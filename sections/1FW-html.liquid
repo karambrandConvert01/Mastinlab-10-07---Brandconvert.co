@@ -1,0 +1,76 @@
+<div class="dp-section-wrapper fw-sections" id="dpp__{{section.id}}" style="background-color:{{section.settings.background_color}}">
+<div class="page-width" >
+  <div class="page-width-inner">
+  <div class="rte featured-row__subtext">{{ section.settings.html }}</div>
+  </div>
+</div>
+
+</div>
+{% style %}
+
+
+#shopify-section-{{ section.id }} .subtitle{
+	color: {{ section.settings.subtitle_color}};
+}
+
+#shopify-section-{{ section.id }} .feature-row__text{
+	margin:30px 0px !important;
+}
+
+#dpp__{{section.id}} .page-width-inner{
+	padding:{{section.settings.padding}};
+}
+@media only screen and (max-width: 768px) {
+	#dpp__{{section.id}} .page-width-inner{
+		padding:{{section.settings.mobile_padding}} !important;
+	}
+}
+{% endstyle %}
+{% schema %}
+  {
+    "name": "HTML(FW)",
+    "class": "index-sections",
+    "settings": [
+	  {
+        "type": "text",
+        "id": "padding",
+        "label": "Custom Padding ",
+        "default": "0px 0px 0px 0px",
+		"info" : "Top right bottom left"
+      },
+	  {
+        "type": "text",
+        "id": "mobile_padding",
+        "label": "Mobile Padding",
+        "default": "0px 0px 0px 0px",
+		"info" : "Top right bottom left"
+      },
+	  {
+        "type": "color",
+        "id": "background_color",
+        "label": "Custom background color ",
+        "default": "#ffffff"
+      },
+	  {
+        "type": "color",
+        "id": "text_color",
+        "label": "Custom text color ",
+        "default": "#000000"
+      },
+	  {
+        "type": "html",
+        "id": "html",
+        "label": "HTML",
+        "default": "Pair large text with an image to tell a story, explain a detail about your product, or describe a new promotion."
+      }
+	 
+      
+    ],
+    "presets": [
+      {
+        "name": "HTML(FW)",
+        "category": "HTML"
+      }
+    ]
+  }
+{% endschema %}

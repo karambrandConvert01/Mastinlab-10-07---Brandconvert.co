@@ -1,0 +1,297 @@
+{% include 'product-template',
+  description_style: section.settings.description_style,
+  image_position: section.settings.image_position,
+  image_container_width: section.settings.image_size,
+  section_id: product.id,
+  social: section.settings.social_enable,
+  thumbnail_position: section.settings.thumbnail_position,
+  thumbnail_arrows: section.settings.thumbnail_arrows,
+  video_looping: section.settings.enable_video_looping,
+  video_style: section.settings.product_video_style
+%}
+
+{% if settings.enable_product_reviews and settings.reviews_layout == 'full' %}
+  <hr id="Reviews-{{ product.id }}" class="hr--clear">
+  <div class="index-section product-reviews product-reviews--full">
+    <div class="page-width">
+      <div id="shopify-product-reviews" data-id="{{product.id}}">{{ product.metafields.spr.reviews }}</div>
+    </div>
+  </div>
+{% endif %}
+{% style %}
+	.page-content--product .add-to-cart{
+		color:{{section.settings.color_btn}} !important;
+		border:1px solid {{section.settings.color_btn_br}} !important;
+		background-color:{{section.settings.color_btn_bg}} !important;
+	}
+ 	@media screen and (max-width:640px){
+
+		.page-content--product .add-to-cart,li.dp_for_mobile #scroll-to-cart{
+            color:{{section.settings.color_mobile_btn}} !important;
+            border:1px solid {{section.settings.mobile_border_color_btn}} !important;
+            background-color:{{section.settings.bg_mobile_color_btn}} !important;
+        }
+	}
+	.page-content--product .add-to-cart:hover{
+		color:{{section.settings.color_btn_hover}} !important;
+		border:1px solid{{section.settings.color_btn_br_hover}} !important;
+		background-color:{{section.settings.color_btn_bg_hover}} !important;
+	}
+    .btn--loading:before{
+		border-color:{{section.settings.vcolor_loading}} !important;
+    }
+	.page-content--product .variant__button-label{
+		color:{{section.settings.vcolor_btn}} !important;
+		border:1px solid{{section.settings.vcolor_btn_br}} !important;
+		background-color:{{section.settings.vcolor_btn_bg}} !important;
+	}
+	.page-content--product  .variant__button-label:hover{
+		color:{{section.settings.vcolor_btn_hover}} !important;
+		border:1px solid{{section.settings.vcolor_btn_br_hover}} !important;
+		background-color:{{section.settings.vcolor_btn_bg_hover}} !important;
+	}
+  .page-content--product  .variant-input-wrap input[type='radio']:checked+label{
+	color:{{section.settings.vcolor_btn_selected_c}} !important;
+	border-color:{{section.settings.vcolor_btn_selected}} !important;
+  }
+	
+
+{% endstyle %}
+{% schema %}
+  {
+    "name": "Product pages",
+    "settings": [
+      {
+        "type": "select",
+        "id": "description_style",
+        "label": "Description position",
+        "default": "default",
+        "options": [
+          {
+            "value": "default",
+            "label": "Next to media"
+          },
+          {
+            "value": "full",
+            "label": "Below media"
+          }
+        ]
+      },
+	  {
+        "type": "color",
+        "id": "vcolor_loading",
+        "label": "Add to cart loading ",
+        "default": "rgba(0, 0, 0, 1)"
+      },
+	  {
+        "type": "header",
+        "content": "Variant button"
+      },
+	  {
+        "type": "color",
+        "id": "vcolor_btn_selected",
+        "label": "Variant selected border color",
+        "default": "rgba(0, 0, 0, 0)"
+      },
+	 {
+        "type": "color",
+        "id": "vcolor_btn_selected_c",
+        "label": "Variant selected color",
+        "default": "rgba(0, 0, 0, 0)"
+      },
+
+	  {
+        "type": "color",
+        "id": "vcolor_btn_bg",
+        "label": "Variant background color",
+        "default": "rgba(0, 0, 0, 0)"
+      },
+	  {
+        "type": "color",
+        "id": "vcolor_btn_bg_hover",
+        "label": "Variant background hover color",
+        "default": "rgba(0, 0, 0, 0.1)"
+      },
+	  {
+        "type": "color",
+        "id": "vcolor_btn_br",
+        "label": "Variant border color",
+        "default": "rgba(0, 0, 0, 0.8)"
+      },
+	  {
+        "type": "color",
+        "id": "vcolor_btn_br_hover",
+        "label": "Variant border hover color",
+        "default": "rgba(0, 0, 0, 1)"
+      },
+	  {
+        "type": "color",
+        "id": "vcolor_btn",
+        "label": "Variant text color",
+        "default": "rgba(0,0,0,0.8)"
+      },
+	  {
+        "type": "color",
+        "id": "vcolor_btn_hover",
+        "label": "Variant text hover color",
+        "default": "rgba(0,0,0,1)"
+      },
+	  {
+        "type": "header",
+        "content": "Add to cart button"
+      },
+	  {
+        "type": "color",
+        "id": "color_btn_bg",
+        "label": "Buttons background color",
+        "default": "rgba(0, 0, 0, 0)"
+      },
+	  {
+        "type": "color",
+        "id": "color_btn_bg_hover",
+        "label": "Buttons background hover color",
+        "default": "rgba(0, 0, 0, 0.1)"
+      },
+	  {
+        "type": "color",
+        "id": "color_btn_br",
+        "label": "Buttons border color",
+        "default": "rgba(0, 0, 0, 0.8)"
+      },
+	  {
+        "type": "color",
+        "id": "color_btn_br_hover",
+        "label": "Buttons border hover color",
+        "default": "rgba(0, 0, 0, 1)"
+      },
+	  {
+        "type": "color",
+        "id": "color_btn",
+        "label": "Buttons text color",
+        "default": "rgba(0,0,0,0.8)"
+      },
+	  {
+        "type": "color",
+        "id": "color_btn_hover",
+        "label": "Buttons text hover color",
+        "default": "rgba(0,0,0,1)"
+      },
+   	  {
+        "type": "header",
+        "content": "Add to cart (Mobile) button"
+      },
+	  {
+        "type": "color",
+        "id": "color_mobile_btn",
+        "label": "Buttons Mobile color",
+        "default": "rgba(0,0,0,0.8)"
+      },
+	  {
+        "type": "color",
+        "id": "bg_mobile_color_btn",
+        "label": "Buttons Background Mobile",
+        "default": "rgba(0,0,0,0)"
+      },
+	  {
+        "type": "color",
+        "id": "mobile_border_color_btn",
+        "label": "Buttons Mobile border color",
+        "default": "rgba(0,0,0,0.8)"
+      },
+      {
+        "type": "checkbox",
+        "id": "social_enable",
+        "label": "Enable social sharing",
+        "default": true
+      },
+      {
+        "type": "header",
+        "content": "Media"
+      },
+      {
+        "type": "paragraph",
+        "content": "Learn more about [media types](https://help.shopify.com/en/manual/products/product-media)"
+      },
+      {
+        "type": "select",
+        "id": "image_position",
+        "label": "Position",
+        "default": "right",
+        "options": [
+          {
+            "value": "left",
+            "label": "Left"
+          },
+          {
+            "value": "right",
+            "label": "Right"
+          }
+        ]
+      },
+      {
+        "type": "select",
+        "id": "image_size",
+        "label": "Size",
+        "default": "medium",
+        "options": [
+          {
+            "value": "small",
+            "label": "Small"
+          },
+          {
+            "value": "medium",
+            "label": "Medium"
+          },
+          {
+            "value": "large",
+            "label": "Large"
+          }
+        ]
+      },
+      {
+        "type": "select",
+        "id": "thumbnail_position",
+        "label": "Thumbnail position",
+        "default": "beside",
+        "options": [
+          {
+            "value": "beside",
+            "label": "Next to media"
+          },
+          {
+            "value": "below",
+            "label": "Below media"
+          }
+        ]
+      },
+      {
+        "type": "checkbox",
+        "id": "thumbnail_arrows",
+        "label": "Show thumbnail arrows"
+      },
+      {
+        "type": "checkbox",
+        "id": "enable_video_looping",
+        "label": "Enable video looping",
+        "default": true
+      },
+      {
+        "type": "select",
+        "id": "product_video_style",
+        "label": "Video style",
+        "default": "muted",
+        "options": [
+          {
+            "value": "muted",
+            "label": "Video without sound"
+          },
+          {
+            "value": "unmuted",
+            "label": "Video with sound"
+          }
+        ],
+        "info": "Video with sound will not autoplay"
+      }
+    ]
+  }
+{% endschema %}

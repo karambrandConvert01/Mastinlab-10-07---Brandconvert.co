@@ -1,0 +1,199 @@
+{
+  "sections": {
+    "1625886222036ec7d5": {
+      "type": "1FW-image-with-html",
+      "settings": {
+        "image": "shopify:\/\/shop_images\/Preset_Quiz_Characters_Final_FO_500x500_12b34859-b08a-49fe-b5e8-1768a3dafc80.png",
+        "padding": "0px 0px 0px 0px",
+        "mobile_padding": "0px 0px 0px 0px",
+        "background_color": "#ffffff",
+        "image_width": 500,
+        "subtitle": "Your perfect preset pack is...",
+        "subtitle_color": "#f45332",
+        "title": "Fuji Original",
+        "text": "<hr>\n<h4 style=\"color:#3A9260\">you’re the deep, real-life \ncolor photographer.<\/h4><p>Sophisticated and refined, you’re drawn to the \nsame style that has inspired fine art photographers \nand wedding magazines for decades. \n\n<\/p>\n<p>You’re right at home capturing black tie affairs, \nelegant estates, and high-end clients who \nlove timeless imagery as much as you do.<\/p>\n<p style=\"text-align:center\">\n<a class=\"btn text-link\" href=\"https:\/\/mastinlabs.com\/products\/fuji-original-lightroom\">SHOP LIGHTROOM &gt; <\/a>\n<a class=\"btn text-link\" href=\"https:\/\/mastinlabs.com\/products\/fuji-original-capture-one\">SHOP CAPTURE ONE &gt;<\/a>\n<\/p>",
+        "btn_color": "#ffffff",
+        "btn_color_border": "#3a9260",
+        "btn_color_bg": "#3a9260",
+        "btn_color_hover": "#ffffff",
+        "btn_color_border_hover": "#3a9260",
+        "btn_color_bg_hover": "#3a9260",
+        "layout": "left",
+        "divider": false
+      }
+    },
+    "3rd_multiple_text-image": {
+      "type": "1FW_multiple_text-image",
+      "blocks": {
+        "4668dc17-e37c-4567-a815-333795547075381": {
+          "type": "textimage",
+          "settings": {
+            "padding": "65px 0px 0px 0px",
+            "mobile_padding": "40px 25px 0px 25px",
+            "background_color": "#f7f6f2",
+            "color": "",
+            "image": "shopify:\/\/shop_images\/222_c002b463-ca55-4378-826c-d0d0d4db9632.png",
+            "image_on_left": false,
+            "code": "<h2>YOU’RE INSPIRED BY<\/h2><p>evergreen coastlines, artisanal hideaways, cozy gatherings, and makers who put their heart into their craft. When the weather turns colder, you dream of hosting friends around a candlelit meal.\n\n<\/p>",
+            "text_algin": "left"
+          }
+        },
+        "0fc4e0f7-72fd-4ffc-9c25-333795547075382": {
+          "type": "textimage",
+          "settings": {
+            "padding": "0px 0px 65px 0px",
+            "mobile_padding": "0px 25px 15px 25px",
+            "background_color": "#f7f6f2",
+            "color": "",
+            "image": "shopify:\/\/shop_images\/333_1901f542-abd4-40cc-8c90-bcebadd93d3c.png",
+            "image_on_left": true,
+            "code": "<h2>YOU LOVE PHOTOS THAT FEEL<\/h2><p>authentic, organic, deep, rich in color,\nand true to life.\n\n<\/p>",
+            "text_algin": "left"
+          }
+        }
+      },
+      "block_order": [
+        "4668dc17-e37c-4567-a815-333795547075381",
+        "0fc4e0f7-72fd-4ffc-9c25-333795547075382"
+      ],
+      "settings": {
+        "headline": "",
+        "description": ""
+      }
+    },
+    "whatisinclude-pro-1620201103": {
+      "type": "1FW-whatisinclude",
+      "blocks": {
+        "whatisinclude-pro-33379554707538-0": {
+          "type": "include",
+          "settings": {
+            "include_title": "",
+            "include_image": "shopify:\/\/shop_images\/FUJI_O_PRO400HN_David_Heidrich_03.jpg",
+            "include_content": "<h3>Fuji 400H<\/h3>\n<p>Natural skin tones and vivid, three-dimensional color<\/p>",
+            "max_width": "220px"
+          }
+        },
+        "whatisinclude-pro-33379554707538-1": {
+          "type": "include",
+          "settings": {
+            "include_title": "",
+            "include_image": "shopify:\/\/shop_images\/FUJI_O_PRO400HB_David_Heidrich_03-2.jpg",
+            "include_content": "<h3>Fuji 400H Blue<\/h3>\n<p>Soft, sage greens<\/p>",
+            "max_width": "220px"
+          }
+        },
+        "whatisinclude-pro-33379554707538-2": {
+          "type": "include",
+          "settings": {
+            "include_title": "",
+            "include_image": "shopify:\/\/shop_images\/FUJI_O_PRO160_David_Heidrich_03-2.jpg",
+            "include_content": "<h3>Fuji 160NS<\/h3>\n<p>Neutral and balanced<\/p>",
+            "max_width": "220px"
+          }
+        },
+        "7a6ddff7-66c6-4603-b2a9-dfebe820b005": {
+          "type": "include",
+          "settings": {
+            "include_title": "",
+            "include_image": "shopify:\/\/shop_images\/FUJI_O_PRO800Z1_David_Heidrich_03-2.jpg",
+            "include_content": "<h3>Fuji 800Z<\/h3>\n<p>Pretty in pink<\/p>",
+            "max_width": "220px"
+          }
+        }
+      },
+      "block_order": [
+        "whatisinclude-pro-33379554707538-0",
+        "whatisinclude-pro-33379554707538-1",
+        "whatisinclude-pro-33379554707538-2",
+        "7a6ddff7-66c6-4603-b2a9-dfebe820b005"
+      ],
+      "settings": {
+        "divider": false,
+        "space_around": false,
+        "padding": "50px 0px 50px 0px",
+        "mobile_padding": "30px 0px 30px 0px",
+        "color": "#ffffff",
+        "background_color": "#261d2d",
+        "text_align": "center",
+        "content_padding": "0px 0px 50px 0px",
+        "content_mobile_padding": "0px 0px 30px 0px",
+        "section_title": "Meet Your Presets",
+        "section_content": "<p style=\"text-align:center\">With the Fuji Original pack, you can \nget the classic light and airy film look.<\/p>",
+        "extra_content": "<p style=\"text-align:center\">\n<a class=\"btn text-link\" href=\"https:\/\/mastinlabs.com\/products\/fuji-original-lightroom\">SHOP LIGHTROOM &gt;<\/a> <a class=\"btn text-link\" href=\"https:\/\/mastinlabs.com\/products\/fuji-original-capture-one\">SHOP CAPTURE ONE &gt;<\/a>\n<\/p>"
+      }
+    },
+    "customer-says-pro-1620204230": {
+      "type": "1FW-testimonial",
+      "blocks": {
+        "customer-says-pro-33379554707538-0": {
+          "type": "testimonial",
+          "settings": {
+            "testimonial": "<p>“Fuji is such a gorgeous pack and has given me <strong>the tones and images I've been looking for!<\/strong> Using this pack makes my editing workflow so quick and seamless! It's a new fave for sure.”<\/p>",
+            "author": "Staci"
+          }
+        },
+        "customer-says-pro-33379554707538-1": {
+          "type": "testimonial",
+          "settings": {
+            "testimonial": "<p>“The Fuji Original is <strong>my go-to for the polished magazine cover finish<\/strong> I have been searching for since going digital. Absolutely over the moon with it.”<\/p>",
+            "author": "Peig"
+          }
+        },
+        "customer-says-pro-33379554707538-2": {
+          "type": "testimonial",
+          "settings": {
+            "testimonial": "<p>“I've been editing and playing with color and light for years, and I can honestly say that <strong>Mastin Labs Fuji presets are a life saver. <\/strong>They take the time and guesswork out of getting your images right and CONSISTENT. My only regret is not switching sooner.”<\/p>",
+            "author": "Valorie"
+          }
+        }
+      },
+      "block_order": [
+        "customer-says-pro-33379554707538-0",
+        "customer-says-pro-33379554707538-1",
+        "customer-says-pro-33379554707538-2"
+      ],
+      "settings": {
+        "title": "What Fuji Original photographers are saying",
+        "background_color": "#f7f6f2",
+        "slider_per_page": "1",
+        "align_text": "left",
+        "round_images": false,
+        "divider": false,
+        "main_background_image": "shopify:\/\/shop_images\/Group_47_5a4a8cc1-0887-4747-8fb2-851c035fa014.png",
+        "main_background_color": "shopify:\/\/shop_images\/Group_44_2.png",
+        "main_color": "#ffffff",
+        "padding": "50px 0px 50px 0px",
+        "mobile_padding": "30px 0px 30px 0px"
+      }
+    },
+    "double_guide": {
+      "type": "1FW-double_guide",
+      "settings": {
+        "enable": true,
+        "main_bg_image": "shopify:\/\/shop_images\/testimonial_background.jpg",
+        "before_background_image": "shopify:\/\/shop_images\/Vector_1.png",
+        "before_background": "#f7f6f2",
+        "headline": "<h2>Ready to learn more? <span style=\"color:#3A9260\" class=\"freescript_v2 \">Check out our free guides below.<\/span>\n<\/h2>",
+        "title_background": "#eae9e4",
+        "after_background_image": "shopify:\/\/shop_images\/Vector_2.png",
+        "padding": "20px 20px 20px 20px",
+        "mobile_padding": "10px 10px 10px 10px",
+        "guide_padding": "50px 20px 20px 20px",
+        "guide_mobile_padding": "20px 20px 20px 20px",
+        "fguide_title": "THE ULTIMATE GUIDE TO \u0003LIGHT & AIRY \u0003PHOTOGRAPHY",
+        "fguide_code": "<div class=\"klaviyo-form-Wu3sKK\"><\/div>",
+        "fguide_image": "shopify:\/\/shop_images\/Group_86.png",
+        "sguide_title": "THE ULTIMATE GUIDE TO \u0003DARK & MOODY \u0003PHOTOGRAPHY",
+        "sguide_code": "<div class=\"klaviyo-form-XpT4HY\"><\/div>",
+        "sguide_image": "shopify:\/\/shop_images\/Group_87.png"
+      }
+    }
+  },
+  "order": [
+    "1625886222036ec7d5",
+    "3rd_multiple_text-image",
+    "whatisinclude-pro-1620201103",
+    "customer-says-pro-1620204230",
+    "double_guide"
+  ]
+}

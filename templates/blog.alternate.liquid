@@ -1,0 +1,14 @@
+{%layout none %}
+{% paginate blog.articles by 250 %}
+{% capture results %}
+[{% for article in blog.articles %}
+    { 
+      "title"    : {{ article.title | json }},
+      "url"      : {{ article.url | json }},
+      "content": {{ article.content | json }}
+    }
+    {% unless forloop.last %},{% endunless %}
+{%endfor%}]
+{% endcapture %}
+{% endpaginate %}
+{{ results }}

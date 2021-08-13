@@ -1,0 +1,272 @@
+<div class="depro_section_wrapper depro_{{section.id}}" {%if section.settings.bg_color%}style="background-color:{{section.settings.bg_color}}"{%endif%}><div class="page-width">
+  <div class="grid__item medium-up--one-half">
+    {%if section.settings.section_image%}
+    	<img src="{{section.settings.section_image | image_url}}" alt="" />
+    {%endif%}
+    
+  </div>
+  <div class="grid__item medium-up--one-half">
+  	<div  class="product-single__meta">
+{% capture form_id %}AddToCartForm-deprohoang{% endcapture %}
+ {% if section.settings.section_title != blank %}
+    
+      <h2 class="h2 product-single__title">{{ section.settings.section_title | escape }}</h2>
+
+  {% endif %}
+      <p>{{ product.selected_or_first_available_variant.price | money_with_currency}}</p>
+{% if section.settings.description != blank %}
+
+<div style="width:100%;margin:auto;text-align:left;margin-bottom:50px">{{section.settings.description}}</div>
+
+{% endif %}
+
+
+
+<div  class="{{form_id}}">
+  {%- assign current_variant = product.selected_or_first_available_variant -%}
+
+{%assign section_id = "deprohoang"%}
+{% form 'product', product, id: form_id, class: 'product-single__form' %}
+  {% unless product.has_only_default_variant %}
+    {% for option in product.options_with_values %}
+      {% if settings.variant_type == 'button' %}
+        {% include 'variant-button', section_id: section_id, option_drop: option %}
+      {% else %}
+        {% include 'variant-dropdown', section_id: section_id %}
+      {% endif %}
+    {% endfor %}
+  {% endunless %}
+
+  <select name="id" id="ProductSelect-{{ section_id }}" class="product-single__variants no-js">
+    {% for variant in product.variants %}
+      {% if variant.available %}
+        <option {% if variant == product.selected_or_first_available_variant %}
+          selected="selected" {% endif %}
+          value="{{ variant.id }}">
+          {{ variant.title }} - {{ variant.price | money_with_currency }}
+        </option>
+      {% else %}
+        <option disabled="disabled">
+          {{ variant.title }} - {{ 'products.product.sold_out' | t }}
+        </option>
+      {% endif %}
+    {% endfor %}
+  </select>
+
+  {% if settings.quantity_enable %}
+    <div class="product__quantity product__quantity--{{ settings.variant_type }}">
+      <label for="Quantity-{{ section_id }}">{{ 'products.product.quantity' | t }}</label>
+      {% include 'quantity-input', id: section_id, qty: 1, min: 1 %}
+    </div>
+  {% endif %}
+
+  {%- assign inventory_visible = false -%}
+  {%- if settings.inventory_enable and current_variant.inventory_management == 'shopify' -%}
+    {%- if current_variant.inventory_quantity <= settings.inventory_threshold and current_variant.inventory_quantity >= 0 -%}
+      {%- assign inventory_visible = true -%}
+    {%- endif -%}
+  {%- endif -%}
+  {%- if current_variant.inventory_quantity == 0 -%}
+    {%- assign inventory_visible = false -%}
+  {%- endif -%}
+
+  <div
+    id="ProductInventory-{{ section_id }}"
+    class="product__inventory {% unless inventory_visible %}hide{% endunless %}"
+    >
+    {% if current_variant.available %}
+      {{ 'products.product.stock_label' | t: count: current_variant.inventory_quantity }}
+    {% endif %}
+  </div>
+
+  {%- if settings.inventory_transfers_enable -%}
+    <div
+      id="ProductIncomingInventory-{{ section_id }}"
+      class="product__inventory{% if inventory_visible %} hide{% endif %}">
+      {%- if current_variant.incoming and inventory_visible == false -%}
+        {%- if current_variant.next_incoming_date -%}
+          {% assign date = current_variant.next_incoming_date | date: format: 'date' %}
+          {%- if current_variant.available -%}
+            {{ 'products.product.will_not_ship_until' | t: date: date }}
+          {%- else -%}
+            {{ 'products.product.will_be_in_stock_after' | t: date: date }}
+          {%- endif -%}
+        {%- else -%}
+          {{ 'products.product.waiting_for_stock' | t }}
+        {%- endif -%}
+      {%- endif -%}
+    </div>
+  {%- endif -%}
+
+  {%- assign enable_dynamic_buttons = false -%}
+  {% if settings.enable_payment_button and template != 'product.preorder' %}
+    {%- assign enable_dynamic_buttons = true -%}
+  {% endif %}
+	
+  {% if enable_dynamic_buttons %}
+    <div class="payment-buttons">
+  {% endif %}
+
+    <button
+      {% if product.empty? %}type="button"{% else %}type="submit"{% endif %}
+      name="add"
+      id="AddToCart-{{ section_id }}"
+      class="btn btn--full add-to-cart{% if enable_dynamic_buttons %} btn--secondary{% endif %}"
+      {% unless current_variant.available %} disabled="disabled"{% endunless %}>
+      <span id="AddToCartText-{{ section_id }}">
+        {% if current_variant.available %}
+          {% if template == 'product.preorder' %}
+            {{ 'products.product.preorder' | t }}
+          {% else %}
+            {{ 'products.product.add_to_cart' | t }}
+          {% endif %}
+        {% else %}
+          {{ 'products.product.sold_out' | t }}
+        {% endif %}
+      </span>
+    </button>
+
+    {% if enable_dynamic_buttons %}
+      {{ form | payment_button }}
+    {% endif %}
+
+  {% if enable_dynamic_buttons %}
+    </div>
+  {% endif %}
+
+  <div id="VariantsJson-{{ section_id }}" class="hide" aria-hidden="true">
+    {{ product.variants | json }}
+  </div>
+  {% if product.options.size > 1 %}
+    <div id="CurrentVariantJson-{{ section_id }}" class="hide" aria-hidden="true">
+      {{ current_variant | json }}
+    </div>
+  {% endif %}
+{% endform %}
+
+      </div>
+	</div>
+  </div>
+</div>
+</div>
+<style>
+  {%if section.settings.btnbg_color and section.settings.btnbg_color != "rgba(0,0,0,0)"%}
+  .depro_{{section.id}} .variant-input-wrap label{
+    background: {{section.settings.btnbg_color}} !important; 
+  }
+  {%endif%}
+  .depro_{{section.id}} .add-to-cart{
+    {%if section.settings.abtnbg_color and section.settings.abtnbg_color != "rgba(0,0,0,0)" %}
+    background: {{section.settings.abtnbg_color}} !important; 
+    border:none !important;
+    {%endif%}
+    {%if section.settings.abtn_color and section.settings.abtn_color != "rgba(0,0,0,0)"%}
+    color:{{section.settings.abtn_color}} !important; 
+    {%endif%}
+    
+  }
+  
+  .depro_{{section.id}} .variant-input-wrap label:hover{
+    {%if section.settings.btnbg_color_hover and section.settings.btnbg_color_hover != "rgba(0,0,0,0)" %}
+    background: {{section.settings.btnbg_color_hover}} !important; 
+     {%endif%}
+  }
+  .depro_{{section.id}} .add-to-cart:hover{
+    {%if section.settings.abtnbg_color_hover and section.settings.abtnbg_color_hover != "rgba(0,0,0,0)"%}
+    background: {{section.settings.abtnbg_color_hover}} !important;
+     {%endif%}
+    
+  }
+</style>
+{% schema %}
+  {
+    "name": "ADD TO CART SECTION",
+	"class":"depro-section",
+    "settings": [
+		{
+			"type":"color",
+			"id":"bg_color",
+			"label": "background color"
+		
+		},
+		{
+			"type":"image_picker",
+			"id":"section_image",
+			"label": "Image"
+		
+		},
+		{
+			"type":"text",
+			"id":"section_title",
+			"label": "title"
+		
+		},
+
+		{
+
+			"type":"header",
+			"content": "EDITING SOFTWARE",
+			"info":      "Custom color for add to EDITING SOFTWARE button"
+		
+		},
+
+	    {
+			"type":"color",
+			"id":"btnbg_color",
+			"label": "button background color"
+		
+		},
+		{
+			"type":"color",
+			"id":"btnbg_color_hover",
+			"label": "button background color hover"
+		
+		},
+
+		{
+			"type":"header",
+			"content": "Add To Cart",
+			"info":      "Custom color for add to cart button"
+		
+		},
+		{
+			"type":"color",
+			"id":"abtn_color",
+			"label": "Add to cart color"
+		
+		},
+		{
+			"type":"color",
+			"id":"abtnbg_color",
+			"label": "Add to cart background color"
+		
+		},
+		{
+			"type":"color",
+			"id":"abtnbg_color_hover",
+			"label": "Add to cart background color hover"
+		
+		},
+
+		{
+            "type": "richtext",
+            "id": "description",
+            "label": "description"
+         }
+	],
+	"presets": [
+      {
+        "name": "ADD TO CART SECTION",
+        "category": "Advanced layout"
+        
+      }
+    ]
+  
+  }
+{% endschema %}
+
+{% stylesheet %}
+{% endstylesheet %}
+
+{% javascript %}
+{% endjavascript %}

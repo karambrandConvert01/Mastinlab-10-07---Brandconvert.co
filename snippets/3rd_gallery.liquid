@@ -1,0 +1,113 @@
+{%- if section.settings.enable == false and request.design_mode == false -%}
+{%-else-%}
+{%unless section.settings.fullWidth%}
+<div class="page-width">
+{%endunless%}
+  <div class="custom_background">
+{% if section.settings.section_title != blank %}
+  <div class="section-header">
+      <h3 class="section-header__title">{{ section.settings.section_title }}</h3>
+      {% if section.settings.section_content != blank %}<div class="section_description">{{ section.settings.section_content }}</div>{% endif %}
+   </div>
+{% endif %}
+<div class="gallery-pro-wrapper" id="dp__{{section.id}}">
+  
+  <div class="gallery-sizer column-{{section.settings.columns}}"></div>
+{% for block in section.blocks %}
+  <div class="gallery-item column-{{section.settings.columns}}" id="dp_bl_{{block.id}}" >
+     {% if block.settings.image != blank %}
+         <div class="gallery_item_info">
+          
+           {%- assign image = block.settings.image | img_url: '1x1' | replace: '_1x1.', '_{width}x.' -%}
+           <img class="lazyloads"
+                data-src="{{ image }}"
+                src="{{ block.settings.image | img_url: '1080x' }}"
+                data-widths="[360, 540, 720, 900, 1080, 1600]"
+                data-aspectratio="{{ block.settings.image.aspect_ratio }}"
+                data-sizes="auto"
+                alt="{{ block.settings.image.alt }}">   
+           
+          <noscript>
+            <img class="lazyloaded" src="{{ block.settings.image | img_url: '400x' }}" alt="{{ block.settings.image.alt }}">
+          </noscript>
+          <div class="gallery_content_info">
+            <div class="gallery_content-box">
+            {%if block.settings.title != ""%}
+            <div class="imagebox__title">
+              	{{block.settings.title}}
+            </div>
+            {%if block.settings.description != ""%}
+            <p>{{block.settings.description}}</p>
+            {%endif%}
+            {%endif%}
+            
+            <div class="imagebox__btnwrap">
+              {%if block.settings.link%}
+              <a href="{{block.settings.link}}" class="imagebox__btn ny0hes">{{block.settings.button_name}}</a>
+              {%endif%}
+              {%if block.settings.link_second%}
+              <a href="{{block.settings.link_second}}" class="imagebox__btn ny0hes">{{block.settings.button_name_second}}</a>
+              {%endif%}
+            </div>
+            
+            </div>
+          </div>
+        </div>
+     {% endif %} 
+     {% style %}
+        
+        #dp_bl_{{block.id}} .gallery_content_info {
+    		{%if block.settings.alignment == "top"%}
+            align-items:flex-start;
+    		{%endif%}
+   			 {%if block.settings.alignment == "bottom"%}
+            align-items:flex-end;
+    		{%endif%}
+        }
+		
+
+      {% endstyle %}
+  </div>
+    
+{%endfor%}
+</div>
+    </div>
+{%unless section.settings.fullWidth%}
+</div>
+{%endunless%}
+
+{% style %}
+  #shopify-section-{{section.id}} .gallery_item_info{
+   	border:{{section.settings.border}} solid white;
+  }
+  #shopify-section-{{section.id}}.depro-gallery .custom_background{
+	padding:{{section.settings.padding}};
+	background-color:{{section.settings.background_color}};
+  }
+  #shopify-section-{{section.id}}  .gallery-item{
+    padding:{{section.settings.padding_gallery}};
+	
+  }
+  #shopify-section-{{section.id}} .custom_background{
+	{% assign padding = section.settings.padding_gallery | split: ' ' %}
+	margin-left:-{{padding[3]}};
+	margin-right:-{{padding[1]}};
+  }
+  @media only screen and (max-width: 540px) {
+    #shopify-section-{{section.id}}  .gallery-item{
+    	padding:{{section.settings.mobile_gallery_padding}};
+    
+    }
+	#shopify-section-{{section.id}} .custom_background{
+      {% assign padding = section.settings.mobile_gallery_padding | split: ' ' %}
+      margin-left:-{{padding[3]}};
+      margin-right:-{{padding[1]}};
+    }
+  }
+  @media only screen and (max-width: 768px) {
+	#shopify-section-{{section.id}}.depro-gallery .custom_background{
+      padding:{{section.settings.mobile_padding}};
+    }
+  }
+{% endstyle %}
+{%endif%}

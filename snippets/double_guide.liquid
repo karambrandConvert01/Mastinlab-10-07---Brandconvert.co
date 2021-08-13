@@ -1,0 +1,77 @@
+{%- if section.settings.enable == false and request.design_mode == false -%}
+{%-else-%}
+<div id="section-{{section.id}}" class="double_guide">
+<div class="page-width">
+  <div class="center-text heade_line_guide">
+    <h2>{{section.settings.headline}}</h2>
+  </div>
+</div>
+<div class="page-width">
+      <div class="inner-page-width">
+        <div class="grid flex-display grid--uniform">
+          <div class="grid__item medium-up--six-twelfths">
+            <div class="guide_content fguide_content">
+              <div class="center_container">
+                <h3>{{section.settings.fguide_title}}</h3>
+                {{section.settings.fguide_code}}
+              </div>
+            </div>
+          </div>
+          <div class="grid__item medium-up--six-twelfths">
+            <div class="guide_content sguide_content">
+              <div class="center_container">
+                <h3>{{section.settings.sguide_title}}</h3>
+                {{section.settings.sguide_code}}
+              </div>
+            </div>
+          </div>
+        </div>
+  </div>
+</div>
+</div>
+{%style%}
+#section-{{section.id}} .fguide_content:after{
+	background-image:url({{section.settings.fguide_image | img_url :'1000x'}});
+	content:"";
+	position:absolute;
+	top:0px;
+	left:0px;
+	width:110%;
+	height:100%;
+	z-index:9;
+    background-size: cover;
+	background-position:center right;
+}
+#section-{{section.id}} .sguide_content:after{
+	background-image:url({{section.settings.sguide_image | img_url :'1000x'}});
+	content:"";
+	content:"";
+	position:absolute;
+	top:0px;
+	left:-10%;
+	width:110%;
+	height:100%;
+	background-size: cover;
+	background-position:center left;
+}
+#section-{{section.id}} .heade_line_guide{
+	padding:{{section.settings.padding}};
+	text-align:center;
+}
+#section-{{section.id}} .heade_line_guide h2{
+ margin:0px;
+}
+#section-{{section.id}} .guide_content{
+	padding:{{section.settings.guide_padding}};
+}
+@media only screen and (max-width: 768px) {
+	#section-{{section.id}} .heade_line_guide{
+		padding:{{section.settings.mobile_padding}};
+	}
+	#section-{{section.id}} .guide_content{
+		padding:{{section.settings.guide_mobile_padding}};
+	}
+
+}
+{%endstyle%}
+{%-endif-%}

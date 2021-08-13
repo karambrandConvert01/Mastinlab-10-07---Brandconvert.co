@@ -1,0 +1,135 @@
+{%- assign show_announcement = false -%}
+{%- assign announcement_block_count = 0 -%}
+{% for block in section.blocks %}
+  {% if block.type == 'announcement' %}
+    {%- assign show_announcement = true -%}
+    {%- assign announcement_block_count = announcement_block_count | plus: 1 -%}
+  {% endif %}
+{% endfor %}
+
+{% if show_announcement %}
+{%assign specialOption = 0 %}
+{%if template == "product"%}
+{%if section.settings.desktop_enable %}
+	{%assign specialOption = 1 %}
+{%endif%}
+{%elsif template == "collection"%}
+{%if section.settings.desktop_collection_enable %}
+	{%assign specialOption = 2 %}
+{%endif%}
+{%elsif  template == "index"%}
+{%if section.settings.desktop_homepage_enable %}
+	{%assign specialOption = 3 %}
+{%endif%}
+{%elsif  template == "blog"%}
+{%if section.settings.desktop_blog_enable %}
+	{%assign specialOption = 4 %}
+{%endif%}
+{%elsif  template == "article"%}
+{%if section.settings.desktop_article_enable %}
+	{%assign specialOption = 5 %}
+{%endif%}
+{%elsif  template contains "customers"%}
+{%if section.settings.desktop_account_enable %}
+	{%assign specialOption = 6 %}
+{%endif%}
+{%elsif  template contains "page"%}
+{%if section.settings.desktop_page_enable or page.url == "/pages/which-preset-packs-are-right-for-me"%}
+	{%assign specialOption = 7 %}
+{%endif%}
+{%endif%}
+
+{%assign specialmOption = 0 %}
+{%if template == "product"%}
+{%if section.settings.mobile_product_enable %}
+	{%assign specialmOption = 1 %}
+{%endif%}
+{%elsif template == "collection"%}
+{%if section.settings.mobile_collection_enable %}
+	{%assign specialmOption = 2 %}
+{%endif%}
+{%elsif  template == "index"%}
+{%if section.settings.mobile_homepage_enable %}
+	{%assign specialmOption = 3 %}
+{%endif%}
+{%elsif  template == "blog"%}
+{%if section.settings.mobile_blog_enable %}
+	{%assign specialmOption = 4 %}
+{%endif%}
+{%elsif  template == "article"%}
+{%if section.settings.mobile_article_enable %}
+	{%assign specialmOption = 5 %}
+{%endif%}
+{%elsif  template contains "customers"%}
+{%if section.settings.mobile_account_enable %}
+	{%assign specialmOption = 6 %}
+{%endif%}
+{%elsif  template contains "page"%}
+{%if section.settings.mobile_page_enable and page.url == "/pages/which-preset-packs-are-right-for-me"%}
+	{%assign specialmOption = 7 %}
+{%endif%}
+{%endif%}
+
+  <div id="announcement-bar" class="announcement-bar {{template}}-{{specialOption}}-{{specialmOption}} {%if specialOption != 0%}hide_announcement_desktop{%endif%} {%if specialmOption != 0%}hide_announcement_mobile{%endif%}">
+    <div class="page-width">
+      <div
+        id="AnnouncementSlider"
+        class="announcement-slider{% if section.settings.announcement_compact %} announcement-slider--compact{% endif %}"
+        data-compact-style="{{ section.settings.announcement_compact }}"
+        data-block-count="{{ announcement_block_count }}">
+        {%- assign slide_index = 0 -%}
+        {% for block in section.blocks %}
+          {% if block.type == 'announcement' %}
+            <div
+              id="AnnouncementSlide-{{ block.id }}"
+              class="announcement-slider__slide"
+              data-index="{{ slide_index }}"
+              {{ block.shopify_attributes }}>
+              {%assign show = true%}
+              
+
+              <div class="dp-bigscreen">
+              
+
+              {% if block.settings.link != blank %}
+                <a class="announcement-link" target="{{block.settings.link_targer}}" href="{{ block.settings.link }}">
+              {% endif %}
+                {% if block.settings.text != blank %}
+                  <span class="announcement-text">{{ block.settings.text }}</span>
+                {% endif %}
+                {% if block.settings.link_text != blank %}
+                  <span class="announcement-link-text">{{ block.settings.link_text }}</span>
+                {% endif %}
+              {% if block.settings.link != blank %}
+                </a>
+   
+                {%endif%}
+           
+              	</div>
+            
+             
+      
+              <div class="dp-mobile" style="display:none">
+              {% if block.settings.mobile_link != blank %}
+                <a class="announcement-link" target="{{block.settings.mobile_link_targer}}" href="{{ block.settings.mobile_link }}">
+              {% endif %}
+                {% if block.settings.mobile_text != blank %}
+                  <span class="announcement-text">{{ block.settings.mobile_text }}</span>
+                {% endif %}
+                {% if block.settings.mobile_link_text != blank %}
+                  <span class="announcement-link-text">{{ block.settings.mobile_link_text }}</span>
+                {% endif %}
+              {% if block.settings.mobile_link != blank %}
+                </a>
+              {% endif %}
+              </div>
+              
+            </div>
+            {%- assign slide_index = slide_index | plus: 1 -%}
+          {% endif %}
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+
+{% endif %}

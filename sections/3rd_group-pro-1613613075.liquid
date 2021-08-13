@@ -1,0 +1,124 @@
+{%include "3rd_group"%}
+{% schema %}
+  {
+    "name": "Presets",
+    "settings": [
+    {
+          "type": "checkbox",
+          "id": "enable",
+          "label": "Display for live site?",
+		      "default":true
+        },
+        {
+          "type": "checkbox",
+          "id": "default_open",
+          "label": "default hide?",
+      "default":true
+    },
+		{
+          "type": "text",
+          "id": "headline",
+          "label": "Section Title",
+		  "default":"Desktop Presets"
+        },
+		{
+          "type": "color",
+          "id": "backround_color",
+          "label": "Background Color"
+        },
+	    {
+          "type": "color",
+          "id": "text_color",
+          "label": "Text Color"
+        },{
+          "type": "color",
+          "id": "hbackground_color",
+          "label": "Toggle Background Color"
+        },
+		{
+          "type": "color",
+          "id": "htext_color",
+          "label": "Toggle Text Color",
+		  "default":"#000000"
+        }
+	],
+	"blocks": [
+      {
+        "type": "textimage",
+        "name": "Text&Image",
+        "settings": [
+		  {
+            "type": "header",
+            "content": "padding Setting"
+          },
+          {
+            "type": "text",
+            "id": "padding",
+            "label": "Desktop Padding",
+            "default": "0px 0px 0px 0px",
+            "info" : "Top right bottom left"
+          },
+          {
+            "type": "text",
+            "id": "mobile_padding",
+            "label": "Mobile Padding",
+            "default": "0px 0px 0px 0px",
+            "info" : "Top right bottom left"
+          },
+		  {
+            "type": "header",
+            "content": "Block Setting"
+          },
+		  {
+            "type": "color",
+            "id": "background_color",
+            "label": "Background Color"
+          },
+		  {
+            "type": "color",
+            "id": "color",
+            "label": "Color"
+          },
+		  {
+            "type": "image_picker",
+            "id": "image",
+            "label": "Image"
+          },
+		  {
+            "type": "checkbox",
+            "id": "image_on_left",
+            "label": "Image on left",
+			"default":true
+          },
+          {
+            "type": "html",
+            "id": "code",
+            "label": "HTML",
+            "default": "<h2>Preview weekly live edits</h2><p>Lorem ipsum dolor sit amet, consectetur adipisicing elit</p>"
+          },
+		  {
+           "type": "select",
+           "id": "text_algin",
+           "label": "Text lign",
+           "options": [
+             {
+               "value": "left",
+               "label": "Left"
+             },
+             {
+               "value": "center",
+               "label": "Center"
+             },
+             {
+               "value": "right",
+               "label": "Right"
+             }
+           ],
+           "default": "left",
+           "info": "text"
+        }
+        ]
+      }
+    ]
+  }
+{% endschema %}

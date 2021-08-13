@@ -1,0 +1,93 @@
+{%if product.id == 4785544396882  %}
+	{%assign product_get = all_products['fujicolor-original']%}
+{% elsif product.id == 4785500258386 %}
+	{%assign product_get = all_products['adventure-everyday']%}
+{% elsif product.id == 4785527488594  %}
+	{%assign product_get = all_products['fujicolor-everyday']%}
+{% elsif product.id == 4785547444306  %}
+	{%assign product_get = all_products['portra-original']%}
+{% elsif product.id == 4785549213778  %}
+	{%assign product_get = all_products['portra-pushed']%}
+{% elsif product.id == 4785566285906  %}
+	{%assign product_get = all_products['ilford-original']%}
+{% elsif product.id == 4938238492754  %}
+	{%assign product_get = all_products['fujicolor-pushed-lightroom']%}
+{% else%}
+	{%assign product_get = product%}
+{% endif%}
+{% section 'product-template' %}
+{%include "sections_pro_footer"%}
+{%include "capture_sections"%}
+
+<!--Start Stamped.io Auto Installation-->
+<div id="stamped-main-widget" class="stamped-main-widget" data-widget-style="standard" 
+     data-product-id="{{ product_get.id }}" 
+     data-name="{{ product_get.title | escape }}" 
+     data-take-reviews="2"
+     data-url="{{ shop.url }}{{ product_get.url }}" 
+     data-image-url="{{ product_get.featured_image | product_img_url: "large" |replace: '?', '%3F' | replace: '&','%26'}}" 
+     data-description="{{ product_get.description | strip_html | escape }}" 
+     data-product-sku="{{product_get.handle}}" 
+     data-product-type="{{product_get.type}}">{{ product_get.metafields.stamped.reviews }}</div>
+<!--End Stamped.io Auto Installation-->
+
+<!--Start Klaviyo Product Retarget-->
+<script type="text/javascript">
+  var _learnq = _learnq || [];
+  var item = {
+    Name: {{ product.title|json }},
+    ProductID: {{ product.id|json }},
+    Categories: {{ product.collections|map:'title'|json }},
+    ImageURL: "https:{{ product.featured_image.src|img_url:'grande' }}",
+    URL: "{{ shop.secure_url }}{{ product.url }}",
+    Brand: {{ product.vendor|json }},
+    Price: {{ product.price|money|json }},
+    CompareAtPrice: {{ product.compare_at_price_max|money|json }}
+  };
+  _learnq.push(['track', 'Viewed Product', item]);
+  _learnq.push(['trackViewedItem', {
+    Title: item.Name,
+    ItemId: item.ProductID,
+    Categories: item.Categories,
+    ImageUrl: item.ImageURL,
+    Url: item.URL,
+    Metadata: {
+      Brand: item.Brand,
+      Price: item.Price,
+      CompareAtPrice: item.CompareAtPrice
+    }
+  }]);
+</script>
+<!--End Klaviyo Product Retarget-->
+
+{% section 'product-recommendations' %}
+{% section 'recently-viewed' %}
+{%comment%}
+{% if collection %}
+  <div class="text-center page-content page-content--bottom">
+    <a href="{% if collection.handle == 'frontpage' %}/{% else %}{{ collection.url }}{% endif %}" class="btn btn--small return-link">
+      <svg aria-hidden="true" focusable="false" role="presentation" class="icon icon--wide icon-arrow-left" viewBox="0 0 50 15"><path d="M50 5.38v4.25H15V15L0 7.5 15 0v5.38z"/></svg> {{ 'products.general.collection_return' | t: collection: collection.title }}
+    </a>
+  </div>
+{%else%}
+
+{% for collection in product.collections %}
+    <div class="text-center page-content page-content--bottom">
+    <a href="{% if collection.handle == 'frontpage' %}/{% else %}{{ collection.url }}{% endif %}" class="btn btn--small return-link">
+      <svg aria-hidden="true" focusable="false" role="presentation" class="icon icon--wide icon-arrow-left" viewBox="0 0 50 15"><path d="M50 5.38v4.25H15V15L0 7.5 15 0v5.38z"/></svg> {{ 'products.general.collection_return' | t: collection: collection.title }}
+    </a>
+  </div>
+{% endfor %}
+
+{% endif %}
+{%endcomment%}
+<script>
+  // Override default values of shop.strings for each template.
+  // Alternate product templates can change values of
+  // add to cart button, sold out, and unavailable states here.
+  theme.productStrings = {
+    addToCart: {{ 'products.product.add_to_cart' | t | json }},
+    soldOut: {{ 'products.product.sold_out' | t | json }},
+    unavailable: {{ 'products.product.unavailable' | t | json }}
+  };
+</script>

@@ -1,0 +1,221 @@
+{%layout none %}
+<!doctype html>
+<html class="no-js" lang="{{ request.locale }}">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="{{ settings.color_button }}">
+  <link rel="canonical" href="{{ canonical_url }}">
+  <meta name="format-detection" content="telephone=no">
+
+  {%- if settings.favicon -%}
+    <link rel="shortcut icon" href="{{ settings.favicon | img_url: '32x32' }}" type="image/png" />
+  {%- endif -%}
+
+  {% include 'seo-title' %}
+  <title>{{ seo_title }}</title>
+
+  {%- if page_description -%}
+  <meta name="description" content="{{ page_description | escape }}">
+  {%- endif -%}
+
+  {% capture socials_meta %}
+  	{%section "social_image"%}	
+  {% endcapture %}
+  
+  {% assign socials_metas =  socials_meta | remove_first :'<div id="shopify-section-social_image" class="shopify-section index-section">' %}
+  
+  {%comment%}
+  {% assign socials_metas =  socials_metas | remove_first :'<div id="shopify-section-social_image" class="shopify-section index-section" data-theme-editor-section="{&quot;id&quot;:&quot;social_image&quot;,&quot;type&quot;:&quot;social_image&quot;,&quot;disabled&quot;:false}">' %}
+  {%endcomment%}
+  
+  {%assign customize = 0 %}
+  {% if socials_metas contains "data-theme-editor-section"%}
+  	{%assign customize = 1 %}
+    <style>#shopify-section-social_image{display:none}</style>
+  {%else %}
+  {{socials_metas | remove_first : '</div>'}}
+  {%endif%}
+  {% include 'font-face' %}
+  {{ 'theme.scss.css' | asset_url | stylesheet_tag }}
+  
+  <script>
+    document.documentElement.className = document.documentElement.className.replace('no-js', 'js');
+    window.theme = window.theme || {};
+    theme.strings = {
+      addToCart: {{ 'products.product.add_to_cart' | t | json }},
+      soldOut: {{ 'products.product.sold_out' | t | json }},
+      unavailable: {{ 'products.product.unavailable' | t | json }},
+      stockLabel: {{ 'products.product.stock_label' | t: count: '[count]' | json }},
+      willNotShipUntil: {{ 'products.product.will_not_ship_until' | t: date: '[date]' | json }},
+      willBeInStockAfter: {{ 'products.product.will_be_in_stock_after' | t: date: '[date]' | json }},
+      waitingForStock: {{ 'products.product.waiting_for_stock' | t | json }},
+      savePrice: {{ 'products.general.save_html' | t: saved_amount: '[saved_amount]' | json }},
+      cartEmpty: {{ 'cart.general.empty' | t | json }},
+      cartTermsConfirmation: {{ 'cart.general.terms_confirm' | t | json }}
+    };
+    theme.settings = {
+      dynamicVariantsEnable: true,
+      dynamicVariantType: {{ settings.variant_type | json }},
+      cartType: {{ settings.cart_type | json }},
+      moneyFormat: {{ shop.money_format | json }},
+      saveType: {{ settings.product_save_type | json }},
+      recentlyViewedEnabled: false,
+      predictiveSearch: {{ settings.predictive_search_enabled }},
+      predictiveSearchType: {{ settings.search_type | json }},
+      inventoryThreshold: {{ settings.inventory_threshold }},
+      quickView: {{ settings.quick_shop_enable }},
+      themeName: 'Impulse',
+      themeVersion: "3.0.2"
+    };
+    var dp_path = '{{request.path}}';
+  </script>
+  <script src="{{ 'vendor-scripts-v6.js' | asset_url | split: '?' | first }}" defer="defer"></script>
+</head>
+<body class="template-{{ template | replace: '.', ' ' | truncatewords: 1, '' | handle }}" data-transitions="false">
+  {%if template =="article"%}
+  <div id="fb-root"></div>
+<script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_EN/sdk.js#xfbml=1&version=v6.0&appId=851122131575761&autoLogAppEvents=1"></script>
+
+  {%endif%}
+  <a class="in-page-link visually-hidden skip-link" href="#MainContent">{{ 'general.accessibility.skip_to_content' | t }}</a>
+
+  <div id="PageContainer" class="page-container">
+    <div class="transition-body">
+
+    {% section 'header' %}
+
+      <main class="main-content" id="MainContent">
+        {{ content_for_index }}
+		
+		
+      </main>
+
+      {% section 'footer-promotions' %}
+      {% section 'footer' %}
+
+    </div>
+  </div>
+
+    
+    
+  {% include 'video-modal' %}
+  {% include 'photoswipe-template' %}
+  {% if template contains 'product' %}
+    {% include 'recently-viewed-product-template' %}
+  {% endif %}
+
+{%if template == "product"%}
+    <script>
+    	window.onscroll = function() {myFunction()};
+      // Get the header
+      
+      var dp_custom_hd = document.getElementById("PageContainer");
+      var position = document.getElementById("position_lookup");
+      var check = position.offsetTop ;
+		
+	  
+      function myFunction() {
+        if (window.pageYOffset > check) {
+          dp_custom_hd.classList.add("dp--stuck");
+          setTimeout(function() {
+            dp_custom_hd.classList.add("dp--opening");
+          }, 100);
+        } else {
+          dp_custom_hd.classList.remove("dp--stuck","dp--opening");
+        }
+      }
+  </script>
+{%endif%}
+
+{%if template == "collection"%}
+  <script>
+    if(document.getElementById("dp-sidebar")){
+      var height = document.getElementById("depro-fixed-header").offsetHeight + 15;
+      window.onscroll = function() {lookKingScroll()};
+      var PageContainer = document.getElementById("PageContainer");
+      var position = document.getElementById("CollectionAjaxContent");
+
+      var check = position.offsetTop - height;
+    }
+    function lookKingScroll() {
+      if (window.pageYOffset > check) {
+        document.getElementById("dp-sidebar").style.top = height+"px";
+        //PageContainer.classList.add("dp-appply");
+
+      } else {
+        document.getElementById("dp-sidebar").style.top = "0px";
+        //PageContainer.classList.remove("dp-appply");
+      }
+    }
+  
+    
+</script>
+{%endif%} 
+
+<script>
+	if(document.querySelector('.sticky_header')){
+      
+      	var normalHeader = document.getElementById("data-section-header");
+
+         if(normalHeader.offsetHeight > 0){
+
+          document.getElementById("PageContainer").style.paddingTop = normalHeader.offsetHeight+"px";
+          
+        }
+      
+  		var myVar = setInterval(function(){
+    
+      
+          var normalHeader = document.getElementById("data-section-header");
+
+           if(normalHeader.offsetHeight > 0){
+
+            document.getElementById("PageContainer").style.paddingTop = normalHeader.offsetHeight+"px";
+            clearInterval(myVar);
+          }
+
+
+        }, 300);
+
+  }  
+  if (top !== self){
+    let errorsc = parent.window.document.querySelectorAll('div[data-id="BrokenMarkupBanner"]');
+  	errorsc[0].style.display="none";
+  }
+</script>
+
+<div class="dp_overlay"><button class="close"></button></div>
+<div class="dp_lightbox"></div>
+
+
+<!--begin-bc-sf-filter-js-->
+  {% include 'bc-sf-filter' %}
+<!--end-bc-sf-filter-js-->
+
+
+{{'tiny-img-link-preloader.js' | asset_url | script_tag }}
+<script src="{{ 'theme.js' | asset_url }}" defer="defer"></script>
+<script src="{{ 'compress.min.js' | asset_url }}" defer="defer"></script>
+</body>
+</html>
+
+<!--BeginAfterpay-->
+<!--CrucialCommerceApps-->
+<script type="text/javascript">
+// Overrides:
+// var afterpay_product_selector = "#product-price-selector";
+// var afterpay_cart_integration_enabled = true;
+// var afterpay_cart_static_selector = "#cart-subtotal-selector";
+// Non-editable fields:
+var afterpay_shop_currency = {{ shop.currency | json }};
+var afterpay_cart_currency = {{ cart.currency.iso_code | json }};
+var afterpay_shop_money_format = {{ shop.money_format | json }};
+var afterpay_shop_permanent_domain = {{ shop.permanent_domain | json }};
+var afterpay_theme_name = {{ theme.name | json }};
+var afterpay_product = {{ product | json }};
+var afterpay_current_variant = {{ product.selected_or_first_available_variant | json }};
+var afterpay_cart_total_price = {{ cart.total_price | json }};
+</script>
+<!--EndAfterpay-->

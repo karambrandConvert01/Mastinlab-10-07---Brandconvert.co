@@ -1,0 +1,27 @@
+<div class="page-width none-padding section_community" >
+  <div class="inner-page-width" style="background-color:#261d2d">
+    <div class="flex-container aos-init aos-animate" data-aos="">
+      <div class="text-with-background feature-row__text--right">
+        <div class="content_innter">
+            <p class="h3">{{section.settings.title}}</p>
+            <div class="rte featured-row__subtext fixed_box_width">
+              {{section.settings.description}}
+              <p class="btn_wrapper"><a class="btn dp_button" href="{{section.settings.link_button}}" target="_blank">{{section.settings.button}}</a></p>
+            </div>
+        </div>
+      </div>
+
+      <div class="image-with-background sbackground_image" style="flex: 0 0 auto;width: 640px;">
+  
+        		{%- assign img_url = section.settings.image | img_url: '1x1' | replace: '_1x1.', '_{width}x.' -%}
+                  <img class="feature-row__image lazyload"
+                      data-src="{{ img_url }}"
+                      data-widths="[360, 540, 720, 900, 1080, 1600]"
+                      data-aspectratio="{{ section.settings.image.aspect_ratio }}"
+                      data-sizes="auto"
+                      alt="{{ section.settings.image.alt }}">
+        <span class="text_caption">{{section.settings.caption}}</span>
+      </div>
+    </div>
+  </div>
+</div>

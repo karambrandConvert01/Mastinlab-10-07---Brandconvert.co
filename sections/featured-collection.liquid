@@ -1,0 +1,109 @@
+{%include "featured-collection"%}
+{% schema %}
+  {
+    "name": "Featured collection",
+    "class": "index-section",
+    "settings": [
+      {
+        "type": "text",
+        "id": "title",
+        "label": "Heading",
+        "default": "Featured collection"
+      },
+	  {
+        "type": "header",
+        "content": "Padidng Setting"
+      },
+	  {
+        "type": "text",
+        "id": "padding",
+        "label": "Desktop Padding",
+        "default": "0px 0px 0px 0px",
+		"info" : "Top right bottom left"
+      },
+	  {
+        "type": "text",
+        "id": "mobile_padding",
+        "label": "Mobile Padding",
+        "default": "0px 0px 0px 0px",
+		"info" : "Top right bottom left"
+      },
+	  {
+        "type": "color",
+        "id": "background_color",
+        "label": "Custom background color ",
+        "default": "#ffffff"
+      },
+      {
+        "type": "collection",
+        "id": "home_featured_products",
+        "label": "Collection"
+      },
+      {
+        "type": "range",
+        "id": "per_row",
+        "label": "Products per row",
+        "default": 4,
+        "min": 1,
+        "max": 5,
+        "step": 1
+      },
+      {
+        "type": "range",
+        "id": "rows",
+        "label": "Rows of products",
+        "default": 1,
+        "min": 1,
+        "max": 5,
+        "step": 1
+      },
+      {
+        "type": "checkbox",
+        "id": "mobile_scrollable",
+        "label": "Enable swipe on mobile",
+        "default": false
+      },
+	  {
+        "type": "checkbox",
+        "id": "mobile_slider",
+        "label": "Enable Slider on mobile",
+        "default": true
+      },
+      {
+        "type": "checkbox",
+        "id": "view_all",
+        "label": "Show 'View all' link",
+        "default": true
+      },
+      {
+        "type": "checkbox",
+        "id": "divider",
+        "label": "Show section divider",
+        "default": false
+      },
+	  {
+        "type": "color",
+        "id": "btn_color",
+        "label": "Buttons color",
+        "default": "rgba(0,0,0,1)"
+      },
+	  {
+        "type": "color",
+        "id": "btn_color_border",
+        "label": "Buttons border color",
+        "default": "rgba(0,0,0,1)"
+      },
+	  {
+        "type": "color",
+        "id": "btn_color_bg",
+        "label": "Buttons background color",
+        "default": "rgba(0,0,0,0)"
+      }
+    ],
+    "presets": [{
+      "name": "Featured collection",
+      "category": "Collection"
+    }],
+    "blocks" : []
+  }
+{% endschema %}

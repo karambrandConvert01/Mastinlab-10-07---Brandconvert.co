@@ -1,0 +1,82 @@
+<div class="dp-section-wrapper hideforlive" style="padding:{{section.settings.padding}};background-color:{{section.settings.background_color}}">
+{% if section.settings.divider %}<div class="section--divider">{% endif %}
+
+<div class="page-width">
+  {% capture image_layout %}
+    <div class="feature-row__item">
+      <div style="margin: 0 auto; max-width: {{ section.settings.image_width }}px;">
+        {% if section.settings.image != blank %}
+          
+          <div class="image-wrap" style="height: 0; padding-bottom: {{ 100 | divided_by: section.settings.image.aspect_ratio }}%;">
+            {%- assign img_url = section.settings.image | img_url: '1x1' | replace: '_1x1.', '_{width}x.' -%}
+            <img class="feature-row__image lazyload"
+                data-src="{{ img_url }}"
+                data-widths="[180, 360, 540, 720, 900, 1080]"
+                data-aspectratio="{{ section.settings.image.aspect_ratio }}"
+                data-sizes="auto"
+                alt="{{ section.settings.image.alt }}">
+          </div>
+          
+        {% else %}
+          <div class="image-wrap">
+            <img class="feature-row__image lazyautosizes lazyload" data-widths="[180, 360, 540, 720, 900, 1080]" data-aspectratio="0.5038167938931297" data-sizes="auto" alt="" data-srcset="//cdn.shopify.com/s/files/1/0267/6834/3122/files/mobile_180x.jpg?v=1609797959 180w, //cdn.shopify.com/s/files/1/0267/6834/3122/files/mobile_360x.jpg?v=1609797959 360w, //cdn.shopify.com/s/files/1/0267/6834/3122/files/mobile_540x.jpg?v=1609797959 540w, //cdn.shopify.com/s/files/1/0267/6834/3122/files/mobile_720x.jpg?v=1609797959 720w, //cdn.shopify.com/s/files/1/0267/6834/3122/files/mobile_900x.jpg?v=1609797959 900w, //cdn.shopify.com/s/files/1/0267/6834/3122/files/mobile_1080x.jpg?v=1609797959 1080w" sizes="200px" srcset="//cdn.shopify.com/s/files/1/0267/6834/3122/files/mobile_180x.jpg?v=1609797959 180w, //cdn.shopify.com/s/files/1/0267/6834/3122/files/mobile_360x.jpg?v=1609797959 360w, //cdn.shopify.com/s/files/1/0267/6834/3122/files/mobile_540x.jpg?v=1609797959 540w, //cdn.shopify.com/s/files/1/0267/6834/3122/files/mobile_720x.jpg?v=1609797959 720w, //cdn.shopify.com/s/files/1/0267/6834/3122/files/mobile_900x.jpg?v=1609797959 900w, //cdn.shopify.com/s/files/1/0267/6834/3122/files/mobile_1080x.jpg?v=1609797959 1080w">
+          </div>
+        {% endif %}
+      </div>
+    </div>
+  {% endcapture %}
+
+  <div class="feature-row" data-aos>
+    {% if section.settings.layout == 'left' %}
+      {{ image_layout }}
+    {% endif %}
+
+    <div class="feature-row__item feature-row__text feature-row__text--{{ section.settings.layout }}">
+      {% if section.settings.title != blank %}
+        <p class="h3">{{ section.settings.title | escape }}</p>
+      {% endif %}
+      {% if section.settings.text != blank %}
+        <div class="rte featured-row__subtext">{{ section.settings.text }}</div>
+      {% endif %}
+      {% if section.settings.toggle_text != blank %}
+      
+      <button type="button" class="collapsible-trigger collapsible-trigger--inline collapsible--auto-height text-left navigable" aria-controls="Section-content-3-{{ section.id }}">
+        <span class="collapsible-trigger__icon collapsible-trigger__icon--circle collapsible-trigger__icon--open" role="presentation" data-open-accessibility-text-original="18px" style="font-size: 17px;" data-mce-style="font-size: 17px;"> <svg aria-hidden="true" role="presentation" class="icon icon--wide icon-chevron-down" viewBox="0 0 28 16" focusable="false"><path d="M1.57 1.59l12.76 12.77L27.1 1.59" stroke-width="2" stroke="#000" fill="none" fill-rule="evenodd"></path></svg> </span><b>{{ section.settings.toggle_text }}</b>
+          </button>
+
+      <div id="Section-content-3-{{ section.id }}" class="collapsible-content collapsible-content--all">
+        <div class="collapsible-content__inner rte">
+          {{ section.settings.toggle_content }}
+        </div>
+      </div>
+      
+      {% endif %}
+      
+      {% if section.settings.other_text != blank %}
+        <div class="rte featured-row__subtext">{{ section.settings.other_text }}</div>
+      {% endif %}
+      
+    </div>
+
+    {% if section.settings.layout == 'right' %}
+      {{ image_layout }}
+    {% endif %}
+  </div>
+</div>
+
+{% if section.settings.divider %}</div>{% endif %}
+</div>
+{% style %}
+
+  #shopify-section-{{ section.id }} .section-depro_color{
+    color: {{ section.settings.btn_color}};
+	border-color: {{ section.settings.btn_color_border}};
+	background-color:{{ section.settings.btn_color_bg}};
+  }
+  #shopify-section-{{ section.id }} .section-depro_color:hover{
+    color: {{ section.settings.btn_color_hover}};
+	border-color: {{ section.settings.btn_color_border_hover}};
+	background-color:{{ section.settings.btn_color_bg_hover}};
+  }
+
+{% endstyle %}

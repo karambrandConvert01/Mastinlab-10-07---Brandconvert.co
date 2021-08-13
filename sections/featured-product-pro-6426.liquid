@@ -1,0 +1,102 @@
+{%include "featured-product"%}
+{% schema %}
+  {
+    "name": "Featured product",
+    "class": "index-section",
+    "settings": [
+      {
+        "type": "product",
+        "id": "featured_product",
+        "label": "Product"
+      },
+	  {
+        "type": "header",
+        "content": "Padidng Setting"
+      },
+	  {
+        "type": "text",
+        "id": "padding",
+        "label": "Desktop Padding",
+        "default": "0px 0px 0px 0px",
+		"info" : "Top right bottom left"
+      },
+	  {
+        "type": "text",
+        "id": "mobile_padding",
+        "label": "Mobile Padding",
+        "default": "0px 0px 0px 0px",
+		"info" : "Top right bottom left"
+      },
+	  {
+        "type": "color",
+        "id": "background_color",
+        "label": "Custom background color ",
+        "default": "#ffffff"
+      },
+      {
+        "type": "checkbox",
+        "id": "show_description",
+        "label": "Show description",
+        "default": true
+      },
+      {
+        "type": "checkbox",
+        "id": "divider",
+        "label": "Show section divider",
+        "default": false
+      },
+      {
+        "type": "header",
+        "content": "Media"
+      },
+      {
+        "type": "paragraph",
+        "content": "Learn more about [media types](https://help.shopify.com/en/manual/products/product-media)"
+      },
+      {
+        "type": "select",
+        "id": "thumbnail_position",
+        "label": "Thumbnail position",
+        "default": "beside",
+        "options": [
+          {
+            "value": "beside",
+            "label": "Next to media"
+          },
+          {
+            "value": "below",
+            "label": "Below media"
+          }
+        ]
+      },
+      {
+        "type": "checkbox",
+        "id": "thumbnail_arrows",
+        "label": "Show thumbnail arrows"
+      },
+      {
+        "type": "checkbox",
+        "id": "enable_video_looping",
+        "label": "Enable video looping",
+        "default": true
+      },
+      {
+        "type": "select",
+        "id": "product_video_style",
+        "label": "Video style",
+        "default": "muted",
+        "options": [
+          {
+            "value": "muted",
+            "label": "Video without sound"
+          },
+          {
+            "value": "unmuted",
+            "label": "Video with sound"
+          }
+        ],
+        "info": "Video with sound will not autoplay"
+      }
+    ]
+  }
+{% endschema %}

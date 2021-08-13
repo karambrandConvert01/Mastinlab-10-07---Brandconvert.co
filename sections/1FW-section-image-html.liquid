@@ -1,0 +1,179 @@
+<div class="dp-section-wrapper fw-sections" id="dpp__{{section.id}}" style="background-color:{{section.settings.background_color}}">
+{% if section.settings.divider %}<div class="section--divider">{% endif %}
+
+<div class="page-width" >
+  <div class="page-width-inner" style="border-top:1px solid {{section.settings.border_color}}">
+  {% if section.settings.title != blank %}
+        <p class="h3">{{ section.settings.title | escape }}</p>
+  {% endif %}
+  {% if section.settings.description != blank %}
+        <p class="h3">{{ section.settings.description | escape }}</p>
+  {% endif %}
+  {% capture image_layout %}
+    <div class="feature-row__item">
+      <div style="margin: 0 auto; max-width: {{ section.settings.image_width }}px;">
+        {% if section.settings.image != blank %}
+          {% if section.settings.button_label != blank and section.settings.button_link != blank %}<a href="{{ section.settings.button_link }}">{% endif %}
+          <div class="image-wrap" style="height: 0; padding-bottom: {{ 100 | divided_by: section.settings.image.aspect_ratio }}%;">
+            {%- assign img_url = section.settings.image | img_url: '1x1' | replace: '_1x1.', '_{width}x.' -%}
+            <img class="feature-row__image lazyload"
+                data-src="{{ img_url }}"
+                data-widths="[180, 360, 540, 720, 900, 1080]"
+                data-aspectratio="{{ section.settings.image.aspect_ratio }}"
+                data-sizes="auto"
+                alt="{{ section.settings.image.alt }}">
+          </div>
+          {% if section.settings.button_label != blank and section.settings.button_link != blank %}</a>{% endif %}
+        {% else %}
+          <div class="image-wrap">
+            {{ 'image' | placeholder_svg_tag: 'placeholder-svg' }}
+          </div>
+        {% endif %}
+      </div>
+    </div>
+  {% endcapture %}
+
+  <div class="feature-row" data-aos>
+    {% if section.settings.layout == 'left' %}
+      {{ image_layout }}
+    {% endif %}
+
+    <div class="feature-row__item feature-row__text feature-row__text--{{ section.settings.layout }}">
+      
+      
+      {% if section.settings.text != blank %}
+        <div class="rte featured-row__subtext">{{ section.settings.text }}</div>
+      {% endif %}
+    </div>
+
+    {% if section.settings.layout == 'right' %}
+      {{ image_layout }}
+    {% endif %}
+  </div>
+  </div>
+</div>
+
+{% if section.settings.divider %}</div>{% endif %}
+</div>
+{% style %}
+
+
+#shopify-section-{{ section.id }} .subtitle{
+	color: {{ section.settings.subtitle_color}};
+}
+
+#shopify-section-{{ section.id }} .feature-row__text{
+	margin:30px 0px !important;
+}
+
+#dpp__{{section.id}} .page-width-inner{
+	padding:{{section.settings.padding}};
+}
+@media only screen and (max-width: 768px) {
+	#dpp__{{section.id}} .page-width-inner{
+		padding:{{section.settings.mobile_padding}} !important;
+	}
+}
+{% endstyle %}
+{% schema %}
+  {
+    "name": "Image with HTML V2(FW)",
+    "class": "index-sections",
+    "settings": [
+      
+	  {
+        "type": "select",
+        "id": "layout",
+        "label": "Layout",
+        "default": "left",
+        "options": [
+          {
+            "value": "left",
+            "label": "Image on left"
+          },
+          {
+            "value": "right",
+            "label": "Image on right"
+          }
+        ]
+      },
+	  {
+        "type": "text",
+        "id": "padding",
+        "label": "Custom Padding ",
+        "default": "0px 0px 0px 0px",
+		"info" : "Top right bottom left"
+      },
+	  {
+        "type": "text",
+        "id": "mobile_padding",
+        "label": "Mobile Padding",
+        "default": "0px 0px 0px 0px",
+		"info" : "Top right bottom left"
+      },
+	  {
+        "type": "color",
+        "id": "background_color",
+        "label": "Custom background color ",
+        "default": "#ffffff"
+      },
+	  {
+        "type": "color",
+        "id": "text_color",
+        "label": "Custom text color ",
+        "default": "#000000"
+      },
+      {
+        "type": "color",
+        "id": "border_color",
+        "label": "Custom border color ",
+        "default": "#000000"
+      },
+      {
+        "type": "text",
+        "id": "title",
+        "label": "Heading",
+        "default": "Image with text"
+      },
+	  {
+        "type": "html",
+        "id": "description",
+        "label": "Description",
+        "default": "Pair large text with an image to tell a story, explain a detail about your product, or describe a new promotion."
+      },
+	  {
+        "type": "image_picker",
+        "id": "image",
+        "label": "Image"
+      },
+	  {
+        "type": "range",
+        "id": "image_width",
+        "label": "Image width",
+        "default": 500,
+        "min": 100,
+        "max": 500,
+        "step": 10,
+        "unit": "px"
+      },
+      {
+        "type": "html",
+        "id": "text",
+        "label": "Text",
+        "default": "<p>Pair large text with an image to tell a story, explain a detail about your product, or describe a new promotion.</p>"
+      },
+      {
+        "type": "checkbox",
+        "id": "divider",
+        "label": "Show section divider",
+        "default": false
+      }
+    ],
+    "presets": [
+      {
+        "name": "Image with HTML V2(FW)",
+        "category": "Image"
+      }
+    ]
+  }
+{% endschema %}

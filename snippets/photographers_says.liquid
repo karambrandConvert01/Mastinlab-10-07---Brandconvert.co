@@ -1,0 +1,94 @@
+<div class="dp-section-wrapper testimonial_v2" style="padding:{{section.settings.padding}};">
+{% if section.settings.divider %}<div class="section--divider">{% endif %}
+{% if section.blocks.size > 0 %}
+  {% for block in section.blocks %}
+<div class="page-width" id="image-text-logo-{{block.id}}">
+  <div class="inner-page-width">
+  {% capture image_layout %}
+    <div class="feature-row__item image_layout {% if block.settings.layout == 'left' %}image_layout_left{% endif %}">
+      <div class="image_layout_content">
+        {% if block.settings.image != blank %}
+          
+          <div class="image-wrap" style="height: 0; padding-bottom: {{ 100 | divided_by: block.settings.image.aspect_ratio }}%;">
+            {%- assign img_url = block.settings.image | img_url: '1x1' | replace: '_1x1.', '_{width}x.' -%}
+            <img class="feature-row__image lazyload"
+                data-src="{{ img_url }}"
+                data-widths="[180, 360, 540, 720, 900, 1080]"
+                data-aspectratio="{{ block.settings.image.aspect_ratio }}"
+                data-sizes="auto"
+                alt="{{ block.settings.image.alt }}">
+          </div>
+          
+        {% else %}
+          <div class="image-wrap">
+            {{ 'image' | placeholder_svg_tag: 'placeholder-svg' }}
+          </div>
+        {% endif %}
+      </div>
+    </div>
+  {% endcapture %}
+
+  <div class="feature-row" data-aos>
+    {% if block.settings.layout == 'left' %}
+      {{ image_layout }}
+    {% endif %}
+
+    <div class="feature-row__item feature-row__text testimonial_dp_content feature-row__text--{{ block.settings.layout }}">
+      <div class="content_photographers_says">
+		<div class="customer_name">
+          {% if block.settings.name != blank %}<h4>{{ block.settings.name }}</h4>{% endif %}
+          {% if block.settings.address != blank %}<p>{{ block.settings.address }}</p>{% endif %}
+        </div>
+
+      {% if block.settings.text != blank %}
+        <p class="h3">“{{ block.settings.text }}”</p>
+      {% endif %}
+      </div>
+      
+      
+    </div>
+
+    {% if block.settings.layout == 'right' %}
+      {{ image_layout }}
+    {% endif %}
+  </div>
+  </div>
+</div>
+  {% style %}
+#image-text-logo-{{block.id}} .feature-row{
+	align-items: center;
+}
+#image-text-logo-{{block.id}} .testimonial_dp_content{
+  {%if block.settings.bgimage %}
+  background-image:url({{block.settings.bgimage | img_url : "900x900"}});
+  {%else%}
+  background-color:#e25d3f;
+  {%endif%}
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  padding:170px 30px;
+  color:{{block.settings.text_color}};
+  z-index:11;
+}
+
+
+
+@media screen and (min-width:959px){
+  
+  #image-text-logo-{{block.id}} .image_layout_content{
+      {% if block.settings.layout == 'left' %}float: right;{% endif %} width: 100%; max-width: {{ block.settings.image_width }}px;
+  }
+  #image-text-logo-{{block.id}} .testimonial_dp_content{
+	transform: translateX(50px) translateY(0px);
+    {% if block.settings.layout == 'left' %}transform: translateX(-50px) translateY(0px);{% endif %}
+  }
+  #image-text-logo-{{block.id}} .image_layout{
+	transform: translateX(-30px) translateY(0px);
+	{% if block.settings.layout == 'left' %}transform: translateX(30px) translateY(0px);{% endif %}
+  }
+}
+{% endstyle %}
+  {% endfor %}
+{%endif%}
+{% if section.settings.divider %}</div>{% endif %}
+</div>

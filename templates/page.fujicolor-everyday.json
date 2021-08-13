@@ -1,0 +1,189 @@
+{
+  "sections": {
+    "1625886222036ec7d5": {
+      "type": "1FW-image-with-html",
+      "settings": {
+        "image": "shopify:\/\/shop_images\/image_81.png",
+        "padding": "0px 0px 0px 0px",
+        "mobile_padding": "0px 0px 0px 0px",
+        "background_color": "#ffffff",
+        "image_width": 500,
+        "subtitle": "Your perfect preset pack is...",
+        "subtitle_color": "#000000",
+        "title": "Fujicolor Everyday",
+        "text": "<hr>\n<h4 style=\"color:#5B2333\">you’re the deep, real-life \ncolor photographer.<\/h4><p>You see beauty in the quiet, authentic, everyday moments \nshared between loved ones and close friends.\n<\/p>\n<p>Whether you’re photographing meaningful gatherings, intentional living, or a craftsperson at work, you want to capture images that are soulful and real.<\/p>\n<p style=\"text-align:left\">\n<a class=\"btn text-link\" href=\"https:\/\/mastinlabs.com\/products\/fuji-everyday-lightroom\">SHOP LIGHTROOM &gt; <\/a>\n<a class=\"btn text-link\" href=\"https:\/\/mastinlabs.com\/products\/fuji-everyday-capture-one\">SHOP CAPTURE ONE &gt;<\/a>\n<\/p>",
+        "btn_color": "#ffffff",
+        "btn_color_border": "#5b2333",
+        "btn_color_bg": "#5b2333",
+        "btn_color_hover": "#ffffff",
+        "btn_color_border_hover": "#5b2333",
+        "btn_color_bg_hover": "#5b2333",
+        "layout": "left",
+        "divider": false
+      }
+    },
+    "3rd_multiple_text-image": {
+      "type": "1FW_multiple_text-image",
+      "blocks": {
+        "4668dc17-e37c-4567-a815-bdaad4613279": {
+          "type": "textimage",
+          "settings": {
+            "padding": "65px 0px 0px 0px",
+            "mobile_padding": "40px 25px 0px 25px",
+            "background_color": "#f7f6f2",
+            "color": "",
+            "image": "shopify:\/\/shop_images\/222_1ca4aa6b-155a-4101-a36b-853986a3b6da.png",
+            "image_on_left": false,
+            "code": "<h2>YOU’RE INSPIRED BY<\/h2><p>evergreen coastlines, artisanal hideaways, cozy gatherings, and makers who put their heart into their craft. When the weather turns colder, you dream of hosting friends around a candlelit meal.\n<\/p>",
+            "text_algin": "left"
+          }
+        },
+        "0fc4e0f7-72fd-4ffc-9c25-f02c67c59fb4": {
+          "type": "textimage",
+          "settings": {
+            "padding": "0px 0px 65px 0px",
+            "mobile_padding": "0px 25px 15px 25px",
+            "background_color": "#f7f6f2",
+            "color": "",
+            "image": "shopify:\/\/shop_images\/333_d6738215-f04c-4dc2-90f9-717e5e10161f.png",
+            "image_on_left": true,
+            "code": "<h2>YOU LOVE PHOTOS THAT FEEL<\/h2><p>authentic, organic, deep, rich in color, and true to life.\n<\/p>",
+            "text_algin": "left"
+          }
+        }
+      },
+      "block_order": [
+        "4668dc17-e37c-4567-a815-bdaad4613279",
+        "0fc4e0f7-72fd-4ffc-9c25-f02c67c59fb4"
+      ],
+      "settings": {
+        "headline": "",
+        "description": ""
+      }
+    },
+    "whatisinclude-pro-1620201103": {
+      "type": "1FW-whatisinclude",
+      "blocks": {
+        "whatisinclude-pro-79554674770-0": {
+          "type": "include",
+          "settings": {
+            "include_title": "",
+            "include_image": "shopify:\/\/shop_images\/FUJI_ED_SUPERIA400_Kirk_Mastin_21-2.jpg",
+            "include_content": "<h3>Superia 400<\/h3>\n<p>Daylight-balanced \nand colorful<\/p>",
+            "max_width": "220px"
+          }
+        },
+        "whatisinclude-pro-79554674770-1": {
+          "type": "include",
+          "settings": {
+            "include_title": "",
+            "include_image": "shopify:\/\/shop_images\/FUJI_ED_C200_Kirk_Mastin_21.jpg",
+            "include_content": "<h3>Fuji C200<\/h3>\n<p>Muted highlights and shadows<\/p>",
+            "max_width": "220px"
+          }
+        },
+        "whatisinclude-pro-79554674770-2": {
+          "type": "include",
+          "settings": {
+            "include_title": "",
+            "include_image": "shopify:\/\/shop_images\/FUJI_ED_ACROS100_Kirk_Mastin_21-4.jpg",
+            "include_content": "<h3>Acros 100<\/h3>\n<p>Rich, versatile black and white<\/p>",
+            "max_width": "220px"
+          }
+        }
+      },
+      "block_order": [
+        "whatisinclude-pro-79554674770-0",
+        "whatisinclude-pro-79554674770-1",
+        "whatisinclude-pro-79554674770-2"
+      ],
+      "settings": {
+        "divider": false,
+        "space_around": false,
+        "padding": "50px 0px 50px 0px",
+        "mobile_padding": "30px 0px 30px 0px",
+        "color": "#ffffff",
+        "background_color": "#261d2d",
+        "text_align": "center",
+        "content_padding": "0px 0px 50px 0px",
+        "content_mobile_padding": "0px 0px 30px 0px",
+        "section_title": "Meet Your Presets",
+        "section_content": "<p style=\"text-align:center\">With the Fujicolor Everyday pack, you can bring a natural film look to your everyday moments.<\/p>",
+        "extra_content": "<p style=\"text-align:center\">\n<a class=\"btn text-link\" href=\"https:\/\/mastinlabs.com\/products\/fuji-everyday-lightroom\">SHOP LIGHTROOM &gt;<\/a> <a class=\"btn text-link\" href=\"https:\/\/mastinlabs.com\/products\/fuji-everyday-capture-one\">SHOP CAPTURE ONE &gt;<\/a>\n<\/p>"
+      }
+    },
+    "customer-says-pro-1620204230": {
+      "type": "1FW-testimonial",
+      "blocks": {
+        "customer-says-pro-79554674770-0": {
+          "type": "testimonial",
+          "settings": {
+            "testimonial": "<p>“This nails <strong>the color palette I’ve always wanted<\/strong>, vibrant color without feeling overdone, and includes my favorite black and white film: Acros 100!”<\/p>",
+            "author": "Casey"
+          }
+        },
+        "customer-says-pro-79554674770-1": {
+          "type": "testimonial",
+          "settings": {
+            "testimonial": "<p>“I have all of the other Mastin Labs packs, and this one is probably my new favorite. Superia 400 has been my most used preset over the last few weeks. It <strong>makes the image pop just enough<\/strong> without being over-stylized.”<\/p>",
+            "author": "Evan"
+          }
+        },
+        "customer-says-pro-79554674770-2": {
+          "type": "testimonial",
+          "settings": {
+            "testimonial": "<p>“I LOVE LOVE LOVE the new Fuji Everyday Pack! It's <strong>colorful and clean<\/strong> and has a look for basically any situation I can think of.”<\/p>",
+            "author": "Elisabeth"
+          }
+        }
+      },
+      "block_order": [
+        "customer-says-pro-79554674770-0",
+        "customer-says-pro-79554674770-1",
+        "customer-says-pro-79554674770-2"
+      ],
+      "settings": {
+        "title": "What Fuji Everyday  photographers  are saying",
+        "background_color": "#f7f6f2",
+        "slider_per_page": "1",
+        "align_text": "left",
+        "round_images": false,
+        "divider": false,
+        "main_background_image": "shopify:\/\/shop_images\/Group_47_5a4a8cc1-0887-4747-8fb2-851c035fa014.png",
+        "main_background_color": "shopify:\/\/shop_images\/Group_44_1_9b189982-3777-44d6-8601-54b3fa7de70b.png",
+        "main_color": "#ffffff",
+        "padding": "50px 0px 50px 0px",
+        "mobile_padding": "30px 0px 30px 0px"
+      }
+    },
+    "double_guide": {
+      "type": "1FW-double_guide",
+      "settings": {
+        "enable": true,
+        "main_bg_image": "shopify:\/\/shop_images\/testimonial_background.jpg",
+        "before_background_image": "shopify:\/\/shop_images\/Vector_1.png",
+        "before_background": "#f7f6f2",
+        "headline": "<h2>Ready to learn more? <span style=\"color:#5B2333\" class=\"freescript_v2 \">Check out our free guides below.<\/span>\n<\/h2>",
+        "title_background": "#eae9e4",
+        "after_background_image": "shopify:\/\/shop_images\/Vector_2.png",
+        "padding": "20px 20px 20px 20px",
+        "mobile_padding": "10px 10px 10px 10px",
+        "guide_padding": "50px 20px 20px 20px",
+        "guide_mobile_padding": "20px 20px 20px 20px",
+        "fguide_title": "THE ULTIMATE GUIDE TO \u0003LIGHT & AIRY \u0003PHOTOGRAPHY",
+        "fguide_code": "<div class=\"klaviyo-form-Wu3sKK\"><\/div>",
+        "fguide_image": "shopify:\/\/shop_images\/Group_86.png",
+        "sguide_title": "THE ULTIMATE GUIDE TO \u0003DARK & MOODY \u0003PHOTOGRAPHY",
+        "sguide_code": "<div class=\"klaviyo-form-XpT4HY\"><\/div>",
+        "sguide_image": "shopify:\/\/shop_images\/Group_87.png"
+      }
+    }
+  },
+  "order": [
+    "1625886222036ec7d5",
+    "3rd_multiple_text-image",
+    "whatisinclude-pro-1620201103",
+    "customer-says-pro-1620204230",
+    "double_guide"
+  ]
+}

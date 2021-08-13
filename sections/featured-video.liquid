@@ -1,0 +1,96 @@
+<div class="dp-section-wrapper" id="dp__{{section.id}}">
+{% if section.settings.divider %}<div class="section--divider">{% endif %}
+
+<div class="page-width">
+  <div class="custom_background">
+  {% if section.settings.title != blank %}
+    <div class="section-header">
+      <h2>{{ section.settings.title }}</h2>
+    </div>
+  {% endif %}
+  <div class="video-wrapper">
+  {% if section.settings.video_url == blank %}
+    <iframe src="//www.youtube.com/embed/_9VUPq3SxOc?rel=0&showinfo=0&vq=720" width="850" height="480" frameborder="0" allowfullscreen></iframe>
+  {% else %}
+    {% if section.settings.video_url.type == "youtube" %}
+      <iframe src="//www.youtube.com/embed/{{ section.settings.video_url.id }}?rel=0&showinfo=0&vq=720" width="850" height="480" frameborder="0" allowfullscreen></iframe>
+    {% endif %}
+    {% if section.settings.video_url.type == "vimeo" %}
+      <iframe src="//player.vimeo.com/video/{{ section.settings.video_url.id }}?color={{ settings.color_button | remove: "#" }}&byline=0&portrait=0&badge=0" width="850" height="480" frameborder="0" allowfullscreen></iframe>
+    {% endif %}
+  {% endif %}
+  </div>
+  </div>
+</div>
+
+{% if section.settings.divider %}</div>{% endif %}
+</div>
+{% style %}
+  #dp__{{section.id}}{
+	padding:{{section.settings.padding}};
+	
+  }
+#dp__{{section.id}}	.custom_background{
+background-color:{{section.settings.background_color}};
+}
+  @media only screen and (max-width: 768px) {
+	#dp__{{section.id}}{
+      padding:{{section.settings.mobile_padding}};
+    }
+  }
+{% endstyle %}
+{% schema %}
+  {
+    "name": "Video",
+    "class": "index-section",
+    "settings": [
+      {
+        "type": "text",
+        "id": "title",
+        "label": "Heading"
+      },
+      {
+        "type": "video_url",
+        "id": "video_url",
+        "label": "Video link",
+        "accept": ["youtube", "vimeo"]
+      },
+      {
+        "type": "checkbox",
+        "id": "divider",
+        "label": "Show section divider",
+        "default": false
+      },
+	  {
+        "type": "header",
+        "content": "Padidng Setting"
+      },
+	  {
+        "type": "text",
+        "id": "padding",
+        "label": "Desktop Padding",
+        "default": "0px 0px 0px 0px",
+		"info" : "Top right bottom left"
+      },
+	  {
+        "type": "text",
+        "id": "mobile_padding",
+        "label": "Mobile Padding",
+        "default": "0px 0px 0px 0px",
+		"info" : "Top right bottom left"
+      },
+	  {
+        "type": "color",
+        "id": "background_color",
+        "label": "Custom background color ",
+        "default": "#ffffff"
+      }
+    ],
+    "presets": [
+      {
+        "name": "Video",
+        "category": "Video"
+      }
+    ]
+  }
+{% endschema %}

@@ -1,0 +1,223 @@
+{
+  "sections": {
+    "product-template": {
+      "type": "product-template",
+      "settings": {
+        "description_style": "default",
+        "vcolor_loading": "#ff5121",
+        "vcolor_btn_selected": "#2d2d2d",
+        "vcolor_btn_selected_c": "#2d2d2d",
+        "vcolor_btn_bg": "rgba(0,0,0,0)",
+        "vcolor_btn_bg_hover": "rgba(0,0,0,0)",
+        "vcolor_btn_br": "#c8c8c8",
+        "vcolor_btn_br_hover": "#2d2d2d",
+        "vcolor_btn": "#000000",
+        "vcolor_btn_hover": "#2d2d2d",
+        "color_btn_bg": "#ff5121",
+        "color_btn_bg_hover": "#ffffff",
+        "color_btn_br": "#ff5121",
+        "color_btn_br_hover": "#ff5121",
+        "color_btn": "#ffffff",
+        "color_btn_hover": "#ff5121",
+        "color_mobile_btn": "#ff5121",
+        "bg_mobile_color_btn": "rgba(0,0,0,0)",
+        "mobile_border_color_btn": "#ff5121",
+        "social_enable": false,
+        "image_position": "left",
+        "image_size": "medium",
+        "thumbnail_position": "below",
+        "thumbnail_arrows": true,
+        "enable_video_looping": true,
+        "product_video_style": "unmuted"
+      }
+    },
+    "1BX-text-and-background": {
+      "type": "1BX-text-and-background",
+      "settings": {
+        "title": "\" {{ product.title }} pack is BY FAR my favorite— it makes my heart sing!\"",
+        "text": "- Rachel Ashcraft",
+        "align_text": "center",
+        "narrow_column": true,
+        "enlarge_text": false,
+        "divider": false,
+        "padding": "50px 30px 50px 30px",
+        "mobile_padding": "25px 20px 30px 20px",
+        "background_color": "#261d2d",
+        "background_image": "shopify:\/\/shop_images\/Group_115.png",
+        "text_color": "#ffffff"
+      }
+    },
+    "3rd_gallery-pro-4509579280466": {
+      "type": "3rd_gallery",
+      "blocks": {
+        "45095792804661588636388567": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/xo-gallery-6-1586203538453.jpg",
+            "title": "Ektar 100",
+            "description": "Photo: Bisual Studio",
+            "button_name": "Shop This look",
+            "link": "",
+            "button_name_second": "Capture One",
+            "link_second": "",
+            "alignment": "bottom"
+          }
+        },
+        "45095792804661588636411948": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/T_Rex_and_Flower_Ektar_100_PX1280_Q70.jpg",
+            "title": "Ektar 100",
+            "description": "Danil Nevsky",
+            "button_name": "Shop This look",
+            "link": "",
+            "button_name_second": "Capture One",
+            "link_second": "",
+            "alignment": "bottom"
+          }
+        },
+        "45095792804661588636433205": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/xo-gallery-6-1587675421919.jpg",
+            "title": "Tri-X",
+            "description": "Photo: Duet Postscriptum",
+            "button_name": "Shop This look",
+            "link": "",
+            "button_name_second": "Capture One",
+            "link_second": "",
+            "alignment": "bottom"
+          }
+        },
+        "45095792804661588636453993": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/ADV_E_TRIX400_Andrew_Shepherd_04.jpg",
+            "title": "Tri-X",
+            "description": "Photo: Andrew Shepherd",
+            "button_name": "Shop This look",
+            "link": "",
+            "button_name_second": "Capture One",
+            "link_second": "",
+            "alignment": "bottom"
+          }
+        },
+        "45095792804661588636536008": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/ADV_E_TRIX400_Clarisse_Meyer_-_273A9810.jpg",
+            "title": "Ektar 100",
+            "description": "Photo: Clarisse Meyer",
+            "button_name": "Shop This look",
+            "link": "",
+            "button_name_second": "Capture One",
+            "link_second": "",
+            "alignment": "bottom"
+          }
+        },
+        "45095792804661588636481335": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/xo-gallery-6-1587670240220.jpg",
+            "title": "Gold 200",
+            "description": "Photo: HOWL",
+            "button_name": "Shop This look",
+            "link": "",
+            "button_name_second": "Capture One",
+            "link_second": "",
+            "alignment": "bottom"
+          }
+        }
+      },
+      "block_order": [
+        "45095792804661588636388567",
+        "45095792804661588636411948",
+        "45095792804661588636433205",
+        "45095792804661588636453993",
+        "45095792804661588636536008",
+        "45095792804661588636481335"
+      ],
+      "settings": {
+        "enable": true,
+        "section_title": "",
+        "section_content": "",
+        "border": "0px",
+        "padding": "50px 0px 50px 0px",
+        "mobile_padding": "30px 0px 30px 0px",
+        "padding_gallery": "20px 20px 20px 20px",
+        "mobile_gallery_padding": "5px 5px 5px 5px",
+        "background_color": "rgba(0,0,0,0)",
+        "fullWidth": false,
+        "columns": "three"
+      }
+    },
+    "1FW-html": {
+      "type": "1FW-html",
+      "settings": {
+        "padding": "50px 0px 0px 0px",
+        "mobile_padding": "0px 0px 0px 0px",
+        "background_color": "#f7f6f2",
+        "text_color": "#000000",
+        "html": "<h2 style=\"text-align:Center\">Preset Pack Details<\/h2>\n<p style=\"text-align:Center\">Open each title for pack details— so many goodies inside.<\/p>"
+      }
+    },
+    "1FW-included_looks": {
+      "type": "1FW-included_looks",
+      "blocks": {
+        "eebaa2ee-5413-4483-81ce-51e5a2d7c5d9": {
+          "type": "content",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/ADV_E_EKTAR100_Lizzeth_Mendoza_01.jpg",
+            "title": "Ektar 100",
+            "content": "Bright, bold and colorful"
+          }
+        },
+        "eebaa2ee-5413-4483-81ce-51e5a2d7c5d8": {
+          "type": "content",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/ADV_E_GOLD200_Lizzeth_Mendoza_01_18acd49f-fd39-4c6c-ad1d-02c674ea7230.jpg",
+            "title": "Gold 200",
+            "content": "Glowing and full of nostalgia, Gold 200 is a golden toned and medium contrast look with low saturation, making it the most versatile preset in this pack."
+          }
+        },
+        "eebaa2ee-5413-4483-81ce-51e5a2d7c5d7": {
+          "type": "content",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/ADV_E_TRIX400_Lizzeth_Mendoza_01.jpg",
+            "title": "Tri-X 400",
+            "content": "Classic black and white, Tri-X 400 delivers emotive photographs with medium contrast and gorgeous grain."
+          }
+        }
+      },
+      "block_order": [
+        "eebaa2ee-5413-4483-81ce-51e5a2d7c5d9",
+        "eebaa2ee-5413-4483-81ce-51e5a2d7c5d8",
+        "eebaa2ee-5413-4483-81ce-51e5a2d7c5d7"
+      ],
+      "settings": {
+        "enable": true,
+        "headline": "What looks are included in {{ product.title }}?",
+        "background_color": "#f7f6f2",
+        "text_color": "#000000",
+        "border_color": "rgba(0,0,0,0)",
+        "padding": "50px 0px 0px 0px",
+        "mobile_padding": "30px 0px 0px 0px"
+      }
+    },
+    "1stamped-main-widget": {
+      "type": "1stamped-main-widget",
+      "settings": {
+        "padding": "0px 0px 0px",
+        "mobile_padding": "0px 0px 0px"
+      }
+    }
+  },
+  "order": [
+    "product-template",
+    "1BX-text-and-background",
+    "3rd_gallery-pro-4509579280466",
+    "1FW-html",
+    "1FW-included_looks",
+    "1stamped-main-widget"
+  ]
+}

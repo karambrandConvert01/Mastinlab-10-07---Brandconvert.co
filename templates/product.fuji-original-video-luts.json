@@ -1,0 +1,254 @@
+{
+  "sections": {
+    "product-template": {
+      "type": "product-template",
+      "settings": {
+        "description_style": "default",
+        "vcolor_loading": "#ff5121",
+        "vcolor_btn_selected": "#2d2d2d",
+        "vcolor_btn_selected_c": "#2d2d2d",
+        "vcolor_btn_bg": "rgba(0,0,0,0)",
+        "vcolor_btn_bg_hover": "rgba(0,0,0,0)",
+        "vcolor_btn_br": "#c8c8c8",
+        "vcolor_btn_br_hover": "#2d2d2d",
+        "vcolor_btn": "#000000",
+        "vcolor_btn_hover": "#2d2d2d",
+        "color_btn_bg": "#ff5121",
+        "color_btn_bg_hover": "#ffffff",
+        "color_btn_br": "#ff5121",
+        "color_btn_br_hover": "#ff5121",
+        "color_btn": "#ffffff",
+        "color_btn_hover": "#ff5121",
+        "color_mobile_btn": "#ff5121",
+        "bg_mobile_color_btn": "rgba(0,0,0,0)",
+        "mobile_border_color_btn": "#ff5121",
+        "social_enable": false,
+        "image_position": "left",
+        "image_size": "medium",
+        "thumbnail_position": "below",
+        "thumbnail_arrows": true,
+        "enable_video_looping": true,
+        "product_video_style": "unmuted"
+      }
+    },
+    "1BX-text-and-background": {
+      "type": "1BX-text-and-background",
+      "settings": {
+        "title": "\" {{ product.title }} completely changed my editing time, and I consistently get professional results!\"",
+        "text": "Jaqui Bartilotta",
+        "align_text": "center",
+        "narrow_column": true,
+        "enlarge_text": false,
+        "divider": false,
+        "padding": "50px 30px 50px 30px",
+        "mobile_padding": "25px 20px 30px 20px",
+        "background_color": "#261d2d",
+        "background_image": "shopify:\/\/shop_images\/Group_115.png",
+        "text_color": "#ffffff"
+      }
+    },
+    "advanced-content-pro-6602337681490": {
+      "type": "advanced-content",
+      "blocks": {
+        "advanced-content-pro-6602337681490-1": {
+          "type": "html",
+          "settings": {
+            "padding": "0px 0px 0px 0px",
+            "mobile_padding": "0px 0px 0px 0px",
+            "code": "<h1 class=\"text-center\">Frequently Asked Questions<\/h1><p class=\"text-center\">Open each title for answers to frequently asked questions.<\/p>",
+            "code_richtext": "",
+            "width": "100%",
+            "alignment": "center"
+          }
+        }
+      },
+      "block_order": [
+        "advanced-content-pro-6602337681490-1"
+      ],
+      "settings": {
+        "full_width": false,
+        "background_color": "#ffffff",
+        "divider": false,
+        "space_around": false,
+        "padding": "45px 0px 45px 0px",
+        "mobile_padding": "0px 35px 0px 35px"
+      }
+    },
+    "advanced-content-pro-66023376814901": {
+      "type": "advanced-content",
+      "blocks": {
+        "advanced-content-pro-66023376814901-1": {
+          "type": "html",
+          "settings": {
+            "padding": "0px 0px 0px 0px",
+            "mobile_padding": "0px 0px 0px 0px",
+            "code": "<h1 class=\"text-center\">LUT Pack Details<\/h1><p class=\"text-center\">Everything you need to simplify your workflow and get a true-to-film look.<\/p>",
+            "code_richtext": "",
+            "width": "100%",
+            "alignment": "center"
+          }
+        }
+      },
+      "block_order": [
+        "advanced-content-pro-66023376814901-1"
+      ],
+      "settings": {
+        "full_width": false,
+        "background_color": "#ffffff",
+        "divider": false,
+        "space_around": false,
+        "padding": "0px 0px 45px 0px",
+        "mobile_padding": "0px 0px 0px 0px"
+      }
+    },
+    "3rd_included_looks-pro-6602337681490": {
+      "type": "3rd_included_looks",
+      "settings": {
+        "enable": true,
+        "default_open": false,
+        "headline": "What looks are included in Portra Original?",
+        "first_image": "shopify:\/\/shop_images\/Portra160_LUTCOMPARISON.jpg",
+        "ftitle": "Portra 160",
+        "fcontent": "Subtle and neutral, Portra 160 is a flexible look with medium contrast and low saturation, making it ideal for even daylight portraits with exceptionally smooth skin tones and superb color reproduction.",
+        "second_image": "shopify:\/\/shop_images\/Portra400_LUTCOMPARISON.jpg",
+        "stitle": "Portra 400",
+        "scontent": "Versatile and faithful, Portra 400 is a warm-toned film with medium contrast and saturation, making it an extremely flexible look suited for all types of natural light photography.",
+        "third_image": "shopify:\/\/shop_images\/Portra800_LUTCOMPARISON.jpg",
+        "ttitle": "Portra 800",
+        "tcontent": "Balanced and natural, Portra 800 is a medium saturated look with higher contrast suited for natural low light shooting.",
+        "background_color": "#f7f6f2",
+        "text_color": "#0b0b0b",
+        "hbackground_color": "#f7f6f2",
+        "htext_color": "#261d2d",
+        "padding": "0px 0px 0px 0px",
+        "mobile_padding": "0px 0px 0px 0px"
+      }
+    },
+    "3rd_one_click-pro-6602337681490": {
+      "type": "3rd_one_click",
+      "settings": {
+        "enable": true,
+        "default_open": false,
+        "headline": "Mastin Magic Toolkit™: One-click fixes to up your game.",
+        "description": "",
+        "fimage": "shopify:\/\/shop_images\/Tone_Profile.gif",
+        "ftitle": "TONE PROFILES",
+        "fcontent": "<p>Inspired by the original tone profiles from the Fuji Frontier film scanner, these correct contrast while preserving the look of film. (Tone profiles available for DaVinci Resolve. Coming soon for Adobe Premiere and Final Cut)<\/p>",
+        "simage": "shopify:\/\/shop_images\/Orange.gif",
+        "stitle": "ORANGE REDUCTION TOOL (coming soon)",
+        "scontent": "<p>A lifesaver for mixed light, extra warm sunsets, and spray tans that just won’t quit.<\/p>",
+        "timage": "shopify:\/\/shop_images\/AWB.gif",
+        "ttitle": "WHITE BALANCE CORRECTION  (coming soon)",
+        "tcontent": "<p>Sometimes your camera gets it wrong. Get a starting point for true-to-life color.<\/p>",
+        "background_color": "#f7f6f2",
+        "text_color": "#000000",
+        "hbackground_color": "#f7f6f2",
+        "htext_color": "#000000",
+        "padding": "0px 0px 0px 0px",
+        "mobile_padding": "0px 0px 0px 0px"
+      }
+    },
+    "3rd_desktop_presets-pro-6602337681490": {
+      "type": "3rd_desktop_presets_new",
+      "settings": {
+        "enable": true,
+        "default_open": false,
+        "headline": "Mastin Standard™: Matching footage without the headache.",
+        "sheadline": "",
+        "title": "",
+        "content": "Combining footage from multiple cameras and color profiles used to be a pain. <br><br>But with the Mastin Standard camera-matching system, you can normalize all your footage for a cohesive and consistent look – without having to do a thing. Because, for the first time ever, normalization <i>is built-in to the luts themselves.<\/i>\n<br><br>\n<strong>Say goodbye to extra steps. . .  and hello to getting consistent looks across all your cameras!<\/strong>",
+        "image": "shopify:\/\/shop_images\/Mastin_Standard-1.png",
+        "video_url": "",
+        "image_right": false,
+        "background_color": "#f7f6f2",
+        "text_color": "#261d2d",
+        "hbackground_color": "#f7f6f2",
+        "htext_color": "#000000",
+        "padding": "0px 0px 0px 0px",
+        "mobile_padding": "0px 0px 0px 0px",
+        "padding_content": "10px 50px 75px 50px",
+        "mobile_content_padding": "0px 25px 15px 25px"
+      }
+    },
+    "3rd_desktop_presets-pro-66023376814902": {
+      "type": "3rd_desktop_presets",
+      "settings": {
+        "enable": true,
+        "default_open": false,
+        "headline": "What makes Mastin LUTs different?",
+        "title": "",
+        "content": "<p>We know you’ve been burned by bad LUTs before – the so-called “one-click” miracles that didn’t actually work for your footage, required tons of edits, and left your videos looking dated. <\/p>\n<p>That’s why we set out to do things \ndifferently.<\/p>\n<p>Each LUT pack has been meticulously designed and tested to match real film stocks, giving you the same timeless look that filmmakers, film photographers, and high-end clients have loved for decades.<\/p>\n<p>Our Mastin Standard camera-matching system takes all the work out of \nnormalizing footage between different cameras and color profiles, so \nyou can get a consistent film look without spending hours color grading.<\/p>\n<p>Plus, each LUT pack also comes with time-saving editing tools – including tone profiles, \nwhite balance correction (coming soon), orange reduction (coming soon), – and a \nstep-by-step tutorial video to help you nail your first edit and streamline \nyour workflow for good.<\/p>\n<p>This is more than a LUT – it’s a whole new way to color grade, \nwithout the headaches.<\/p>",
+        "video_url": "",
+        "image_right": false,
+        "background_color": "#f7f6f2",
+        "text_color": "#000000",
+        "hbackground_color": "#f7f6f2",
+        "htext_color": "#261d2d",
+        "padding": "0px 0px 0px 0px",
+        "mobile_padding": "0px 0px 0px 0px",
+        "padding_content": "0px 50px 50px 50px",
+        "mobile_content_padding": "0px 15px 15px 15px"
+      }
+    },
+    "3rd_desktop_presets-pro-66023376814903": {
+      "type": "3rd_desktop_presets",
+      "settings": {
+        "enable": true,
+        "default_open": false,
+        "headline": "Will these work with my current workflow?",
+        "title": "",
+        "content": "Absolutely! While we’ve designed our LUTs to make editing fast and easy with the Mastin 3-Step Workflow™, we know you might already have a system that works for you. So, every LUT in your pack will be clearly labeled and ready to incorporate into your existing workflow if that’s what you prefer.",
+        "video_url": "",
+        "image_right": false,
+        "background_color": "#f7f6f2",
+        "text_color": "#261d2d",
+        "hbackground_color": "#f7f6f2",
+        "htext_color": "#000000",
+        "padding": "0px 0px 0px 0px",
+        "mobile_padding": "0px 0px 0px 0px",
+        "padding_content": "0px 50px 50px 50px",
+        "mobile_content_padding": "0px 25px 15px 25px"
+      }
+    },
+    "rd_desktop_presets-pro-66023376814904": {
+      "type": "3rd_desktop_presets",
+      "settings": {
+        "enable": true,
+        "default_open": false,
+        "headline": "Will you be adding more picture profiles?",
+        "title": "",
+        "content": "Yes! We’ve designed our LUTs to be compatible with the most popular cameras and picture profiles on the market, and we’re actively working to add more as soon as possible. We new tools and profiles are added, a free pack update will be available for you.",
+        "video_url": "",
+        "image_right": true,
+        "background_color": "#f7f6f2",
+        "text_color": "#000000",
+        "hbackground_color": "#f7f6f2",
+        "htext_color": "#000000",
+        "padding": "0px 0px 0px 0px",
+        "mobile_padding": "0px 0px 0px 0px",
+        "padding_content": "0px 50px 50px 50px",
+        "mobile_content_padding": "0px 15px 15px 15px"
+      }
+    },
+    "1stamped-main-widget": {
+      "type": "1stamped-main-widget",
+      "settings": {
+        "padding": "0px 0px 0px",
+        "mobile_padding": "0px 0px 0px"
+      }
+    }
+  },
+  "order": [
+    "product-template",
+    "1BX-text-and-background",
+    "advanced-content-pro-66023376814901",
+    "3rd_included_looks-pro-6602337681490",
+    "3rd_one_click-pro-6602337681490",
+    "3rd_desktop_presets-pro-6602337681490",
+    "advanced-content-pro-6602337681490",
+    "3rd_desktop_presets-pro-66023376814902",
+    "3rd_desktop_presets-pro-66023376814903",
+    "rd_desktop_presets-pro-66023376814904",
+    "1stamped-main-widget"
+  ]
+}

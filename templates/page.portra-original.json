@@ -1,0 +1,189 @@
+{
+  "sections": {
+    "1625886222036ec7d5": {
+      "type": "1FW-image-with-html",
+      "settings": {
+        "image": "shopify:\/\/shop_images\/Preset_Quiz_Characters_Final_FP_500x500_6e4076c3-c02b-4d25-b891-a1ebc50d4460.png",
+        "padding": "0px 0px 0px 0px",
+        "mobile_padding": "0px 0px 0px 0px",
+        "background_color": "#ffffff",
+        "image_width": 500,
+        "subtitle": "Your perfect preset pack is...",
+        "subtitle_color": "#f9c138",
+        "title": "Portra Original",
+        "text": "<hr>\n<h4 style=\"color:#F9C138\">You’re the warm and neutral photographer.<\/h4><p>You don’t have to be loud to get noticed. <\/p>\n<p>As an artist, you find beauty in mundane moments, \nquiet contemplation, and thoughtfully-made pieces. \nYou want to create work that says something real.<\/p>\n<p style=\"text-align:left\">\n<a class=\"btn text-link\" href=\"https:\/\/mastinlabs.com\/products\/portra-original-lightroom\">SHOP LIGHTROOM &gt; <\/a> <a class=\"btn text-link\" href=\"https:\/\/mastinlabs.com\/products\/portra-original-capture-one\">SHOP CAPTURE ONE &gt; <\/a>\n<\/p>",
+        "btn_color": "#ffffff",
+        "btn_color_border": "#f9c138",
+        "btn_color_bg": "#f9c138",
+        "btn_color_hover": "#ffffff",
+        "btn_color_border_hover": "#f9c138",
+        "btn_color_bg_hover": "#f9c138",
+        "layout": "left",
+        "divider": false
+      }
+    },
+    "3rd_multiple_text-image": {
+      "type": "1FW_multiple_text-image",
+      "blocks": {
+        "4668dc17-e37c-4567-a815-333179554773074": {
+          "type": "textimage",
+          "settings": {
+            "padding": "65px 0px 0px 0px",
+            "mobile_padding": "40px 25px 0px 25px",
+            "background_color": "#f7f6f2",
+            "color": "",
+            "image": "shopify:\/\/shop_images\/111_1b903a1e-d5d2-4348-a5c8-0f193b216a8b.png",
+            "image_on_left": false,
+            "code": "<h2>YOU’RE INSPIRED BY<\/h2><p>minimal studios, desert highways, and \noverlooked Americana – neutral scenery that doesn’t need to be dressed up. \nYou’re drawn to raw honesty and \nvulnerable realness.\n\n<\/p>",
+            "text_algin": "left"
+          }
+        },
+        "0fc4e0f7-72fd-4ffc-9c25-333279554773074": {
+          "type": "textimage",
+          "settings": {
+            "padding": "0px 0px 65px 0px",
+            "mobile_padding": "0px 25px 15px 25px",
+            "background_color": "#f7f6f2",
+            "color": "",
+            "image": "shopify:\/\/shop_images\/222_68ee6c5d-7b5c-4239-a429-60eb5f16d0b2.png",
+            "image_on_left": true,
+            "code": "<h2>YOU LOVE PHOTOS THAT FEEL<\/h2><p>contemplative, quiet, subtle, intentional, \nearthy, and real.\n\n<\/p>",
+            "text_algin": "left"
+          }
+        }
+      },
+      "block_order": [
+        "4668dc17-e37c-4567-a815-333179554773074",
+        "0fc4e0f7-72fd-4ffc-9c25-333279554773074"
+      ],
+      "settings": {
+        "headline": "",
+        "description": ""
+      }
+    },
+    "whatisinclude-pro-1620201103": {
+      "type": "1FW-whatisinclude",
+      "blocks": {
+        "whatisinclude-pro-33379554773074-0": {
+          "type": "include",
+          "settings": {
+            "include_title": "",
+            "include_image": "shopify:\/\/shop_images\/PO_Portra160_JonDuenas_11.jpg",
+            "include_content": "<h3>Portra 160<\/h3>\n<p>Subtle and neutral<\/p>",
+            "max_width": "220px"
+          }
+        },
+        "whatisinclude-pro-33379554773074-1": {
+          "type": "include",
+          "settings": {
+            "include_title": "",
+            "include_image": "shopify:\/\/shop_images\/PO_Portra160_JonDuenas_11-2.jpg",
+            "include_content": "<h3>Portra 400<\/h3>\n<p>Versatile and faithful<\/p>",
+            "max_width": "220px"
+          }
+        },
+        "whatisinclude-pro-33379554773074-2": {
+          "type": "include",
+          "settings": {
+            "include_title": "",
+            "include_image": "shopify:\/\/shop_images\/PO_Portra160_JonDuenas_11-3.jpg",
+            "include_content": "<h3>Portra 800<\/h3>\n<p>Balanced and natural<\/p>",
+            "max_width": "220px"
+          }
+        }
+      },
+      "block_order": [
+        "whatisinclude-pro-33379554773074-0",
+        "whatisinclude-pro-33379554773074-1",
+        "whatisinclude-pro-33379554773074-2"
+      ],
+      "settings": {
+        "divider": false,
+        "space_around": false,
+        "padding": "50px 0px 50px 0px",
+        "mobile_padding": "30px 0px 30px 0px",
+        "color": "#ffffff",
+        "background_color": "#261d2d",
+        "text_align": "center",
+        "content_padding": "0px 0px 50px 0px",
+        "content_mobile_padding": "0px 0px 30px 0px",
+        "section_title": "Meet Your Presets",
+        "section_content": "<p style=\"text-align:center\">With the Portra Original, you get three versatile film looks for documenting your life.<\/p>",
+        "extra_content": "<p style=\"text-align:center\">\n<a class=\"btn text-link\" href=\"https:\/\/mastinlabs.com\/products\/portra-original-lightroom\">SHOP LIGHTROOM &gt;<\/a> <a class=\"btn text-link\" href=\"https:\/\/mastinlabs.com\/products\/portra-original-capture-one\">SHOP CAPTURE ONE &gt;<\/a>\n<\/p>"
+      }
+    },
+    "customer-says-pro-1620204230": {
+      "type": "1FW-testimonial",
+      "blocks": {
+        "customer-says-pro-33379554773074-1": {
+          "type": "testimonial",
+          "settings": {
+            "testimonial": "<p>“I get compliments on the colors often and <strong>people mistake my digital work for film all the time<\/strong>, even other photographers, magazine editors, and bloggers.”<\/p>",
+            "author": "Rachel"
+          }
+        },
+        "customer-says-pro-33379554773074-0": {
+          "type": "testimonial",
+          "settings": {
+            "testimonial": "<p>“<strong>This helps me get to the aesthetic I'm looking for way faster<\/strong> than editing each photo individually and it's not a crazy filtered look that I have to dial back like other plugin packs; just a natural film look that I already get with my Portra film that now I can enjoy with my digital photos.”<\/p>",
+            "author": "Ben"
+          }
+        },
+        "customer-says-pro-33379554773074-2": {
+          "type": "testimonial",
+          "settings": {
+            "testimonial": "<p>“I'm excited to have <strong>more consistency in my work<\/strong> and an editing style that goes with everything I do – mainly travel\/landscape with the occasional portrait session.”<\/p>",
+            "author": "Alyonka"
+          }
+        }
+      },
+      "block_order": [
+        "customer-says-pro-33379554773074-1",
+        "customer-says-pro-33379554773074-0",
+        "customer-says-pro-33379554773074-2"
+      ],
+      "settings": {
+        "title": "What Portra Original photographers are saying",
+        "background_color": "#f7f6f2",
+        "slider_per_page": "1",
+        "align_text": "left",
+        "round_images": false,
+        "divider": false,
+        "main_background_image": "shopify:\/\/shop_images\/Group_47_5a4a8cc1-0887-4747-8fb2-851c035fa014.png",
+        "main_background_color": "shopify:\/\/shop_images\/Group_44_4.png",
+        "main_color": "#ffffff",
+        "padding": "50px 0px 50px 0px",
+        "mobile_padding": "30px 0px 30px 0px"
+      }
+    },
+    "double_guide": {
+      "type": "1FW-double_guide",
+      "settings": {
+        "enable": true,
+        "main_bg_image": "shopify:\/\/shop_images\/testimonial_background.jpg",
+        "before_background_image": "shopify:\/\/shop_images\/Vector_1.png",
+        "before_background": "#f7f6f2",
+        "headline": "<h2>Ready to learn more? <span style=\"color:#F9C138\" class=\"freescript_v2\">Check out our free guides below.<\/span>\n<\/h2>",
+        "title_background": "#eae9e4",
+        "after_background_image": "shopify:\/\/shop_images\/Vector_2.png",
+        "padding": "20px 20px 20px 20px",
+        "mobile_padding": "10px 10px 10px 10px",
+        "guide_padding": "50px 20px 20px 20px",
+        "guide_mobile_padding": "20px 20px 20px 20px",
+        "fguide_title": "THE ULTIMATE GUIDE TO  LIGHT & AIRY  PHOTOGRAPHY",
+        "fguide_code": "<div class=\"klaviyo-form-Wu3sKK\"><\/div>",
+        "fguide_image": "shopify:\/\/shop_images\/pexels-dmitry-zvolskiy-1721944_1.png",
+        "sguide_title": "THE ULTIMATE GUIDE TO  LIGHT & AIRY  PHOTOGRAPHY",
+        "sguide_code": "<div class=\"klaviyo-form-XpT4HY\"><\/div>",
+        "sguide_image": "shopify:\/\/shop_images\/last_image.png"
+      }
+    }
+  },
+  "order": [
+    "1625886222036ec7d5",
+    "3rd_multiple_text-image",
+    "whatisinclude-pro-1620201103",
+    "customer-says-pro-1620204230",
+    "double_guide"
+  ]
+}

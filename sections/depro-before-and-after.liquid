@@ -1,0 +1,207 @@
+{%include "depro-before-and-after"%}
+{% schema %}
+  {
+    "name": "Before&After Slider",
+	"class":"depro-slider",
+    "max_blocks": 40,
+    "settings": [
+	  {
+        "type": "checkbox",
+        "id": "divider",
+        "label": "Show section divider",
+        "default": false
+      },
+      {
+        "type": "checkbox",
+        "id": "space_around",
+        "label": "Add spacing above and below",
+        "default": true
+      },
+	  {
+        "type": "checkbox",
+        "id": "slider_on_right",
+        "label": "Slider on right?",
+        "default": false
+      },
+      {
+        "type": "header",
+        "content": "Section padding Setting"
+      },
+	  {
+        "type": "text",
+        "id": "padding",
+        "label": "Desktop Padding",
+        "default": "0px 0px 0px 0px",
+		"info" : "Top right bottom left"
+      },
+	  {
+        "type": "text",
+        "id": "mobile_padding",
+        "label": "Mobile Padding",
+        "default": "0px 0px 0px 0px",
+		"info" : "Top right bottom left"
+      },
+	  {
+        "type": "color",
+        "id": "background_color",
+        "label": "Custom background color ",
+        "default": "#ffffff"
+      },
+      {
+        "type": "header",
+        "content": "Slider padding Setting"
+      },
+      {
+        "type": "text",
+        "id": "slider_padding",
+        "label": "Desktop Padding",
+        "default": "0px 0px 0px 0px",
+        "info" : "Top right bottom left"
+      },
+      {
+        "type": "text",
+        "id": "slider_mobile_padding",
+        "label": "Mobile Padding",
+        "default": "0px 0px 0px 0px",
+        "info" : "Top right bottom left"
+      },
+	  {
+        "type": "header",
+        "content": "Content padding Setting"
+      },
+      {
+        "type": "text",
+        "id": "content_padding",
+        "label": "Desktop Padding",
+        "default": "0px 0px 0px 0px",
+        "info" : "Top right bottom left"
+      },
+      {
+        "type": "text",
+        "id": "content_mobile_padding",
+        "label": "Mobile Padding",
+        "default": "0px 0px 0px 0px",
+        "info" : "Top right bottom left"
+      },
+	  {
+        "type": "select",
+        "id": "slider_alignment",
+        "label": "Slider Vertical alignment",
+        "default": "top-middle",
+        "info": "Aligns when next to other custom content",
+        "options": [
+        {
+        "value": "top-middle",
+        "label": "Top"
+        },
+        {
+        "value": "center",
+        "label": "Middle"
+        },
+        {
+        "value": "bottom-middle",
+        "label": "Bottom"
+        }
+        ]
+       }
+    ],
+    "blocks": [
+      {
+        "type": "slider",
+        "name": "Slider",
+	    "settings": [
+          {
+            "type": "image_picker",
+            "id": "before_image",
+            "label": "BEFORE IMAGE"
+          },
+		  {
+            "type": "text",
+            "id": "before_button_name",
+            "label": "BEFORE IMAGE LABEL",
+			"default":"Before"
+          },
+	      {
+            "type": "image_picker",
+            "id": "after_image",
+            "label": "AFTER IMAGE"
+          },
+		  {
+            "type": "text",
+            "id": "after_button_name",
+            "label": "AFTER IMAGE LABEL",
+			"default":"After"
+          },
+		  {
+            "type": "html",
+            "id": "caption",
+            "label": "CAPTION"
+          },
+		  {
+            "type":   "range",
+            "id":     "default_position",
+            "min":       0,
+            "max":       100,
+            "step":      1,
+            "unit":      "%",
+            "label":     "Default divider position",
+            "default":   35
+        },
+		 {
+           "type":      "checkbox",
+           "id":        "after_on_left",
+           "label":     "After on Left ?",
+           "default":   false,
+           "info":      "Defaut After will move to right"
+         }
+		  
+        ]
+      },
+      {
+        "type": "Content",
+        "name": "Content",
+		"limit": 1,
+        "settings": [
+          {
+            "type": "text",
+            "id": "title",
+            "label": "Title"
+          },
+		  {
+            "type": "html",
+            "id": "content",
+            "label": "Content"
+          },
+          {
+            "type": "select",
+            "id": "alignment",
+            "label": "Vertical alignment",
+            "default": "top-middle",
+            "info": "Aligns when next to other custom content",
+            "options": [
+              {
+                "value": "top-middle",
+                "label": "Top"
+              },
+              {
+                "value": "center",
+                "label": "Middle"
+              },
+              {
+                "value": "bottom-middle",
+                "label": "Bottom"
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "presets": [
+      {
+        "name": "Before&After Slider",
+        "category": "Deprohoang Sections"
+        
+      }
+    ]
+  }
+{% endschema %}

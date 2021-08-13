@@ -1,0 +1,34 @@
+{%comment%}
+<div class="add_cart_info add_cart_info_mobile">
+
+  {%assign section_id = "deprohoang"%}
+  {% unless product.has_only_default_variant %}
+  {% for option in product.options_with_values %}
+  {% if settings.variant_type == 'button' %}
+  <center class="dpuppercase">{{option.name}}</center><center>{% include 'variant-button', section_id: "deproheader", option_drop: option %}</center>
+  {% else %}
+  <center class="dpuppercase">{{option.name}}</center><center>{% include 'variant-dropdown', section_id: "deproheader" %}</center>
+  {% endif %}
+  {% endfor %}
+  {% endunless %}
+  
+  <div style="display:none"><select name="id" id="ProductSelect-headermb" class="product-single__variantss no-js">
+    {% for variant in product.variants %}
+    {% if variant.available %}
+    <option {% if variant == product.selected_or_first_available_variant %}
+            selected="selected" {% endif %}
+            value="{{ variant.id }}">
+      {{ variant.title }} - {{ variant.price | money_with_currency }}
+    </option>
+    {% else %}
+    <option disabled="disabled">
+      {{ variant.title }} - {{ 'products.product.sold_out' | t }}
+    </option>
+    {% endif %}
+    {% endfor %}
+    </select>
+  </div>
+  <center><button id="dp-add-to-cart" class="mbdp-add-to-cart btn">Add to cart</button></center>
+  
+</div>
+{%endcomment%}

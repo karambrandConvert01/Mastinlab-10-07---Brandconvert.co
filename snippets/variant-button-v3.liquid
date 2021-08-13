@@ -1,0 +1,176 @@
+{%- assign swatch_file_extension = 'png' -%}
+{%- assign is_color = false -%}
+{%- assign color_swatch_drop = option_drop -%}
+{%- assign color_option_index = 0 -%}
+
+{%- if settings.product_color_swatches -%}
+  {%- for option in product.options_with_values -%}
+    {%- if option == color_swatch_drop -%}
+      {%- assign color_option_index = forloop.index0 -%}
+      {%- assign downcased_option = color_swatch_drop.name | downcase -%}
+      {%- if downcased_option contains 'color' or downcased_option contains 'colour' -%}
+        {%- assign is_color = true -%}
+      {%- endif -%}
+    {%- endif -%}
+  {%- endfor -%}
+{%- endif -%}
+{%comment%}Desktop Presets Only,Desktop Presets + Mobile Profiles,Mobile Profiles Upgrade{%endcomment%}
+{%assign cShow = "Desktop Presets" %}
+{%if customer%}
+  
+  {%assign Cvariants = ""%}
+	
+  {%unless product.handle contains "capture-one"%}
+  {% for order in customer.orders %}
+    {% for item in order.line_items %}
+	  {%unless product.handle contains "capture-one"%}
+		{%assign itemHandle = item.title | downcase %}
+		{%assign currentHandle = product.handle %}
+		{%assign itemVariant = item.variant.title %}
+		{%unless item.product_id %}
+			{% assign Iinfo = itemHandle | split: "-" %}
+			{%assign itemHandle = Iinfo | first %}
+			{%assign itemVariant = Iinfo | last %}
+		{%endunless%}
+		
+        {%if itemHandle contains "ilford" and itemHandle contains "original" and currentHandle contains "ilford" and currentHandle contains "original"%}
+            {% assign Cvariants = Cvariants | append: itemVariant  | append: "__" %}
+        {%endif%}
+		{%if itemHandle contains "portra" and itemHandle contains "pushed" and currentHandle contains "portra" and currentHandle contains "pushed"%}
+            {% assign Cvariants = Cvariants | append: itemVariant  | append: "__" %}
+        {%endif%}
+		{%if itemHandle contains "portra" and itemHandle contains "original" and currentHandle contains "portra" and currentHandle contains "original"%}
+            {% assign Cvariants = Cvariants | append: itemVariant  | append: "__" %}
+        {%endif%}
+		{%if itemHandle contains "fujicolor" and itemHandle contains "pushed" and currentHandle contains "fujicolor" and currentHandle contains "pushed"%}
+            {% assign Cvariants = Cvariants | append: itemVariant  | append: "__" %}
+        {%endif%}
+		{%if itemHandle contains "fujicolor" and itemHandle contains "original" and currentHandle contains "fujicolor" and currentHandle contains "original"%}
+            {% assign Cvariants = Cvariants | append: itemVariant  | append: "__" %}
+        {%endif%}
+		{%if itemHandle contains "fujicolor" and itemHandle contains "everyday" and currentHandle contains "fujicolor" and currentHandle contains "everyday"%}
+            {% assign Cvariants = Cvariants | append: itemVariant  | append: "__" %}
+        {%endif%}
+		{%if itemHandle contains "adventure" and itemHandle contains "everyday" and currentHandle contains "adventure" and currentHandle contains "everyday"%}
+            {% assign Cvariants = Cvariants | append: itemVariant  | append: "__" %}
+        {%endif%}
+	  {%endunless%}
+    {% endfor %}
+  {% endfor %}
+  {%endunless%}
+
+
+
+
+
+
+
+  {%comment%}Cvariants = Desktop Presets Only__Lightroom & ARC{%endcomment%}
+
+  {%- for value in option.values -%}
+	  {%assign value = value | downcase %}
+      {%if Cvariants contains " + "%}
+          {%assign cShow = "Mobile Profiles Upgrade" %}
+          {%comment%}Desktop Presets + Mobile Profiles{%endcomment%}
+      {%elsif  Cvariants contains value %}
+          {%if value contains "mobile"%}
+              {%assign cShow = "Desktop Presets Only" %}
+              {%comment%}Mobile Profiles{%endcomment%}
+          {%else%}
+              {%comment%}Desktop Presets Only{%endcomment%}
+			  {%assign cShow = "Mobile Profiles Upgrade" %}
+          {%endif%}
+	  {%elsif  Cvariants contains "lightroom" %}
+		{%assign cShow = "Mobile Profiles Upgrade" %}
+      {%endif%}
+  {%- endfor -%}
+{%endif%}
+<div class="variant-wrapper custom_variants variant-wrapper--{{ settings.variant_type }} js" data-customer = "{{Cvariants}}">
+  {%- assign option_index = forloop.index -%}
+  <fieldset class="variant-input-wraps"
+    name="{{ option.name }}"
+    data-index="option{{ option_index }}"
+    id="ProductSelect-{{ section_id }}-option-{{ forloop.index0 }}">
+    {%- for value in option.values -%}
+      {%if settings.hidedpmp and value contains " + "%}
+    
+      {%else%}
+       {%- assign product_available = true -%}
+      {%- if product.options.size == 1 -%}
+        {%- assign product_available = product.variants[forloop.index0].available -%}
+      {%- endif -%}
+      {%if product.handle contains "capture-one"%}
+    	{%assign cShow = "Desktop Styles"%}
+    {%endif%}
+      {%if customer%}
+    		{%if value contains cShow %}
+            <div class="variant-input"
+                 data-index="option{{ option_index }}"
+                 data-value="{{ value | escape }}">
+              <input type="radio"
+                     {% if option.selected_value == value %} checked="checked"{% endif %}
+                     value="{{ value | escape }}"
+                     data-index="option{{ option_index }}"
+                     {%unless value contains cShow %}disabled{%endunless%}
+                     name="{{ option.name }}"
+                     class="variant__input_depro v-hide variant__input-{{ section_id }}{% unless product_available %} disabled{% endunless %}{% if is_color %} variant__input--color-swatch-{{ section_id }}{% endif %}"
+                     {% if is_color %} data-color-name="{{ value | escape }}"{% endif %}
+                     {% if is_color %} data-color-index="{{ color_option_index }}"{% endif %}
+                     id="ProductSelect-{{ section_id }}-option-{{ option.name | handleize }}-{{ value | url_encode }}">
+              {%- if is_color -%}
+              {%- assign color_image = value | handle | append: '.' | append: swatch_file_extension | asset_img_url: '50x' | prepend: 'https:' | split: '?' | first -%}
+              {%- assign color_swatch_fallback = value | split: ' ' | last | handle -%}
+              <label
+                     for="ProductSelect-{{ section_id }}-option-{{ option.name | handleize }}-{{ value | url_encode }}"
+                     class="variant__button-labelss color-swatch color-swatch--{{ value | handle }}{% unless product_available %} disabled{% endunless %}"
+                     style="background-image: url({{ color_image }}); background-color: {{ color_swatch_fallback }};"
+                     >Add {{ value | escape }} To Cart</label>
+              {%- else -%}
+              <label
+                     for="ProductSelect-{{ section_id }}-option-{{ option.name | handleize }}-{{ value | url_encode }}"
+                     class="variant__button-labelss btn {% unless product_available %} disabled{% endunless %}">Add  {{ value | escape }} To Cart</label>
+              {%- endif -%}
+
+            </div>
+            {%endif%}
+
+    
+      {%endif%}
+      {%unless customer %}
+    	
+    	{%unless value == "Mobile Profiles Upgrade"%}
+            <div
+              class="variant-input"
+              data-index="option{{ option_index }}"
+              data-value="{{ value | escape }}">
+              <input type="radio"
+                {% if option.selected_value == value %} checked="checked"{% endif %}
+                value="{{ value | escape }}"
+                data-index="option{{ option_index }}"
+                name="{{ option.name }}"
+                class="variant__input_depro  v-hide variant__input-{{ section_id }}{% unless product_available %} disabled{% endunless %}{% if is_color %} variant__input--color-swatch-{{ section_id }}{% endif %}"
+                {% if is_color %} data-color-name="{{ value | escape }}"{% endif %}
+                {% if is_color %} data-color-index="{{ color_option_index }}"{% endif %}
+                id="ProductSelect-{{ section_id }}-option-{{ option.name | handleize }}-{{ value | url_encode }}">
+              {%- if is_color -%}
+                {%- assign color_image = value | handle | append: '.' | append: swatch_file_extension | asset_img_url: '50x' | prepend: 'https:' | split: '?' | first -%}
+                {%- assign color_swatch_fallback = value | split: ' ' | last | handle -%}
+                <label
+                  for="ProductSelect-{{ section_id }}-option-{{ option.name | handleize }}-{{ value | url_encode }}"
+                  class="variant__button-label  color-swatch color-swatch--{{ value | handle }}{% unless product_available %} disabled{% endunless %}"
+                  style="background-image: url({{ color_image }}); background-color: {{ color_swatch_fallback }};"
+                >Add {{ value | escape }} To Cart</label>
+              {%- else -%}
+                <label
+                  for="ProductSelect-{{ section_id }}-option-{{ option.name | handleize }}-{{ value | url_encode }}"
+                  class="variant__button-label btn {% unless product_available %} disabled{% endunless %}">Add  {{ value | escape }} To Cart</label>
+              {%- endif -%}
+            </div>
+    	{%endunless%}
+    	
+      {%endunless%}
+    
+     {%endif%}
+    {%- endfor -%}
+  </fieldset>
+</div>

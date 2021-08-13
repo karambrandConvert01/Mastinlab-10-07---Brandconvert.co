@@ -1,0 +1,219 @@
+{
+  "sections": {
+    "1625886222036ec7d5": {
+      "type": "1FW-image-with-html",
+      "settings": {
+        "image": "shopify:\/\/shop_images\/pp_111.png",
+        "padding": "0px 0px 0px 0px",
+        "mobile_padding": "0px 0px 0px 0px",
+        "background_color": "#ffffff",
+        "image_width": 500,
+        "subtitle": "Your perfect preset pack is...",
+        "subtitle_color": "#ce971d",
+        "title": "Portra Pushed",
+        "text": "<hr>\n<h4 style=\"color:#CE971D\">You’re the dark and moody photographer.<\/h4><p>You feel deeply. You explore the shadows. You find \nbeauty and strength in the darker side of life.\n<\/p><p>\nThere’s something powerful and primal about your work. \nYou don’t hide from complex emotions. You amplify them.\n<\/p>\n<p style=\"text-align:center\">\n<a class=\"btn text-link\" href=\"https:\/\/mastin-test.myshopify.com\/products\/portra-pushed-lightroom\">SHOP LIGHTROOM &gt; <\/a> <a class=\"btn text-link\" href=\"https:\/\/mastin-test.myshopify.com\/products\/portra-pushed-capture-one\">SHOP CAPTURE ONE &gt; <\/a>\n<\/p>",
+        "btn_color": "#ffffff",
+        "btn_color_border": "#ce971d",
+        "btn_color_bg": "#ce971d",
+        "btn_color_hover": "#ffffff",
+        "btn_color_border_hover": "#ce971d",
+        "btn_color_bg_hover": "#ce971d",
+        "layout": "left",
+        "divider": false
+      }
+    },
+    "3rd_multiple_text-image": {
+      "type": "1FW_multiple_text-image",
+      "blocks": {
+        "4668dc17-e37c-4567-a815-333179554805842": {
+          "type": "textimage",
+          "settings": {
+            "padding": "65px 0px 0px 0px",
+            "mobile_padding": "40px 25px 0px 25px",
+            "background_color": "#f7f6f2",
+            "color": "",
+            "image": "shopify:\/\/shop_images\/pp_222.png",
+            "image_on_left": false,
+            "code": "<h2>YOU’RE INSPIRED BY<\/h2><p>dramatic mountainsides, shady groves, falling leaves, and half-lit rooms. You thrive on private moments.\n\n<\/p>",
+            "text_algin": "left"
+          }
+        },
+        "0fc4e0f7-72fd-4ffc-9c25-333279554805842": {
+          "type": "textimage",
+          "settings": {
+            "padding": "0px 0px 65px 0px",
+            "mobile_padding": "0px 25px 15px 25px",
+            "background_color": "#f7f6f2",
+            "color": "",
+            "image": "shopify:\/\/shop_images\/pp_333.png",
+            "image_on_left": true,
+            "code": "<h2>YOU LOVE PHOTOS THAT FEEL<\/h2><p>deep, rich, powerful, dramatic, and intimate.<\/p>",
+            "text_algin": "left"
+          }
+        }
+      },
+      "block_order": [
+        "4668dc17-e37c-4567-a815-333179554805842",
+        "0fc4e0f7-72fd-4ffc-9c25-333279554805842"
+      ],
+      "settings": {
+        "headline": "",
+        "description": ""
+      }
+    },
+    "whatisinclude-pro-1620201103": {
+      "type": "1FW-whatisinclude",
+      "blocks": {
+        "3cd5c42b-56c9-473f-8af5-207bef3787db": {
+          "type": "include",
+          "settings": {
+            "include_title": "",
+            "include_image": "shopify:\/\/shop_images\/PP_Portra160_1_Thais_Varela_01.jpg",
+            "include_content": "<h3>Portra 160+1<\/h3>\n<p>Low saturation and \ntones that lean towards red and brown<\/p>",
+            "max_width": "220px"
+          }
+        },
+        "8eb10c12-6434-4b06-bc33-0eb1f96926e8": {
+          "type": "include",
+          "settings": {
+            "include_title": "",
+            "include_image": "shopify:\/\/shop_images\/PP_Portra160_2_Thais_Varela_01.jpg",
+            "include_content": "<h3>Portra 160+2<\/h3>\n<p>Increased red tones \nand flatness in \nthe shadows<\/p>",
+            "max_width": "220px"
+          }
+        },
+        "whatisinclude-pro-33379554805842-2": {
+          "type": "include",
+          "settings": {
+            "include_title": "",
+            "include_image": "shopify:\/\/shop_images\/PP_Portra400_1_Thais_Varela_01.jpg",
+            "include_content": "<h3>Portra 400+1<\/h3>\n<p>Deep, rich color\nwith clean tones<\/p>",
+            "max_width": "220px"
+          }
+        },
+        "eb91f1ee-7222-40ec-8349-1d6038b91948": {
+          "type": "include",
+          "settings": {
+            "include_title": "",
+            "include_image": "shopify:\/\/shop_images\/PP_Portra400_2_Thais_Varela_01.jpg",
+            "include_content": "<h3>Portra 400+2<\/h3>\n<p>Increased red and orange shifts in the shadows for an editorial look<\/p>",
+            "max_width": "220px"
+          }
+        },
+        "whatisinclude-pro-33379554805842-0": {
+          "type": "include",
+          "settings": {
+            "include_title": "",
+            "include_image": "shopify:\/\/shop_images\/PP_Portra4800_1_Thais_Varela_01.jpg",
+            "include_content": "<h3>Portra 800+1<\/h3>\n<p>Balanced and \nnatural<\/p>",
+            "max_width": "220px"
+          }
+        },
+        "whatisinclude-pro-33379554805842-1": {
+          "type": "include",
+          "settings": {
+            "include_title": "",
+            "include_image": "shopify:\/\/shop_images\/PP_Portra4800_2_Thais_Varela_01.jpg",
+            "include_content": "<h3>Portra 800+2<\/h3>\n<p>The ultimate moody look<\/p>",
+            "max_width": "220px"
+          }
+        }
+      },
+      "block_order": [
+        "3cd5c42b-56c9-473f-8af5-207bef3787db",
+        "8eb10c12-6434-4b06-bc33-0eb1f96926e8",
+        "whatisinclude-pro-33379554805842-2",
+        "eb91f1ee-7222-40ec-8349-1d6038b91948",
+        "whatisinclude-pro-33379554805842-0",
+        "whatisinclude-pro-33379554805842-1"
+      ],
+      "settings": {
+        "divider": false,
+        "space_around": false,
+        "padding": "50px 0px 50px 0px",
+        "mobile_padding": "30px 0px 30px 0px",
+        "color": "#ffffff",
+        "background_color": "#261d2d",
+        "text_align": "center",
+        "content_padding": "0px 0px 50px 0px",
+        "content_mobile_padding": "0px 0px 30px 0px",
+        "section_title": "Meet Your Presets",
+        "section_content": "<p style=\"text-align:center\">With the Portra Pushed pack, you can get the original dark and moody look.<\/p>",
+        "extra_content": "<p style=\"text-align:center\">\n<a class=\"btn text-link\" href=\"https:\/\/mastinlabs.com\/products\/portra-pushed-lightroom\">SHOP LIGHTROOM &gt;<\/a> <a class=\"btn text-link\" href=\"https:\/\/mastinlabs.com\/products\/portra-pushed-capture-one\">SHOP CAPTURE ONE &gt;<\/a>\n<\/p>"
+      }
+    },
+    "customer-says-pro-1620204230": {
+      "type": "1FW-testimonial",
+      "blocks": {
+        "customer-says-pro-33379554805842-0": {
+          "type": "testimonial",
+          "settings": {
+            "testimonial": "<p>“<strong>The Portra Pushed presets bring life to my images! <\/strong>They intensify the emotion and give images a gorgeous pop, while keeping the skin tones natural looking.”<\/p>",
+            "author": "TEREZA"
+          }
+        },
+        "customer-says-pro-33379554805842-1": {
+          "type": "testimonial",
+          "settings": {
+            "testimonial": "<p>“The Portra Pushed Pack is everything I've been looking for in my editing. I used to spend countless hours tweaking other presets to get this look. <strong>It has drastically cut my editing time!<\/strong> It is everything it describes itself to be and is the definition of moody, not muddy.”<\/p>",
+            "author": "Kayla"
+          }
+        },
+        "customer-says-pro-33379554805842-2": {
+          "type": "testimonial",
+          "settings": {
+            "testimonial": "<p>“I love that this pack speaks to <strong>the moodier, more saturated side of the film look.<\/strong> It has an edge that I love!”<\/p>",
+            "author": "Marie"
+          }
+        }
+      },
+      "block_order": [
+        "customer-says-pro-33379554805842-0",
+        "customer-says-pro-33379554805842-1",
+        "customer-says-pro-33379554805842-2"
+      ],
+      "settings": {
+        "title": "What Portra Pushed photographers are saying",
+        "background_color": "#f7f6f2",
+        "slider_per_page": "1",
+        "align_text": "left",
+        "round_images": false,
+        "divider": false,
+        "main_background_image": "shopify:\/\/shop_images\/Group_47_5a4a8cc1-0887-4747-8fb2-851c035fa014.png",
+        "main_background_color": "shopify:\/\/shop_images\/Group_44_5.png",
+        "main_color": "#ffffff",
+        "padding": "50px 0px 50px 0px",
+        "mobile_padding": "30px 0px 30px 0px"
+      }
+    },
+    "double_guide": {
+      "type": "1FW-double_guide",
+      "settings": {
+        "enable": true,
+        "main_bg_image": "shopify:\/\/shop_images\/testimonial_background.jpg",
+        "before_background_image": "shopify:\/\/shop_images\/Vector_1.png",
+        "before_background": "#f7f6f2",
+        "headline": "<h2>Ready to learn more? <span style=\"color:#CE971D\" class=\"freescript_v2\">Check out our free guides below.<\/span>\n<\/h2>",
+        "title_background": "#eae9e4",
+        "after_background_image": "shopify:\/\/shop_images\/Vector_2.png",
+        "padding": "20px 20px 20px 20px",
+        "mobile_padding": "10px 10px 10px 10px",
+        "guide_padding": "50px 20px 20px 20px",
+        "guide_mobile_padding": "20px 20px 20px 20px",
+        "fguide_title": "THE ULTIMATE GUIDE TO  LIGHT & AIRY  PHOTOGRAPHY",
+        "fguide_code": "<div class=\"klaviyo-form-Wu3sKK\"><\/div>",
+        "fguide_image": "shopify:\/\/shop_images\/pexels-dmitry-zvolskiy-1721944_1.png",
+        "sguide_title": "THE ULTIMATE GUIDE TO  LIGHT & AIRY  PHOTOGRAPHY",
+        "sguide_code": "<div class=\"klaviyo-form-XpT4HY\"><\/div>",
+        "sguide_image": "shopify:\/\/shop_images\/last_image.png"
+      }
+    }
+  },
+  "order": [
+    "1625886222036ec7d5",
+    "3rd_multiple_text-image",
+    "whatisinclude-pro-1620201103",
+    "customer-says-pro-1620204230",
+    "double_guide"
+  ]
+}

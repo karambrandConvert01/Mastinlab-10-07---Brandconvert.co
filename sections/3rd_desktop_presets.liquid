@@ -1,0 +1,118 @@
+{%include "3rd_desktop_presets"%}
+{% schema %}
+  {
+    "name": "Presets",
+    "settings": [
+		{
+          "type": "checkbox",
+          "id": "enable",
+          "label": "Display for live site?",
+		      "default":true
+        },
+        {
+          "type": "checkbox",
+          "id": "default_open",
+          "label": "default hide?",
+		  "default":true
+        },
+		{
+          "type": "text",
+          "id": "headline",
+          "label": "Section Title",
+		  "default":"Desktop Presets"
+        },
+		{
+            "type": "header",
+            "content": "First Block"
+        },
+	    {
+          "type": "text",
+          "id": "title",
+          "label": "Title",
+		  "default":"Discover how to make beautiful photos in just three steps with Adventure Everyday."
+        },
+		{
+          "type": "html",
+          "id": "content",
+		  "label":"Content",
+		   "default": "<p>With the Mastin 3-Step Workflow™, getting a clean, consistent film look is fast and easy:<\/p>1. Apply a preset<br>2. Adjust exposure<br>3. Adjust white balance.<br><p>Seriously, editing really can be that simple.<\/p>"
+        },
+		{
+            "type": "header",
+            "content": "Second Block"
+        },
+		{
+          "type": "image_picker",
+          "id": "image",
+          "label": "Image"
+        },
+		{
+          "type": "video_url",
+          "id": "video_url",
+          "label": "Video url",
+          "accept": ["youtube", "vimeo"]
+        },
+		{
+          "type": "checkbox",
+          "id": "image_right",
+          "label": "Image on right ?",
+		  "default":true
+        },
+		{
+          "type": "color",
+          "id": "background_color",
+          "label": "Background Color"
+        },
+		{
+          "type": "color",
+          "id": "text_color",
+          "label": "Text Color",
+		  "default":"#cccccc"
+        },
+		{
+          "type": "color",
+          "id": "hbackground_color",
+          "label": "Toggle Background Color"
+        },
+		{
+          "type": "color",
+          "id": "htext_color",
+          "label": "Toggle Text Color",
+		  "default":"#cccccc"
+        },
+        {
+          "type": "header",
+          "content": "Padding Setting"
+        },
+          {
+          "type": "text",
+          "id": "padding",
+          "label": "Desktop Padding",
+          "default": "0px 0px 0px 0px",
+            "info" : "Top right bottom left"
+        },
+          {
+          "type": "text",
+          "id": "mobile_padding",
+          "label": "Mobile Padding",
+          "default": "0px 0px 0px 0px",
+              "info" : "Top right bottom left"
+        }, 
+		{
+          "type": "text",
+          "id": "padding_content",
+          "label": "Desktop Content Padding",
+          "default": "50px 0px 50px 0px",
+            "info" : "Top right bottom left"
+        },
+          {
+          "type": "text",
+          "id": "mobile_content_padding",
+          "label": "Mobile Content Padding",
+          "default": "50px 0px 50px 0px",
+              "info" : "Top right bottom left"
+        }
+
+	]
+  }
+{% endschema %}

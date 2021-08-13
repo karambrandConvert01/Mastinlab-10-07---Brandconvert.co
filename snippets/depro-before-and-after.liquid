@@ -1,0 +1,157 @@
+{% if section.settings.divider %}<div class="section--divider">{% endif %}
+{% if section.settings.space_around %}
+  <div class="index-section" >
+{% endif %}
+<div class="page-width">
+<div class="before-after-wrapper" id="dp__{{section.id}}">
+{%assign content = ""%}
+{%assign sliders = ""%}
+{%assign sliderscap = ""%}
+{%assign sliderC = 0 %}
+{%assign thumbnails = ""%}
+{% for block in section.blocks %}
+	{%if block.type == "Content"%}
+		{% capture contents %}
+		<div class="custom__item small--one-whole one-half align--{{block.settings.alignment}}">
+			<div class="custom__item-inner custom__item-inner--html dp__slider_contentss">
+			  <div class="rte dp__slider_content"  id="dp__block_{{block.id}}" data-section-type="featured-content-section">
+				<h3>{{block.settings.title}}</h3>
+				{{block.settings.content}}
+			  </div>
+			</div>
+		</div>
+		{% endcapture %}
+		{%assign content = contents%}
+	{%endif%}
+	{%if block.type == "slider"%}
+		{%assign sliderC = sliderC | plus: 1 %}
+		{%- assign before_images = block.settings.before_image | img_url: '1x1' | replace: '_1x1.', '_{width}x.' -%}
+		{%- assign after_images = block.settings.after_image | img_url: '1x1' | replace: '_1x1.', '_{width}x.' -%}
+		{% capture slider %}
+		<div class="ba-slider" id="dp__block_{{block.id}}">
+		   <img class="lazyloaded lazy2"
+		   		src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII="
+				data-src="{{ block.settings.after_image | img_url: '720x' }}"
+				data-mobsrc="{{ block.settings.after_image | img_url: '360x' }}"
+				data-aspectratio="{{ block.settings.after_image.aspect_ratio }}"
+				data-sizes="auto"
+				alt="{{ block.settings.after_image.alt }}">       
+		  <div class="resize" style="width:{{block.settings.default_position}}%">
+			<div class="slider_inner">
+			<img class="lazyloaded lazy2"
+				src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII="
+				data-src="{{ block.settings.before_image | img_url: '720x' }}"
+				data-mobsrc="{{ block.settings.before_image | img_url: '360x' }}"
+				data-aspectratio="{{ block.settings.before_image.aspect_ratio }}"
+				data-sizes="auto"
+				alt="{{ block.settings.before_image.alt }}"> 
+			</div>
+		  </div>
+		  <div class="handle" style="left:{{block.settings.default_position}}%"><span></span></div>
+		  <div class="slider_before" {%if block.settings.after_on_left%}data-after="onleft"{%else%}data-after="onright"{%endif%}>{{ block.settings.before_button_name }}</div>
+		  <div class="slider_after" {%if block.settings.after_on_left%}data-after="onleft"{%else%}data-after="onright"{%endif%}>{{ block.settings.after_button_name }}</div>
+		  
+		</div>
+		
+		{% endcapture %}
+		{%assign sliders = sliders | append: slider %} 
+		{% capture slidercap %}
+		<div class="slider_caption">
+			{{ block.settings.caption }}
+		</div>
+		{% endcapture %}
+		{%assign sliderscap = sliderscap | append: slidercap %} 
+  
+  
+		{% capture thumbnail %}
+		<div class="product__thumb-item"
+			  data-index="current">
+			  <div class="image-wrap" style="height: 0; padding-bottom: {{ 100 | divided_by: block.settings.after_image.aspect_ratio }}%;">
+				<a
+				  href="#"
+				  class="product__thumb dp_custom_thumb js-no-transition"
+				  data-index="{{ forloop.index | minus : 2 }}"
+				  data-id="{{ block.id }}">                 
+				  <img
+					class="animation-delay-{{ forloop.index | times: 3 }} lazyloaded lazy2"
+					src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII="
+					data-src="{{ block.settings.after_image | img_url: '720x' }}"
+					data-mobsrc="{{ block.settings.after_image | img_url: '360x' }}"
+					data-aspectratio="{{ block.settings.after_image.aspect_ratio }}"
+					data-sizes="auto"
+					alt="{{ block.settings.after_image.alt | escape }}">
+				</a>
+			  </div>
+			</div>
+		{% endcapture %}
+		{%assign thumbnails = thumbnails | append: thumbnail %} 
+	{%endif%}
+  
+{%endfor%}
+  <div class="slider_wrapper custom-content">
+	<div class="custom__item slider_before-and-after small--one-whole one-half align--{{section.settings.slider_alignment}}">
+	  <div class="custom__item-inner custom__item-inner--html ">
+		<div class="rte"  id="dp__block_{{block.id}}" data-section-type="featured-content-section">
+		  <div class="before_after_content">
+			{{sliders}}
+		  </div>
+		  <div class="slider_drive">
+			<div class="sliders_captions">{{sliderscap}}</div>
+			  <div class="slider_control">
+				<button class="dp_prev_slider" class="w3-button w3-light-grey" ><svg style="transform: rotate(180deg);" viewBox="0 0 28 28" width="28" height="28"><path fill-rule="evenodd" d="M16.36 7.232a1 1 0 0 1 1.408.128l5 6a1 1 0 0 1 0 1.28l-5 6a1 1 0 1 1-1.536-1.28L19.864 15H6a1 1 0 1 1 0-2h13.865l-3.633-4.36a1 1 0 0 1 .036-1.322z"></path></svg></button>
+				<button class="dp_next_slider" class="w3-button w3-light-grey" ><svg viewBox="0 0 28 28" width="28" height="28"><path fill-rule="evenodd" d="M16.36 7.232a1 1 0 0 1 1.408.128l5 6a1 1 0 0 1 0 1.28l-5 6a1 1 0 1 1-1.536-1.28L19.864 15H6a1 1 0 1 1 0-2h13.865l-3.633-4.36a1 1 0 0 1 .036-1.322z"></path></svg></button>
+			  </div>
+			  
+			  <div class="slider_info"><span>1</span>/{{sliderC}}</div>
+			</div>
+		  <div
+			   style="width:100%;float:left;display:flex"
+		id="section-thumb-product"
+		class="product__thumbs product__thumbs--below"
+		data-position="below"
+		data-arrows="true"
+		data-aos>
+		{{thumbnails}}
+	  </div>
+		</div>
+	  </div>
+	</div>
+	{{content}}
+  </div>
+  
+  
+</div>
+{% if section.settings.space_around %}
+  </div>
+{% endif %}
+  {% if section.settings.divider %}</div>{% endif %}
+</div>
+<style>
+  #dp__{{section.id}}{
+	padding:{{section.settings.padding}};
+	background-color:{{section.settings.background_color}};
+  }
+{% if section.settings.slider_on_right %}
+	#dp__{{section.id}}  .slider_before-and-after{
+		order:1;
+	}
+{% endif %}
+  #dp__{{section.id}} .dp__slider_contentss{
+	padding:{{section.settings.slider_padding}};
+  }
+  #dp__{{section.id}}  .dp__slider_contentss{
+	padding:{{section.settings.content_padding}};
+  }
+  @media only screen and (max-width: 768px) {
+	#dp__{{section.id}}{
+	  padding:{{section.settings.mobile_padding}};
+	}
+
+	#dp__{{section.id}} .dp__slider_contentss{
+	  padding:{{section.settings.slider_mobile_padding}};
+	}
+	#dp__{{section.id}}  .dp__slider_contentss{
+	  padding:{{section.settings.content_mobile_padding}};
+	}
+  }
+</style>

@@ -1,0 +1,109 @@
+{% paginate customer.orders by 20 %}
+<div class="page-width">
+              <div class="inner-page-width account_new_design">
+                <div class="grid flex-display grid--uniform " >
+				  
+                  <div class="grid__item  medium-up--six-twelfths">
+                    	<div align="center" style="padding: 50px 35px 0px 35px;">
+                            <h3>{{ 'customer.orders.title' | t }}</h3>
+
+                            {% if customer.orders.size != 0 %}
+
+                              <table align="center" class="orders_table table--small-text" >
+                                <thead>
+                                  <tr>
+                                    <th>{{ 'customer.orders.order_number' | t }}</th>
+
+                                   <th>Invoice</th>
+                                  </tr>
+                                </thead>
+                                <tbody>
+                                  {% for order in customer.orders %}
+                                    <tr class="table__section">
+                                      <td data-label="{{ 'customer.orders.order_number' | t }}">{{ order.name | link_to: order.customer_url }}</td>
+                                      <td ><a class="invoice_link" target="_blank" href="https://callings.xyz/mastinlabs/invoice/create.php?id={{order.id}}">View Invoice</a></td>
+                                    </tr>
+                                  {% endfor %}
+                                </tbody>
+                              </table>
+
+                              <hr class="hr--clear">
+
+                            {% else %}
+
+                              <p>{{ 'customer.orders.none' | t }}</p>
+
+                            {% endif %}
+
+                              
+                        </div>
+                      
+                  </div>
+   
+                  
+                  <div class="grid__item  medium-up--six-twelfths">
+                    <div align="center" style="padding: 50px 35px 0px 35px;">
+                      
+                      <h3>Order Details</h3>
+                      <p><a href="/apps/downloads/orders/{{customer.id}}/" class="btn button" style="background-color:#2274a5;">Download Purchases</a></p>  
+                      
+                      <h3 class="account-details">{{ 'customer.account.details' | t }}</h3>
+                      <p class="h5">{{ customer.name }}</p>
+                      <p>{{customer.email}}</p>
+                                           
+                      <p><a href="{{ routes.account_logout_url }}" class="logout_link">{{ 'layout.customer.log_out'| t }}</a></p>
+                  </div>
+                </div>
+             </div>
+          </div>
+ </div>
+
+          <div id="shopify-section-custom_text_pro_list-pro-1610816244" class="shopify-section index-sections"><div class="dp-section-wrapper custom_text_pro_list " id="dp__custom_text_pro_list-pro-1610816244">
+
+          <div class="page-width">
+            <div class="custom-contents" style="background-color:#261d2d;color:#fafafa">
+            <div class="grid" style="width:100%">
+              <div class="grid__item text-center">
+                <h2 class="custom_bg_headline">Earn Mastin Rewards and save on your next purchase!</h2>
+
+                  <p class="smile_text">Your Points Balance: <span class="sweettooth-points-balance"><img src="https://cdn.shopify.com/s/files/1/0267/6834/3122/files/ajax-loading.gif?v=1611197301" alt="smile point"></span></p>
+
+                 <div class="smile_wrappers">
+
+                    <ul>
+                    <li><a class="btn dp_button" href="/account/#smile-home">Mastin Rewards &gt;</a></li>
+                    <li><a class="btn dp_button" href="/account/#smile-points-activity-rules">Ways to earn &gt;</a></li>
+                    <li><a class="btn dp_button" href="/account/#smile-points-products">Ways to redeem &gt;</a></li>
+                    <li><a class="btn dp_button" href="/account/#smile-referral-program-details">Referral Details &gt;</a></li>
+                  </ul>
+
+                </div>
+
+
+            </div>
+            </div>
+          </div>
+        </div>
+
+        </div>
+        <style data-shopify="">
+          #dp__custom_text_pro_list-pro-1610816244 .custom-contents{
+            padding:50px 30px 50px 30px;
+
+          }
+
+          @media only screen and (max-width: 768px) {
+
+            #dp__custom_text_pro_list-pro-1610816244 .custom-contents{
+              padding:30px 30px 30px 30px;
+            }
+          }
+        </style>
+
+        </div>
+  
+  {% if paginate.pages > 1 %}
+    {% include 'pagination' %}
+  {% endif %}
+{% endpaginate %}
+

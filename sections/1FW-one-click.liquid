@@ -1,0 +1,312 @@
+{%- if section.settings.enable == false and request.design_mode == false -%}
+{%-else-%}
+<div class="dp-section-wrapper n3rd_one_click" id="dp__{{section.id}}" >
+  <div class="page-width">
+    <div class="inner-page-width" style="border-top:1px solid {{section.settings.border_color}}">
+      <h2 class="toggle_title">{{section.settings.headline}}</h2>
+      <div class="toggle_content">
+        {%if section.settings.description %}<div class="n3rd_description">{{section.settings.description}}</div>{%endif%}
+        <div class="toggle_inner text-center">
+          
+        <div class="grid grid--uniform">
+          <div class="grid__item  medium-up--one-third">
+            <div class="content-wrapper">
+              {%- assign img_url = section.settings.fimage | img_url: '1x1' | replace: '_1x1.', '_{width}x.' -%}
+          		<img class="lazyload"
+               data-src="{{ img_url }}"
+               data-widths="[360, 540, 720, 900, 1080, 1600]"
+               data-aspectratio="{{ section.settings.fimage.aspect_ratio }}"
+               data-sizes="auto"
+               alt="{{ section.settings.fimage.alt }}">
+              
+              <p class="head_line">{{section.settings.ftitle}}</p>
+               {{section.settings.fcontent}}
+            </div>
+          </div>
+          <div class="grid__item  medium-up--one-third">
+              <div class="content-wrapper">
+                {%- assign img_url = section.settings.simage | img_url: '1x1' | replace: '_1x1.', '_{width}x.' -%}
+          		<img class="lazyload"
+               data-src="{{ img_url }}"
+               data-widths="[360, 540, 720, 900, 1080, 1600]"
+               data-aspectratio="{{ section.settings.simage.aspect_ratio }}"
+               data-sizes="auto"
+               alt="{{ section.settings.simage.alt }}">
+               	<p class="head_line">{{section.settings.stitle}}</p>
+               {{section.settings.scontent}}
+              </div>
+          </div>
+          <div class="grid__item  medium-up--one-third">
+            <div class="content-wrapper">
+              {%- assign img_url = section.settings.timage | img_url: '1x1' | replace: '_1x1.', '_{width}x.' -%}
+          		<img class="lazyload"
+               data-src="{{ img_url }}"
+               data-widths="[360, 540, 720, 900, 1080, 1600]"
+               data-aspectratio="{{ section.settings.timage.aspect_ratio }}"
+               data-sizes="auto"
+               alt="{{ section.settings.timage.alt }}">
+              <p class="head_line">{{section.settings.ttitle}}</p>
+               {{section.settings.tcontent}}
+            </div>
+          </div>
+          
+        </div>
+        <div class="grid grid--uniform">
+          
+          <div class="grid__item  medium-up--one-third">
+              <div class="content-wrapper">
+                {%- assign img_url = section.settings.foimage | img_url: '1x1' | replace: '_1x1.', '_{width}x.' -%}
+          		<img class="lazyload"
+               data-src="{{ img_url }}"
+               data-widths="[360, 540, 720, 900, 1080, 1600]"
+               data-aspectratio="{{ section.settings.foimage.aspect_ratio }}"
+               data-sizes="auto"
+               alt="{{ section.settings.foimage.alt }}">
+                <p class="head_line">{{section.settings.fotitle}}</p>
+               {{section.settings.focontent}}
+              </div>
+          </div>
+          <div class="grid__item  medium-up--one-third">
+            <div class="content-wrapper">
+              {%- assign img_url = section.settings.fiimage | img_url: '1x1' | replace: '_1x1.', '_{width}x.' -%}
+          		<img class="lazyload"
+               data-src="{{ img_url }}"
+               data-widths="[360, 540, 720, 900, 1080, 1600]"
+               data-aspectratio="{{ section.settings.fiimage.aspect_ratio }}"
+               data-sizes="auto"
+               alt="{{ section.settings.fiimage.alt }}">
+              <p class="head_line">{{section.settings.fititle}}</p>
+               {{section.settings.ficontent}}
+            </div>
+          </div>
+          <div class="grid__item  medium-up--one-third">
+              <div class="content-wrapper">
+                {%- assign img_url = section.settings.siimage | img_url: '1x1' | replace: '_1x1.', '_{width}x.' -%}
+          		<img class="lazyload"
+               data-src="{{ img_url }}"
+               data-widths="[360, 540, 720, 900, 1080, 1600]"
+               data-aspectratio="{{ section.settings.siimage.aspect_ratio }}"
+               data-sizes="auto"
+               alt="{{ section.settings.siimage.alt }}">
+                <p class="head_line">{{section.settings.sititle}}</p>
+               {{section.settings.sicontent}}
+              </div>
+          </div>
+        </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{% style %}
+#dp__{{section.id}}{
+ background-color:{{section.settings.background_color}};
+ color:{{section.settings.text_color}};
+}
+#dp__{{section.id}} .inner-page-width{
+	padding:{{section.settings.padding}}
+}
+@media only screen and (max-width: 768px) {
+  #dp__{{section.id}} .inner-page-width{
+  	padding:{{section.settings.mobile_padding}};
+  }
+}
+#dp__{{section.id}} .content-wrapper img{
+ margin-left:auto;
+margin-right:auto;
+}
+{% endstyle %}
+{%endif%}
+{% schema %}
+  {
+    "name": "One Click",
+    "settings": [
+{
+          "type": "checkbox",
+          "id": "enable",
+          "label": "Display for live site?",
+		      "default":true
+        },
+		{
+          "type": "text",
+          "id": "headline",
+          "label": "Section Title",
+		  "default":"One-click fixes to up your game."
+        },
+		{
+          "type": "richtext",
+          "id": "description",
+          "label": "Description",
+		  "default":"<p>Included with your preset pack, our custom tools help you correct the trickiest photos.</p>"
+        },
+		{
+            "type": "header",
+            "content": "First Block"
+        },
+		{
+          "type": "image_picker",
+          "id": "fimage",
+          "label": "Image"
+        },
+	    {
+          "type": "text",
+          "id": "ftitle",
+          "label": "Title",
+		  "default":"AUTO WHITE BALANCE"
+        },
+		{
+          "type": "html",
+          "id": "fcontent",
+		  "label":"Content",
+		   "default": "<p>Sometimes your camera gets it wrong. Get a starting point for true-to-life color.<\/p>"
+        },
+		{
+            "type": "header",
+            "content": "Second Block"
+        },
+		{
+          "type": "image_picker",
+          "id": "simage",
+          "label": "Image"
+        },
+		{
+          "type": "text",
+          "id": "stitle",
+          "label": "Title",
+		  "default":"LENS CORRECTION"
+        },
+		{
+          "type": "html",
+          "id": "scontent",
+		  "label":"Content",
+		   "default": "<p>Fix vignetting and distortion, minimize color fringing, and remove chromatic aberration to instantly improve every image.<\/p>"
+        },
+		{
+            "type": "header",
+            "content": "Third Block"
+        },
+		{
+          "type": "image_picker",
+          "id": "timage",
+          "label": "Image"
+        },
+	    {
+          "type": "text",
+          "id": "ttitle",
+          "label": "Title",
+		  "default":"AUTO TRANSFORM"
+        },
+		{
+          "type": "html",
+          "id": "tcontent",
+		  "label":"Content",
+		   "default": "<p>Tired of crooked buildings?Clean up your photosby correcting vertical and horizontal lines.<\/p>"
+        },
+		{
+            "type": "header",
+            "content": "Four Block"
+        },
+		{
+          "type": "image_picker",
+          "id": "foimage",
+          "label": "Image"
+        },
+	    {
+          "type": "text",
+          "id": "fotitle",
+          "label": "Title",
+		  "default":"ORANGE REDUCTION"
+        },
+		{
+          "type": "html",
+          "id": "focontent",
+		  "label":"Content",
+		   "default": "<p>A lifesaver for mixed light, extra warm sunsets, and spray tans that just won’t quit.<\/p>"
+        },
+		{
+            "type": "header",
+            "content": "Fifth Block"
+        },
+		{
+          "type": "image_picker",
+          "id": "fiimage",
+          "label": "Image"
+        },
+	    {
+          "type": "text",
+          "id": "fititle",
+          "label": "Title",
+		  "default":"TONE PROFILES"
+        },
+		{
+          "type": "html",
+          "id": "ficontent",
+		  "label":"Content",
+		   "default": "<p>Inspired by the original tone profiles from the Fuji Frontier film scanner, these correct contrast while preserving the look of film.<\/p>"
+        },
+	   {
+            "type": "header",
+            "content": "sixth Block"
+        },
+		{
+          "type": "image_picker",
+          "id": "siimage",
+          "label": "Image"
+        },
+	    {
+          "type": "text",
+          "id": "sititle",
+          "label": "Title",
+		  "default":"GRAIN"
+        },
+		{
+          "type": "html",
+          "id": "sicontent",
+		  "label":"Content",
+		   "default": "<p>While our presets start grain-free, you can complete your look with 35 mm or medium-format grains.<\/p>"
+        },
+		{
+          "type": "color",
+          "id": "background_color",
+          "label": "Background Color"
+        },
+		{
+          "type": "color",
+          "id": "text_color",
+          "label": "Text Color",
+		  "default":"#000000"
+        },
+		{
+          "type": "color",
+          "id": "border_color",
+          "label": "Border Color",
+		  "default":"#cccccc"
+        },
+	  {
+        "type": "header",
+        "content": "Padding Setting"
+      },
+	  {
+        "type": "text",
+        "id": "padding",
+        "label": "Desktop Padding",
+        "default": "0px 0px 0px 0px",
+		"info" : "Top right bottom left"
+      },
+	  {
+        "type": "text",
+        "id": "mobile_padding",
+        "label": "Mobile Padding",
+        "default": "0px 0px 0px 0px",
+		"info" : "Top right bottom left"
+      }
+
+	],
+	"presets": [
+      {
+        "name": "One Click",
+        "category": "3rd Design"
+      }
+    ]
+  }
+{% endschema %}

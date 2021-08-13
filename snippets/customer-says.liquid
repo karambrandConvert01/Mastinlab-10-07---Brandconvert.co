@@ -1,0 +1,112 @@
+<div class="dp-section-wrapper" id="dp__{{ section.id }}">
+{% if section.settings.divider %}<div class="section--divider">{% endif %}
+
+<div
+  class="page-width none-padding text-{{ section.settings.align_text }}"
+  data-section-id="{{ section.id }}"
+  data-section-type="testimonials">
+  <div class="customer_say_content">
+    <div class="left_side_content">
+  
+    <div class="section-header">
+      {% if section.settings.title != blank %}
+      <h3>{{ section.settings.title | escape }}</h3>
+      {% endif %}
+      {%- assign img_url = section.settings.main_background_image | img_url: '1x1' | replace: '_1x1.', '_{width}x.' -%}
+                  <img class="lazyload"
+                      data-src="{{ img_url }}"
+                      data-widths="[180, 360, 540, 720, 900, 1080]"
+                      data-aspectratio="{{ section.settings.main_background_image.aspect_ratio }}"
+                      data-sizes="auto"
+                      alt="{{ section.settings.main_background_image.alt }}">
+    </div>
+  
+    </div>
+    <div class="right_side_content">
+  {% if section.blocks.size > 0 %}
+    <div class="testimonials-wrapper">
+     
+      <div class="testimonials-slider" id="Testimonials-{{ section.id }}" data-count="{{ section.blocks.size }}" data-show="{{ section.settings.slider_per_page }}">
+        {% for block in section.blocks %}
+          <div
+            class="testimonials-slide--{{ block.id }}"
+            data-aos="row-of-{{ section.blocks.size }}"
+            {{ block.shopify_attributes }}>
+            <blockquote class="testimonials-slider__text">
+              {%comment%}<span class="quote-icon"><svg aria-hidden="true" focusable="false" role="presentation" class="icon icon-quote" viewBox="0 0 41 35"><path d="M10.208 17.711h6.124v16.332H0V21.684C0 8.184 5.444.956 16.332 0v6.125c-4.083 1.14-6.124 4.414-6.124 9.82v1.766zm24.498 0h6.124v16.332H24.498V21.684C24.498 8.184 29.942.956 40.83 0v6.125c-4.083 1.14-6.124 4.414-6.124 9.82v1.766z" fill="#000" fill-rule="evenodd"/></svg></span>{%endcomment%}
+              {% if block.settings.testimonial != blank %}
+                <div class="rte-setting text-spacing custom_font">{{ block.settings.testimonial }}</div>
+              {% endif %}
+              {% if block.settings.image != blank %}
+                <div
+                  class="image-wrap text-spacing testimonail-image{% if section.settings.round_images %} testimonail-image--round{% endif %}">
+                  {%- assign img_url = block.settings.image | img_url: '1x1' | replace: '_1x1.', '_{width}x.' -%}
+                  <img class="lazyload"
+                      data-src="{{ img_url }}"
+                      data-widths="[180, 360, 540, 720, 900, 1080]"
+                      data-aspectratio="{{ block.settings.image.aspect_ratio }}"
+                      data-sizes="auto"
+                      alt="{{ block.settings.image.alt }}">
+                  <noscript>
+                    <img class="lazyloaded" src="{{ block.settings.image | img_url: '400x' }}" alt="{{ block.settings.image.alt }}">
+                  </noscript>
+                </div>
+              {% endif %}
+              {% if block.settings.author != blank %}
+                <cite>{{ block.settings.author | escape }}</cite>
+              {% endif %}
+            </blockquote>
+          </div>
+        {% endfor %}
+      </div>
+      
+    </div>
+  {% endif %}
+    </div>
+  </div>
+</div>
+
+{% if section.settings.divider %}</div>{% endif %}
+
+</div>
+{% style %}
+#dp__{{section.id}}{
+padding:{{section.settings.padding}};
+}
+#dp__{{section.id}} .customer_say_content{
+{%if section.settings.background_color == "#ffffff"%}
+	background-color:#f7f6f2;
+{%else%}
+background-color:{{section.settings.background_color}};
+{%endif%}
+}
+#dp__{{section.id}} .right_side_content{
+padding:50px 0px;
+background-color:{{section.settings.main_background_color}};		
+}
+#dp__{{section.id}} .testimonials-slider__text{
+	color:{{section.settings.main_color}};
+ 	font-size:1.3em;
+	max-width:800px;
+	margin:auto;
+	
+}	
+#dp__{{section.id}} .testimonials-slider__text cite{
+  font-weight: bold;
+  text-transform: uppercase;
+  font-size: 0.8em;
+}
+#dp__{{section.id}} .testimonials-wrapper .slick-dots li button::before{
+background-color:{{section.settings.main_color}} !important; 
+width:12px !important;
+height:12px !important;
+}
+#dp__{{section.id}}  .slick-dots li{
+ margin:10px;
+}
+  @media only screen and (max-width: 768px) {
+	#dp__{{section.id}}{
+      padding:{{section.settings.mobile_padding}};
+    }
+  }
+{% endstyle %}

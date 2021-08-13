@@ -1,0 +1,211 @@
+{
+  "sections": {
+    "product-template": {
+      "type": "product-template",
+      "settings": {
+        "description_style": "default",
+        "vcolor_loading": "#ff5121",
+        "vcolor_btn_selected": "#2d2d2d",
+        "vcolor_btn_selected_c": "#2d2d2d",
+        "vcolor_btn_bg": "rgba(0,0,0,0)",
+        "vcolor_btn_bg_hover": "rgba(0,0,0,0)",
+        "vcolor_btn_br": "#c8c8c8",
+        "vcolor_btn_br_hover": "#2d2d2d",
+        "vcolor_btn": "#000000",
+        "vcolor_btn_hover": "#2d2d2d",
+        "color_btn_bg": "#ff5121",
+        "color_btn_bg_hover": "#ffffff",
+        "color_btn_br": "#ff5121",
+        "color_btn_br_hover": "#ff5121",
+        "color_btn": "#ffffff",
+        "color_btn_hover": "#ff5121",
+        "color_mobile_btn": "#ff5121",
+        "bg_mobile_color_btn": "rgba(0,0,0,0)",
+        "mobile_border_color_btn": "#ff5121",
+        "social_enable": false,
+        "image_position": "left",
+        "image_size": "medium",
+        "thumbnail_position": "below",
+        "thumbnail_arrows": true,
+        "enable_video_looping": true,
+        "product_video_style": "unmuted"
+      }
+    },
+    "1BX-text-and-background": {
+      "type": "1BX-text-and-background",
+      "settings": {
+        "title": "\" {{ product.title }} completely changed my editing time, and I consistently get professional results!\"",
+        "text": "Jaqui Bartilotta",
+        "align_text": "center",
+        "narrow_column": true,
+        "enlarge_text": false,
+        "divider": false,
+        "padding": "50px 30px 50px 30px",
+        "mobile_padding": "25px 20px 30px 20px",
+        "background_color": "#261d2d",
+        "background_image": "shopify:\/\/shop_images\/Group_115.png",
+        "text_color": "#ffffff"
+      }
+    },
+    "3rd_gallery-pro-4509579280466": {
+      "type": "3rd_gallery",
+      "blocks": {
+        "45086549279541588643596332": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/xo-gallery-11-1587073736303.jpg",
+            "title": "Portra 160",
+            "description": "Photo: Nicole Mason",
+            "button_name": "Shop This look",
+            "button_name_second": "Capture One",
+            "alignment": "bottom"
+          }
+        },
+        "45086549279541588643671447": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/PO_Portra160_328A0678_2.jpg",
+            "title": "Portra 160",
+            "description": "Photo: Nicole Mason",
+            "button_name": "Shop This look",
+            "button_name_second": "Capture One",
+            "alignment": "bottom"
+          }
+        },
+        "45086549279541588643536381": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/PO_Portra160_Ania_Boniecka_02.jpg",
+            "title": "Portra 800",
+            "description": "Photo: Ania Boniecka",
+            "button_name": "Shop This look",
+            "button_name_second": "Capture One",
+            "alignment": "bottom"
+          }
+        },
+        "45086549279541588643567971": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/xo-gallery-11-1587069484245.jpg",
+            "title": "Portra 160",
+            "description": "Photo: Akela - From Alp to Alp",
+            "button_name": "Shop This look",
+            "button_name_second": "Capture One",
+            "alignment": "bottom"
+          }
+        },
+        "45086549279541588643615746": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/PO_Portra800_Colby_Moore_9638c4cf-a388-4418-91f3-0325cdca1feb.jpg",
+            "title": "Portra 800",
+            "description": "Photo: Colby Moore",
+            "button_name": "Shop This look",
+            "button_name_second": "Capture One",
+            "alignment": "bottom"
+          }
+        },
+        "45086549279541588643654925": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/xo-gallery-11-1588197082422.jpg",
+            "title": "Portra 400",
+            "description": "Photo: Ania Boniecka",
+            "button_name": "Shop This look",
+            "button_name_second": "Capture One",
+            "alignment": "bottom"
+          }
+        }
+      },
+      "block_order": [
+        "45086549279541588643596332",
+        "45086549279541588643671447",
+        "45086549279541588643536381",
+        "45086549279541588643567971",
+        "45086549279541588643615746",
+        "45086549279541588643654925"
+      ],
+      "settings": {
+        "enable": true,
+        "section_title": "",
+        "section_content": "",
+        "border": "0px",
+        "padding": "50px 0px 50px 0px",
+        "mobile_padding": "30px 0px 30px 0px",
+        "padding_gallery": "20px 20px 20px 20px",
+        "mobile_gallery_padding": "5px 5px 5px 5px",
+        "background_color": "rgba(0,0,0,0)",
+        "fullWidth": false,
+        "columns": "three"
+      }
+    },
+    "1FW-html": {
+      "type": "1FW-html",
+      "settings": {
+        "padding": "50px 0px 0px 0px",
+        "mobile_padding": "0px 0px 0px 0px",
+        "background_color": "#f7f6f2",
+        "text_color": "#000000",
+        "html": "<h2 style=\"text-align:Center\">Preset Pack Details<\/h2>\n<p style=\"text-align:Center\">Open each title for pack details— so many goodies inside.<\/p>"
+      }
+    },
+    "1FW-included_looks": {
+      "type": "1FW-included_looks",
+      "blocks": {
+        "eebaa2ee-5413-4483-81ce-51e5a2d7c5d9": {
+          "type": "content",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/PO_Portra160_JonDuenas_11.jpg",
+            "title": "Portra 160",
+            "content": "Subtle and neutral, Portra 160 is a flexible look with medium contrast and low saturation, making it ideal for even daylight portraits with exceptionally smooth skin tones and superb color reproduction."
+          }
+        },
+        "eebaa2ee-5413-4483-81ce-51e5a2d7c5d8": {
+          "type": "content",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/PO_Portra160_JonDuenas_11-2.jpg",
+            "title": "Portra 400",
+            "content": "Versatile and faithful, Portra 400 is a warm-toned film with medium contrast and saturation, making it an extremely flexible look suited for all types of natural light photography."
+          }
+        },
+        "eebaa2ee-5413-4483-81ce-51e5a2d7c5d7": {
+          "type": "content",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/PO_Portra160_JonDuenas_11-3.jpg",
+            "title": "Portra 800",
+            "content": "Balanced and natural, Portra 800 is a medium saturated look with higher contrast suited for natural low light shooting."
+          }
+        }
+      },
+      "block_order": [
+        "eebaa2ee-5413-4483-81ce-51e5a2d7c5d9",
+        "eebaa2ee-5413-4483-81ce-51e5a2d7c5d8",
+        "eebaa2ee-5413-4483-81ce-51e5a2d7c5d7"
+      ],
+      "settings": {
+        "enable": true,
+        "headline": "What looks are included in {{ product.title }}?",
+        "background_color": "#f7f6f2",
+        "text_color": "#000000",
+        "border_color": "rgba(0,0,0,0)",
+        "padding": "50px 0px 0px 0px",
+        "mobile_padding": "30px 0px 0px 0px"
+      }
+    },
+    "1stamped-main-widget": {
+      "type": "1stamped-main-widget",
+      "settings": {
+        "padding": "0px 0px 0px",
+        "mobile_padding": "0px 0px 0px"
+      }
+    }
+  },
+  "order": [
+    "product-template",
+    "1BX-text-and-background",
+    "3rd_gallery-pro-4509579280466",
+    "1FW-html",
+    "1FW-included_looks",
+    "1stamped-main-widget"
+  ]
+}

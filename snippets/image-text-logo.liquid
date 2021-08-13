@@ -1,0 +1,134 @@
+<div class="dp-section-wrapper testimonial_v2" style="padding:{{section.settings.padding}};">
+{% if section.settings.divider %}<div class="section--divider">{% endif %}
+{% if section.blocks.size > 0 %}
+  {% for block in section.blocks %}
+<div class="page-width" id="image-text-logo-{{block.id}}">
+  {% capture image_layout %}
+    <div class="feature-row__item image_layout {% if block.settings.layout == 'left' %}image_layout_left{% endif %}">
+      <div class="image_layout_content">
+        {% if block.settings.image != blank %}
+          
+          <div class="image-wrap" style="height: 0; padding-bottom: {{ 100 | divided_by: block.settings.image.aspect_ratio }}%;">
+            {%- assign img_url = block.settings.image | img_url: '1x1' | replace: '_1x1.', '_{width}x.' -%}
+            <img class="feature-row__image lazyload"
+                data-src="{{ img_url }}"
+                data-widths="[180, 360, 540, 720, 900, 1080]"
+                data-aspectratio="{{ block.settings.image.aspect_ratio }}"
+                data-sizes="auto"
+                alt="{{ block.settings.image.alt }}">
+            <div class="image_caption"><span>{{ block.settings.image_caption }}</span></div>
+            <div class="image_icon">{% if block.settings.icon != blank %}
+              {%- assign img_icon = block.settings.icon | img_url: '1x1' | replace: '_1x1.', '_{width}x.' -%}
+            <img class="lazyload"
+                data-src="{{ img_icon }}"
+                data-widths="[360, 540]"
+                data-aspectratio="{{ block.settings.icon.aspect_ratio }}"
+                data-sizes="auto"
+                alt="{{ block.settings.icon.alt }}">
+              
+              {%endif%}</div>
+          </div>
+          
+        {% else %}
+          <div class="image-wrap">
+            {{ 'image' | placeholder_svg_tag: 'placeholder-svg' }}
+          </div>
+        {% endif %}
+      </div>
+    </div>
+  {% endcapture %}
+
+  <div class="feature-row" data-aos>
+    {% if block.settings.layout == 'left' %}
+      {{ image_layout }}
+    {% endif %}
+
+    <div class="feature-row__item feature-row__text testimonial_dp_content feature-row__text--{{ block.settings.layout }}">
+      <div class="testimonial_dp_main_content">
+	  <div class="customer_name">
+        {% if block.settings.name != blank %}<h4>{{ block.settings.name }}</h4>{% endif %}
+        {% if block.settings.address != blank %}<p>{{ block.settings.address }}</p>{% endif %}
+        <p class="icon_testimonial"><img src="https://cdn.shopify.com/s/files/1/0267/6834/3122/files/1f49151004c207fcd82c8bfdbdffddf1.svg?v=1623401098" ><img src="https://cdn.shopify.com/s/files/1/0267/6834/3122/files/Vector.svg?v=1623401099"></p>
+      </div>
+      {% if block.settings.title != blank %}
+        <p class="h3">{{ block.settings.title | escape }}</p>
+      {% endif %}
+      {% if block.settings.text != blank %}
+        <div class="rte featured-row__subtext">{{ block.settings.text }}</div>
+      {% endif %}
+      
+      </div>
+      
+    </div>
+
+    {% if block.settings.layout == 'right' %}
+      {{ image_layout }}
+    {% endif %}
+  </div>
+</div>
+  {% style %}
+#image-text-logo-{{block.id}} .feature-row{
+	align-items: start;
+}
+#image-text-logo-{{block.id}} .testimonial_dp_content{
+  background-color:{{block.settings.background_color}};
+  color:{{block.settings.text_color}};
+  z-index:11;
+}
+#image-text-logo-{{block.id}} .image-wrap{
+   position:relative;
+}
+  #image-text-logo-{{block.id}} .image-wrap:After{
+   content:"";
+  background:url(https://cdn.shopify.com/s/files/1/0267/6834/3122/files/image_34.svg?v=1623401548);
+  position:absolute;
+  z-index:0;
+  bottom:0px;
+  height:100px;
+  width:100%;
+  }
+#image-text-logo-{{block.id}} .image_caption span{
+  color:{{block.settings.text_color}};
+  font-weight:bold !important;
+  {%if block.settings.icon_align == "left"%}
+  	right:0px;
+  {%else%}
+  	left:0px;  
+  {%endif%}
+}
+#image-text-logo-{{block.id}} .image_icon img{
+    {%if block.settings.icon_align == "left"%}
+      left: -50px;
+    {%else%}
+      right:-50px;
+    {%endif%}
+}
+
+@media screen and (min-width:959px){
+  #image-text-logo-{{block.id}} .image_icon img{
+    bottom: -85px;
+    width: 190px;
+    {%if block.settings.icon_align == "left"%}
+      left:-85px;
+    {%else%}
+      right:-85px;
+    {%endif%}
+  }
+  
+  #image-text-logo-{{block.id}} .image_layout_content{
+      {% if block.settings.layout == 'left' %}float: right;{% endif %} width: 100%; max-width: {{ block.settings.image_width }}px;
+  }
+  #image-text-logo-{{block.id}} .testimonial_dp_content{
+	transform: translateX(50px) translateY(0px);
+    {% if block.settings.layout == 'left' %}transform: translateX(-50px) translateY(0px);{% endif %}
+  }
+  #image-text-logo-{{block.id}} .image_layout{
+	transform: translateX(-30px) translateY(30px);
+	{% if block.settings.layout == 'left' %}transform: translateX(30px) translateY(30px);{% endif %}
+  }
+}
+{% endstyle %}
+  {% endfor %}
+{%endif%}
+{% if section.settings.divider %}</div>{% endif %}
+</div>

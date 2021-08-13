@@ -1,0 +1,211 @@
+{
+  "sections": {
+    "product-template": {
+      "type": "product-template",
+      "settings": {
+        "description_style": "default",
+        "vcolor_loading": "#ff5121",
+        "vcolor_btn_selected": "#2d2d2d",
+        "vcolor_btn_selected_c": "#2d2d2d",
+        "vcolor_btn_bg": "rgba(0,0,0,0)",
+        "vcolor_btn_bg_hover": "rgba(0,0,0,0)",
+        "vcolor_btn_br": "#c8c8c8",
+        "vcolor_btn_br_hover": "#2d2d2d",
+        "vcolor_btn": "#000000",
+        "vcolor_btn_hover": "#2d2d2d",
+        "color_btn_bg": "#ff5121",
+        "color_btn_bg_hover": "#ffffff",
+        "color_btn_br": "#ff5121",
+        "color_btn_br_hover": "#ff5121",
+        "color_btn": "#ffffff",
+        "color_btn_hover": "#ff5121",
+        "color_mobile_btn": "#ff5121",
+        "bg_mobile_color_btn": "rgba(0,0,0,0)",
+        "mobile_border_color_btn": "#ff5121",
+        "social_enable": false,
+        "image_position": "left",
+        "image_size": "medium",
+        "thumbnail_position": "below",
+        "thumbnail_arrows": true,
+        "enable_video_looping": true,
+        "product_video_style": "unmuted"
+      }
+    },
+    "1BX-text-and-background": {
+      "type": "1BX-text-and-background",
+      "settings": {
+        "title": "\" {{ product.title }} makes my images pop without being over-stylized in backlit scenes or direct sun.\"",
+        "text": "Evan Bonde",
+        "align_text": "center",
+        "narrow_column": true,
+        "enlarge_text": false,
+        "divider": false,
+        "padding": "50px 30px 50px 30px",
+        "mobile_padding": "25px 20px 30px 20px",
+        "background_color": "#261d2d",
+        "background_image": "shopify:\/\/shop_images\/Group_115.png",
+        "text_color": "#ffffff"
+      }
+    },
+    "3rd_gallery-pro-4509579280466": {
+      "type": "3rd_gallery",
+      "blocks": {
+        "45095752500021588638625979": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/xo-gallery-12-1588459420149.jpg",
+            "title": "Fuji C200",
+            "description": "Photo: Bonnin Studio",
+            "button_name": "Shop This look",
+            "button_name_second": "Capture One",
+            "alignment": "bottom"
+          }
+        },
+        "45095752500021588638645503": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/FUJI_ED_SUPERIA400_BONNINSTUDIO_01.jpg",
+            "title": "Superia 400",
+            "description": "Photo: Bonnin Studio",
+            "button_name": "Shop This look",
+            "button_name_second": "Capture One",
+            "alignment": "bottom"
+          }
+        },
+        "45095752500021588638669582": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/xo-gallery-10-1587068875587.jpg",
+            "title": "Superia 400",
+            "description": "Photo: Simon",
+            "button_name": "Shop This look",
+            "button_name_second": "Capture One",
+            "alignment": "bottom"
+          }
+        },
+        "45095752500021588638737317": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/xo-gallery-7-1586238337802.jpg",
+            "title": "Fuji C200",
+            "description": "Photo: Kirk Mastin",
+            "button_name": "Shop This look",
+            "button_name_second": "Capture One",
+            "alignment": "bottom"
+          }
+        },
+        "45095752500021588638788863": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/FUJI_ED_ACROS100_Kirk_Mastin_17.jpg",
+            "title": "Acros 100",
+            "description": "Photo: Kirk Mastin",
+            "button_name": "Shop This look",
+            "button_name_second": "Capture One",
+            "alignment": "bottom"
+          }
+        },
+        "45095752500021588638772201": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/xo-gallery-12-1588459418256.jpg",
+            "title": "Superia 400",
+            "description": "Photo: Leah Flores",
+            "button_name": "Shop This look",
+            "button_name_second": "Capture One",
+            "alignment": "bottom"
+          }
+        }
+      },
+      "block_order": [
+        "45095752500021588638625979",
+        "45095752500021588638645503",
+        "45095752500021588638669582",
+        "45095752500021588638737317",
+        "45095752500021588638788863",
+        "45095752500021588638772201"
+      ],
+      "settings": {
+        "enable": true,
+        "section_title": "",
+        "section_content": "",
+        "border": "0px",
+        "padding": "50px 0px 50px 0px",
+        "mobile_padding": "30px 0px 30px 0px",
+        "padding_gallery": "20px 20px 20px 20px",
+        "mobile_gallery_padding": "5px 5px 5px 5px",
+        "background_color": "rgba(0,0,0,0)",
+        "fullWidth": false,
+        "columns": "three"
+      }
+    },
+    "1FW-html": {
+      "type": "1FW-html",
+      "settings": {
+        "padding": "50px 0px 0px 0px",
+        "mobile_padding": "0px 0px 0px 0px",
+        "background_color": "#f7f6f2",
+        "text_color": "#000000",
+        "html": "<h2 style=\"text-align:Center\">Preset Pack Details<\/h2>\n<p style=\"text-align:Center\">Open each title for pack details— so many goodies inside.<\/p>"
+      }
+    },
+    "1FW-included_looks": {
+      "type": "1FW-included_looks",
+      "blocks": {
+        "eebaa2ee-5413-4483-81ce-51e5a2d7c5d9": {
+          "type": "content",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/FUJI_ED_SUPERIA400_Kirk_Mastin_21-2.jpg",
+            "title": "Superia 400",
+            "content": "Regarded as a truly everyday film, Superia 400 is a daylight-balanced look with subtle adjustments to colors and contrast that is colorful without being overly stylized."
+          }
+        },
+        "eebaa2ee-5413-4483-81ce-51e5a2d7c5d8": {
+          "type": "content",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/FUJI_ED_C200_Kirk_Mastin_21.jpg",
+            "title": "Fuji C200",
+            "content": "Celebrated for its faithful depiction, Fuji C200 is the perfect choice for portraits of friends and family and features muted highlights and shadows."
+          }
+        },
+        "eebaa2ee-5413-4483-81ce-51e5a2d7c5d7": {
+          "type": "content",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/FUJI_ED_ACROS100_Kirk_Mastin_21-4.jpg",
+            "title": "Acros 100",
+            "content": "Praised for its super-fine grain, this is a versatile black and white look with rich three-dimensional gradation and low contrast."
+          }
+        }
+      },
+      "block_order": [
+        "eebaa2ee-5413-4483-81ce-51e5a2d7c5d9",
+        "eebaa2ee-5413-4483-81ce-51e5a2d7c5d8",
+        "eebaa2ee-5413-4483-81ce-51e5a2d7c5d7"
+      ],
+      "settings": {
+        "enable": true,
+        "headline": "What looks are included in {{ product.title }}?",
+        "background_color": "#f7f6f2",
+        "text_color": "#000000",
+        "border_color": "rgba(0,0,0,0)",
+        "padding": "50px 0px 0px 0px",
+        "mobile_padding": "30px 0px 0px 0px"
+      }
+    },
+    "1stamped-main-widget": {
+      "type": "1stamped-main-widget",
+      "settings": {
+        "padding": "0px 0px 0px",
+        "mobile_padding": "0px 0px 0px"
+      }
+    }
+  },
+  "order": [
+    "product-template",
+    "1BX-text-and-background",
+    "3rd_gallery-pro-4509579280466",
+    "1FW-html",
+    "1FW-included_looks",
+    "1stamped-main-widget"
+  ]
+}

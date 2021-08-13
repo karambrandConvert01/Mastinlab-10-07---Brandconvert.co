@@ -1,0 +1,70 @@
+<div class="dp-section-wrapper" style="padding:{{section.settings.padding}};">
+{% if section.settings.divider %}<div class="section--divider">{% endif %}
+
+<div class="page-width none-padding" >
+  <div class="inner-page-width" style="background-color:{{section.settings.background_color}}">
+  {% capture image_layout %}
+    <div class="image-with-background " style="flex: 0 0 auto;width: {{ section.settings.image_width }}px;">
+      
+        {% if section.settings.image != blank %}
+          {% if section.settings.button_label != blank and section.settings.button_link != blank %}<a href="{{ section.settings.button_link }}">{% endif %}
+            {%- assign img_url = section.settings.image | img_url: '1x1' | replace: '_1x1.', '_{width}x.' -%}
+            <img class="feature-row__image  lazyload" role="presentation"
+                data-src="{{ img_url }}"
+                data-widths="[180, 360, 540, 720, 900, 1080]"
+                data-aspectratio="{{ section.settings.image.aspect_ratio }}"
+                data-sizes="auto"
+                alt="{{ section.settings.image.alt }}">
+          {% if section.settings.button_label != blank and section.settings.button_link != blank %}</a>{% endif %}
+        {% else %}
+          <div class="image-wrap">
+            {{ 'image' | placeholder_svg_tag: 'placeholder-svg' }}
+          </div>
+        {% endif %}
+      
+    </div>
+  {% endcapture %}
+
+  <div class="flex-container" data-aos>
+    {% if section.settings.layout == 'left' %}
+      {{ image_layout }}
+    {% endif %}
+
+    <div class="text-center text-with-background feature-row__text--{{ section.settings.layout }}">
+      {% if section.settings.title != blank %}
+        <p class="h3">{{ section.settings.title | escape }}</p>
+      {% endif %}
+      {% if section.settings.text != blank %}
+        <div class="rte featured-row__subtext fixed_box_width">{{ section.settings.text }}</div>
+      {% endif %}
+      <div class="guide_contaier">
+      {% for block in section.blocks %}
+      	<div class="guide_item">
+          <div class="guide_item_box">
+          <h4>{{block.settings.title}}</h4>
+           <p>{{block.settings.content}}</p>
+          </div>
+        </div>
+      {%endfor%}
+      </div>
+    </div>
+
+    {% if section.settings.layout == 'right' %}
+      {{ image_layout }}
+    {% endif %}
+  </div>
+  </div>
+</div>
+
+{% if section.settings.divider %}</div>{% endif %}
+</div>
+{%style%}
+
+.text-with-background{
+{%if section.settings.content_padding%}
+	padding:{{section.settings.content_padding}};
+{%else%}
+	padding:50px;
+{%endif%}
+}
+{%endstyle%}

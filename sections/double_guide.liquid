@@ -1,0 +1,95 @@
+{%include "double_guide"%}
+{% schema %}
+  {
+    "name": "Double guide",
+    "settings": [
+		{
+          "type": "checkbox",
+          "id": "enable",
+          "label": "Display for live site?",
+		  "default":true
+        },
+
+		{
+          "type": "text",
+          "id": "headline",
+          "label": "Section Title",
+		  "default":"Ready to learn more? Check out our free guides below."
+        },
+		{
+          "type": "text",
+          "id": "padding",
+          "label": "Desktop Title Padding",
+          "default": "0px 0px 0px 0px",
+          "info" : "Top right bottom left"
+        },
+        {
+          "type": "text",
+          "id": "mobile_padding",
+          "label": "Mobile Title Padding",
+          "default": "0px 0px 0px 0px",
+          "info" : "Top right bottom left"
+        },
+		{
+          "type": "text",
+          "id": "guide_padding",
+          "label": "Guide Desktop Padding",
+          "default": "0px 0px 0px 0px",
+          "info" : "Top right bottom left"
+        },
+        {
+          "type": "text",
+          "id": "guide_mobile_padding",
+          "label": "Guide Mobile Padding",
+          "default": "0px 0px 0px 0px",
+          "info" : "Top right bottom left"
+        },
+		{
+          "type": "header",
+           "content": "Left Guide content"
+        },
+		{
+          "type": "text",
+          "id": "fguide_title",
+          "label": "Guide Title",
+		  "default":"THE ULTIMATE GUIDE TO  LIGHT & AIRY  PHOTOGRAPHY"
+        },
+	    {
+          "type": "html",
+          "id": "fguide_code",
+          "label": "Guide code"
+        },
+		{
+          "type": "image_picker",
+          "id": "fguide_image",
+          "label": "Guide background image"
+        },
+		{
+          "type": "header",
+           "content": "Right Guide content"
+        },
+		{
+          "type": "text",
+          "id": "sguide_title",
+          "label": "Guide Title",
+		  "default":"THE ULTIMATE GUIDE TO  LIGHT & AIRY  PHOTOGRAPHY"
+        },
+	    {
+          "type": "html",
+          "id": "sguide_code",
+          "label": "Guide code"
+        },
+		{
+          "type": "image_picker",
+          "id": "sguide_image",
+          "label": "Guide background image"
+        }
+	],
+	"presets": [
+      {
+        "name": "Double guide",
+        "category": "3rd Design"
+      }
+    ]
+  }
+{% endschema %}

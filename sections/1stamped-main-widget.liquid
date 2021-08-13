@@ -1,0 +1,49 @@
+<div id="stamped-main-widget" class="stamped-main-widget" data-widget-style="standard" 
+     data-product-id="{{ product.id }}" 
+     data-name="{{ product.title | escape }}" 
+     data-take-reviews="2"
+     data-url="{{ shop.url }}{{ product.url }}" 
+     data-image-url="{{ product.featured_image | product_img_url: "large" |replace: '?', '%3F' | replace: '&','%26'}}" 
+     data-description="{{ product.description | strip_html | escape }}" 
+     data-product-sku="{{product.handle}}" 
+     data-product-type="{{product.type}}">{{ product.metafields.stamped.reviews }}</div>
+
+{% schema %}
+  {
+    "name": "Stamped Widget",
+    "settings": [
+		{
+        "type": "header",
+        "content": "Padding Setting"
+      },
+	  {
+        "type": "text",
+        "id": "padding",
+        "label": "Desktop Padding",
+        "default": "0px 0px 0px 0px",
+		"info" : "Top right bottom left"
+      },
+	  {
+        "type": "text",
+        "id": "mobile_padding",
+        "label": "Mobile Padding",
+        "default": "0px 0px 0px 0px",
+		"info" : "Top right bottom left"
+      }
+	],
+	"presets": [{
+      "name": "Stamped Widget (BOXED)",
+      "category": "Deprohoang Sections"
+    }]
+  }
+{% endschema %}
+{% stylesheet %}
+	#stamped-main-widget{
+		padding: {{section.settings.padding}}
+	}
+@media only screen and (max-width: 768px) {
+	#stamped-main-widget{
+      padding:{{section.settings.mobile_padding}};
+    }
+  }
+{% endstylesheet %}

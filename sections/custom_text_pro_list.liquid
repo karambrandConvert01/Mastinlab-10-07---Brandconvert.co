@@ -1,0 +1,109 @@
+{%include "custom_text_pro_list"%}
+{% schema %}
+  {
+    "name": "Custom text with list",
+    "class": "index-section",
+    "settings": [
+      {
+        "type": "checkbox",
+        "id": "divider",
+        "label": "Show section divider",
+        "default": false
+      },
+	  {
+        "type": "color",
+        "id": "text_color",
+        "label": "Text Color"
+      },
+	  {
+        "type": "color",
+        "id": "background_color",
+        "label": "Background Color"
+      },
+	  {
+        "type": "text",
+        "id": "padding",
+        "label": "Custom Padding ",
+        "default": "0px 0px 0px 0px",
+        "info" : "Top right bottom left"
+      },
+	  {
+        "type": "text",
+        "id": "mobile_padding",
+        "label": "Mobile Padding",
+        "default": "0px 0px 0px 0px",
+		"info" : "Top right bottom left"
+      },
+      {
+         "type": "header",
+         "content": "Content Settings"
+      },
+	  {
+        "type": "text",
+        "id": "headlinetext",
+        "label": "Headline",
+        "default": "PLUS, YOU’LL BE ABLE TO..."
+       },
+	  {
+        "type": "text",
+        "id": "titletext",
+        "label": "Title",
+        "default": "Test the Mastin looks with your images"
+       },{
+        "type": "richtext",
+        "id": "contenttext",
+        "label": "Title",
+		"default": "<p>Want to make sure you love our presets before you buy? We're here to help! All you have to do is...</p>"
+       },
+	  {
+         "type": "header",
+         "content": "List Settings"
+      },
+	  {
+        "type": "image_picker",
+        "id": "list_image",
+        "label": "List Image"
+      },
+	  {
+         "type": "header",
+         "content": "Button Settings"
+      },
+	  {
+        "type": "text",
+        "id": "button_name",
+        "label": "Button Name",
+        "default": "JOIN THE COMMUNITY > "
+       },
+	   {
+        "type": "url",
+        "id": "button_link",
+        "label": "Button Link"
+       },
+	  {
+        "type": "text",
+        "id": "button_descriptiontext",
+        "label": "Description Link"
+       }
+    ],
+	"blocks":[
+		{
+		"type": "list",
+        "name": "List",
+		"settings":[
+          {
+            "type": "text",
+            "id": "text",
+            "label": "Text",
+            "default": "drop links to a few RAW files in the feed"
+          }
+		]
+	  }
+	],
+    "presets": [
+      {
+        "name": "Custom text with list",
+        "category": "Deprohoang Sections"
+      }
+    ]
+  }
+{% endschema %}

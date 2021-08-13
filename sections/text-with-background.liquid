@@ -1,0 +1,164 @@
+{%render "text-with-background"%}
+{% style %}
+  .presentation{
+	transform:none !important;
+  }
+  #shopify-section-{{ section.id }} .section-depro_color{
+    color: {{ section.settings.btn_color}};
+	border-color: {{ section.settings.btn_color_border}};
+	background-color:{{ section.settings.btn_color_bg}};
+  }
+  #shopify-section-{{ section.id }} .section-depro_color:hover{
+    color: {{ section.settings.btn_color_hover}};
+	border-color: {{ section.settings.btn_color_border_hover}};
+	background-color:{{ section.settings.btn_color_bg_hover}};
+  }
+
+{% endstyle %}
+{% schema %}
+  {
+    "name": "One-click Guide",
+    "class": "index-section",
+    "settings": [
+      {
+        "type": "image_picker",
+        "id": "image",
+        "label": "Image"
+      },
+	  {
+        "type": "text",
+        "id": "padding",
+        "label": "Custom Padding ",
+        "default": "0px 0px 0px 0px",
+		"info" : "Top right bottom left"
+      },
+	  {
+        "type": "text",
+        "id": "content_padding",
+        "label": "Custom content padding ",
+        "default": "50px 50px 50px 50px",
+		"info" : "Top right bottom left"
+      },
+	  {
+        "type": "color",
+        "id": "background_color",
+        "label": "Custom background color ",
+        "default": "#ffffff"
+      },
+      {
+        "type": "range",
+        "id": "image_width",
+        "label": "Image width",
+        "default": 500,
+        "min": 100,
+        "max": 500,
+        "step": 10,
+        "unit": "px"
+      },
+      {
+        "type": "text",
+        "id": "title",
+        "label": "Heading",
+        "default": "One-click fixes to up your game."
+      },
+      {
+        "type": "richtext",
+        "id": "text",
+        "label": "Text",
+        "default": "<p>Included with your preset pack, our custom tools help you correct the trickiest photos.</p>"
+      },
+     
+      {
+        "type": "select",
+        "id": "layout",
+        "label": "Layout",
+        "default": "left",
+        "options": [
+          {
+            "value": "left",
+            "label": "Background on left"
+          },
+          {
+            "value": "right",
+            "label": "Background on right"
+          }
+        ]
+      },
+      {
+        "type": "checkbox",
+        "id": "divider",
+        "label": "Show section divider",
+        "default": false
+      }
+    ],
+	"blocks": [
+      {
+        "type": "text",
+        "name": "Guide block",
+	    "settings": [
+          {
+            "type": "text",
+            "id": "title",
+            "label": "Title"
+          },
+		  {
+            "type": "textarea",
+            "id": "content",
+            "label": "Content"
+          }
+		  
+        ]
+      }
+	],
+    "presets": [
+      {
+        "name": "One-click Guide",
+        "category": "Deprohoang Sections",
+		"blocks": [
+          {
+            "type": "text",
+            "settings": {
+              "title": "AUTO WHITE BALANCE",
+			  "content":"Sometimes your camera gets it wrong. Get a starting point for true-to-life color."
+            }
+          },
+		  {
+            "type": "text",
+            "settings": {
+              "title": "LENS CORRECTION",
+			  "content":"Fix vignetting and distortion, minimize color fringing, and remove chromatic aberration to instantly improve every image."
+            }
+          },
+		  {
+            "type": "text",
+            "settings": {
+              "title": "AUTO TRANSFORM",
+			  "content":"Tired of crooked buildings? Clean up your photos by correcting vertical and horizontal lines."
+            }
+          },
+		  {
+            "type": "text",
+            "settings": {
+              "title": "ORANGE REDUCTION",
+			  "content":"A lifesaver for mixed light, extra warm sunsets, and spray tans that just won’t quit."
+            }
+          },
+		  {
+            "type": "text",
+            "settings": {
+              "title": "TONE PROFILES",
+			  "content":"Inspired by the original tone profiles from the Fuji Frontier film scanner, these correct contrast while preserving the look of film."
+            }
+          },
+		  {
+            "type": "text",
+            "settings": {
+              "title": "CUSTOM GRAIN",
+			  "content":"While our presets start grain-free, you can complete your look with 35 mm or medium-format grains."
+            }
+          }
+        ]
+      }
+    ]
+  }
+{% endschema %}

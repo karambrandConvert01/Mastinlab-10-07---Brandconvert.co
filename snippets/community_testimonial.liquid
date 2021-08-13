@@ -1,0 +1,34 @@
+<div class="dp-section-wrapper" id="dp__{{section.id}}">
+{% if section.settings.divider %}<div class="section--divider">{% endif %}
+  <div class="page-width">
+    <div class="custom-contents">
+        {% for block in section.blocks %}
+          <div class="community_testimonial text-center" style="{%if block.settings.text_color%}color:{{block.settings.text_color}};{%endif%} {%if block.settings.bg_color%}background-color:{{block.settings.bg_color}}{%endif%}">
+            {%if block.settings.bg_image%}<img src="{{block.settings.bg_image | img_url : "master"}}" />{%endif%}
+            <div class="community_testimonial_innter">
+            {% if block.settings.contenttext != blank %}
+            {{ block.settings.contenttext }}
+            {%endif%}
+            {% if block.settings.titletext != blank %}
+              <p class="h4">{{ block.settings.titletext }}</p>
+            {%endif%}
+            </div>
+          </div>
+        {% endfor %}
+    </div>
+  </div>
+
+{% if section.settings.divider %}</div>{% endif %}
+</div>
+{% style %}
+  #dp__{{section.id}} .custom-contents{
+	padding:{{section.settings.padding}};
+	background-color:{{section.settings.background_color}};
+  }
+
+  @media only screen and (max-width: 768px) {
+	#dp__{{section.id}} .custom-contents{
+      padding:{{section.settings.mobile_padding}};
+    }
+  }
+{% endstyle %}

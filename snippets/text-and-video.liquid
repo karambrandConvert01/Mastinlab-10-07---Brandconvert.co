@@ -1,0 +1,83 @@
+<div class="dp-section-wrapper" id="dp__{{section.id}}">
+{% if section.settings.divider %}<div class="section--divider">{% endif %}
+
+<div class="page-width">
+  {% capture image_layout %}
+    <div class="grid__item small--one-whole large-down--one-whole one-half">
+      <div class="video-wrapper">
+        {% if section.settings.video_url == blank %}
+          <iframe src="//www.youtube.com/embed/_9VUPq3SxOc?rel=0&showinfo=0&vq=720" width="850" height="480" frameborder="0" allowfullscreen></iframe>
+        {% else %}
+          {% if section.settings.video_url.type == "youtube" %}
+            <iframe src="//www.youtube.com/embed/{{ section.settings.video_url.id }}?rel=0&showinfo=0&vq=720" width="850" height="480" frameborder="0" allowfullscreen></iframe>
+          {% endif %}
+          {% if section.settings.video_url.type == "vimeo" %}
+            <iframe src="//player.vimeo.com/video/{{ section.settings.video_url.id }}?color={{ settings.color_button | remove: "#" }}&byline=0&portrait=0&badge=0" width="850" height="480" frameborder="0" allowfullscreen="allowfullscreen" mozallowfullscreen="mozallowfullscreen" msallowfullscreen="msallowfullscreen" oallowfullscreen="oallowfullscreen" webkitallowfullscreen="webkitallowfullscreen"></iframe>
+          {% endif %}
+        {% endif %}
+        </div>
+  		</div>
+  {% endcapture %}
+
+  <div class="feature-rows grid custom-content">
+    {% if section.settings.layout == 'left' %}
+      {{ image_layout }}
+    {% endif %}
+
+    <div class="grid__item small--one-whole large-down--one-whole one-half feature-row__text feature-row__text--{{ section.settings.layout }}">
+      {% if section.settings.subtitle != blank %}
+        <p class="h5">{{ section.settings.subtitle }}</p>
+      {% endif %}
+      {% if section.settings.title != blank %}
+        <h3>{{ section.settings.title | escape }}</h3>
+      {% endif %}
+      {% if section.settings.text != blank %}
+        <div class="rte featured-row__subtext">{{ section.settings.text }}</div>
+      {% endif %}
+      {% if section.settings.button_label != blank %}
+        <a href="{{ section.settings.button_link }}" class="btn section-depro_color">
+          {{ section.settings.button_label }}
+        </a>
+      {% endif %}
+    </div>
+
+    {% if section.settings.layout == 'right' %}
+      {{ image_layout }}
+    {% endif %}
+  </div>
+</div>
+
+{% if section.settings.divider %}</div>{% endif %}
+</div>
+{% style %}
+  #shopify-section-{{ section.id }} .section-depro_color{
+    color: {{ section.settings.btn_color}};
+	border-color: {{ section.settings.btn_color_border}};
+	background-color:{{ section.settings.btn_color_bg}};
+  }
+  #dp__{{section.id}} .feature-row__text{
+	text-align:{{ section.settings.text_align}} !important;
+	align-self: {{ section.settings.text_align_self}} !important;
+  }
+
+  #dp__{{section.id}}{
+	padding:{{section.settings.padding}};
+	background-color:{{section.settings.background_color}};
+  }
+  #dp__{{section.id}} iframe{
+	padding:{{section.settings.vpadding}};
+	
+  }
+  @media only screen and (max-width: 768px) {
+	#dp__{{section.id}}{
+      padding:{{section.settings.mobile_padding}};
+    }
+	#dp__{{section.id}} iframe{
+	padding:{{section.settings.vmobile_padding}};
+	
+  }
+  #dp__{{section.id}} .feature-row__text{
+	text-align:center !important;
+  }
+ }
+{% endstyle %}

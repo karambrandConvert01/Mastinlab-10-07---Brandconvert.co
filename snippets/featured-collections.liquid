@@ -1,0 +1,65 @@
+<div class="dp-section-wrapper" id="dp__{{section.id}}">
+{% if section.settings.divider %}<div class="section--divider">{% endif %}
+
+<div class="page-width">
+  <div class="custom_background" style="background-color:{{ section.settings.background_color }}">
+  {% if section.settings.title != blank %}
+    <div class="section-header">
+      <h3 class="section-header__title">{{ section.settings.title }}</h3>
+    </div>
+  {% endif %}
+
+  <div class="grid grid--uniform{% unless section.settings.enable_gutter %} grid--no-gutters{% endunless %}">
+
+    {%- assign isEmpty = true -%}
+
+    {% if section.blocks.size > 0 %}
+      {%- assign isEmpty = false -%}
+    {% endif %}
+
+    {% for block in section.blocks limit: collection_limit %}
+      {%- assign collection = collections[block.settings.collection] -%}
+      {%- assign background_position = block.settings.focal_point -%}
+
+      {% case section.settings.per_row %}
+      {% when 2 %}
+        {%- assign grid_item_width = 'medium-up--one-half' -%}
+      {% when 3 %}
+        {%- assign grid_item_width = 'small--one-half medium-up--one-third' -%}
+      {% when 4 %}
+        {%- assign grid_item_width = 'small--one-half medium-up--one-quarter' -%}
+      {% when 5 %}
+        {%- assign grid_item_width = 'small--one-half medium-up--one-fifth' -%}
+      {% endcase %}
+
+      {% include 'collection-grid-item', per_row: section.settings.per_row %}
+    {% endfor %}
+
+    {% if isEmpty %}
+      <div class="page-width">
+        <div class="grid">
+          <div class="grid__item">
+            <div class="rte">
+              {{ 'home_page.onboarding.no_content' | t }}
+            </div>
+          </div>
+        </div>
+      </div>
+    {% endif %}
+
+  </div>
+  </div>
+</div>
+
+{% if section.settings.divider %}</div>{% endif %}
+</div>
+{% style %}
+  #dp__{{section.id}} .custom_background{
+	padding:{{section.settings.padding}};
+  }
+  @media only screen and (max-width: 768px) {
+	#dp__{{section.id}} .custom_background{
+      padding:{{section.settings.mobile_padding}};
+    }
+  }
+{% endstyle %}

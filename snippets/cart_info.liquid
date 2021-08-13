@@ -1,0 +1,93 @@
+<div class="depro_header_item" >
+  <div class="depro_inside header-item">
+  <ul class="add_cart_info">
+    <li class="dp-title">{% include 'header-logo-block' %}</li>
+    <li class="dp-title">{{product.title}}</li>
+    {%comment%}<li class="dp-price">{{ product.selected_or_first_available_variant.price | money_with_currency}}</li>{%endcomment%}
+    
+    {%assign section_id = "deprohoang"%}
+  {% unless product.has_only_default_variant %}
+    {% for option in product.options_with_values %}
+      {% if settings.variant_type == 'button' %}
+        <li class="dp-hide_mb dpuppercase">{{option.name}}</li><li class="dp-hide_mb">{% include 'variant-button', section_id: "deproheader", option_drop: option %}</li>
+      {% else %}
+        <li class="dp-hide_mb dpuppercase">{{option.name}}</li><li class="dp-hide_mb">{% include 'variant-dropdown', section_id: "deproheader" %}</li>
+      {% endif %}
+    {% endfor %}
+  {% endunless %}
+     <li style="display:none"><select name="id" id="ProductSelect-header" class="product-single__variantss no-js">
+    {% for variant in product.variants %}
+      {% if variant.available %}
+        <option {% if variant == product.selected_or_first_available_variant %}
+          selected="selected" {% endif %}
+          value="{{ variant.id }}">
+          {{ variant.title }} - {{ variant.price | money_with_currency }}
+        </option>
+      {% else %}
+        <option disabled="disabled">
+          {{ variant.title }} - {{ 'products.product.sold_out' | t }}
+        </option>
+      {% endif %}
+    {% endfor %}
+  </select>
+    </li>
+    <li class="dp-hide_mb"><button id="dp-add-to-cart" class="btn">Add to cart</button></li>
+    <li class="dp_for_mobile"><button id="scroll-to-cart" class="btn scroll-to-cart">Buy it now</button></li>
+    <li>
+      <a href="{{ routes.cart_url }}" class="site-nav__link site-nav__link--icon js-drawer-open-cart js-no-transition" aria-controls="CartDrawer" data-icon="{{ settings.cart_icon }}">
+      <span class="cart-link">
+        {%- if settings.cart_icon == 'cart' -%}
+          <svg aria-hidden="true" focusable="false" role="presentation" class="icon icon-cart" viewBox="0 0 64 64"><path fill="none" d="M14 17.44h46.79l-7.94 25.61H20.96l-9.65-35.1H3"/><circle cx="27" cy="53" r="2"/><circle cx="47" cy="53" r="2"/></svg>
+        {%- else -%}
+          <svg aria-hidden="true" focusable="false" role="presentation" class="icon icon-bag" viewBox="0 0 64 64"><g fill="none" stroke="#000" stroke-width="2"><path d="M25 26c0-15.79 3.57-20 8-20s8 4.21 8 20"/><path d="M14.74 18h36.51l3.59 36.73h-43.7z"/></g></svg>
+        {%- endif -%}
+        <span class="icon__fallback-text">{{ 'layout.cart.title' | t }}</span>
+        <span class="cart-link__bubble{% if cart.item_count > 0 %} cart-link__bubble--visible{% endif %}">{% if cart.item_count > 0 %}{{cart.item_count}}{% endif %}</span>
+      </span>
+    </a>
+    </li>
+  </ul>
+  </div>
+  <style>
+  {%assign sticker_border = "#cccccc" %}
+  {%assign sticker_border_active = "#000000" %}
+  {%assign sticker_atc_cl = "#ffffff" %}
+  {%assign sticker_atc_bgcl = "#ff5121" %}
+  {%if settings.sticker_border and settings.sticker_border != ""%}
+  	{%assign sticker_border = settings.sticker_border %}
+  {%endif%}
+  {%if settings.sticker_border_active and settings.sticker_border_active != ""%}
+  	{%assign sticker_border_active = settings.sticker_border_active %}
+  {%endif%}
+  {%if settings.sticker_atc_cl and settings.sticker_atc_cl != ""%}
+  	{%assign sticker_atc_cl = settings.sticker_atc_cl %}
+  {%endif%}
+  {%if settings.sticker_atc_bgcl and settings.sticker_atc_bgcl != ""%}
+  	{%assign sticker_atc_bgcl = settings.sticker_atc_bgcl  %}
+  {%endif%}
+
+
+  .add_cart_info_mobile label,#dp-add-to-cart{
+    
+    border: 1px solid {{sticker_border}};
+
+  }
+  #dp-add-to-cart{
+    background-color:{{sticker_atc_bgcl}};
+    color:{{sticker_atc_cl}} !important;
+  }
+     
+  .add_cart_info  input[checked="checked"]+label{
+    /* box-shadow:0 0 0 2px {{sticker_border_active}} !important;*/
+  }
+  .add_cart_info_mobile.add_cart_info  .variant__button-label.clicked{
+    border: 1px solid {{sticker_border}} !important;
+  }
+  .add_cart_info_mobile.add_cart_info .variant__button-label.clicked.active{
+    /*box-shadow:0 0 0 2px {{sticker_border_active}} !important; */
+  }
+  
+</style>
+
+</div>
+

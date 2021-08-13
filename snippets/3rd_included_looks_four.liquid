@@ -1,0 +1,91 @@
+{%- if section.settings.enable == false and request.design_mode == false -%}
+{%-else-%}
+<div class="dp-section-wrapper n3rd_sections" id="dp__{{section.id}}">
+  <div class="page-width">
+    <div class="inner-page-width">
+      <h2 class="toggle_title {%unless section.settings.default_open %} tactive {%endunless%} toggle_button" style="background-color:{{section.settings.hbackground_color}};color:{{section.settings.htext_color}};">
+        {%include "plus_svg"%}
+        {{section.settings.headline}}</h2>
+      <div class="toggle_content " {% if request.design_mode %}style="max-height: 100% !important;background-color:{{section.settings.background_color}};color:{{section.settings.text_color}};"{%else%}style="background-color:{{section.settings.background_color}};color:{{section.settings.text_color}};"{%endif%}>
+        <div class="toggle_inner grid grid--uniform" >
+        <div class="grid__item medium--two-quarters  medium-up--one-quarter">
+          {%if section.settings.first_image%}
+          {%- assign img_url = section.settings.first_image | img_url: '1x1' | replace: '_1x1.', '_{width}x.' -%}
+          <img class="lazyload"
+               data-src="{{ img_url }}"
+               data-widths="[360, 540, 720, 900, 1080, 1600]"
+               data-aspectratio="{{ section.settings.first_image.aspect_ratio }}"
+               data-sizes="auto"
+               alt="{{ section.settings.first_image.alt }}">
+          {%endif%}
+          <div class="content_wrapper">
+            <h3>{{section.settings.ftitle}}</h3>
+            <p>{{section.settings.fcontent}}</p>
+          </div>
+        </div>
+        <div class="grid__item medium--two-quarters medium-up--one-quarter">
+          {%if section.settings.second_image%}
+		  {%- assign img_url = section.settings.second_image | img_url: '1x1' | replace: '_1x1.', '_{width}x.' -%}
+          <img class="lazyload"
+               data-src="{{ img_url }}"
+               data-widths="[360, 540, 720, 900, 1080, 1600]"
+               data-aspectratio="{{ section.settings.second_image.aspect_ratio }}"
+               data-sizes="auto"
+               alt="{{ section.settings.second_image.alt }}">
+          {%endif%}
+          <div class="content_wrapper">
+            <h3>{{section.settings.stitle}}</h3>
+            <p>{{section.settings.scontent}}</p>
+          </div>
+        </div>
+
+        <div class="grid__item medium--two-quarters medium-up--one-quarter">
+          {%if section.settings.third_image%}
+		  {%- assign img_url = section.settings.third_image | img_url: '1x1' | replace: '_1x1.', '_{width}x.' -%}
+          <img class="lazyload"
+               data-src="{{ img_url }}"
+               data-widths="[360, 540, 720, 900, 1080, 1600]"
+               data-aspectratio="{{ section.settings.third_image.aspect_ratio }}"
+               data-sizes="auto"
+               alt="{{ section.settings.third_image.alt }}">
+          {%endif%}
+          <div class="content_wrapper">
+            <h3>{{section.settings.ttitle}}</h3>
+            <p>{{section.settings.tcontent}}</p>
+          </div>
+        </div>
+          
+          
+          
+          <div class="grid__item medium--two-quarters medium-up--one-quarter">
+          {%if section.settings.fourth_image%}
+		  {%- assign img_url = section.settings.fourth_image | img_url: '1x1' | replace: '_1x1.', '_{width}x.' -%}
+          <img class="lazyload"
+               data-src="{{ img_url }}"
+               data-widths="[360, 540, 720, 900, 1080, 1600]"
+               data-aspectratio="{{ section.settings.fourth_image.aspect_ratio }}"
+               data-sizes="auto"
+               alt="{{ section.settings.fourth_image.alt }}">
+          {%endif%}
+          <div class="content_wrapper">
+            <h3>{{section.settings.fourthtitle}}</h3>
+            <p>{{section.settings.fourthcontent}}</p>
+          </div>
+        </div>
+          
+      </div>
+      </div>
+    </div>
+  </div>
+</div>
+{% style %}
+#dp__{{section.id}} .inner-page-width{
+	padding:{{section.settings.padding}}
+}
+@media only screen and (max-width: 768px) {
+  #dp__{{section.id}} .inner-page-width{
+  	padding:{{section.settings.mobile_padding}};
+  }
+}
+{% endstyle %}
+{%endif%}

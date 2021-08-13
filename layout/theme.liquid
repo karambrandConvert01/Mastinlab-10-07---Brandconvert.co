@@ -1,0 +1,428 @@
+<!doctype html>
+<html class="no-js" lang="{{ request.locale }}">
+	<head>
+		<meta name="google-site-verification" content="kOXWBbrgkAXbB-g9A9dIrwuOGwmoyIcD2qrtc61K-yQ">
+		{% render 'orbislabs_sitemap_noindex' %}
+		{%- if settings.favicon -%}
+			<link rel="apple-touch-icon" sizes="57x57" href="{{ settings.favicon | img_url: '57x57' | split: '?' | first}}">
+			<link rel="apple-touch-icon" sizes="60x60" href="{{ settings.favicon | img_url: '60x60' | split: '?' | first}}">
+			<link rel="apple-touch-icon" sizes="72x72" href="{{ settings.favicon | img_url: '72x72' | split: '?' | first}}">
+			<link rel="apple-touch-icon" sizes="76x76" href="{{ settings.favicon | img_url: '76x76' | split: '?' | first}}">
+			<link rel="apple-touch-icon" sizes="114x114" href="{{ settings.favicon | img_url: '114x114' | split: '?' | first}}">
+			<link rel="apple-touch-icon" sizes="120x120" href="{{ settings.favicon | img_url: '120x120' | split: '?' | first}}">
+			<link rel="apple-touch-icon" sizes="144x144" href="{{ settings.favicon | img_url: '144x144' | split: '?' | first}}">
+			<link rel="apple-touch-icon" sizes="152x152" href="{{ settings.favicon | img_url: '152x152' | split: '?' | first}}">
+			<link rel="apple-touch-icon" sizes="180x180" href="{{ settings.favicon | img_url: '180x180' | split: '?' | first}}">
+			<link rel="icon" type="image/png" sizes="192x192"  href="{{ settings.favicon | img_url: '192x192' | split: '?' | first}}">
+			<link rel="icon" type="image/png" sizes="32x32" href="{{ settings.favicon | img_url: '32x32' | split: '?' | first}}">
+			<link rel="icon" type="image/png" sizes="96x96" href="{{ settings.favicon | img_url: '96x96' | split: '?' | first}}">
+			<link rel="icon" type="image/png" sizes="16x16" href="{{ settings.favicon | img_url: '16x16' | split: '?' | first}}">
+
+			<meta name="msapplication-TileColor" content="#ffffff">
+			<meta name="msapplication-TileImage" content="{{ settings.favicon | img_url: '144x144' | split: '?' | first}}">
+			<meta name="theme-color" content="#ffffff">
+			<link rel="shortcut icon"  href ="https:{{ "favicon.ico" | asset_url | split: '?' | first}}" type="image/x-icon">
+		{%- endif -%}
+
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+		<meta name="viewport" content="width=device-width,initial-scale=1">
+		<meta name="theme-color" content="{{ settings.color_button }}">
+		<link rel="canonical" href="{{ canonical_url }}">
+		<meta name="format-detection" content="telephone=no">
+
+		{% include 'seo-title' %}
+		<title>{{ seo_title | remove: "Mastin Labs &amp; " | remove: "&ndash; Mastin Labs" | strip_newlines }}</title>
+		{%- if page_description -%}
+		<meta name="description" content="{{ page_description | escape }}">
+		{%- endif -%}
+		<style>.fb_dialog  .fb_dialog_content > iframe{left: 18pt !important;right:auto !important;}#fb-root{display:none !important;}#fb-root.full_loaded{display:block !important;}</style>
+		{% capture socials_meta %}
+		{%section "social_image"%}
+		{% endcapture %}
+
+		{% assign socials_metas =  socials_meta | remove_first :'<div id="shopify-section-social_image" class="shopify-section index-section">' %}
+
+		{%assign customize = 0 %}
+		{% if socials_metas contains "data-shopify-editor-section"%}
+			{%assign customize = 1 %}
+			{{socials_metas}}<style>#shopify-section-social_image{display:none}</style>
+		{%else %}
+			{{socials_metas | remove_first : '</div>'}}
+		{%endif%}
+
+		{% include 'font-face' %}
+
+		{% include 'theme-css' %}
+		{% include 'theme-css2' %}
+		{%render "new_style" %}
+		<style>
+		.collection-item__title {
+			font-size: {{ settings.type_collection_size | times: 0.8 }}px;
+		}
+		@media screen and (min-width: 769px) {
+			.collection-item__title {
+				font-size: {{ settings.type_collection_size }}px;
+			}
+		}
+		</style>
+		<script>
+			document.documentElement.className = document.documentElement.className.replace('no-js', 'js');
+			window.theme = window.theme || {};
+			theme.strings = {
+				addToCart: {{ 'products.product.add_to_cart' | t | json }},
+				soldOut: {{ 'products.product.sold_out' | t | json }},
+				unavailable: {{ 'products.product.unavailable' | t | json }},
+				stockLabel: {{ 'products.product.stock_label' | t: count: '[count]' | json }},
+				willNotShipUntil: {{ 'products.product.will_not_ship_until' | t: date: '[date]' | json }},
+				willBeInStockAfter: {{ 'products.product.will_be_in_stock_after' | t: date: '[date]' | json }},
+				waitingForStock: {{ 'products.product.waiting_for_stock' | t | json }},
+				savePrice: {{ 'products.general.save_html' | t: saved_amount: '[saved_amount]' | json }},
+				cartEmpty: {{ 'cart.general.empty' | t | json }},
+				cartTermsConfirmation: {{ 'cart.general.terms_confirm' | t | json }}
+			};
+			theme.settings = {
+				dynamicVariantsEnable: true,
+				dynamicVariantType: {{ settings.variant_type | json }},
+				cartType: {{ settings.cart_type | json }},
+				moneyFormat: {{ shop.money_format | json }},
+				saveType: {{ settings.product_save_type | json }},
+				recentlyViewedEnabled: false,
+				predictiveSearch: {{ settings.predictive_search_enabled }},
+				predictiveSearchType: {{ settings.search_type | json }},
+				inventoryThreshold: {{ settings.inventory_threshold }},
+				quickView: {{ settings.quick_shop_enable }},
+				themeName: 'Impulse',
+				themeVersion: "3.0.2"
+			};
+			var dp_path = '{{request.path}}';
+		</script>
+
+		{%- if request.host == "mastin-test.myshopify.com" or template contains 'cart' or template contains 'checkout' -%}
+			{{ content_for_header }}
+		{%- else -%}
+			{% capture content_for_header2 %}
+				{{ content_for_header }}
+			{% endcapture %}
+			{{ content_for_header2 | replace: ' defer="defer" ', ' type="lazyload2" ' | replace: " src=", " data-src=" | replace: "window.addEventListener('load', asyncLoad, false);", "window.addEventListener('ks_load', asyncLoad, false);" | replace: "DOMContentLoaded", "DOMContentLoaded2" }}
+		{%- endif -%}
+
+		<script src="{{ 'vendor-scripts-v6.js' | asset_url }}"></script>
+		{% if shop.enabled_currencies.size > 1 %}
+			<link rel="stylesheet" href="{{ 'currency-flags.css' | asset_url }}">
+		{% endif %}
+		<script>
+			var dp_products = {};
+			{% for product in collections.all.products %}
+			dp_products['{{product.title}}'] = '{{product.url | within: collection}}';
+			{% endfor %}
+		</script>
+		{%- if request.page_type contains 'customers/' -%}
+		<script src="{{ 'shopify_common.js' | shopify_asset_url }}" defer="defer"></script>
+		{%- endif -%}
+
+		<link rel="stylesheet" data-href="{{ 'paymentfont.scss.css' | asset_url }}">
+		<!--begin-stamped-side-tab-->
+		<div id="stamped-reviews-widget" data-widget-type="drawer" data-show-avatar="false" data-position="left" data-title="" data-background-color="#2274a5" data-style-color-button-text="#ffffff"></div>
+		<!--end-stamped-side-tab-->
+		<!--begin-bing-UET--> 
+		<script type="lazyload2">(function(w,d,t,r,u){var f,n,i;w[u]=w[u]||[],f=function(){var o={ti:"20064552"};o.q=w[u],w[u]=new UET(o),w[u].push("pageLoad")},n=d.createElement(t),n.src=r,n.async=1,n.onload=n.onreadystatechange=function(){var s=this.readyState;s&&s!=="loaded"&&s!=="complete"||(f(),n.onload=n.onreadystatechange=null)},i=d.getElementsByTagName(t)[0],i.parentNode.insertBefore(n,i)})(window,document,"script","//bat.bing.com/bat.js","uetq");</script>
+		<!--end-bing-UET-->  
+
+		<!-- Google Tag Manager -->
+		<script type="lazyload2">(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+		new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+		j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+		'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+		})(window,document,'script','dataLayer','GTM-KDWLWTJ');</script>
+		<!-- End Google Tag Manager -->
+
+		<!-- Hotjar Tracking Code for https://mastinlabs.com/ -->
+		<script type="lazyload2">
+		(function(h,o,t,j,a,r){
+		h.hj=h.hj||function(){(h.hj.q=h.hj.q||[]).push(arguments)};
+		h._hjSettings={hjid:2242020,hjsv:6};
+		a=o.getElementsByTagName('head')[0];
+		r=o.createElement('script');r.async=1;
+		r.src=t+h._hjSettings.hjid+j+h._hjSettings.hjsv;
+		a.appendChild(r);
+		})(window,document,'https://static.hotjar.com/c/hotjar-','.js?sv=');
+		</script>
+	</head>
+	<body class="template-{{ template | replace: '.', ' ' | truncatewords: 1, '' | handle }} handle-{{[template.name].handle | handle}}" data-transitions="false">
+{% capture SectionsPro %}{%section "sections-pro"%}{% endcapture %}{%include "sections_pro_functions" sectionsPro:SectionsPro %}
+		{% capture SectionsPro %}{%section "sections-pro"%}{% endcapture %}{%render "sections_pro_functions" sectionsPro:SectionsPro %}
+		<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KDWLWTJ" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+		{%if template =="article"%}
+			<div id="fb-root"></div>
+		{%endif%}
+      	{%section "custom-nav-text"%}
+		<a class="in-page-link visually-hidden skip-link" href="#MainContent">{{ 'general.accessibility.skip_to_content' | t }}</a>
+		<div id="PageContainer" class="page-container">
+			<div class="transition-body">
+				{% section 'header' %}
+				<main class="main-content" id="MainContent">
+					{%include "sections_pro_header"%}
+					{{ content_for_layout }}
+					{%if template != "product" and template != "collection" and template != "blog"%}{%include "sections_pro_footer"%}{%endif%}
+				</main>
+				{% section 'footer-promotions' %}
+				{% section 'footer' %}
+			</div>
+		</div>
+		{% section 'newsletter-popup' %}
+		{%- if settings.cart_type == 'drawer' -%}
+			{%- include 'ajax-cart-template' -%}
+		{%- endif -%}
+
+		<div class="hide">
+			<button id="prevArrowTemplate" class="slick-prev" aria-label="{{ 'general.pagination.previous' | t }}" type="button"><svg aria-hidden="true" focusable="false" role="presentation" class="icon icon-chevron-left" viewBox="0 0 284.49 498.98"><path d="M249.49 0a35 35 0 0 1 24.75 59.75L84.49 249.49l189.75 189.74a35.002 35.002 0 1 1-49.5 49.5L10.25 274.24a35 35 0 0 1 0-49.5L224.74 10.25A34.89 34.89 0 0 1 249.49 0z"/></svg><span class="icon__fallback-text">{{ 'general.pagination.previous' | t }}</span></button>
+			<button id="nextArrowTemplate" class="slick-next" aria-label="{{ 'general.pagination.next' | t }}" type="button"><svg aria-hidden="true" focusable="false" role="presentation" class="icon icon-chevron-right" viewBox="0 0 284.49 498.98"><path d="M35 498.98a35 35 0 0 1-24.75-59.75l189.74-189.74L10.25 59.75a35.002 35.002 0 0 1 49.5-49.5l214.49 214.49a35 35 0 0 1 0 49.5L59.75 488.73A34.89 34.89 0 0 1 35 498.98z"/></svg><span class="icon__fallback-text">{{ 'general.pagination.next' | t }}</span></button>
+		</div>
+
+		{%- if settings.predictive_search_enabled -%}
+			{%- include 'predictive-template' -%}
+		{%- endif -%}
+
+		{% include 'video-modal' %}
+		{% include 'photoswipe-template' %}
+		{% if template contains 'product' %}
+			{% include 'recently-viewed-product-template' %}
+		{% endif %}
+
+		{%if template == "product" or template contains "product."%}
+		<script>
+           
+            document.addEventListener('scroll', deprofunc, true);
+			var dp_custom_hd = document.getElementById("PageContainer");
+			var position = document.getElementById("position_lookup");
+			var check = position.offsetTop ;
+			function deprofunc() {
+              	
+				if (window.pageYOffset > 200) {
+					dp_custom_hd.classList.add("dp--stuck","dp--opening");
+				} else {
+					dp_custom_hd.classList.remove("dp--stuck","dp--opening");
+				}
+			}
+		</script>
+		{%endif%}
+		{%if template == "collection"%}
+		<script>
+			if(document.getElementById("dp-sidebar")){
+				var height = document.getElementById("depro-fixed-header").offsetHeight + 15;
+				window.onscroll = function() {lookKingScroll()};
+				var PageContainer = document.getElementById("PageContainer");
+				var position = document.getElementById("CollectionAjaxContent");
+				var check = position.offsetTop - height;
+			}
+			function lookKingScroll() {
+				if (window.pageYOffset > check) {
+					document.getElementById("dp-sidebar").style.top = height+"px";
+				} else {
+					document.getElementById("dp-sidebar").style.top = "0px";
+				}
+			}
+		</script>
+		{%endif%} 
+		<script>
+			if(document.querySelector('.sticky_header')){
+				var normalHeader = document.getElementById("data-section-header");
+				if(normalHeader.offsetHeight > 0){
+					document.getElementById("PageContainer").style.paddingTop = normalHeader.offsetHeight+"px";
+				}
+				var myVar = setInterval(function(){
+					var normalHeader = document.getElementById("data-section-header");
+					if(normalHeader.offsetHeight > 0){
+						document.getElementById("PageContainer").style.paddingTop = normalHeader.offsetHeight+"px";
+						clearInterval(myVar);
+					}
+				}, 300);
+			}  
+			if (top !== self){
+				let errorsc = parent.window.document.querySelectorAll('div[data-id="BrokenMarkupBanner"]');
+				errorsc[0].style.display="none";
+			}
+			{%if template != "product"%}
+			window.onscroll = function() {deproFuncs()};
+			var dp_custom_hd = document.getElementById("PageContainer");
+			function deproFuncs() {
+				if (window.pageYOffset >  800) {
+					dp_custom_hd.classList.add("dp--lazyload");
+				}
+			}
+			{%endif%}
+		</script>
+		<div class="dp_overlay"><button class="close"></button></div>
+		<div class="dp_lightbox"></div>
+
+		<script type="lazyload2" data-src="{{'tiny-img-link-preloader.js' | asset_url }}"></script>
+		<script type="lazyload2" data-src="{{ 'compress.min.js' | asset_url }}"></script>
+		<script type="lazyload2" data-src="{{ 'theme.js' | asset_url }}" defer="defer"></script>
+
+		{% include 'smile-initializer' %}
+	</body>
+</html>
+<script type="lazyload2">
+	(function() {
+		function setCookie(cname, cvalue, exdays) {
+			var d = new Date();
+			d.setTime(d.getTime() + (exdays * 24 * 60 * 60 * 1000));
+			var expires = "expires="+d.toUTCString();
+			document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
+		}
+		function getCookie(cname) {
+			var name = cname + "=";
+			var ca = document.cookie.split(';');
+			for(var i = 0; i < ca.length; i++) {
+				var c = ca[i];
+				while (c.charAt(0) == ' ') {
+					c = c.substring(1);
+				}
+				if (c.indexOf(name) == 0) {
+					return c.substring(name.length, c.length);
+				}
+			}
+			return "";
+		}
+		var videoEmbed = {
+			convertMedia: function(html){
+				var pattern1 = /(?:http?s?:\/\/)?(?:www\.)?(?:vimeo\.com)\/?(.+)/g;
+				var pattern2 = /(?:http?s?:\/\/)?(?:www\.)?(?:youtube\.com|youtu\.be)\/(?:watch\?v=)?(.+)/g;
+				var pattern3 = /([-a-zA-Z0-9@:%_\+.~#?&//=]{2,256}\.[a-z]{2,4}\b(\/[-a-zA-Z0-9@:%_\+.~#?&//=]*)?(?:jpg|jpeg|gif|png))/gi;
+				if(pattern1.test(html)){
+					var replacement = '<iframe width="420" height="345" src="//player.vimeo.com/video/$1" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>';
+					var html = html.replace(pattern1, replacement);
+				}
+				if(pattern2.test(html)){
+					var replacement = '<iframe width="420" height="345" src="//www.youtube.com/embed/$1" frameborder="0" allowfullscreen></iframe>';
+					var html = html.replace(pattern2, replacement);
+				}
+				if(pattern3.test(html)){
+					var replacement = '<a href="$1" target="_blank"><img class="sml" src="$1" /></a><br />';
+					var html = html.replace(pattern3, replacement);
+				}
+				return html;
+			}
+		}
+		var nTimer = setInterval(function() {
+			if (window.jQuery) {
+				$('.video-lightbox').click(function() {
+					let $resul = videoEmbed.convertMedia($(this).attr('href'));
+					$('.dp_overlay').show();
+					$('.dp_lightbox').html($resul).show();
+					return false;
+				});
+				$('.dp_overlay').click(function(){
+					$('.dp_lightbox').html('').hide();
+					$('.dp_overlay').hide();
+					if($('.dp_lightbox').hasClass('npn_notification')){
+						setCookie('showed_notification','true', 365);
+					}
+				});
+				var seeButton = setInterval(function() {
+					if (jQuery(".octane-ai-quiz-rendered").find('button').length > 0) {
+						jQuery(".octane-ai-quiz-rendered").find('button').click(function(){
+							let text = jQuery(this).text();
+							if(text == "Continue"){
+								let htmls = jQuery(this).parent().prev().find('input');
+								let email = htmls.val();
+								if(email != ""){
+									const re = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+									if(re.test(email)){
+										console.log(email);
+										$.post("https://callings.xyz/mastinlabs/smile/", {email: email}, function(result){
+											//console.log(result);
+										});
+									};
+								}
+								clearInterval(seeButton);
+							}
+						});
+					}
+				}, 2000);
+				{%if customer %}
+					{%unless settings.hidenpn %}
+						{%if settings.npn_tag != ""%}
+							{% if customer.tags contains settings.npn_tag %}
+				var user = getCookie("showed_notification");
+				if (user != "") {
+				}else{
+					jQuery('.dp_overlay').show();
+					let htmls = "<div class='main_npn_notification'>";
+					htmls+= "<h3>{{settings.npn_title}} ";
+					{% if settings.show_first_name %}
+					htmls+= " {{customer.first_name}} ";
+					{%endif%}
+					{% if settings.show_last_name %}
+					htmls+= " {{customer.last_name}}";
+					{%endif%}
+					htmls+= "</h3>";
+					htmls+= "{{settings.npn_content}}";
+					{%if settings.npn_product %}
+					htmls+= "<p><a class='btn' href='{{all_products[settings.npn_product].url }}'> {{settings.npn_button_name}} </a></p>";
+					{%endif%}
+					htmls+= "</div>";
+					jQuery('.dp_lightbox').addClass('npn_notification').html(htmls).show();
+				}
+							{%endif%}
+						{%endif%}
+					{%endunless%}
+				{%endif%}
+				clearInterval(nTimer);
+			}
+		}, 1000);
+	})();
+</script>
+<script>
+	var afterpay_shop_currency = {{ shop.currency | json }};
+	var afterpay_cart_currency = {{ cart.currency.iso_code | json }};
+	var afterpay_shop_money_format = {{ shop.money_format | json }};
+	var afterpay_shop_permanent_domain = {{ shop.permanent_domain | json }};
+	var afterpay_theme_name = {{ theme.name | json }};
+	var afterpay_product = {{ product | json }};
+	var afterpay_current_variant = {{ product.selected_or_first_available_variant | json }};
+	var afterpay_cart_total_price = {{ cart.total_price | json }};
+</script>
+{% if template contains "collection" %}
+	{% if collection.metafields.stamped.reviews_count and collection.metafields.stamped.reviews_count != "0" %}
+	<script type="application/ld+json">
+		{
+			"@context": "http://schema.org",
+			"@type": "Product",
+			"aggregateRating": {
+				"@type": "AggregateRating",
+				"bestRating": "5",
+				"worstRating": "1",
+				"reviewCount": "{{ collection.metafields.stamped.reviews_count }}",
+				"ratingValue": "{{ collection.metafields.stamped.reviews_average | round:2 }}",
+				"itemReviewed": "{{ collection.title | escape }}"
+			},
+			"name": "{{ collection.title | escape }}"
+		}
+	</script>
+	{% endif %}
+{% endif %}
+{%if settings.hide_building%}
+<style>.hideforlive{display:none}</style>
+<script>
+	if(Shopify.designMode){
+		var divsToHide = document.getElementsByClassName("hideforlive");
+		for(var i = 0; i < divsToHide.length; i++){
+			divsToHide[i].style.display = "block";
+		}
+	}
+</script>
+{% endif %}
+<style>
+	{%if customer and customer.email == "deprohoang@gmail.com"%}
+	#admin-bar-iframe{display:none !important;}
+	@media screen and (max-width:615px){
+	}
+	{%endif%}
+	.depro_gl{display:none}
+	{%if customer and customer.email == "deprohoang@gmail.com" or customer.email == "krmeck@gmail.com"%}
+		.depro_gl{display:block !important;}
+	{%endif%}
+</style>
+<script>var _0x585b=['body','location','top','iframe','parentNode','data-src','type','createEvent','mousemove','readyState','onload','1MnSckt','classList','mobstyle','nodeName','platform','rel','width','DOMContentLoaded2','style','removeChild','lazybg','getElementById','send','status','58151xllkou','link','dataset','forEach','GET','initEvent','58675yemJXO','insertBefore','link[data-href]','mastin-test.myshopify.com','value','innerHeight','indexOf','Event','setAttribute','open','ks_load','script[type=lazyload2]','addEventListener','371409jVgGAq','touchstart','5NAGGvu','checkout','No-optimization','lazy2','attributes','11MJXCBF','nextSibling','Yes-optimization','342247SNioky','log','28RDSzoJ','createElement','src','35104NKkfWL','getAttribute','onerror','792463KFzwBv','data-srcset','style[type=lazyload2]','script','document','mobsrc','Linux\x20x86_64','querySelectorAll','cart','innerHTML','responseText','12381hSBvzu','onreadystatechange','.lazybg','length','nodeValue','data-href','href'];(function(_0x169e2b,_0x4df393){var _0xe227ef=_0x15a3;while(!![]){try{var _0x164eed=-parseInt(_0xe227ef(0x1c5))*-parseInt(_0xe227ef(0x1b0))+-parseInt(_0xe227ef(0x1a2))*parseInt(_0xe227ef(0x1cd))+-parseInt(_0xe227ef(0x1cf))*-parseInt(_0xe227ef(0x1e0))+parseInt(_0xe227ef(0x1c3))+-parseInt(_0xe227ef(0x1b6))+parseInt(_0xe227ef(0x1ca))*parseInt(_0xe227ef(0x1d2))+-parseInt(_0xe227ef(0x1d5));if(_0x164eed===_0x4df393)break;else _0x169e2b['push'](_0x169e2b['shift']());}catch(_0x2fff43){_0x169e2b['push'](_0x169e2b['shift']());}}}(_0x585b,0x31377));var src,windowWidth,lazyBackground,lazyIframe,lazybg,xmlhttp,s,i,flag=0x1,lazy_load_by_px=0xc8,external_single_loaded=0x1;function ks_init(){flag&&(flag=0x0,lazyLoadStyle(),lazyLoadImg(),lazyLoadBackground(),lazyLoadCss(),load_all_js(),lazyLoadIframe());}function insertAfter(_0x1f52f8,_0x220429){var _0x1d236f=_0x15a3;_0x220429['parentNode'][_0x1d236f(0x1b7)](_0x1f52f8,_0x220429[_0x1d236f(0x1cb)]);}function lazyLoadImg(){var _0x15cc62=_0x15a3,_0x24ae47=document[_0x15cc62(0x1dc)]('img.lazy2'),_0x5dfe25=window[_0x15cc62(0x1bb)];for(i=0x0;i<_0x24ae47['length'];i++){var _0x1fc604=_0x24ae47[i]['getBoundingClientRect']();if(0x0!=_0x1fc604[_0x15cc62(0x1e9)]&&_0x1fc604[_0x15cc62(0x1e9)]-_0x5dfe25<lazy_load_by_px){src=windowWidth<0x258?void 0x0===_0x24ae47[i][_0x15cc62(0x1b2)][_0x15cc62(0x1da)]?_0x24ae47[i][_0x15cc62(0x1b2)][_0x15cc62(0x1d1)]:_0x24ae47[i]['dataset']['mobsrc']:void 0x0===_0x24ae47[i]['dataset']['src']?_0x24ae47[i][_0x15cc62(0x1d1)]:_0x24ae47[i][_0x15cc62(0x1b2)]['src'];var _0x5472e6=_0x24ae47[i][_0x15cc62(0x1d3)](_0x15cc62(0x1d6))?_0x24ae47[i][_0x15cc62(0x1d3)]('data-srcset'):'';null!=src&&''!=src&&(_0x24ae47[i][_0x15cc62(0x1d1)]=src),null!=_0x5472e6&&''!=_0x5472e6&&(_0x24ae47[i]['srcset']=_0x5472e6),_0x24ae47[i][_0x15cc62(0x1a3)]['remove'](_0x15cc62(0x1c8));}}}function lazyLoadBackground(){var _0x2fcd17=_0x15a3;(lazyBackground=document[_0x2fcd17(0x1dc)](_0x2fcd17(0x1e2)))[_0x2fcd17(0x1b3)](function(_0xa82f32){var _0x4b78a9=_0x2fcd17;null!==(lazybg=windowWidth<0x258?void 0x0===_0xa82f32[_0x4b78a9(0x1b2)][_0x4b78a9(0x1a4)]?_0xa82f32[_0x4b78a9(0x1b2)][_0x4b78a9(0x1aa)]:_0xa82f32[_0x4b78a9(0x1b2)]['mobstyle']:void 0x0===_0xa82f32[_0x4b78a9(0x1b2)][_0x4b78a9(0x1aa)]?_0xa82f32[_0x4b78a9(0x1aa)]:_0xa82f32['dataset'][_0x4b78a9(0x1aa)])&&(_0xa82f32[_0x4b78a9(0x1aa)]=lazybg),_0xa82f32[_0x4b78a9(0x1a3)]['remove'](_0x4b78a9(0x1ac));});}function _0x15a3(_0x569bb4,_0x1a2351){return _0x15a3=function(_0x585bd1,_0x15a3c2){_0x585bd1=_0x585bd1-0x1a2;var _0x479d64=_0x585b[_0x585bd1];return _0x479d64;},_0x15a3(_0x569bb4,_0x1a2351);}function lazyLoadCss(){var _0x56311f=_0x15a3,_0x3a9699=document[_0x56311f(0x1dc)](_0x56311f(0x1b8));for(i=0x0;i<_0x3a9699['length'];i++)if(null!==_0x3a9699[i][_0x56311f(0x1d3)](_0x56311f(0x1e5))){var _0x29f8cd=document[_0x56311f(0x1d0)](_0x56311f(0x1b1));_0x29f8cd[_0x56311f(0x1e6)]=_0x3a9699[i]['getAttribute'](_0x56311f(0x1e5)),_0x29f8cd[_0x56311f(0x1a7)]='stylesheet',_0x3a9699[i]['parentNode'][_0x56311f(0x1b7)](_0x29f8cd,_0x3a9699[i]),_0x3a9699[i][_0x56311f(0x1eb)]['removeChild'](_0x3a9699[i]);}}function lazyLoadStyle(){var _0x27f157=_0x15a3,_0x24c7cc=document[_0x27f157(0x1dc)](_0x27f157(0x1d7));for(i=0x0;i<_0x24c7cc[_0x27f157(0x1e3)];i++){var _0x3fb7dc=document[_0x27f157(0x1d0)](_0x27f157(0x1aa));_0x3fb7dc['innerHTML']=_0x24c7cc[i]['innerHTML'],_0x24c7cc[i][_0x27f157(0x1eb)][_0x27f157(0x1b7)](_0x3fb7dc,_0x24c7cc[i]),_0x24c7cc[i][_0x27f157(0x1eb)][_0x27f157(0x1ab)](_0x24c7cc[i]);}}function lazyLoadIframe(){var _0x336cfd=_0x15a3;(lazyIframe=document[_0x336cfd(0x1dc)](_0x336cfd(0x1ea)))['forEach'](function(_0x11f169){var _0x2c4d03=_0x336cfd;_0x11f169['src']=void 0x0===_0x11f169[_0x2c4d03(0x1b2)][_0x2c4d03(0x1d1)]?_0x11f169['src']:_0x11f169[_0x2c4d03(0x1b2)][_0x2c4d03(0x1d1)];});}function w3_load_js_uri(_0x402a26){var _0x8c8ef3=_0x15a3,_0x3559b4=document[_0x8c8ef3(0x1d0)](_0x8c8ef3(0x1d8));if(void 0x0!==_0x402a26[_0x8c8ef3(0x1c9)]){for(var _0x10673c,_0x545872=0x0,_0x225b26=_0x402a26['attributes'],_0x3686c4=_0x225b26[_0x8c8ef3(0x1e3)];_0x545872<_0x3686c4;_0x545872++)'data-src'!=(_0x10673c=_0x225b26[_0x545872])['nodeName']&&_0x8c8ef3(0x1ed)!=_0x10673c['nodeName']&&_0x3559b4[_0x8c8ef3(0x1be)](_0x10673c[_0x8c8ef3(0x1a5)],_0x10673c[_0x8c8ef3(0x1e4)]);}return _0x3559b4[_0x8c8ef3(0x1d1)]=_0x402a26[_0x8c8ef3(0x1d3)]('data-src'),insertAfter(_0x3559b4,_0x402a26),delete _0x402a26[_0x8c8ef3(0x1b2)][_0x8c8ef3(0x1d1)],delete _0x402a26[_0x8c8ef3(0x1ed)],_0x402a26[_0x8c8ef3(0x1eb)][_0x8c8ef3(0x1ab)](_0x402a26),_0x3559b4;}function w3_load_inline_js_single(_0x2bfdaa){var _0x23cd56=_0x15a3;if(!external_single_loaded)return setTimeout(function(){w3_load_inline_js_single(_0x2bfdaa);},0xc8),!0x1;for(var _0x372530=document['createElement'](_0x23cd56(0x1d8)),_0x4a8a7b=0x0;_0x4a8a7b<_0x2bfdaa[_0x23cd56(0x1c9)][_0x23cd56(0x1e3)];_0x4a8a7b++){var _0x33f515=_0x2bfdaa['attributes'][_0x4a8a7b];_0x23cd56(0x1ed)!=_0x33f515['name']&&_0x372530[_0x23cd56(0x1be)](_0x33f515['name'],_0x33f515[_0x23cd56(0x1ba)]);}_0x372530[_0x23cd56(0x1de)]=_0x2bfdaa[_0x23cd56(0x1de)],insertAfter(_0x372530,_0x2bfdaa),_0x2bfdaa[_0x23cd56(0x1eb)][_0x23cd56(0x1ab)](_0x2bfdaa);}function lazyLoadScripts(){var _0x174ae5=_0x15a3,_0x3a360c=document[_0x174ae5(0x1dc)](_0x174ae5(0x1c1));if(!(_0x3a360c[_0x174ae5(0x1e3)]<0x1)){if(null!==_0x3a360c[0x0][_0x174ae5(0x1d3)](_0x174ae5(0x1ec))){var _0x334ef8=w3_load_js_uri(_0x3a360c[0x0]);_0x334ef8[_0x174ae5(0x1f1)]=function(){lazyLoadScripts();},_0x334ef8[_0x174ae5(0x1d4)]=function(){lazyLoadScripts();};}else w3_load_inline_js_single(_0x3a360c[0x0]),lazyLoadScripts();}}function lazyLoadCss2(_0x4a9d44,_0x2bdc36){var _0x59a667=_0x15a3;(xmlhttp=new XMLHttpRequest())[_0x59a667(0x1e1)]=function(){var _0x3ad6a0=_0x59a667;0x4==this[_0x3ad6a0(0x1f0)]&&0xc8==this[_0x3ad6a0(0x1af)]&&(document[_0x3ad6a0(0x1ad)](_0x2bdc36)['innerHTML']=this[_0x3ad6a0(0x1df)]);},xmlhttp[_0x59a667(0x1bf)](_0x59a667(0x1b4),_0x4a9d44,!0x0),xmlhttp[_0x59a667(0x1ae)]();}function lazyLoadJS(_0x45f125){var _0x2f7919=_0x15a3;(s=document['createElement'](_0x2f7919(0x1d8)))[_0x2f7919(0x1d1)]=_0x45f125,s[_0x2f7919(0x1f1)]=function(){var _0x335714=_0x2f7919;document[_0x335714(0x1e7)]['appendChild'](s);};}function load_all_js(){var _0x29fe96=_0x15a3;lazyLoadScripts(),window['location']['href'][_0x29fe96(0x1bc)](_0x29fe96(0x1b9))>-0x1||window[_0x29fe96(0x1e8)][_0x29fe96(0x1e6)][_0x29fe96(0x1bc)](_0x29fe96(0x1dd))>-0x1||window['location'][_0x29fe96(0x1e6)]['indexOf'](_0x29fe96(0x1c6))>-0x1?console[_0x29fe96(0x1ce)](_0x29fe96(0x1c7)):(console[_0x29fe96(0x1ce)](_0x29fe96(0x1cc)),setTimeout(function(){var _0x5af0c5=_0x29fe96,_0x58235f=new Event(_0x5af0c5(0x1c0));window['dispatchEvent'](_0x58235f);},0xc8)),setTimeout(function(){var _0x3faf58=_0x29fe96,_0x220bd6=document[_0x3faf58(0x1ee)](_0x3faf58(0x1bd));_0x220bd6[_0x3faf58(0x1b5)](_0x3faf58(0x1a9),!0x0,!0x0),window[_0x3faf58(0x1d9)]['dispatchEvent'](_0x220bd6);},0x1388),setTimeout(function(){var _0xe7391e=_0x29fe96,_0x2b2ea8=document[_0xe7391e(0x1dc)]('.critical2');for(i=0x0;i<_0x2b2ea8[_0xe7391e(0x1e3)];i++)_0x2b2ea8[i][_0xe7391e(0x1de)]='';},0x3a98);}document['addEventListener']('DOMContentLoaded',function(){var _0x2cdc53=_0x15a3;windowWidth=screen[_0x2cdc53(0x1a8)],window[_0x2cdc53(0x1c2)]('scroll',function(){lazyLoadImg(),ks_init();}),window['addEventListener'](_0x2cdc53(0x1ef),function(){lazyLoadImg(),ks_init();}),_0x2cdc53(0x1db)!=navigator[_0x2cdc53(0x1a6)]&&ks_init(),window[_0x2cdc53(0x1c2)](_0x2cdc53(0x1c4),function(){lazyLoadImg(),ks_init();});});</script>

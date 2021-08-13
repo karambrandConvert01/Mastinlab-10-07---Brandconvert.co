@@ -1,0 +1,188 @@
+{%include "3rd_included_looks"%}
+{% schema %}
+  {
+    "name": "Included Looks",
+    "settings": [
+{
+          "type": "checkbox",
+          "id": "enable",
+          "label": "Display for live site?",
+		      "default":true
+        },
+        {
+          "type": "checkbox",
+          "id": "default_open",
+          "label": "default hide?",
+		  "default":true
+        },
+		{
+          "type": "text",
+          "id": "headline",
+          "label": "Section Title"
+        },
+		{
+            "type": "header",
+            "content": "First Block"
+        },
+		{
+          "type": "image_picker",
+          "id": "first_image",
+          "label": "Image"
+        },
+	    {
+          "type": "text",
+          "id": "ftitle",
+          "label": "Title",
+		  "default":"Ektar 100"
+        },
+		{
+          "type": "text",
+          "id": "fcontent",
+          "label": "Content","default":"Bright, bold and colorful"
+        },
+		{
+            "type": "header",
+            "content": "Second Block"
+        },
+		{
+          "type": "image_picker",
+          "id": "second_image",
+          "label": "Second Image"
+        },
+		{
+          "type": "text",
+          "id": "stitle",
+          "label": "Title",
+		  "default":"Gold 200"
+        },
+		{
+          "type": "text",
+          "id": "scontent",
+          "label": "Content","default":"Versatile golden tones with medium contrast"
+        },
+		{
+            "type": "header",
+            "content": "Third Block"
+        },
+		{
+          "type": "image_picker",
+          "id": "third_image",
+          "label": "Third Image"
+        },		{
+          "type": "text",
+          "id": "ttitle",
+          "label": "Title",
+		  "default":"Tri-X 400"
+        },
+		{
+          "type": "text",
+          "id": "tcontent",
+          "label": "Content","default":"Classic black & white with medium contrast"
+        },
+
+{
+            "type": "header",
+            "content": "Fourth Block"
+        },
+		{
+          "type": "image_picker",
+          "id": "fourth_image",
+          "label": "Fourth Image"
+        },		{
+          "type": "text",
+          "id": "fourthtitle",
+          "label": "Title",
+		  "default":"Tri-X 400"
+        },
+		{
+          "type": "text",
+          "id": "fourthcontent",
+          "label": "Content","default":"Classic black & white with medium contrast"
+        },
+
+{
+            "type": "header",
+            "content": "Fifth Block"
+        },
+		{
+          "type": "image_picker",
+          "id": "fifth_image",
+          "label": "Fifth Image"
+        },		{
+          "type": "text",
+          "id": "fifthtitle",
+          "label": "Title",
+		  "default":"Tri-X 400"
+        },
+		{
+          "type": "text",
+          "id": "fifthcontent",
+          "label": "Content","default":"Classic black & white with medium contrast"
+        },
+
+{
+            "type": "header",
+            "content": "Sixth Block"
+        },
+		{
+          "type": "image_picker",
+          "id": "sixth_image",
+          "label": "Sixth Image"
+        },		{
+          "type": "text",
+          "id": "sixthtitle",
+          "label": "Title",
+		  "default":"Tri-X 400"
+        },
+		{
+          "type": "text",
+          "id": "sixthcontent",
+          "label": "Content","default":"Classic black & white with medium contrast"
+        },
+		{
+          "type": "color",
+          "id": "background_color",
+          "label": "Background Color"
+        },
+		{
+          "type": "color",
+          "id": "text_color",
+          "label": "Text Color",
+		  "default":"#cccccc"
+        },{
+          "type": "color",
+          "id": "hbackground_color",
+          "label": "Toggle Background Color"
+        },
+		{
+          "type": "color",
+          "id": "htext_color",
+          "label": "Toggle Text Color",
+		  "default":"#000000"
+        },{
+        "type": "header",
+        "content": "Padidng Setting"
+      },
+	  {
+        "type": "text",
+        "id": "padding",
+        "label": "Desktop Padding",
+        "default": "0px 0px 0px 0px",
+		"info" : "Top right bottom left"
+      },
+	  {
+        "type": "text",
+        "id": "mobile_padding",
+        "label": "Mobile Padding",
+        "default": "0px 0px 0px 0px",
+		"info" : "Top right bottom left"
+      }
+
+	]}
+{% endschema %}
+
+{% stylesheet %}
+{% endstylesheet %}
+
+{% javascript %}
+{% endjavascript %}

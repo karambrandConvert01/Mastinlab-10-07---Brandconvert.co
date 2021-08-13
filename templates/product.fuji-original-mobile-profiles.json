@@ -1,0 +1,220 @@
+{
+  "sections": {
+    "product-template": {
+      "type": "product-template",
+      "settings": {
+        "description_style": "default",
+        "vcolor_loading": "#ff5121",
+        "vcolor_btn_selected": "#2d2d2d",
+        "vcolor_btn_selected_c": "#2d2d2d",
+        "vcolor_btn_bg": "rgba(0,0,0,0)",
+        "vcolor_btn_bg_hover": "rgba(0,0,0,0)",
+        "vcolor_btn_br": "#c8c8c8",
+        "vcolor_btn_br_hover": "#2d2d2d",
+        "vcolor_btn": "#000000",
+        "vcolor_btn_hover": "#2d2d2d",
+        "color_btn_bg": "#ff5121",
+        "color_btn_bg_hover": "#ffffff",
+        "color_btn_br": "#ff5121",
+        "color_btn_br_hover": "#ff5121",
+        "color_btn": "#ffffff",
+        "color_btn_hover": "#ff5121",
+        "color_mobile_btn": "#ff5121",
+        "bg_mobile_color_btn": "rgba(0,0,0,0)",
+        "mobile_border_color_btn": "#ff5121",
+        "social_enable": false,
+        "image_position": "left",
+        "image_size": "medium",
+        "thumbnail_position": "below",
+        "thumbnail_arrows": true,
+        "enable_video_looping": true,
+        "product_video_style": "unmuted"
+      }
+    },
+    "1BX-text-and-background": {
+      "type": "1BX-text-and-background",
+      "settings": {
+        "title": "\"I finally achieve the light &amp; airy look I've always wanted. My editing is consistent now!\"",
+        "text": "Valorie Lalanne",
+        "align_text": "center",
+        "narrow_column": true,
+        "enlarge_text": false,
+        "divider": false,
+        "padding": "50px 30px 50px 30px",
+        "mobile_padding": "25px 20px 30px 20px",
+        "background_color": "#261d2d",
+        "background_image": "shopify:\/\/shop_images\/Group_115.png",
+        "text_color": "#ffffff"
+      }
+    },
+    "3rd_gallery-pro-4509579280466": {
+      "type": "3rd_gallery",
+      "blocks": {
+        "45086953636661588641551433": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/xo-gallery-3-1586238001860.jpg",
+            "title": "Fuji 800Z",
+            "description": "Photo: Aly Whitney Plaut",
+            "button_name": "Shop This look",
+            "button_name_second": "Capture One",
+            "alignment": "bottom"
+          }
+        },
+        "45086953636661588641574107": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/xo-gallery-3-1586552091104.jpg",
+            "title": "Fuji 400H",
+            "description": "Photo: Kayla Baptista",
+            "button_name": "Shop This look",
+            "button_name_second": "Capture One",
+            "alignment": "bottom"
+          }
+        },
+        "45086953636661588641639250": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/FUJI_O_160NS_David_Heidrich_04.jpg",
+            "title": "Fuji 160NS",
+            "description": "Photo: David Heidrich",
+            "button_name": "Shop This look",
+            "button_name_second": "Capture One",
+            "alignment": "bottom"
+          }
+        },
+        "45086953636661588641675482": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/FUJI_O_PRO400HN_Alexander_Kozlovich_01.jpg",
+            "title": "Fuji 400H",
+            "description": "Photo: Alexander Kozlovich",
+            "button_name": "Shop This look",
+            "button_name_second": "Capture One",
+            "alignment": "bottom"
+          }
+        },
+        "45086953636661588641726558": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/xo-gallery-3-1586238008136.jpg",
+            "title": "Fuji 400H",
+            "description": "Photo: Sacia Matthews",
+            "button_name": "Shop This look",
+            "button_name_second": "Capture One",
+            "alignment": "bottom"
+          }
+        },
+        "45086953636661588641693958": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/xo-gallery-3-1586238008205.jpg",
+            "title": "Fuji 400H",
+            "description": "Photo: Tess Lucas",
+            "button_name": "Shop This look",
+            "button_name_second": "Capture One",
+            "alignment": "bottom"
+          }
+        }
+      },
+      "block_order": [
+        "45086953636661588641551433",
+        "45086953636661588641574107",
+        "45086953636661588641639250",
+        "45086953636661588641675482",
+        "45086953636661588641726558",
+        "45086953636661588641693958"
+      ],
+      "settings": {
+        "enable": true,
+        "section_title": "",
+        "section_content": "",
+        "border": "0px",
+        "padding": "50px 0px 50px 0px",
+        "mobile_padding": "30px 0px 30px 0px",
+        "padding_gallery": "20px 20px 20px 20px",
+        "mobile_gallery_padding": "5px 5px 5px 5px",
+        "background_color": "rgba(0,0,0,0)",
+        "fullWidth": false,
+        "columns": "three"
+      }
+    },
+    "1FW-html": {
+      "type": "1FW-html",
+      "settings": {
+        "padding": "50px 0px 0px 0px",
+        "mobile_padding": "0px 0px 0px 0px",
+        "background_color": "#f7f6f2",
+        "text_color": "#000000",
+        "html": "<h2 style=\"text-align:Center\">Preset Pack Details<\/h2>\n<p style=\"text-align:Center\">Open each title for pack details— so many goodies inside.<\/p>"
+      }
+    },
+    "1FW-included_looks": {
+      "type": "1FW-included_looks",
+      "blocks": {
+        "eebaa2ee-5413-4483-81ce-51e5a2d7c5d9": {
+          "type": "content",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/FUJI_O_PRO160_David_Heidrich_03-2.jpg",
+            "title": "Fuji 160NS",
+            "content": "Neutral and balanced, Fuji 160NS is the portrait photographers favored film stock for its smooth gradients from the highlights to the shadows and clean skin across a broad range of tones."
+          }
+        },
+        "eebaa2ee-5413-4483-81ce-51e5a2d7c5d8": {
+          "type": "content",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/FUJI_O_PRO400HN_David_Heidrich_03.jpg",
+            "title": "Fuji 400H",
+            "content": "The first light and airy preset, Fuji 400h is the preferred film stock for wedding and family photographers. Fuji 400h provides natural skin-tones while maintaining vivid three-dimensional color."
+          }
+        },
+        "eebaa2ee-5413-4483-81ce-51e5a2d7c5d7": {
+          "type": "content",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/FUJI_O_PRO400HB_David_Heidrich_03-2.jpg",
+            "title": "Fuji 400H Blue",
+            "content": "An evolution of Fuji 400H, Fuji 400HB adds blue into the greens to soften the vibrancy of foliage, giving you sage colored greens."
+          }
+        },
+        "eebaa2ee-5413-4483-81ce-51e5a2d7c5d6": {
+          "type": "content",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/FUJI_O_PRO800Z1_David_Heidrich_03-2.jpg",
+            "title": "Fuji 800Z",
+            "content": "Pretty in pink, Fuji 800Z brings magenta to the forefront of the highlights creating a dream-like color scape in your photography."
+          }
+        }
+      },
+      "block_order": [
+        "eebaa2ee-5413-4483-81ce-51e5a2d7c5d9",
+        "eebaa2ee-5413-4483-81ce-51e5a2d7c5d8",
+        "eebaa2ee-5413-4483-81ce-51e5a2d7c5d7",
+        "eebaa2ee-5413-4483-81ce-51e5a2d7c5d6"
+      ],
+      "settings": {
+        "enable": true,
+        "headline": "What looks are included in {{ product.title }}?",
+        "background_color": "#f7f6f2",
+        "text_color": "#000000",
+        "border_color": "rgba(0,0,0,0)",
+        "padding": "50px 0px 0px 0px",
+        "mobile_padding": "30px 0px 0px 0px"
+      }
+    },
+    "1stamped-main-widget": {
+      "type": "1stamped-main-widget",
+      "settings": {
+        "padding": "0px 0px 0px",
+        "mobile_padding": "0px 0px 0px"
+      }
+    }
+  },
+  "order": [
+    "product-template",
+    "1BX-text-and-background",
+    "3rd_gallery-pro-4509579280466",
+    "1FW-html",
+    "1FW-included_looks",
+    "1stamped-main-widget"
+  ]
+}

@@ -1,0 +1,189 @@
+{
+  "sections": {
+    "1625886222036ec7d5": {
+      "type": "1FW-image-with-html",
+      "settings": {
+        "image": "shopify:\/\/shop_images\/Preset_Quiz_Characters_R4_AE_2.png",
+        "padding": "0px 0px 0px 0px",
+        "mobile_padding": "0px 0px 0px 0px",
+        "background_color": "#ffffff",
+        "image_width": 500,
+        "subtitle": "Your perfect preset pack is...",
+        "subtitle_color": "#f45332",
+        "title": "Adventure Everyday",
+        "text": "<hr>\n<h4 style=\"color:#2274A5\">you’re the vibrant, modern, \nand fun photographer.<\/h4><p>Whether you’re documenting clients’ nostalgic moments or your \nown family road trip, adventure runs deep in your blood. You live in \nfull color, and you want your photos to show life at 11 out of 10.\n<\/p>\n<p>\n<a class=\"btn\" href=\"https:\/\/mastinlabs.com\/products\/adventure-everyday-lightroom\">SHOP ADVENTURE EVERYDAY &gt;<\/a> \n<\/p>",
+        "btn_color": "#ffffff",
+        "btn_color_border": "#f45332",
+        "btn_color_bg": "#f45332",
+        "btn_color_hover": "#ffffff",
+        "btn_color_border_hover": "#2274a5",
+        "btn_color_bg_hover": "#2274a5",
+        "layout": "left",
+        "divider": false
+      }
+    },
+    "3rd_multiple_text-image": {
+      "type": "1FW_multiple_text-image",
+      "blocks": {
+        "4668dc17-e37c-4567-a815-bdaad4613279": {
+          "type": "textimage",
+          "settings": {
+            "padding": "65px 0px 0px 0px",
+            "mobile_padding": "40px 25px 0px 25px",
+            "background_color": "#f7f6f2",
+            "color": "",
+            "image": "shopify:\/\/shop_images\/2222.jpg",
+            "image_on_left": false,
+            "code": "<h2>YOU’RE INSPIRED BY<\/h2><p>Tropical landscapes, vibrant cultures, \nnatural wonders, and creative \ncities. You thrive on positive vibes, \nnostalgic moments, spontaneity, \nand offbeat celebrations.\n<\/p>",
+            "text_algin": "left"
+          }
+        },
+        "0fc4e0f7-72fd-4ffc-9c25-f02c67c59fb4": {
+          "type": "textimage",
+          "settings": {
+            "padding": "0px 0px 65px 0px",
+            "mobile_padding": "0px 25px 15px 25px",
+            "background_color": "#f7f6f2",
+            "color": "",
+            "image": "shopify:\/\/shop_images\/3333_4bdf4c00-1085-4b25-be8a-dcd03913e64a.jpg",
+            "image_on_left": true,
+            "code": "<h2>YOU LOVE PHOTOS THAT FEEL<\/h2><p>Warm, happy, vibrant, bold, and \nfull of life in the moment.\n<\/p>",
+            "text_algin": "left"
+          }
+        }
+      },
+      "block_order": [
+        "4668dc17-e37c-4567-a815-bdaad4613279",
+        "0fc4e0f7-72fd-4ffc-9c25-f02c67c59fb4"
+      ],
+      "settings": {
+        "headline": "",
+        "description": ""
+      }
+    },
+    "whatisinclude-pro-1620201103": {
+      "type": "1FW-whatisinclude",
+      "blocks": {
+        "whatisinclude-pro-1620201103-0": {
+          "type": "include",
+          "settings": {
+            "include_title": "",
+            "include_image": "shopify:\/\/shop_images\/ADV_E_EKTAR100_Lizzeth_Mendoza_01.jpg",
+            "include_content": "<h3>Ektar 100<\/h3>\n<p>Bright, bold \nand colorful<\/p>",
+            "max_width": "220px"
+          }
+        },
+        "whatisinclude-pro-1620201103-1": {
+          "type": "include",
+          "settings": {
+            "include_title": "",
+            "include_image": "shopify:\/\/shop_images\/ADV_E_GOLD200_Lizzeth_Mendoza_01_b45c86fa-f6d0-48c3-979a-a8600f36b0e8.jpg",
+            "include_content": "<h3>Gold 200<\/h3>\n<p>Versatile golden tones \nwith medium contrast<\/p>",
+            "max_width": "220px"
+          }
+        },
+        "whatisinclude-pro-1620201103-2": {
+          "type": "include",
+          "settings": {
+            "include_title": "",
+            "include_image": "shopify:\/\/shop_images\/ADV_E_TRIX400_Lizzeth_Mendoza_01.jpg",
+            "include_content": "<h3>Tri-X 400<\/h3>\n<p>Classic black &amp; white with medium contrast<\/p>",
+            "max_width": "220px"
+          }
+        }
+      },
+      "block_order": [
+        "whatisinclude-pro-1620201103-0",
+        "whatisinclude-pro-1620201103-1",
+        "whatisinclude-pro-1620201103-2"
+      ],
+      "settings": {
+        "divider": false,
+        "space_around": false,
+        "padding": "50px 0px 50px 0px",
+        "mobile_padding": "30px 0px 30px 0px",
+        "color": "#ffffff",
+        "background_color": "#261d2d",
+        "text_align": "center",
+        "content_padding": "0px 0px 50px 0px",
+        "content_mobile_padding": "0px 0px 30px 0px",
+        "section_title": "Meet Your Presets",
+        "section_content": "<p style=\"text-align:center\">With the Adventure Everyday pack, you get three versatile film looks for documenting your life.<\/p>",
+        "extra_content": "<p style=\"text-align:center\">\n<a class=\"btn text-link\" href=\"https:\/\/mastinlabs.com\/products\/adventure-everyday-lightroom\">SHOP LIGHTROOM &gt;<\/a> <a class=\"btn text-link\" href=\"https:\/\/mastinlabs.com\/products\/adventure-everyday-capture-one\">SHOP CAPTURE ONE &gt;<\/a>\n<\/p>"
+      }
+    },
+    "customer-says-pro-1620204230": {
+      "type": "1FW-testimonial",
+      "blocks": {
+        "customer-says-pro-1620204230-0": {
+          "type": "testimonial",
+          "settings": {
+            "testimonial": "<p>“The Adventure Everyday pack gives me all the warm tones that I have been needing in my work! It is drastically reducing my editing time and giving me a perfect golden vibe to my photos.”<\/p>",
+            "author": "CHLOE"
+          }
+        },
+        "customer-says-pro-1620204230-1": {
+          "type": "testimonial",
+          "settings": {
+            "testimonial": "<p>These presets are AMAZING. I wasted years trying out different free or low-cost options and wish I had done these sooner! The work flow is such a time saver and the results are incomparable!<\/p>",
+            "author": "Lauren B."
+          }
+        },
+        "customer-says-pro-1620204230-2": {
+          "type": "testimonial",
+          "settings": {
+            "testimonial": "<p>Fantastic - for me the combination of Ektar 100 for when I want strong Oranges and C200 for when I want to tone down the oranges makes for the perfect \"day trip adventure\" energy. 10\/10<\/p>",
+            "author": "Adam"
+          }
+        }
+      },
+      "block_order": [
+        "customer-says-pro-1620204230-0",
+        "customer-says-pro-1620204230-1",
+        "customer-says-pro-1620204230-2"
+      ],
+      "settings": {
+        "title": "What Adventure Everyday  photographers  are saying",
+        "background_color": "#f7f6f2",
+        "slider_per_page": "1",
+        "align_text": "left",
+        "round_images": false,
+        "divider": false,
+        "main_background_image": "shopify:\/\/shop_images\/Group_47_5a4a8cc1-0887-4747-8fb2-851c035fa014.png",
+        "main_background_color": "shopify:\/\/shop_images\/Group_44_815abfc7-8e72-4f9d-8662-2f844abd569b.png",
+        "main_color": "#ffffff",
+        "padding": "50px 0px 50px 0px",
+        "mobile_padding": "30px 0px 30px 0px"
+      }
+    },
+    "double_guide": {
+      "type": "1FW-double_guide",
+      "settings": {
+        "enable": true,
+        "main_bg_image": "shopify:\/\/shop_images\/testimonial_background.jpg",
+        "before_background_image": "shopify:\/\/shop_images\/Vector_1.png",
+        "before_background": "#f7f6f2",
+        "headline": "<h2>Ready to learn more? <span style=\"color:#F45332\" class=\"freescript_v2 \">Check out our free guides below.<\/span>\n<\/h2>",
+        "title_background": "#eae9e4",
+        "after_background_image": "shopify:\/\/shop_images\/Vector_2.png",
+        "padding": "20px 20px 20px 20px",
+        "mobile_padding": "10px 10px 10px 10px",
+        "guide_padding": "50px 20px 20px 20px",
+        "guide_mobile_padding": "20px 20px 20px 20px",
+        "fguide_title": "THE ULTIMATE GUIDE TO  LIGHT & AIRY  PHOTOGRAPHY",
+        "fguide_code": "<div class=\"klaviyo-form-Wu3sKK\"><\/div>",
+        "fguide_image": "shopify:\/\/shop_images\/pexels-dmitry-zvolskiy-1721944_1.png",
+        "sguide_title": "THE ULTIMATE GUIDE TO  LIGHT & AIRY  PHOTOGRAPHY",
+        "sguide_code": "<div class=\"klaviyo-form-XpT4HY\"><\/div>",
+        "sguide_image": "shopify:\/\/shop_images\/last_image.png"
+      }
+    }
+  },
+  "order": [
+    "1625886222036ec7d5",
+    "3rd_multiple_text-image",
+    "whatisinclude-pro-1620201103",
+    "customer-says-pro-1620204230",
+    "double_guide"
+  ]
+}

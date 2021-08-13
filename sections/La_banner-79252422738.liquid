@@ -1,0 +1,106 @@
+{%include "la_banner"%}
+{% schema %}
+  {
+    "name": "LA Banner",
+    "settings": [
+		{
+          "type": "checkbox",
+          "id": "enable",
+          "label": "Display for live site?",
+		  "default":true
+        },
+		{
+          "type": "text",
+          "id": "headline",
+          "label": "Section Title",
+		  "default":"Free Guide"
+        },
+	    {
+          "type": "text",
+          "id": "title",
+          "label": "Title",
+		  "default":"The Ultimate Guide to Light & Airy Photography."
+        },
+	    {
+          "type": "text",
+          "id": "description",
+          "label": "Description"
+        },
+		{
+          "type": "text",
+          "id": "form_code",
+          "label": "Form class"
+        },
+		{
+          "type": "image_picker",
+          "id": "background_image",
+          "label": "Background Image"
+        },
+		{
+          "type": "header",
+          "content": "Color Setting"
+        },
+		{
+          "type": "color",
+          "id": "border_color",
+          "label": "Border Out-line Color"
+        },
+		{
+          "type": "color",
+          "id": "button_color",
+          "label": "Button Background Color"
+        },
+		{
+          "type": "color",
+          "id": "background_color",
+          "label": "Background Color"
+        },
+		{
+          "type": "color",
+          "id": "text_color",
+          "label": "Text Color",
+		  "default":"#cccccc"
+        },
+		
+        {
+          "type": "header",
+          "content": "Padding Setting"
+        },
+        {
+          "type": "text",
+          "id": "margin",
+          "label": "Desktop margin",
+          "default": "30px 30px 30px 30px",
+            "info" : "Top right bottom left"
+        },
+          {
+          "type": "text",
+          "id": "mobile_margin",
+          "label": "Mobile margin",
+          "default": "30px 30px 30px 30px",
+              "info" : "Top right bottom left"
+        }, 
+		{
+          "type": "text",
+          "id": "padding_content",
+          "label": "Desktop Content Padding",
+          "default": "50px 0px 50px 0px",
+            "info" : "Top right bottom left"
+        },
+          {
+          "type": "text",
+          "id": "mobile_content_padding",
+          "label": "Mobile Content Padding",
+          "default": "50px 0px 50px 0px",
+              "info" : "Top right bottom left"
+        }
+
+	],
+	"presets": [
+      {
+        "name": "La Banner",
+        "category": "Deprohoang Sections"
+      }
+    ]
+  }
+{% endschema %}

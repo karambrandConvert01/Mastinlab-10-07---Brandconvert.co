@@ -1,0 +1,77 @@
+{%include "community_testimonial"%}
+{% schema %}
+  {
+    "name": "Community Testimonial",
+    "class": "index-section",
+    "settings": [
+      {
+        "type": "checkbox",
+        "id": "divider",
+        "label": "Show section divider",
+        "default": false
+      },
+	  {
+        "type": "color",
+        "id": "background_color",
+        "label": "Background Color"
+      },
+	  {
+        "type": "text",
+        "id": "padding",
+        "label": "Custom Padding ",
+        "default": "0px 0px 0px 0px",
+        "info" : "Top right bottom left"
+      },
+	  {
+        "type": "text",
+        "id": "mobile_padding",
+        "label": "Mobile Padding",
+        "default": "0px 0px 0px 0px",
+		"info" : "Top right bottom left"
+      }
+
+    ],
+	"blocks":[
+		{
+		"type": "testimonial",
+        "name": "Testimonial",
+		"settings":[
+          {
+            "type": "text",
+            "id": "titletext",
+            "label": "Title",
+            "default": "- JOHN JAMES"
+           },
+           {
+            "type": "html",
+            "id": "contenttext",
+            "label": "Title",
+            "default": "<p>“I just want to say a big thanks to this community.<I>I would not be the person or photographer I am   today without each and every one of you that</I>lends inspiration, insight and conversation.” </p>"
+           },
+		  {
+            "type": "image_picker",
+            "id": "bg_image",
+            "label": "Background Image"
+          },
+		  {
+            "type": "color",
+            "id": "text_color",
+            "label": "Text Color"
+          },
+		  {
+            "type": "color",
+            "id": "bg_color",
+            "label": "Background Color"
+          }
+		]
+	  }
+	],
+	"presets": [
+      {
+        "name": "Community Testimonial",
+        "category": "Deprohoang Sections"
+      }
+    ]
+  }
+{% endschema %}
+

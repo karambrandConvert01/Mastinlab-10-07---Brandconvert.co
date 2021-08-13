@@ -1,0 +1,117 @@
+<div class="before-after-wrapper" id="dp__custom_for_product">
+  <div class="before_after_content">
+	{%assign number = product.media.size | divided_by: 2 | floor | minus : 1%}
+	{%assign allmedia = product.media  %}
+	{%assign slider = ""%}
+	{%assign thumbnails = ""%}
+	{%- for item in (0..number) -%}
+		
+		{%- assign current = item | times: 2 -%}
+		{%- assign next = item | times: 2 | plus: 1 -%}
+		{%- assign media = allmedia[current] -%}
+		{%- assign media_url = media | img_url: '1x1' | replace: '_1x1.', '_{width}x.' -%}
+		<div class="ba-slider">
+		  
+		  {% case media.media_type %}
+		  {% when 'image' %}
+			
+			<img class="lazyload"
+				data-src="{{ media_url  }}"
+				data-widths="[360, 540, 720, 900, 1080, 1600]"
+				data-aspectratio="{{ media.aspect_ratio }}"
+				data-sizes="auto"
+				alt="{{ media.alt }}">
+		  
+		  {% when 'external_video' %}
+			
+		   {{ media | external_video_tag }}
+		   
+		  {% when 'video' %}
+			
+			  {{ media | video_tag: controls: true | replace: "<video", "<video autoplay"}}
+		   
+		  {% else %}
+		   
+			 {{ media | media_tag }}
+			
+		{% endcase %}
+		  
+		  
+		  
+		  <div class="resize" style="width:35%">
+			{%- assign medianext = allmedia[next] -%}
+			{%- assign media_url_next = medianext | img_url: '1x1' | replace: '_1x1.', '_{width}x.' -%}
+			
+			{% case medianext.media_type %}
+			  {% when 'image' %}
+				<div class="slider_inner">
+				<img
+					class="lazyloaded lazy2"
+					src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII="
+					data-src="{{ medianext | img_url: '720x' }}"
+					data-mobsrc="{{ medianext | img_url: '360x' }}"
+					data-aspectratio="{{ medianext.aspect_ratio }}"
+					data-sizes="auto"
+					alt="{{ medianext.alt }}">
+				  </div>
+			  {% when 'external_video' %}
+			   {{ media | external_video_tag }}
+
+			  {% when 'video' %}
+				<div class="slider_inner">
+				  {{ medianext | video_tag: controls: true | replace: "<video", "<video autoplay"}}
+				</div>
+			  {% else %}
+
+				 {{ medianext | media_tag }}
+
+			{% endcase %}
+			
+		   
+			
+		  </div>
+		  <div class="handle" style="left:35%"><span></span></div>
+		  <div class="slider_before" data-after="onright">BEFORE</div>
+		  <div class="slider_after" data-after="onright">AFTER</div>
+		</div>
+		
+	   {% capture slidercap %}
+		<div class="slider_caption">
+			{{ media.alt }}
+		</div>
+		{% endcapture %}
+		{%assign slider = slider | append: slidercap %} 
+	
+		
+		{% capture thumbnail %}
+		<div class="product__thumb-item"
+			  data-index="current">
+			  <div class="image-wrap" style="height: 0; padding-bottom: {{ 100 | divided_by: medianext.aspect_ratio }}%;">
+				<a
+				  href="#"
+				  class="product__thumb dp_custom_thumb js-no-transition"
+				  data-index="{{ item }}"
+				  data-id="{{ item }}">                 
+				  <img class="animation-delay-{{ item | times: 3 }} lazyload"
+					  data-src="{{ media_url }}"
+					  data-widths="[360, 540, 720, 900, 1080]"
+					  data-aspectratio="{{ medianext.aspect_ratio }}"
+					  data-sizes="auto"
+					  alt="{{ medianext.alt | escape }}">
+				</a>
+			  </div>
+			</div>
+		{% endcapture %}
+		{%assign thumbnails = thumbnails | append: thumbnail %} 
+	{%- endfor -%}
+  </div>
+  <div
+		id="ProductThumbs-product"
+		class="product__thumbs product__thumbs--below"
+		data-position="below"
+		data-arrows="true"
+		data-aos>
+		{{thumbnails}}
+	  </div>
+  
+</div>

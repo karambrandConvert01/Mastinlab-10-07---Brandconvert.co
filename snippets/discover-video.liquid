@@ -1,0 +1,130 @@
+<div class="dp-section-wrapper" id="dp__{{section.id}}">
+{% if section.settings.divider %}<div class="section--divider">{% endif %}
+
+<div class="page-width">
+  <div class="smaller_contaier">
+  {% capture image_layout %}
+    <div class="grid__item small--one-whole large-down--one-whole one-half">
+      <div class="video-wrapper">
+        {% if section.settings.video_image %}
+        	{%- assign image = section.settings.video_image | img_url: '1x1' | replace: '_1x1.', '_{width}x.' -%}
+
+        	<img id="overlay_image_video" class="overlay_image_video lazyload"
+                data-src="{{ image  }}"
+                data-widths="[360, 540, 720, 900, 1080, 1600]"
+                data-aspectratio="{{ section.settings.video_image.aspect_ratio }}"
+                data-sizes="auto"
+                alt="{{ section.settings.video_image.alt }}"> 
+        {%endif%}
+        {% if section.settings.video_url == blank %}
+          <iframe id="iframe_video" data-src="//www.youtube.com/embed/_9VUPq3SxOc?rel=0&showinfo=0&vq=720" width="850" height="480" frameborder="0" sandbox="allow-scripts allow-same-origin allow-presentation"></iframe>
+        {% else %}
+          {% if section.settings.video_url.type == "youtube" %}
+            <iframe id="iframe_video" data-src="//www.youtube.com/embed/{{ section.settings.video_url.id }}?rel=0&showinfo=0&vq=720" width="850" height="480" frameborder="0" sandbox="allow-scripts allow-same-origin allow-presentation"></iframe>
+          {% endif %}
+          {% if section.settings.video_url.type == "vimeo" %}
+            <iframe id="iframe_video" data-src="//player.vimeo.com/video/{{ section.settings.video_url.id }}?color={{ settings.color_button | remove: "#" }}&byline=0&portrait=0&badge=0" sandbox="allow-scripts allow-same-origin allow-presentation" width="850" height="480" frameborder="0" allowfullscreen="allowfullscreen" mozallowfullscreen="mozallowfullscreen" msallowfullscreen="msallowfullscreen" oallowfullscreen="oallowfullscreen" webkitallowfullscreen="webkitallowfullscreen"></iframe>
+          {% endif %}
+        {% endif %}
+        
+        </div>
+  		</div>
+  {% endcapture %}
+
+  <div class="feature-rows grid custom-content">
+    {% if section.settings.layout == 'left' %}
+      {{ image_layout }}
+    {% endif %}
+
+    <div class="grid__item small--one-whole large-down--one-whole one-half feature-row__text feature-row__text--{{ section.settings.layout }}">
+      {% if section.settings.subtitle != blank %}
+        <p class="h5">{{ section.settings.subtitle }}</p>
+      {% endif %}
+      {% if section.settings.title != blank %}
+        <h3>{{ section.settings.title | escape }}</h3>
+      {% endif %}
+      {% if section.settings.text != blank %}
+        <div class="rte featured-row__subtext">{{ section.settings.text }}</div>
+      {% endif %}
+      {% if section.settings.button_label != blank %}
+        <a href="{{ section.settings.button_link }}" class="btn section-depro_color">
+          {{ section.settings.button_label }}
+        </a>
+      {% endif %}
+    </div>
+
+    {% if section.settings.layout == 'right' %}
+      {{ image_layout }}
+    {% endif %}
+  </div>
+  </div>
+</div>
+
+{% if section.settings.divider %}</div>{% endif %}
+</div>
+{% style %}
+  #shopify-section-{{ section.id }} .section-depro_color{
+    color: {{ section.settings.btn_color}};
+	border-color: {{ section.settings.btn_color_border}};
+	background-color:{{ section.settings.btn_color_bg}};
+  }
+  #dp__{{section.id}} .feature-row__text{
+	text-align:{{ section.settings.text_align}} !important;
+	align-self: {{ section.settings.text_align_self}} !important;
+  }
+.overlay_image_video{
+	position:relative;
+	background:white;
+	z-index:100;
+}
+.overlay_image_video.hided{
+ visibility: hidden !important;
+}
+#dp__{{section.id}} .video-wrapper{
+  box-shadow:none;
+  padding:0px !important;
+  
+}
+#dp__{{section.id}} .video-wrapper iframe{
+ width:100%;
+height:100%;
+top:50%;
+transform:translateY(-50%);
+}
+  #dp__{{section.id}}{
+	padding:{{section.settings.padding}};
+	background-color:{{section.settings.background_color}};
+  }
+  #dp__{{section.id}} iframe{
+	padding:{{section.settings.vpadding}};
+	
+  }
+  @media only screen and (max-width: 768px) {
+	#dp__{{section.id}}{
+      padding:{{section.settings.mobile_padding}};
+    }
+	#dp__{{section.id}} iframe{
+	padding:{{section.settings.vmobile_padding}};
+	
+  }
+  #dp__{{section.id}} .feature-row__text{
+	text-align:center !important;
+  }
+ }
+{% endstyle %}
+<script>
+  ( function( d ) {
+   'use strict';
+
+
+const Player = document.getElementById('iframe_video');
+const PlayBtn = document.getElementById('overlay_image_video');
+const video_url = Player.getAttribute('data-src');
+const playVideo = PlayBtn.addEventListener( 'click' , (ev) => {
+      PlayBtn.classList.add( 'hided' );
+      Player.src = video_url+"&autoplay=1";
+      ev.preventDefault();
+});
+
+ }( document ));
+</script>

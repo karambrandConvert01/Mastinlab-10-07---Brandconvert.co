@@ -1,0 +1,70 @@
+<div class="dp-section-wrapper custom_text_pro_list " id="dp__{{section.id}}" >
+{% if section.settings.divider %}<div class="section--divider">{% endif %}
+  <div class="page-width" >
+    <div class="custom-contents" {%if section.settings.background_color%}style="background-color:{{section.settings.background_color}};color:{{section.settings.text_color}}"{%endif%}>
+    <div class="grid" style="width:100%">
+      <div class="grid__item text-center">
+        
+        {% if section.settings.headlinetext != blank %}
+          <p class="ch3">{{ section.settings.headlinetext }}</p>
+        {% endif %}
+        {% if section.settings.titletext != blank %}
+          <h2>{{ section.settings.titletext }}</h2>
+        {% endif %}
+
+        {% if section.settings.contenttext != blank %}
+          <div class="rte">
+            {{ section.settings.contenttext }}
+          </div>
+        {% endif %}
+        {%assign list_image = ""%}
+        
+        {% if section.settings.list_image != blank %}
+        	{%capture list_image%}
+         
+            <img src="{{ section.settings.list_image | img_url : "200x200"}}" alt="list image">
+          
+        {% endcapture %}
+        {% endif %}
+		<ul class="text_list_pro">
+        {% for block in section.blocks %}
+         
+         
+                {% if block.settings.text != blank %}
+                  
+            <li>{{list_image}}{{ block.settings.text }}</li>
+         
+                {% endif %}
+            
+          
+        {% endfor %}
+      </ul>
+       {% if section.settings.button_name != blank %}
+        	
+         
+        <p class="text-center"><a class="btn dp_button" href="{% if section.settings.button_link != blank %}{{section.settings.button_link}}{%endif%}">{{section.settings.button_name}}</a></p>
+        
+        
+       {% endif %}
+       {% if section.settings.button_link != blank %}<p>{{section.settings.button_descriptiontext}}</p>{%endif%}
+    </div>
+    </div>
+  </div>
+</div>
+
+{% if section.settings.divider %}</div>{% endif %}
+  
+</div>
+{% style %}
+  #dp__{{section.id}} .custom-contents{
+	padding:{{section.settings.padding}};
+	
+  }
+  
+  @media only screen and (max-width: 768px) {
+    
+	#dp__{{section.id}} .custom-contents{
+      padding:{{section.settings.mobile_padding}};
+    }
+  }
+{% endstyle %}

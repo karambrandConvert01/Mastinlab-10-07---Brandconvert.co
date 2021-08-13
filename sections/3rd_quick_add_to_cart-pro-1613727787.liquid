@@ -1,0 +1,94 @@
+{%- if section.settings.enable == false and request.design_mode == false -%}
+{%-else-%}
+<div class="dp-section-wrapper" id="dp__{{section.id}}">
+  <div class="index-section">
+  <div class="page-width">
+  <div class="custom-content" style="background-color:{{section.settings.background_color}};color:{{section.settings.text_color}}">
+    <div class="custom__item item__index__1 one-whole align--center">
+      <div class="custom__item-inner custom__item-inner--html text-center">
+        <h1>{{section.settings.title}}</h1>
+        {%if section.settings.content != ""%}{{section.settings.content}}{%endif%}
+		{%if template contains "product"%}
+        {% unless product.has_only_default_variant %}
+        {% for option in product.options_with_values %}
+
+        {% include 'variant-button-v3', section_id: "custom_product_btn", option_drop: option %}
+        {%endfor%}
+        {% endunless %}
+        {%endif%}
+      </div>
+    </div>
+  </div>
+  </div>
+
+
+ </div>
+
+  
+</div>
+{% style %}
+#dp__{{section.id}} .custom-content{
+  padding:{{section.settings.padding}}
+}
+@media only screen and (max-width: 768px) {
+  #dp__{{section.id}} .custom-content{
+    padding:{{section.settings.mobile_padding}};
+  }
+}
+{% endstyle %}
+{%endif%}
+{% schema %}
+  {
+    "name": "Quick Add To Cart",
+    "settings": [
+{
+          "type": "checkbox",
+          "id": "enable",
+          "label": "Display for live site?",
+		  "default":true
+        },
+	    {
+          "type": "text",
+          "id": "title",
+          "label": "Title",
+		  "default":"Ready to upgrade your editing?"
+        },
+		{
+          "type": "html",
+          "id": "content",
+		  "label":"Content"
+		},
+		
+		{
+          "type": "color",
+          "id": "background_color",
+          "label": "Background Color"
+        },
+		{
+          "type": "color",
+          "id": "text_color",
+          "label": "Text Color",
+		  "default":"#cccccc"
+        },
+        {
+          "type": "header",
+          "content": "Padding Setting"
+        },
+          {
+          "type": "text",
+          "id": "padding",
+          "label": "Desktop Padding",
+          "default": "0px 0px 0px 0px",
+            "info" : "Top right bottom left"
+        },
+          {
+          "type": "text",
+          "id": "mobile_padding",
+          "label": "Mobile Padding",
+          "default": "0px 0px 0px 0px",
+              "info" : "Top right bottom left"
+        }
+
+	]
+  }
+{% endschema %}

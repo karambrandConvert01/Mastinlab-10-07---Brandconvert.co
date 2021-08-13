@@ -1,0 +1,124 @@
+{%include "3rd_presetVSprofiles"%}
+{% schema %}
+  {
+    "name": "Presets VS Profiles",
+    "settings": [
+{
+          "type": "checkbox",
+          "id": "enable",
+          "label": "Display for live site?",
+		      "default":true
+        },
+        {
+          "type": "checkbox",
+          "id": "default_open",
+          "label": "default hide?",
+		  "default":true
+        },
+		{
+          "type": "text",
+          "id": "headline",
+          "label": "Section Title",
+		  "default":"Presets vs. Profiles: What’s the Difference"
+        },
+		{
+            "type": "header",
+            "content": "First Block"
+        },
+	    {
+          "type": "text",
+          "id": "title",
+          "label": "Title",
+		  "default":"PRESETS"
+        },
+		{
+          "type": "html",
+          "id": "content",
+		  "label":"Content",
+		   "default": "<p>With the Mastin 3-Step Workflow™, getting a clean, consistent film look is fast and easy:<\/p>1. Apply a preset<br>2. Adjust exposure<br>3. Adjust white balance.<br><p>Seriously, editing really can be that simple.<\/p>"
+        },
+		{
+            "type": "header",
+            "content": "Second Block"
+        },
+		{
+          "type": "text",
+          "id": "stitle",
+          "label": "Title",
+		  "default":"Profiles"
+        },
+		{
+          "type": "html",
+          "id": "scontent",
+		  "label":"Content",
+		   "default": "<p>With the Mastin 3-Step Workflow™, getting a clean, consistent film look is fast and easy:<\/p>1. Apply a preset<br>2. Adjust exposure<br>3. Adjust white balance.<br><p>Seriously, editing really can be that simple.<\/p>"
+        },
+		{
+          "type": "color",
+          "id": "background_color",
+          "label": "Background Color"
+        },
+		{
+          "type": "color",
+          "id": "text_color",
+          "label": "Text Color",
+		  "default":"#cccccc"
+        },
+		{
+          "type": "color",
+          "id": "hbackground_color",
+          "label": "Toggle Background Color"
+        },
+		{
+          "type": "color",
+          "id": "htext_color",
+          "label": "Toggle Text Color",
+		  "default":"#000000"
+        },
+        {
+          "type": "header",
+          "content": "Padding Setting"
+        },
+          {
+          "type": "text",
+          "id": "padding",
+          "label": "Desktop Padding",
+          "default": "0px 0px 0px 0px",
+            "info" : "Top right bottom left"
+        },
+          {
+          "type": "text",
+          "id": "mobile_padding",
+          "label": "Mobile Padding",
+          "default": "0px 0px 0px 0px",
+              "info" : "Top right bottom left"
+        },
+		{
+          "type": "header",
+          "content": "Content Padding Setting"
+        },
+          {
+          "type": "text",
+          "id": "cpadding",
+          "label": "Desktop Padding",
+          "default": "0px 0px 0px 0px",
+            "info" : "Top right bottom left"
+        },
+          {
+          "type": "text",
+          "id": "cmobile_padding",
+          "label": "Mobile Padding",
+          "default": "0px 0px 0px 0px",
+              "info" : "Top right bottom left"
+        }
+
+
+	],
+	"presets": [
+      {
+        "name": "Presets VS Profiles",
+        "category": "3rd Design"
+      }
+    ]
+  }
+{% endschema %}

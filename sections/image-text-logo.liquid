@@ -1,0 +1,138 @@
+{%include "image-text-logo"%}
+{% schema %}
+  {
+    "name": "Image with testimonial",
+    "class": "index-section",
+    "settings": [
+      {
+        "type": "checkbox",
+        "id": "divider",
+        "label": "Show section divider",
+        "default": false
+      },
+	  {
+        "type": "text",
+        "id": "padding",
+        "label": "Custom Padding ",
+        "default": "0px 0px 0px 0px",
+        "info" : "Top right bottom left"
+      },
+	  {
+        "type": "text",
+        "id": "mobile_padding",
+        "label": "Mobile Padding",
+        "default": "0px 0px 0px 0px",
+		"info" : "Top right bottom left"
+      }
+    ],
+	"blocks":[
+		{
+		"type": "testimonial",
+        "name": "Testimonial",
+		"settings":[
+		  {
+            "type": "image_picker",
+            "id": "image",
+            "label": "Image"
+          },
+          {
+            "type": "range",
+            "id": "image_width",
+            "label": "Image width",
+            "default": 500,
+            "min": 100,
+            "max": 500,
+            "step": 10,
+            "unit": "px"
+          },
+		  {
+            "type": "select",
+            "id": "layout",
+            "label": "Layout",
+            "default": "left",
+            "options": [
+              {
+                "value": "left",
+                "label": "Image on left"
+              },
+              {
+                "value": "right",
+                "label": "Image on right"
+              }
+            ]
+          },
+		  {
+            "type": "text",
+            "id": "image_caption",
+            "label": "Image caption",
+            "default": "PHOTO BY CHRISTINA QUESENBERRY"
+          },
+		  {
+            "type": "image_picker",
+            "id": "icon",
+            "label": "Icon"
+          },
+		  {
+            "type": "select",
+            "id": "icon_align",
+            "label": "Icon Align",
+            "default": "left",
+            "options": [
+              {
+                "value": "left",
+                "label": "Icon on left"
+              },
+              {
+                "value": "right",
+                "label": "Icon on right"
+              }
+            ]
+          },
+          {
+            "type": "text",
+            "id": "title",
+            "label": "Heading",
+            "default": "I’ve finally found my style."
+          },
+          {
+            "type": "richtext",
+            "id": "text",
+            "label": "Text",
+            "default": "<p>Pair large text with an image to tell a story, explain a detail about your product, or describe a new promotion.</p>"
+          },
+          {
+            "type": "text",
+            "id": "name",
+            "label": "Customer Name",
+            "default": "CHRISTINA QUESENBERRY"
+          },
+          {
+            "type": "text",
+            "id": "address",
+            "label": "Customer Address",
+            "default": "VILSECK, GERMANY"
+          },
+          {
+            "type": "color",
+            "id": "background_color",
+            "label": "Testimonial background color ",
+            "default": "#261d2d"
+          },
+          {
+            "type": "color",
+            "id": "text_color",
+            "label": "Testimonial text color ",
+            "default": "#f4f4f4"
+          }
+          
+		]
+	  }
+	],
+    "presets": [
+      {
+        "name": "Image with testimonial",
+        "category": "Deprohoang Sections"
+      }
+    ]
+  }
+{% endschema %}

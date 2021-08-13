@@ -1,0 +1,41 @@
+{%include "social_image"%}
+{% schema %}
+  {
+    "name": "Custom Social Images",
+    "class": "index-section",
+	"max_blocks": 100,
+    "settings": [
+      
+    ],
+    "blocks": [
+      {
+        "type": "social_media",
+        "name": "Custom social media",
+        "settings": [
+		  {
+            "type": "text",
+            "id": "social_image_display",
+            "label": "Title"
+          },
+		  {
+            "type": "text",
+            "id": "social_image_for",
+            "label": "Social media for Url"
+          },
+          {
+            "type": "image_picker",
+            "id": "social_image",
+            "label": "Image"
+          }
+		
+  		]
+	 }
+    ],
+    "presets": [
+      {
+        "name": "Custom Social Images",
+        "category": "Image"
+      }
+    ]
+  }
+{% endschema %}

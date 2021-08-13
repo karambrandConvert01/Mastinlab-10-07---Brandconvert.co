@@ -1,0 +1,160 @@
+{%render "whatisinclude"%}
+{% schema %}
+  {
+    "name": "What’s Included",
+    "settings": [
+	  {
+        "type": "checkbox",
+        "id": "divider",
+        "label": "Show section divider",
+        "default": false
+      },
+      {
+        "type": "checkbox",
+        "id": "space_around",
+        "label": "Add spacing above and below",
+        "default": true
+      },
+      {
+        "type": "header",
+        "content": "Section padding Setting"
+      },
+	  {
+        "type": "text",
+        "id": "padding",
+        "label": "Desktop Padding",
+        "default": "0px 0px 0px 0px",
+		"info" : "Top right bottom left"
+      },
+	  {
+        "type": "text",
+        "id": "mobile_padding",
+        "label": "Mobile Padding",
+        "default": "0px 0px 0px 0px",
+		"info" : "Top right bottom left"
+      },
+	  {
+        "type": "color",
+        "id": "background_color",
+        "label": "Custom background color ",
+        "default": "#f7f6f2"
+      },
+      {
+        "type": "select",
+        "id": "text_align",
+        "label": "Text align",
+        "default": "left",
+        "options": [
+        {
+        "value": "left",
+        "label": "Left"
+        },
+        {
+        "value": "center",
+        "label": "Center"
+        },
+        {
+        "value": "right",
+        "label": "Right"
+        }
+        ]
+      },
+	  {
+        "type": "header",
+        "content": "Content padding Setting"
+      },
+      {
+        "type": "text",
+        "id": "content_padding",
+        "label": "Desktop Padding",
+        "default": "0px 0px 0px 0px",
+        "info" : "Top right bottom left"
+      },
+      {
+        "type": "text",
+        "id": "content_mobile_padding",
+        "label": "Mobile Padding",
+        "default": "0px 0px 0px 0px",
+        "info" : "Top right bottom left"
+      },
+	  {
+        "type": "header",
+        "content": "Section Infomation"
+      },
+	  {
+        "type": "text",
+        "id": "section_title",
+        "label": "Section title"
+      }
+	],
+	"blocks": [
+      {
+        "type": "include",
+        "name": "Include",
+	    "settings": [
+          {
+            "type": "text",
+            "id": "include_title",
+            "label": "Title"
+          },
+	      {
+            "type": "image_picker",
+            "id": "include_image",
+            "label": "IMAGE"
+          },
+		  {
+            "type": "html",
+            "id": "include_content",
+            "label": "Content"
+          },
+		  {
+            "type": "text",
+            "id": "max_width",
+            "label": "Content max width",
+			"default":"220px"
+          }
+		  
+        ]
+      }
+	],
+	"presets": [
+      {
+        "name": "What’s Included",
+        "category": "Deprohoang Sections",
+        "blocks": [
+          {
+            "type": "include",
+            "settings": {
+              "include_title": "PRESETS",
+			  "include_content":"",
+			  "max_width":"220px"
+            }
+          },
+		  {
+            "type": "include",
+            "settings": {
+              "include_title": "TOOLS",
+			  "include_content":"<ul><li>Auto White Balance</li><li>Lens Correction</li><li>Auto Transform</li><li>Orange Reduction</li><li>Tone Profiles</li><li>Grain</li></ul>",
+			  "max_width":"180px"
+            }
+          },
+		  {
+            "type": "include",
+            "settings": {
+              "include_title": "BONUS EDUCATION",
+			  "include_content":"<ul><li>Three RAW images to get you started</li><li>A step-by-step editing tutorial video</li><li>A guide to getting started with the Mastin 3-Step Workflow™, tech support, and access to all future updates.</li></ul>",
+			  "max_width":"220px"
+            }
+          }
+			
+        ]
+      }
+    ]
+  }
+{% endschema %}
+
+{% stylesheet %}
+{% endstylesheet %}
+
+{% javascript %}
+{% endjavascript %}

@@ -1,0 +1,46 @@
+{% style %}
+{% if section.blocks.size > 0 %}
+{% for block in section.blocks %}
+	.custom_products-{{block.settings.product}}:after{
+		content:"{{block.settings.text}}";
+	}
+	{%if block.settings.image %}
+	.custom_products-{{block.settings.product}}:before{
+		background-image:url("{{block.settings.image | img_url : 'master'}}");
+	}
+	{%endif%}
+{%endfor%}
+{%endif%}
+{% endstyle %}
+{% schema %}
+  {
+    "name": "Custom Nav",
+    "max_blocks": 100,
+    "settings": [
+
+    ],
+    "blocks": [
+      {
+        "type": "nav_setup",
+        "name": "Nav Setting",
+        "settings": [
+          {
+            "type": "image_picker",
+            "id": "image",
+            "label": "Image"
+          },
+          {
+            "type": "text",
+            "id": "text",
+            "label": "Description"
+          },
+		  {
+            "type": "product",
+            "id": "product",
+            "label": "Product"
+          }
+        ]
+      }
+    ]
+  }
+{% endschema %}

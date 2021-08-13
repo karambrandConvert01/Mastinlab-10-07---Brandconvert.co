@@ -1,0 +1,219 @@
+{
+  "sections": {
+    "1625886222036ec7d5": {
+      "type": "1FW-image-with-html",
+      "settings": {
+        "image": "shopify:\/\/shop_images\/Preset_Quiz_Characters_Final_FP_500x500_6e4076c3-c02b-4d25-b891-a1ebc50d4460.png",
+        "padding": "0px 0px 0px 0px",
+        "mobile_padding": "0px 0px 0px 0px",
+        "background_color": "#ffffff",
+        "image_width": 500,
+        "subtitle": "Your perfect preset pack is...",
+        "subtitle_color": "#f45332",
+        "title": "Fuji Pushed",
+        "text": "<hr>\n<h4 style=\"color:#274332\">you’re the VIBRANT AND \nAIRY PHOTOGRAPHER.<\/h4><p>You see the world through rose-colored glasses – \nand you want to capture the dreamiest moments \nwith an extra punch of color and depth.<\/p>\n<p>From a sophisticated destination elopement to an \neditorial fashion shoot, you’re drawn to stylized images \nthat fall somewhere between fantasy and reality.<\/p>\n<p style=\"text-align:left\">\n<a class=\"btn text-link\" href=\"https:\/\/mastinlabs.com\/products\/fuji-pushed-lightroom\">SHOP LIGHTROOM &gt; <\/a> <a class=\"btn text-link\" href=\"https:\/\/mastinlabs.com\/products\/fuji-pushed-capture-one\">SHOP CAPTURE ONE &gt; <\/a>\n<\/p>",
+        "btn_color": "#ffffff",
+        "btn_color_border": "#274332",
+        "btn_color_bg": "#274332",
+        "btn_color_hover": "#ffffff",
+        "btn_color_border_hover": "#274332",
+        "btn_color_bg_hover": "#274332",
+        "layout": "left",
+        "divider": false
+      }
+    },
+    "3rd_multiple_text-image": {
+      "type": "1FW_multiple_text-image",
+      "blocks": {
+        "4668dc17-e37c-4567-a815-33319554740306": {
+          "type": "textimage",
+          "settings": {
+            "padding": "65px 0px 0px 0px",
+            "mobile_padding": "40px 25px 0px 25px",
+            "background_color": "#f7f6f2",
+            "color": "",
+            "image": "shopify:\/\/shop_images\/111_5f991a5b-80bc-4def-a2c6-d3b46d4c893d.png",
+            "image_on_left": false,
+            "code": "<h2>YOU’RE INSPIRED BY<\/h2><p>white beaches, light-filled studios, styled alcoves, and carefully curated moments. You like to play outside the box.\n\n<\/p>",
+            "text_algin": "left"
+          }
+        },
+        "0fc4e0f7-72fd-4ffc-9c25-33329554740306": {
+          "type": "textimage",
+          "settings": {
+            "padding": "0px 0px 65px 0px",
+            "mobile_padding": "0px 25px 15px 25px",
+            "background_color": "#f7f6f2",
+            "color": "",
+            "image": "shopify:\/\/shop_images\/222_f42bee33-4d24-4d97-92dc-ada6ad8a5107.png",
+            "image_on_left": true,
+            "code": "<h2>YOU LOVE PHOTOS THAT FEEL<\/h2><p>happy, hopeful, romantic, energetic, \nglowing, and dreamy.\n\n<\/p>",
+            "text_algin": "left"
+          }
+        }
+      },
+      "block_order": [
+        "4668dc17-e37c-4567-a815-33319554740306",
+        "0fc4e0f7-72fd-4ffc-9c25-33329554740306"
+      ],
+      "settings": {
+        "headline": "",
+        "description": ""
+      }
+    },
+    "whatisinclude-pro-1620201103": {
+      "type": "1FW-whatisinclude",
+      "blocks": {
+        "whatisinclude-pro-3339554740306-0": {
+          "type": "include",
+          "settings": {
+            "include_title": "",
+            "include_image": "shopify:\/\/shop_images\/FUJI_P_400H_1_Laura_Memory_Escobar.jpg",
+            "include_content": "<h3>Fuji 400H+1<\/h3>\n<p>Light and airy with extra punch<\/p>",
+            "max_width": "220px"
+          }
+        },
+        "whatisinclude-pro-3339554740306-1": {
+          "type": "include",
+          "settings": {
+            "include_title": "",
+            "include_image": "shopify:\/\/shop_images\/FUJI_P_400H_2_Laura_Memory_Escobar.jpg",
+            "include_content": "<h3>Fuji 400H+2<\/h3>\n<p>Increased contrast \nand saturation<\/p>",
+            "max_width": "220px"
+          }
+        },
+        "whatisinclude-pro-3339554740306-2": {
+          "type": "include",
+          "settings": {
+            "include_title": "",
+            "include_image": "shopify:\/\/shop_images\/FUJI_P_160NS_1_Laura_Memory_Escobar.jpg",
+            "include_content": "<h3>Fuji 160NS+1<\/h3>\n<p>Neutral and balanced color with deep contrast<\/p>",
+            "max_width": "220px"
+          }
+        },
+        "e9461342-39d2-4d6d-b46f-957a22966a53": {
+          "type": "include",
+          "settings": {
+            "include_title": "",
+            "include_image": "shopify:\/\/shop_images\/FUJI_P_160NS_2_Laura_Memory_Escobar.jpg",
+            "include_content": "<h3>Fuji 160NS+2<\/h3>\n<p>Deeper contrast with magenta in the highlights<\/p>",
+            "max_width": "220px"
+          }
+        },
+        "fb2ee394-b9e9-40f8-9cb6-a2b4955427e6": {
+          "type": "include",
+          "settings": {
+            "include_title": "",
+            "include_image": "shopify:\/\/shop_images\/FUJI_P_800Z_1_Laura_Memory_Escobar.jpg",
+            "include_content": "<h3>Fuji 800Z+1<\/h3>\n<p>Pretty in pink with more magenta in the highlights<\/p>",
+            "max_width": "220px"
+          }
+        },
+        "1daaa418-1ccf-4c45-9dd2-6e1fba0226f1": {
+          "type": "include",
+          "settings": {
+            "include_title": "",
+            "include_image": "shopify:\/\/shop_images\/FUJI_P_800Z_2_Laura_Memory_Escobar.jpg",
+            "include_content": "<h3>Fuji 800Z+2<\/h3>\n<p>Glowing magenta with increased color and contrast<\/p>",
+            "max_width": "220px"
+          }
+        }
+      },
+      "block_order": [
+        "whatisinclude-pro-3339554740306-0",
+        "whatisinclude-pro-3339554740306-1",
+        "whatisinclude-pro-3339554740306-2",
+        "e9461342-39d2-4d6d-b46f-957a22966a53",
+        "fb2ee394-b9e9-40f8-9cb6-a2b4955427e6",
+        "1daaa418-1ccf-4c45-9dd2-6e1fba0226f1"
+      ],
+      "settings": {
+        "divider": false,
+        "space_around": false,
+        "padding": "50px 0px 50px 0px",
+        "mobile_padding": "30px 0px 30px 0px",
+        "color": "#ffffff",
+        "background_color": "#261d2d",
+        "text_align": "center",
+        "content_padding": "0px 0px 50px 0px",
+        "content_mobile_padding": "0px 0px 30px 0px",
+        "section_title": "Meet Your Presets",
+        "section_content": "<p style=\"text-align:center\">With the Adventure Everyday pack, you get three versatile film looks for documenting your life.<\/p>",
+        "extra_content": "<p style=\"text-align:center\">\n<a class=\"btn text-link\" href=\"https:\/\/mastinlabs.com\/products\/fuji-pushed-lightroom\">SHOP LIGHTROOM &gt;<\/a> <a class=\"btn text-link\" href=\"https:\/\/mastinlabs.com\/products\/fuji-pushed-capture-one\">SHOP CAPTURE ONE &gt;<\/a>\n<\/p>"
+      }
+    },
+    "customer-says-pro-1620204230": {
+      "type": "1FW-testimonial",
+      "blocks": {
+        "customer-says-pro-3339554740306-0": {
+          "type": "testimonial",
+          "settings": {
+            "testimonial": "<p>“Fuji Pushed gave my work <strong>the look I was searching for!<\/strong> The contrast, the color, and the overall feel of these presets gives my images exactly what they need.”<\/p>",
+            "author": "Chassidi"
+          }
+        },
+        "customer-says-pro-3339554740306-1": {
+          "type": "testimonial",
+          "settings": {
+            "testimonial": "<p>“I've bounced around between presets over the years, but for the first time I feel like I have <strong>everything I need in one package.<\/strong> Not only does the Fuji Pushed pack almost perfectly match my film scans, but I can color edit digital images so quickly. I feel like I have my life back!”<\/p>",
+            "author": "Katie"
+          }
+        },
+        "customer-says-pro-3339554740306-2": {
+          "type": "testimonial",
+          "settings": {
+            "testimonial": "<p>“The Fuji Pushed pack gives <strong>a real film look with a bit more character.<\/strong> I love that these presets are vibrant without being too punchy. I'd definitely recommend this pack because it's super easy to use.”<\/p>",
+            "author": "Austin"
+          }
+        }
+      },
+      "block_order": [
+        "customer-says-pro-3339554740306-0",
+        "customer-says-pro-3339554740306-1",
+        "customer-says-pro-3339554740306-2"
+      ],
+      "settings": {
+        "title": "What Fuji Pushed photographers are saying",
+        "background_color": "#f7f6f2",
+        "slider_per_page": "1",
+        "align_text": "left",
+        "round_images": false,
+        "divider": false,
+        "main_background_image": "shopify:\/\/shop_images\/Group_47_5a4a8cc1-0887-4747-8fb2-851c035fa014.png",
+        "main_background_color": "shopify:\/\/shop_images\/Group_44_3_b9c3438c-4f82-403f-b388-fbc756b13297.png",
+        "main_color": "#ffffff",
+        "padding": "50px 0px 50px 0px",
+        "mobile_padding": "30px 0px 30px 0px"
+      }
+    },
+    "double_guide": {
+      "type": "1FW-double_guide",
+      "settings": {
+        "enable": true,
+        "main_bg_image": "shopify:\/\/shop_images\/testimonial_background.jpg",
+        "before_background_image": "shopify:\/\/shop_images\/Vector_1.png",
+        "before_background": "#f7f6f2",
+        "headline": "<h2>Ready to learn more? <span style=\"color:#274332\" class=\"freescript_v2\">Check out our free guides below.<\/span>\n<\/h2>",
+        "title_background": "#eae9e4",
+        "after_background_image": "shopify:\/\/shop_images\/Vector_2.png",
+        "padding": "20px 20px 20px 20px",
+        "mobile_padding": "10px 10px 10px 10px",
+        "guide_padding": "50px 20px 20px 20px",
+        "guide_mobile_padding": "20px 20px 20px 20px",
+        "fguide_title": "THE ULTIMATE GUIDE TO  LIGHT & AIRY  PHOTOGRAPHY",
+        "fguide_code": "<div class=\"klaviyo-form-Wu3sKK\"><\/div>",
+        "fguide_image": "shopify:\/\/shop_images\/pexels-dmitry-zvolskiy-1721944_1.png",
+        "sguide_title": "THE ULTIMATE GUIDE TO  LIGHT & AIRY  PHOTOGRAPHY",
+        "sguide_code": "<div class=\"klaviyo-form-XpT4HY\"><\/div>",
+        "sguide_image": "shopify:\/\/shop_images\/last_image.png"
+      }
+    }
+  },
+  "order": [
+    "1625886222036ec7d5",
+    "3rd_multiple_text-image",
+    "whatisinclude-pro-1620201103",
+    "customer-says-pro-1620204230",
+    "double_guide"
+  ]
+}

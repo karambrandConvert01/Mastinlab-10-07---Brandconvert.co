@@ -1,0 +1,183 @@
+{%include "3rd_gallery"%}
+{% schema %}
+  {
+    "name": "Gallery",
+	"class":"depro-gallery",
+    "max_blocks": 40,
+    "settings": [
+		{
+          "type": "checkbox",
+          "id": "enable",
+          "label": "Display for live site?",
+		  "default":true
+        },
+	  {
+        "type": "text",
+        "id": "section_title",
+        "label": "Section title"
+      },
+	  {
+        "type": "text",
+        "id": "section_content",
+        "label": "Section description"
+      },
+	  {
+        "type": "text",
+        "id": "border",
+        "label": "Gallery Border",
+        "default": "0px"
+      },
+      {
+        "type": "header",
+        "content": "Padidng Setting"
+      },
+	  {
+        "type": "text",
+        "id": "padding",
+        "label": "Desktop Padding",
+        "default": "0px 0px 0px 0px",
+		"info" : "Top right bottom left"
+      },
+	  {
+        "type": "text",
+        "id": "mobile_padding",
+        "label": "Mobile Padding",
+        "default": "0px 0px 0px 0px",
+		"info" : "Top right bottom left"
+      },
+	  {
+      "type": "text",
+      "id": "padding_gallery",
+      "label": "Desktop Gallery Padding",
+      "default": "0px 0px 0px 0px",
+      "info" : "Top right bottom left"
+      },
+      {
+      "type": "text",
+      "id": "mobile_gallery_padding",
+      "label": "Mobile Gallery Padding",
+      "default": "0px 0px 0px 0px",
+      "info" : "Top right bottom left"
+      },
+	  {
+        "type": "color",
+        "id": "background_color",
+        "label": "Custom background color ",
+        "default": "#ffffff"
+      },
+	  {
+        "type": "checkbox",
+        "id": "fullWidth",
+        "label": "Full width",
+        "default": true
+      },
+	  {
+        "type": "select",
+        "id": "columns",
+        "label": "Columns per page",
+        "default": "three",
+        "options": [
+		{
+        "value": "two",
+        "label": "Two"
+        },
+        {
+        "value": "three",
+        "label": "Three"
+        },
+        {
+        "value": "four",
+        "label": "Four"
+        },
+        {
+        "value": "five",
+        "label": "Five"
+        }
+        ]
+      }
+    ],
+    "blocks": [
+      {
+        "type": "image",
+        "name": "Image",
+        "settings": [
+		  {
+            "type": "header",
+            "content": "Block Setting"
+          },
+          {
+            "type": "image_picker",
+            "id": "image",
+            "label": "Image"
+          },
+		  {
+            "type": "html",
+            "id": "title",
+            "label": "Title"
+          },
+		  {
+            "type": "html",
+            "id": "description",
+            "label": "Description"
+          },
+		  {
+            "type": "text",
+            "id": "button_name",
+            "label": "Button Name",
+			"default":"Lightroom"
+          },
+          {
+            "type": "url",
+            "id": "link",
+            "label": "Link"
+          },
+          {
+            "type": "text",
+            "id": "button_name_second",
+            "label": "Button Name second",
+			"default":"Capture One"
+          },
+          {
+            "type": "url",
+            "id": "link_second",
+            "label": "Link for button second"
+          },
+          {
+            "type": "select",
+            "id": "alignment",
+            "label": "Vertical alignment",
+            "default": "center",
+            "info": "Aligns when next to other custom content",
+            "options": [
+              {
+                "value": "top",
+                "label": "Top"
+              },
+              {
+                "value": "center",
+                "label": "Middle"
+              },
+              {
+                "value": "bottom",
+                "label": "Bottom"
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "presets": [
+      {
+        "name": "Gallery",
+        "category": "3rd Design"
+        
+      }
+    ]
+  }
+{% endschema %}
+
+{% stylesheet %}
+{% endstylesheet %}
+
+{% javascript %}
+{% endjavascript %}

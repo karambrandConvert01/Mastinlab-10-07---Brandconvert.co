@@ -1,0 +1,219 @@
+{%- if section.settings.enable == false and request.design_mode == false -%}
+{%-else-%}
+<div id="section-{{section.id}}" class="double_guide fw-sections">
+<div style="background-color:{{section.settings.before_background}};padding-top:50px;">
+{%if section.settings.before_background_image%}
+<img class="full-width-image" src="{{section.settings.before_background_image | img_url :'1000x'}}" >
+{%endif%}
+</div>
+<div style="background-color:{{section.settings.title_background}}">
+<div class="page-width">
+  <div class="center-text heade_line_guide">
+    {{section.settings.headline}}
+  </div>
+</div>
+</div>
+<div class="main_bg_image">
+{%if section.settings.after_background_image%}
+<img class="full-width-image" src="{{section.settings.after_background_image | img_url :'1000x'}}" >
+{%endif%}
+
+<div class="page-width main_test_content">
+      <div class="inner-page-width">
+        <div class="grid flex-display grid--uniform">
+          <div class="grid__item medium-up--six-twelfths">
+            <div class="guide_content fguide_content">
+              <div class="center_container">
+                <h3>{{section.settings.fguide_title}}</h3>
+                {{section.settings.fguide_code}}
+              </div>
+            </div>
+          </div>
+          <div class="grid__item medium-up--six-twelfths">
+            <div class="guide_content sguide_content">
+              <div class="center_container">
+                <h3>{{section.settings.sguide_title}}</h3>
+                {{section.settings.sguide_code}}
+              </div>
+            </div>
+          </div>
+        </div>
+  </div>
+</div>
+  </div>
+</div>
+{%style%}
+#section-{{section.id}} .fguide_content:after{
+	background-image:url({{section.settings.fguide_image | img_url :'1000x'}});
+	content:"";
+	position:absolute;
+	top:0px;
+	left:0px;
+	width:100%;
+	height:100%;
+	z-index:9;
+    background-size: cover;
+	background-position:center right;
+}
+#section-{{section.id}} .sguide_content:after{
+	background-image:url({{section.settings.sguide_image | img_url :'1000x'}});
+	content:"";
+	content:"";
+	position:absolute;
+	top:0px;
+	left:0px;
+	width:100%;
+	height:100%;
+	background-size: cover;
+	background-position:center left;
+}
+#section-{{section.id}} .main_test_content{
+	padding-top:50px;
+}
+#section-{{section.id}} .main_bg_image{
+padding:0px 0px 100px;
+{%if section.settings.main_bg_image %}
+
+	background-image:url({{section.settings.main_bg_image | img_url :'100x'}});
+
+{%endif%}
+}
+#section-{{section.id}} .heade_line_guide{
+	padding:{{section.settings.padding}};
+	text-align:center;
+}
+#section-{{section.id}} .heade_line_guide h2{
+ margin:0px;
+}
+#section-{{section.id}} .guide_content{
+	padding:{{section.settings.guide_padding}};
+}
+@media only screen and (max-width: 768px) {
+	#section-{{section.id}} .heade_line_guide{
+		padding:{{section.settings.mobile_padding}};
+	}
+	#section-{{section.id}} .guide_content{
+		padding:{{section.settings.guide_mobile_padding}};
+	}
+
+}
+{%endstyle%}
+{%-endif-%}
+{% schema %}
+  {
+    "name": "Double guide(FW)",
+    "settings": [
+		{
+          "type": "checkbox",
+          "id": "enable",
+          "label": "Display for live site?",
+		  "default":true
+        },
+		{
+          "type": "image_picker",
+          "id": "main_bg_image",
+          "label": "Main background image"
+        },
+	    {
+          "type": "image_picker",
+          "id": "before_background_image",
+          "label": "First highlight image"
+        },
+		{
+          "type": "color",
+          "id": "before_background",
+          "label": "First highlight background"
+        },
+		{
+          "type": "html",
+          "id": "headline",
+          "label": "Section Title",
+		  "default":"Ready to learn more? Check out our free guides below."
+        },
+		{
+          "type": "color",
+          "id": "title_background",
+          "label": "Title background"
+        },
+		{
+          "type": "image_picker",
+          "id": "after_background_image",
+          "label": "Last highlight image"
+        },
+		{
+          "type": "text",
+          "id": "padding",
+          "label": "Desktop Title Padding",
+          "default": "0px 0px 0px 0px",
+          "info" : "Top right bottom left"
+        },
+        {
+          "type": "text",
+          "id": "mobile_padding",
+          "label": "Mobile Title Padding",
+          "default": "0px 0px 0px 0px",
+          "info" : "Top right bottom left"
+        },
+		{
+          "type": "text",
+          "id": "guide_padding",
+          "label": "Guide Desktop Padding",
+          "default": "0px 0px 0px 0px",
+          "info" : "Top right bottom left"
+        },
+        {
+          "type": "text",
+          "id": "guide_mobile_padding",
+          "label": "Guide Mobile Padding",
+          "default": "0px 0px 0px 0px",
+          "info" : "Top right bottom left"
+        },
+		{
+          "type": "header",
+           "content": "Left Guide content"
+        },
+		{
+          "type": "text",
+          "id": "fguide_title",
+          "label": "Guide Title",
+		  "default":"THE ULTIMATE GUIDE TO  LIGHT & AIRY  PHOTOGRAPHY"
+        },
+	    {
+          "type": "html",
+          "id": "fguide_code",
+          "label": "Guide code"
+        },
+		{
+          "type": "image_picker",
+          "id": "fguide_image",
+          "label": "Guide background image"
+        },
+		{
+          "type": "header",
+           "content": "Right Guide content"
+        },
+		{
+          "type": "text",
+          "id": "sguide_title",
+          "label": "Guide Title",
+		  "default":"THE ULTIMATE GUIDE TO  LIGHT & AIRY  PHOTOGRAPHY"
+        },
+	    {
+          "type": "html",
+          "id": "sguide_code",
+          "label": "Guide code"
+        },
+		{
+          "type": "image_picker",
+          "id": "sguide_image",
+          "label": "Guide background image"
+        }
+	],
+	"presets": [
+      {
+        "name": "Double guide(FW)",
+        "category": "3rd Design"
+      }
+    ]
+  }
+{% endschema %}

@@ -1,0 +1,109 @@
+{%- if section.settings.enable == false and request.design_mode == false -%}
+{%-else-%}
+<div class="dp-section-wrapper n3rd_sections n3rd_desktop_presets" id="dp__{{section.id}}" >
+  <div class="page-width">
+    <div class="inner-page-width">
+      <h2 class="toggle_title {%unless section.settings.default_open %} tactive {%endunless%} toggle_button" style="background-color:{{section.settings.hbackground_color}};color:{{section.settings.htext_color}};">
+        {%include "plus_svg"%}
+         {{section.settings.headline}}</h2>
+      <div class="toggle_content " style="{%if section.settings.background_color != ""%}background-color:{{section.settings.background_color}};color:{{section.settings.text_color}};{%endif%}{% if request.design_mode %}max-height: 100% !important;{%endif%}" >
+      
+        <div class="padding_innter_content grid flex-display grid--uniform " >
+        
+		{%unless section.settings.image_right %}
+          {%if section.settings.image%}
+        <div class="grid__item  medium-up--five-twelfths">
+          <div class="right-content-wrapper custom_video_iframe">
+            
+		  {%- assign img_url = section.settings.image | img_url: '1x1' | replace: '_1x1.', '_{width}x.' -%}
+          <img id="overlay_image_video{{section.id}}" class="lazyload"
+               data-src="{{ img_url }}"
+               data-widths="[360, 540, 720, 900, 1080, 1600]"
+               data-aspectratio="{{ section.settings.image.aspect_ratio }}"
+               data-sizes="auto"
+               alt="{{ section.settings.image.alt }}">
+            
+            {% if section.settings.video_url == blank %}
+                {% else %}
+          {% if section.settings.video_url.type == "youtube" %}
+            <iframe id="iframe_video{{section.id}}" data-src="//www.youtube.com/embed/{{ section.settings.video_url.id }}?rel=0&showinfo=0&vq=720" width="850" height="480" frameborder="0" sandbox="allow-scripts allow-same-origin allow-presentation"></iframe>
+          {% endif %}
+          {% if section.settings.video_url.type == "vimeo" %}
+            <iframe id="iframe_video{{section.id}}" data-src="//player.vimeo.com/video/{{ section.settings.video_url.id }}?color={{ settings.color_button | remove: "#" }}&byline=0&portrait=0&badge=0" sandbox="allow-scripts allow-same-origin allow-presentation" width="850" height="480" frameborder="0" allowfullscreen="allowfullscreen" mozallowfullscreen="mozallowfullscreen" msallowfullscreen="msallowfullscreen" oallowfullscreen="oallowfullscreen" webkitallowfullscreen="webkitallowfullscreen"></iframe>
+          {% endif %}
+        {% endif %}
+            
+          </div>
+        </div>
+          {%endif%}
+		{%endunless%}
+        <div class="grid__item  {%if section.settings.image%}medium-up--seven-twelfths{%endif%}">
+     		<div class="left-content-wrapper">
+              <h3>{{section.settings.title}}</h3>
+              {{section.settings.content}}
+            </div>
+        </div>
+        {%if section.settings.image_right and section.settings.image%}
+        <div class="grid__item  medium-up--five-twelfths">
+          <div class="right-content-wrapper custom_video_iframe">
+		  {%- assign img_url = section.settings.image | img_url: '1x1' | replace: '_1x1.', '_{width}x.' -%}
+          <img id="overlay_image_video{{section.id}}" class="lazyload"
+               data-src="{{ img_url }}"
+               data-widths="[360, 540, 720, 900, 1080, 1600]"
+               data-aspectratio="{{ section.settings.image.aspect_ratio }}"
+               data-sizes="auto"
+               alt="{{ section.settings.image.alt }}">
+            
+            {% if section.settings.video_url == blank %}
+                  {% else %}
+          {% if section.settings.video_url.type == "youtube" %}
+            <iframe id="iframe_video{{section.id}}" data-src="//www.youtube.com/embed/{{ section.settings.video_url.id }}?rel=0&showinfo=0&vq=720" width="850" height="480" frameborder="0" sandbox="allow-scripts allow-same-origin allow-presentation"></iframe>
+          {% endif %}
+          {% if section.settings.video_url.type == "vimeo" %}
+            <iframe id="iframe_video{{section.id}}" data-src="//player.vimeo.com/video/{{ section.settings.video_url.id }}?color={{ settings.color_button | remove: "#" }}&byline=0&portrait=0&badge=0" sandbox="allow-scripts allow-same-origin allow-presentation" width="850" height="480" frameborder="0" allowfullscreen="allowfullscreen" mozallowfullscreen="mozallowfullscreen" msallowfullscreen="msallowfullscreen" oallowfullscreen="oallowfullscreen" webkitallowfullscreen="webkitallowfullscreen"></iframe>
+          {% endif %}
+        {% endif %}
+          </div>
+        </div>
+		{%endif%}
+        
+      </div>
+      </div>
+    </div>
+  </div>
+</div>
+{% style %}
+#dp__{{section.id}} .inner-page-width{
+  padding:{{section.settings.padding}}
+}
+#dp__{{section.id}} .padding_innter_content{
+  padding:{{section.settings.padding_content}}
+}
+
+@media only screen and (max-width: 768px) {
+  #dp__{{section.id}} .inner-page-width{
+    padding:{{section.settings.mobile_padding}};
+  }
+  #dp__{{section.id}} .padding_innter_content{
+    padding:{{section.settings.mobile_content_padding}}
+  }
+}
+{% endstyle %}
+{%endif%}
+{% if section.settings.video_url != blank %}
+<script>
+  ( function( d ) {
+   'use strict';
+
+const Player = document.getElementById('iframe_video{{section.id}}');
+const PlayBtn = document.getElementById('overlay_image_video{{section.id}}');
+const video_url = Player.getAttribute('data-src');
+const playVideo = PlayBtn.addEventListener( 'click' , (ev) => {
+      PlayBtn.classList.add( 'hided' );
+      Player.src = video_url+"&autoplay=1";
+      ev.preventDefault();
+});
+
+ }( document ));
+</script>
+{%endif%}

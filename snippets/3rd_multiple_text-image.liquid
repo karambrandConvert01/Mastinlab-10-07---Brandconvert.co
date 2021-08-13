@@ -1,0 +1,61 @@
+<div class="dp-section-wrapper n3rd_multiple_text-image n3rd_sections n3rd_group" id="dp__{{section.id}}">
+  <div class="page-width">
+  {%if section.settings.headline != ""%}
+  <h2 class="text-center">{{section.settings.headline}}</h2>
+  {%endif%}
+  {%if section.settings.description != ""%}
+  <p class="text-center">{{section.settings.description}}</p>
+  {%endif%}
+  </div>
+  {% for block in section.blocks %}
+  {%if block.settings.mobile_padding != ""%}
+  <style>
+    @media screen and (max-width:768px){
+      #group__{{block.id}}{
+        padding:{{block.settings.mobile_padding}} !important;
+      }
+    }
+ </style>
+  {%endif%}
+  <div class="group_single" id="group__{{block.id}}" style="background-color:{{block.settings.background_color}};color:{{block.settings.color}};padding:{{block.settings.padding}}">
+    <div class="page-width">
+      <div class="inner-page-width">
+        <div class="grid flex-display grid--uniform " >
+		  {%if block.settings.image_on_left%}
+          <div class="grid__item image_order medium-up--six-twelfths">
+            <div class="right-content-wrapper">
+              {%- assign img_url = block.settings.image | img_url: '1x1' | replace: '_1x1.', '_{width}x.' -%}
+                  <img class="lazyload"
+                      data-src="{{ img_url }}"
+                      data-widths="[360, 540, 720, 900, 1080, 1600]"
+                      data-aspectratio="{{ block.settings.image.aspect_ratio }}"
+                      data-sizes="auto"
+                      alt="{{ block.settings.image.alt }}">
+            </div>
+          </div>
+		  {%endif%}
+          <div class="grid__item text_order medium-up--six-twelfths">
+            <div class="left-content-wrapper text-box-layout text-{{block.settings.text_algin}}">
+              {{block.settings.code}}
+            </div>
+          </div>
+		  {%unless block.settings.image_on_left%}
+          <div class="grid__item image_order medium-up--six-twelfths">
+            <div class="right-content-wrapper">
+              {%- assign img_url = block.settings.image | img_url: '1x1' | replace: '_1x1.', '_{width}x.' -%}
+                  <img class="lazyload"
+                      data-src="{{ img_url }}"
+                      data-widths="[360, 540, 720, 900, 1080, 1600]"
+                      data-aspectratio="{{ block.settings.image.aspect_ratio }}"
+                      data-sizes="auto"
+                      alt="{{ block.settings.image.alt }}">
+            </div>
+          </div>
+		  {%endunless%}
+
+        </div>
+      </div>
+    </div>
+  </div>
+  {%endfor%}
+</div>

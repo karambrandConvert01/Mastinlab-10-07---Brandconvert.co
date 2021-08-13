@@ -1,0 +1,430 @@
+{%- assign number_of_comments = article.comments_count -%}
+{%- assign author_custom = article.author -%}
+{% if comment %}
+  {%- assign number_of_comments = article.comments_count | plus: 1 -%}
+{% endif %}
+
+{% if section.settings.image_hero and article.image %}
+  <div class="collection-hero dp_hero_custom">
+
+    <div class="collection-hero__content">
+      <div class="page-width">
+        <header class="section-header section-header--hero">
+          <div class="section-header__shadow">
+            {%- include 'breadcrumbs' -%}
+            {% if section.settings.blog_show_date or article.tags.size > 0 or articles.comments_count > 0 %}
+              <div class="article__date">
+                {% if section.settings.blog_show_tags and article.tags.size > 0 %}
+                  {% for tag in article.tags %}
+                	{%if tag contains "author_"%}
+                		{%- assign author_custom = tag | replace: 'author_', '' | replace: '-', ' ' | replace: '_', ' ' -%}
+                	{%else%}
+                    {%- include 'filter-out-custom-tags' -%}
+                    <a href="{{ blog.url }}/tagged/{{ tag | handle }}">{{ tag }}</a> {% unless forloop.last == true %}&middot;{%endunless%}
+                	{%endif%}
+                  {% endfor %}
+                {% endif %}
+                {% if section.settings.blog_show_comments and article.comments_count > 0 %}
+                  <a href="#comments">
+                    {{ 'blogs.comments.with_count' | t: count: number_of_comments }}
+                  </a> &middot;
+                {% endif %}
+                {% if section.settings.blog_show_date %}
+                  {{ article.published_at | time_tag: format: 'month_day_year' }}
+                {% endif %}
+              </div>
+            {% endif %}
+
+            <h1 class="section-header__title">
+              {{ article.title }}
+            </h1>
+
+            {% if section.settings.blog_show_author %}
+              <div class="article__author">by {{ author_custom }}</div>
+            {% endif %}
+          </div>
+        </header>
+      </div>
+    </div>
+  </div>
+
+{% endif %}
+
+<div class="page-width page-content">
+    
+  <div class="grid">
+    <article class="grid__item widescreen--six-tenths widescreen--push-two-tenths medium-up--two-thirds medium-up--push-one-sixth article">
+	
+      {%- unless section.settings.image_hero and article.image -%}
+        {%- include 'breadcrumbs' -%}
+ 		 
+        <header class="section-header">
+          {% if section.settings.blog_show_date or article.tags.size > 0 or articles.comments_count > 0 %}
+            <div class="article__date">
+              {% if section.settings.blog_show_tags and article.tags.size > 0 %}
+                {% for tag in article.tags %}
+                  {%if tag contains "author_"%}
+                		{%- assign author_custom = tag | replace: 'author_', '' | replace: '-', ' ' | replace: '_', ' ' -%}
+                	{%else%}
+                    {%- include 'filter-out-custom-tags' -%}
+                    <a href="{{ blog.url }}/tagged/{{ tag | handle }}">{{ tag }}</a> {% unless forloop.last == true %}&middot;{%endunless%}
+                	{%endif%}
+                {% endfor %}
+              {% endif %}
+              {% if section.settings.blog_show_comments and article.comments_count > 0 %}
+                <a href="#comments">
+                  {{ 'blogs.comments.with_count' | t: count: number_of_comments }}
+                </a> &middot;
+              {% endif %}
+              {% if section.settings.blog_show_date %}
+                {{ article.published_at | time_tag: format: 'month_day_year' }}
+              {% endif %}
+            </div>
+          {% endif %}
+          <h1 class="section-header__title">{{ article.title }}</h1>
+          {% if section.settings.blog_show_author %}
+          	
+            <div class="article__author">by {{ author_custom }}</div>
+          {% endif %}
+        </header>
+      {%- endunless -%}
+
+      <div class="article__body rte">
+        
+        	{%- assign img_url = article.image | img_url: '1x1' | replace: '_1x1.', '_{width}x.' -%}
+
+    		<img class="lazyload"
+              src=""
+              data-src="{{ img_url }}"
+              data-aspectratio="{{ article.image.aspect_ratio }}"
+              data-sizes="auto"
+              style="padding-bottom:20px;"
+              data-parent-fit="cover"
+              alt="{{ article.image.alt | escape }}">
+        
+        	{% assign depro_content = article.content | split: '[product_handle="' %}
+        {%assign dp_size =  depro_content | size %}
+        {%if dp_size > 0%}
+		 {{  depro_content[0] | remove: '[product_handle="' }}
+		
+        {% assign content1 = depro_content[1] | replace_first : '"]', ']]' %}
+        {% assign content2 = content1 | split: ']]' %}
+        {%assign product_handle = content2[0] | remove: ']]'%}
+        
+        {%if product_handle != "" %}
+        {%assign product = all_products[product_handle]%}
+      </div></article></div></div>
+		{% include 'product-template',
+          description_style: "default",
+          image_position: "left",
+          image_container_width: "medium",
+          section_id: 4509573316690,
+          social: false,
+          thumbnail_position: "below",
+          thumbnail_arrows: true,
+          video_looping: true,
+          video_style: "unmuted"
+        %}
+        <style data-shopify>
+          .page-content--product{
+            
+            padding:75px 0px 0px !important;
+          }
+          .page-content--product .product-single__title{
+            color:#000000 !important;
+          }
+          .page-content--product .add-to-cart{
+            color:#000000 !important;
+            border:1px solid#000000 !important;
+
+          }
+          .page-content--product .hr--medium{
+            margin: 25px auto !important;
+          }
+          @media screen and (min-width:767px){
+            .page-content--product{
+              padding-left:40px !important;
+              padding-right:40px !important;
+            }
+            .page-content--product .page-width{
+              
+              /*padding:0px !important; 
+              max-width:1200px !important;*/
+              background: {{settings.product_section_background}} !important;
+              border-width: {{settings.product_section_border_width}};
+              border-color: {{settings.product_section_border_color}};
+              padding: 50px 50px 30px 50px !important;
+              border-style :solid;
+              max-width:1420px !important;
+            }
+            .page-content--product .page-width{
+              position:relative;
+            }
+            .product-section .page-width:before{
+              z-index: 2;
+              content: "Product Featured in This Post";
+              position: absolute;
+              top: -10px;
+              left: -10px;
+              font-size: 14px;
+              color: white;
+              font-weight: 600;
+              background: red;
+              padding: 8px 12px;
+              box-shadow: 1px 1px 1px 0px #824f4f;
+            }
+          }
+          @media screen and (max-width:1024px){
+            .page-content--product .page-width{
+            	padding: 25px 25px 15px 25px !important;
+            }
+          }
+           @media screen and (max-width:768px){
+            .page-content--product .page-width{
+			  background: {{settings.product_section_background_mobile}} !important;
+              border-width: {{settings.product_section_border_width_mobile}};
+              border-style :solid;
+              border-color: {{settings.product_section_border_color_mobile}};
+            }
+           }
+          .page-content--product .payment-buttons{
+            min-height:152px; 
+          }
+          .page-content--product .add-to-cart:hover{
+            color:#ff5121 !important;
+            border:1px solid#ff5121 !important;
+            background-color:{{settings.product_section_background}} !important;
+          }
+          .btn--loading:before{
+            border-color:#ff5121 !important;
+          }
+          .variant__button-label{
+            color:#000000 !important;
+            border:1px solid#c8c8c8 !important;
+            background-color:rgba(0,0,0,0) !important;
+          }
+          .variant__button-label:hover{
+            color:#2d2d2d !important;
+            border:1px solid#2d2d2d !important;
+            background-color:rgba(0,0,0,0) !important;
+          }
+          .variant-input-wrap input[type='radio']:checked+label{
+            color:#2d2d2d !important;
+            border-color:#2d2d2d !important;
+          }
+		.product__thumbs .slick-arrow,.page-content--product .add-to-cart{
+          background:transparent !important; 
+        }
+          /*
+		.product-section{
+            border-top:2px solid rgb(173, 153, 114);
+            border-bottom:2px solid rgb(173, 153, 114);
+          }
+          */
+        </style>
+		<div class="page-width page-content">  
+  		<div class="grid">
+		<article class="grid__item widescreen--six-tenths widescreen--push-two-tenths medium-up--two-thirds medium-up--push-one-sixth article">
+		<div class="article__body rte">
+         {%endif%}
+        {{content2[1]}}
+        {%else%}
+        	{{ article.content }}
+        {%endif%}
+        
+        </div>
+	  
+      {% if section.settings.social_sharing_blog %}
+        {% include 'social-sharing', share_title: article.title, share_permalink: article.url, share_image: article.image %}
+      {% endif %}
+
+      {% if blog.comments_enabled? %}
+
+        {% if number_of_comments > 0 %}
+          <hr class="hr--large">
+          <h3>{{ 'blogs.comments.with_count' | t: count: number_of_comments }}</h3>
+          <hr class="hr--small hr--clear">
+        {% endif %}
+
+        {% paginate article.comments by 5 %}
+          {% comment %}
+            #comments is required, it is used as an anchor link by Shopify.
+          {% endcomment %}
+          <div id="comments">
+
+            {% if comment and comment.errors == blank %}
+              <hr class="hr--small hr--clear">
+              <p class="note note--success">
+                {% if blog.moderated? %}
+                  {{ 'blogs.comments.success_moderated' | t }}
+                {% else %}
+                  {{ 'blogs.comments.success' | t }}
+                {% endif %}
+              </p>
+            {% endif %}
+
+            {% if number_of_comments > 0 %}
+              <ul class="no-bullets">
+                {% comment %}
+                  If a comment was just submitted with no blank field, show it.
+                {% endcomment %}
+                {% if comment and comment.errors == blank %}
+                  <li id="{{ comment.id }}" class="comment first{% if article.comments_count == 0 %} last{% endif %}">
+                    {% include 'comment' %}
+                  </li>
+                {% endif %}
+
+                {% for comment in article.comments %}
+                  <li id="{{ comment.id }}" class="comment{% unless number_of_comments > article.comments_count %}{% if forloop.first %} first{% endif %}{% endunless %}{% if forloop.last %} last {% endif %}">
+                    {% include 'comment' %}
+                  </li>
+
+                  {% unless forloop.last %}
+                    <li><hr class="hr--clear"></li>
+                  {% endunless %}
+                {% endfor %}
+              </ul>
+
+              {% if paginate.pages > 1 %}
+                {% include 'pagination' %}
+              {% endif %}
+
+            {% endif %}
+
+            <hr class="hr--large">
+
+            <header class="section-header{% unless settings.type_headers_align_text %} section-header--with-link{% endunless %}">
+              <h3 class="section-header__title">{{ 'blogs.comments.title' | t }}</h3>
+            </header>
+
+            <div class="form-vertical">
+              {% form 'new_comment', article %}
+
+                {{ form.errors | default_errors }}
+
+                <div class="grid grid--small">
+                  <div class="grid__item medium-up--one-half">
+                    <label for="CommentAuthor">{{ 'blogs.comments.name' | t }}</label>
+                    <input class="input-full{% if form.errors contains 'author' %} error{% endif %}" type="text" name="comment[author]" id="CommentAuthor" value="{{ form.author }}" autocapitalize="words">
+                  </div>
+                  <div class="grid__item medium-up--one-half">
+                    <label for="CommentEmail">{{ 'blogs.comments.email' | t }}</label>
+                    <input class="input-full{% if form.errors contains 'email' %} error{% endif %}" type="email" name="comment[email]" id="CommentEmail" value="{{ form.email }}" autocorrect="off" autocapitalize="off">
+                  </div>
+                </div>
+
+                <label for="CommentBody">{{ 'blogs.comments.message' | t }}</label>
+                <textarea class="input-full{% if form.errors contains 'body' %} error{% endif %}" name="comment[body]" id="CommentBody">{{ form.body }}</textarea>
+
+                {% if blog.moderated? %}
+                  <p><small>{{ 'blogs.comments.moderated' | t }}</small></p>
+                {% endif %}
+
+                <button type="submit" class="btn btn--secondary">
+                  {{ 'blogs.comments.post' | t }}
+                </button>
+
+              {% endform %}
+            </div>
+
+          </div>
+        {% endpaginate %}
+      {% endif %}
+
+      <hr class="hr--large">
+	  <div class="fb-comments article__body" data-href="{{shop.url}}{{article.url}}" data-numposts="5" data-width="100%"></div>
+    </article>
+
+  </div>
+
+  
+  <div class="text-center">
+    <a href="{{ blog.url }}" class="btn return-link"><svg aria-hidden="true" focusable="false" role="presentation" class="icon icon--wide icon-arrow-left" viewBox="0 0 50 15"><path d="M50 5.38v4.25H15V15L0 7.5 15 0v5.38z"/></svg> {{ 'blogs.article.back_to_blog' | t: title: blog.title }}</a>
+  </div>
+</div>
+
+<script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "Article",
+  "articleBody": {{ article.content | strip_html | json }},
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": {{ shop.url | append: page.url | json }}
+  },
+  "headline": {{ article.title | json }},
+  {% if article.excerpt != blank %}
+    "description": {{ article.excerpt | strip_html | json }},
+  {% endif %}
+  {% if article.image %}
+    {% assign image_size = article.image.width | append: 'x' %}
+    "image": [
+      {{ article | img_url: image_size | prepend: "https:" | json }}
+    ],
+  {% endif %}
+  "datePublished": {{ article.published_at | date: '%Y-%m-%dT%H:%M:%SZ' | json }},
+  "dateModified": {{ article.updated_at | date: '%Y-%m-%dT%H:%M:%SZ' | json }},
+  "dateCreated": {{ article.created_at | date: '%Y-%m-%dT%H:%M:%SZ' | json }},
+  "author": {
+    "@type": "Person",
+    "name": {{ article.author | json }}
+  },
+  "publisher": {
+    "@type": "Organization",
+    {% if settings.share_image %}
+      {% assign image_size = settings.share_image.width | append: 'x' %}
+      "logo": {
+        "@type": "ImageObject",
+        "height": {{ settings.share_image.height | json }},
+        "url": {{ settings.share_image | img_url: image_size | prepend: "https:" | json }},
+        "width": {{ settings.share_image.width | json }}
+      },
+    {% endif %}
+    "name": {{ shop.name | json }}
+  }
+}
+</script>
+
+{% schema %}
+  {
+    "name": "Article pages",
+    "settings": [
+      {
+        "type": "checkbox",
+        "id": "image_hero",
+        "label": "Use featured image as full-width hero",
+        "info": "(if article image is set)",
+        "default": false
+      },
+      {
+        "type": "checkbox",
+        "id": "blog_show_tags",
+        "label": "Show tags",
+        "default": true
+      },
+      {
+        "type": "checkbox",
+        "id": "blog_show_date",
+        "label": "Show date",
+        "default": true
+      },
+      {
+        "type": "checkbox",
+        "id": "blog_show_comments",
+        "label": "Show comment count",
+        "default": true
+      },
+      {
+        "type": "checkbox",
+        "id": "blog_show_author",
+        "label": "Show author"
+      },
+      {
+        "type": "checkbox",
+        "id": "social_sharing_blog",
+        "label": "Show social sharing buttons",
+        "default": true
+      }
+    ]
+  }
+{% endschema %}

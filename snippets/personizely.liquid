@@ -1,0 +1,14 @@
+<script>
+    window.Personizely = {
+    customerId: {{ customer.id | default: 'null' }},
+    customerTags: {% if customer.tags %}{{ customer.tags | json }}{% else %}[]{% endif %},
+    moneyFormat: '{{shop.money_format | strip_html}}',
+    currency: '{{shop.currency}}',
+    cart: {{ cart | json }},
+    cartCollections: {%- include 'personizely.cart' -%},
+    productCollections: {%- include 'personizely.product' -%},
+    productTags: {% if product.tags %}{{ product.tags | json }}{% else %}[]{% endif %}
+}; 
+</script>
+<link rel="stylesheet" href="https://static.personizely.net/a6793d801f.css" />
+<script src="https://static.personizely.net/a6793d801f.js" type="text/javascript" async></script>
