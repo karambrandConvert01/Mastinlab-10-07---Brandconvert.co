@@ -194,7 +194,7 @@
           "e3686d38-512a-49d4-8eed-b49904882def"
         ],
         "settings": {
-          "main_menu_link_list": "simple-top-nav",
+          "main_menu_link_list": "main-menu",
           "mega_menu_images": false,
           "hide_account": false,
           "main_menu_alignment": "left-center",
