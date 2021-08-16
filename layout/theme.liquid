@@ -148,6 +148,8 @@
 		a.appendChild(r);
 		})(window,document,'https://static.hotjar.com/c/hotjar-','.js?sv=');
 		</script>
+
+		<link rel="stylesheet" href="{{ 'custom.style.css' | asset_url }}">
 	</head>
 	<body class="template-{{ template | replace: '.', ' ' | truncatewords: 1, '' | handle }} handle-{{[template.name].handle | handle}}" data-transitions="false">
 {% capture SectionsPro %}{%section "sections-pro"%}{% endcapture %}{%include "sections_pro_functions" sectionsPro:SectionsPro %}
@@ -261,6 +263,7 @@
 		<script type="lazyload2" data-src="{{ 'theme.js' | asset_url }}" defer="defer"></script>
 
 		{% include 'smile-initializer' %}
+		<script src="{{ 'custom.app.js' | asset_url }}"></script>
 	</body>
 </html>
 <script type="lazyload2">
