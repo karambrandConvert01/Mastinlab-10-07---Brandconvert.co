@@ -14,17 +14,9 @@
   {%- assign show_selectors = true -%}
 {%- endif -%}
 {%assign mobile_show = ""%}
-<div class="downloadSectionContainer">
-  <div class="downloadSectionWrapper">
-    <div class="downloadSectionItem">
-      <div class="downloadSectionItemIcon"></div>
-      <div class="downloadSectionItemContent"></div>
-    </div>
-  </div>
-</div>
-
 <footer class="site-footer" data-section-id="{{ section.id }}" data-section-type="footer-section">
   <div class="page-width">
+
     <div class="grid">
       {%- assign row_width = 0 -%}
       {% for block in section.blocks %}
@@ -33,14 +25,15 @@
           <div class="footer__clear small--hide"></div>
           {%- assign row_width = row_width | minus: 100 -%}
         {% endif %}
-
-        <div {{ block.shopify_attributes }} class="grid__item dp-footer-custom footer__item--{{ block.id }}" data-type="{{ block.type }}">
+      
+		
+      <div {{ block.shopify_attributes }} class="grid__item dp-footer-custom footer__item--{{ block.id }}" data-type="{{ block.type }}">
           {% style %}
-            .footer__item--{{ block.id }} {
-              {%if block.settings.block_float != "none"%}
-                float: {{ block.settings.block_float }} !important;
-              {%endif%}
-              width: {{ block.settings.container_width }}%;
+          	.footer__item--{{ block.id }} {
+          		{%if block.settings.block_float != "none"%}
+          		float: {{ block.settings.block_float }} !important;
+          		{%endif%}
+           		width: {{ block.settings.container_width }}%;
             }
           {% endstyle %}
 
@@ -52,9 +45,10 @@
           {% when 'newsletter' %}
             {% include 'footer-newsletter', block: block %}
           {% when 'menu' %}
-            {% include 'footer-menu', block: block %}
+			{% include 'footer-menu', block: block %}
           {% endcase %}
         </div>
+      
       {% endfor %}
 
       {% for block in section.blocks %}
@@ -68,70 +62,77 @@
 
     {%- if show_selectors -%}
       <div class="footer__section">
-        {%- include 'multi-selectors', locale_selector: locale_selector, currency_selector: currency_selector, show_currency_flags: section.settings.show_currency_flags, location: 'footer' -%}
+       
+        {%- include 'multi-selectors',
+          locale_selector: locale_selector,
+          currency_selector: currency_selector,
+          show_currency_flags: section.settings.show_currency_flags
+          location: 'footer'
+        -%}
       </div>
     {%- endif -%}
-  </div>
-
+    </div>
   <div class="second-footer-info">
-    <div class="page-width ">
-      <div class="grid ">
-        {% if section.settings.show_copyright %}
-          <div class="grid__item hide-custom dp--one-half dp-grid-custom-1">
-            <div class="footer__small-text">
-              &copy; {{ 'now' | date: '%Y' }} {{ shop.name }}
-              {% if section.settings.copyright_text != blank %}
-                {{ section.settings.copyright_text }}
-              {% endif %}
-            </div>
-          </div>
-        {% endif %}
-
-        {% if section.settings.show_payment_icons %}
-          {% unless shop.enabled_payment_types == empty %}
-            <div class="grid__item dp--one-half dp-grid-custom-2">
-              <ul class="inline-list payment-icons footer__section">
-                <li class="icon--payment payment_icons_prefix hide-mobile">{{section.settings.payment_icons_prefix}}</li>
-                {% for type in shop.enabled_payment_types %}
-                  <li class="icon--payment">
-                    {{ type | payment_type_svg_tag: class:'icon icon--full-color' }}
-                  </li>
-                {% endfor %}
-              </ul>
-            </div>
-          {% endunless %}
-        {% endif %}
-
-        {% if section.settings.show_copyright %}
-          <div class="grid__item show-custom  dp--one-half dp-grid-custom-1" style="display:none">
-            <div class="footer__small-text">
-              &copy; {{ 'now' | date: '%Y' }} {{ shop.name }}
-              {% if section.settings.copyright_text != blank %}
-                {{ section.settings.copyright_text }}
-              {% endif %}
-            </div>
-          </div>
-        {% endif %}
+  	<div class="page-width ">
+	<div class="grid ">
+      
+    {% if section.settings.show_copyright %}
+      <div class="grid__item hide-custom dp--one-half dp-grid-custom-1">
+        
+        <div class="footer__small-text">
+          
+          &copy; {{ 'now' | date: '%Y' }} {{ shop.name }}
+          {% if section.settings.copyright_text != blank %}
+            {{ section.settings.copyright_text }}
+          {% endif %}
+           
+        </div>
+      </div>
+    {% endif %}
+    {% if section.settings.show_payment_icons %}
+      {% unless shop.enabled_payment_types == empty %}
+      	<div class="grid__item dp--one-half dp-grid-custom-2">
+          <ul class="inline-list payment-icons footer__section">
+            <li class="icon--payment payment_icons_prefix hide-mobile">{{section.settings.payment_icons_prefix}}</li>
+            {% for type in shop.enabled_payment_types %}
+              <li class="icon--payment">
+                {{ type | payment_type_svg_tag: class:'icon icon--full-color' }}
+              </li>
+            {% endfor %}
+            
+          </ul>
+        </div>
+      {% endunless %}
+    {% endif %}
+	{% if section.settings.show_copyright %}
+      <div class="grid__item show-custom  dp--one-half dp-grid-custom-1" style="display:none">
+        <div class="footer__small-text">
+          &copy; {{ 'now' | date: '%Y' }} {{ shop.name }}
+          {% if section.settings.copyright_text != blank %}
+            {{ section.settings.copyright_text }}
+          {% endif %}
+        </div>
+      </div>
+    {% endif %}
       </div>
     </div>
   </div>
 </footer>
-
 {% style %}
-  .footer__small-text{
-    color: {{section.settings.copyright_text_color}};
-  }
-  .footer__small-text a{
-    color: {{section.settings.copyright_link_color}};
-  }
-  .footer__small-text a:hover{
-    color: {{section.settings.copyright_link_color_hover}};
-  }
-  .payment_icons_prefix{
-    color:{{section.settings.payment_icons_prefix_color}};
-  }
-{% endstyle %}
 
+.footer__small-text{
+	color: {{section.settings.copyright_text_color}};
+}
+.footer__small-text a{
+	color: {{section.settings.copyright_link_color}};
+}
+.footer__small-text a:hover{
+	color: {{section.settings.copyright_link_color_hover}};
+}
+.payment_icons_prefix{
+ color:{{section.settings.payment_icons_prefix_color}};
+}
+{% endstyle %}
 {% schema %}
   {
     "name": "Footer",
@@ -175,13 +176,13 @@
         "label": "Show payment icons",
         "default": false
       },
-      {
+	  {
         "type": "text",
         "id": "payment_icons_prefix",
         "label": "Payment prefix text",
         "default": "We accept :"
       },
-      {
+	  {
         "type": "color",
         "id": "payment_icons_prefix_color",
         "label": "Payment prefix color"
@@ -196,23 +197,21 @@
         "id": "copyright_text",
         "label": "Additional copyright text"
       },
-      {
+	  {
         "type": "color",
         "id": "copyright_text_color",
         "label": "Additional copyright text Color",
-        "default": "#000000"
-      },
-      {
+		"default": "#000000"
+      },{
         "type": "color",
         "id": "copyright_link_color",
         "label": "Additional copyright link Color",
-        "default": "#000000"
-      },
-      {
+		"default": "#000000"
+      },{
         "type": "color",
         "id": "copyright_link_color_hover",
         "label": "Additional copyright link Color hover",
-        "default": "#000000"
+		"default": "#000000"
       }
     ],
     "blocks": [
@@ -235,7 +234,7 @@
             "max": 120,
             "unit": "px"
           },
-          {
+		  {
             "type": "select",
             "id": "block_float",
             "label": "Blog Float",
@@ -249,7 +248,7 @@
                 "value": "left",
                 "label": "Left"
               },
-              {
+		 	  {
                 "value": "right",
                 "label": "Right"
               }
@@ -282,7 +281,7 @@
             "default": "footer",
             "info": "This menu won't show dropdown items"
           },
-          {
+		  {
             "type": "select",
             "id": "block_float",
             "label": "Blog Float",
@@ -296,7 +295,7 @@
                 "value": "left",
                 "label": "Left"
               },
-              {
+		 	  {
                 "value": "right",
                 "label": "Right"
               }
@@ -324,13 +323,13 @@
             "label": "Show heading",
             "default": true
           },
-          {
+		  {
             "type": "color",
             "id": "newsletter_color",
             "label": "Newsletter Color",
             "default": "#000000"
       	  },
-          {
+		  {
             "type": "select",
             "id": "block_float",
             "label": "Blog Float",
@@ -344,7 +343,7 @@
                 "value": "left",
                 "label": "Left"
               },
-              {
+		 	  {
                 "value": "right",
                 "label": "Right"
               }
@@ -388,7 +387,7 @@
             "label": "Show heading",
             "default": true
           },
-          {
+		  {
             "type": "select",
             "id": "block_float",
             "label": "Blog Float",
@@ -402,7 +401,7 @@
                 "value": "left",
                 "label": "Left"
               },
-              {
+		 	  {
                 "value": "right",
                 "label": "Right"
               }
@@ -452,4 +451,3 @@
     }
   }
 {% endschema %}
-

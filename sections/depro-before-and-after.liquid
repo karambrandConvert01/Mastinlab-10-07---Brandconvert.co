@@ -2,10 +2,10 @@
 {% schema %}
   {
     "name": "Before&After Slider",
-	"class":"depro-slider",
+    "class":"depro-slider",
     "max_blocks": 40,
     "settings": [
-	  {
+      {
         "type": "checkbox",
         "id": "divider",
         "label": "Show section divider",
@@ -17,7 +17,7 @@
         "label": "Add spacing above and below",
         "default": true
       },
-	  {
+      {
         "type": "checkbox",
         "id": "slider_on_right",
         "label": "Slider on right?",
@@ -27,21 +27,21 @@
         "type": "header",
         "content": "Section padding Setting"
       },
-	  {
+      {
         "type": "text",
         "id": "padding",
         "label": "Desktop Padding",
         "default": "0px 0px 0px 0px",
-		"info" : "Top right bottom left"
+        "info" : "Top right bottom left"
       },
-	  {
+      {
         "type": "text",
         "id": "mobile_padding",
         "label": "Mobile Padding",
         "default": "0px 0px 0px 0px",
-		"info" : "Top right bottom left"
+        "info" : "Top right bottom left"
       },
-	  {
+      {
         "type": "color",
         "id": "background_color",
         "label": "Custom background color ",
@@ -65,7 +65,7 @@
         "default": "0px 0px 0px 0px",
         "info" : "Top right bottom left"
       },
-	  {
+      {
         "type": "header",
         "content": "Content padding Setting"
       },
@@ -83,91 +83,134 @@
         "default": "0px 0px 0px 0px",
         "info" : "Top right bottom left"
       },
-	  {
+      {
         "type": "select",
         "id": "slider_alignment",
         "label": "Slider Vertical alignment",
         "default": "top-middle",
         "info": "Aligns when next to other custom content",
         "options": [
-        {
-        "value": "top-middle",
-        "label": "Top"
-        },
-        {
-        "value": "center",
-        "label": "Middle"
-        },
-        {
-        "value": "bottom-middle",
-        "label": "Bottom"
-        }
+          {
+            "value": "top-middle",
+            "label": "Top"
+          },
+          {
+            "value": "center",
+            "label": "Middle"
+          },
+          {
+            "value": "bottom-middle",
+            "label": "Bottom"
+          }
         ]
-       }
+      },
+      {
+        "type": "header",
+        "content": "Section Style"
+      },
+      {
+        "type": "range",
+        "id": "paddingTop",
+        "label": "Padding Top",
+        "unit": "px",
+        "min": 0,
+        "max": 100,
+        "step": 5,
+        "default": 75
+      },
+      {
+        "type": "range",
+        "id": "paddingBottom",
+        "label": "Padding Bottom",
+        "unit": "px",
+        "min": 0,
+        "max": 100,
+        "step": 5,
+        "default": 75
+      },
+      {
+        "type": "range",
+        "id": "spaceBetweenHeadings",
+        "label": "Space Between Headings",
+        "unit": "em",
+        "min": 0,
+        "max": 2,
+        "step": 0.1,
+        "default": 0.5
+      },
+      {
+        "type": "range",
+        "id": "spaceBetweenParagraphs",
+        "label": "Space Between Paragraphs",
+        "unit": "em",
+        "min": 0,
+        "max": 2,
+        "step": 0.1,
+        "default": 0.5
+      }
     ],
     "blocks": [
       {
         "type": "slider",
         "name": "Slider",
-	    "settings": [
+        "settings": [
           {
             "type": "image_picker",
             "id": "before_image",
             "label": "BEFORE IMAGE"
           },
-		  {
+          {
             "type": "text",
             "id": "before_button_name",
             "label": "BEFORE IMAGE LABEL",
-			"default":"Before"
+            "default":"Before"
           },
-	      {
+          {
             "type": "image_picker",
             "id": "after_image",
             "label": "AFTER IMAGE"
           },
-		  {
+          {
             "type": "text",
             "id": "after_button_name",
             "label": "AFTER IMAGE LABEL",
-			"default":"After"
+            "default":"After"
           },
-		  {
+          {
             "type": "html",
             "id": "caption",
             "label": "CAPTION"
           },
-		  {
-            "type":   "range",
-            "id":     "default_position",
-            "min":       0,
-            "max":       100,
-            "step":      1,
-            "unit":      "%",
-            "label":     "Default divider position",
-            "default":   35
-        },
-		 {
-           "type":      "checkbox",
-           "id":        "after_on_left",
-           "label":     "After on Left ?",
-           "default":   false,
-           "info":      "Defaut After will move to right"
-         }
-		  
+          {
+            "type": "range",
+            "id": "default_position",
+            "min": 0,
+            "max": 100,
+            "step": 1,
+            "unit": "%",
+            "label": "Default divider position",
+            "default": 35
+          },
+          {
+            "type": "checkbox",
+            "id": "after_on_left",
+            "label": "After on Left ?",
+            "default": false,
+            "info": "Defaut After will move to right"
+          }
         ]
       },
       {
         "type": "Content",
         "name": "Content",
-		"limit": 1,
+        "limit": 1,
         "settings": [
           {
             "type": "text",
             "id": "title",
             "label": "Title"
           },
-		  {
+          {
             "type": "html",
             "id": "content",
             "label": "Content"
@@ -200,8 +243,37 @@
       {
         "name": "Before&After Slider",
         "category": "Deprohoang Sections"
-        
       }
     ]
   }
 {% endschema %}
+
+{% style %}
+  #shopify-section-{{ section.id }} {
+    padding-bottom: {{ section.settings.paddingBottom }}px;
+    padding-top: {{ section.settings.paddingTop }}px;
+  }
+  #shopify-section-{{ section.id }} > .index-section {
+    margin: 0;
+  }
+  #shopify-section-{{ section.id }} > .index-section .rte .h1,
+  #shopify-section-{{ section.id }} > .index-section .rte h1,
+  #shopify-section-{{ section.id }} > .index-section .rte .h2,
+  #shopify-section-{{ section.id }} > .index-section .rte h2,
+  #shopify-section-{{ section.id }} > .index-section .rte .h3,
+  #shopify-section-{{ section.id }} > .index-section .rte h3,
+  #shopify-section-{{ section.id }} > .index-section .rte .h4,
+  #shopify-section-{{ section.id }} > .index-section .rte h4,
+  #shopify-section-{{ section.id }} > .index-section .rte .h5,
+  #shopify-section-{{ section.id }} > .index-section .rte h5,
+  #shopify-section-{{ section.id }} > .index-section .rte .h6,
+  #shopify-section-{{ section.id }} > .index-section .rte h6 {
+    margin-bottom: {{ section.settings.spaceBetweenHeadings }}em;
+  }
+  #shopify-section-{{ section.id }} > .index-section .rte ol,
+  #shopify-section-{{ section.id }} > .index-section .rte p,
+  #shopify-section-{{ section.id }} > .index-section .rte table,
+  #shopify-section-{{ section.id }} > .index-section .rte ul {
+    margin-bottom: {{ section.settings.spaceBetweenParagraphs }}em;
+  }
+{% endstyle %}

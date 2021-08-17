@@ -22,21 +22,21 @@
       </a>
 
       {% if link.links.size > 0 %}
-        <div class="site-nav__dropdown megamenu text-left">
-          <div class="page-width">
-            <div class="megamenuContainer">
-              {% for childlink in link.links %}
-                <div class="megamenuWrapper">
-                  <div class="megamenuTitle">{{ childlink.title }}</div>
-                  {% if childlink.url contains '/collections/' %}
-                    {% assign collectionHandle = childlink.url | split: '/' | last %}
-                    {% assign navCollection = collections[collectionHandle] %}
-                    <div class="megamenuContent">{{ navCollection.description | strip_html | strip | truncate: 150, '...' }}</div>
-                  {% endif %}
-                  <div class="megamenuLink"><a href="{{ childlink.url }}">Shop {{ childlink.title }}</a></div>
-                </div>
-              {% endfor %}
-            </div>
+        <div class="site-nav__dropdown megamenu styled_megamenu text-left">
+          <div class="megamenuContainer">
+            {% for childlink in link.links %}
+              <div class="megamenuWrapper">
+                {% assign titleArray = childlink.title | split: ',' %}
+                <div class="megamenuTitle">{{ titleArray | first }}</div>
+                {% if childlink.url contains '/collections/' %}
+                  {% assign collectionHandle = childlink.url | split: '/' | last %}
+                  {% assign navCollection = collections[collectionHandle] %}
+                  {% assign navCollectionDescription = navCollection.description | strip_html | strip | truncatewords: 13, "." %}
+                  <div class="megamenuContent">{{ navCollectionDescription }}</div>
+                {% endif %}
+                <div class="megamenuLink"><a href="{{ childlink.url }}">{{ titleArray | last }}</a></div>
+              </div>
+            {% endfor %}
           </div>
         </div>
       {% endif %}
