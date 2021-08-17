@@ -1,0 +1,143 @@
+<div class="page-width">
+  <div class="quizSectionContainer">
+    <div class="quizSectionRow">
+      <div class="quizSectionCol quizSectionImg">
+        {% if section.settings.image.src != blank %}<img src="{{ section.settings.image | img_url: 'master' }}">{% endif %}
+      </div>
+      <div class="quizSectionCol quizSectionContent">
+        {% if section.settings.subHeading != blank %}
+          <h3>
+            <div class="iconWrapper">
+              <svg width="25" height="25" viewBox="0 0 25 25" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12.6287 2.1416C7.11472 2.1416 2.62872 6.6276 2.62872 12.1416C2.62872 17.6556 7.11472 22.1416 12.6287 22.1416C18.1427 22.1416 22.6287 17.6556 22.6287 12.1416C22.6287 6.6276 18.1427 2.1416 12.6287 2.1416ZM12.6287 20.1416C8.21772 20.1416 4.62872 16.5526 4.62872 12.1416C4.62872 7.7306 8.21772 4.1416 12.6287 4.1416C17.0397 4.1416 20.6287 7.7306 20.6287 12.1416C20.6287 16.5526 17.0397 20.1416 12.6287 20.1416Z" fill="white"/><path d="M13.6287 7.1416H11.6287V12.5556L14.9217 15.8486L16.3357 14.4346L13.6287 11.7276V7.1416Z" fill="white"/></svg>
+            </div>
+            <div class="text">{{ section.settings.subHeading }}</div>
+          </h3>
+        {% endif %}
+        {% if section.settings.heading != blank %}<h2>{{ section.settings.heading }}</h2>{% endif %}
+        {% if section.settings.link != blank and section.settings.label != blank %}<a href="{{ section.settings.link }}" class="btn section-depro_color">{{ section.settings.label }}</a>{% endif %}
+      </div>
+    </div>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Quiz Section",
+  "settings": [
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "Image"
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "What does your editing style say about you?"
+    },
+    {
+      "type": "text",
+      "id": "subHeading",
+      "label": "Sub Heading",
+      "default": "Takes 2 mins"
+    },
+    {
+      "type": "text",
+      "id": "label",
+      "label": "Button Label",
+      "default": "Take the preset quiz >"
+    },
+    {
+      "type": "url",
+      "id": "link",
+      "label": "Link"
+    },
+    {
+      "type": "header",
+      "content": "Style"
+    },
+    {
+      "type": "color",
+      "id": "bgColor",
+      "label": "Background Color",
+      "default": "#271D2E"
+    },
+    {
+      "type": "color",
+      "id": "text",
+      "label": "Text Color",
+      "default": "#FFFFFF"
+    },
+    {
+      "type": "range",
+      "id": "padding",
+      "label": "Padding(Top and Bottom)",
+      "unit": "px",
+      "min": 0,
+      "max": 200,
+      "step": 5,
+      "default": 75
+    },
+    {
+      "type": "checkbox",
+      "id": "reverse",
+      "label": "Reverse Columns"
+    }
+  ],
+  "presets": [
+    {
+      "category": "Content",
+      "name":"Quiz Section"
+    }
+  ]
+}
+{% endschema %}
+
+{% style %}
+  #shopify-section-{{ section.id }} {
+    background-color: {{ section.settings.bgColor }};
+    color: {{ section.settings.text }};
+    margin: 0;
+    padding: {{ section.settings.padding }}px 0;
+  }
+  #shopify-section-{{ section.id }} .quizSectionRow {
+    align-items: center;
+    display: flex;
+    {% if section.settings.reverse %}flex-direction: row-reverse;{% endif %}
+    flex-wrap: wrap;
+    justify-content: space-around;
+    margin: 0 -15px;
+  }
+  #shopify-section-{{ section.id }} .quizSectionCol {
+    flex: 1 1 45%;
+    padding: 15px;
+  }
+  #shopify-section-{{ section.id }} .quizSectionCol h2 {
+    color: #FFFFFF;
+    font-family: Lora;
+    font-size: 2.125rem;
+    font-weight: 500;
+    line-height: 1.12;
+    margin: 2.25rem 0px;
+  }
+  #shopify-section-{{ section.id }} .quizSectionCol h3 {
+    align-items: center;
+    color: #ffffff;
+    display: flex;
+    font-family: Work Sans;
+    font-size: 1rem !important;
+    font-weight: bold;
+    gap: 1rem;
+    line-height: 1.3;
+  }
+  #shopify-section-{{ section.id }} .quizSectionCol h3 svg {
+    height: auto;
+    vertical-align: middle;
+    width: 100%;
+  }
+  @media only screen and (max-width: 767px) {
+    #shopify-section-{{ section.id }} .quizSectionCol {
+      flex: 1 1 100%;
+    }
+  }
+{% endstyle %}

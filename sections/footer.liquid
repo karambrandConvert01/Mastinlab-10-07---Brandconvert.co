@@ -14,14 +14,40 @@
   {%- assign show_selectors = true -%}
 {%- endif -%}
 {%assign mobile_show = ""%}
-<div class="downloadSectionContainer">
-  <div class="downloadSectionWrapper">
-    <div class="downloadSectionItem">
-      <div class="downloadSectionItemIcon"></div>
-      <div class="downloadSectionItemContent"></div>
+{% assign downloadBoxSize = 0 %}
+{% for block in section.blocks %}
+  {% if block.type == "downloadItem" %}
+    {% assign downloadBoxSize = downloadBoxSize | plus: 1 %}
+  {% endif %}
+{% endfor %}
+
+{% if downloadBoxSize > 0 %}
+  <div class="downloadSectionContainer">
+    <div class="page-width">
+      <div class="downloadSectionWrapper">
+        {% for block in section.blocks %}
+          {% if block.type == "downloadItem" and block.settings.downloadLink != blank %}
+            <div class="downloadSectionItem">
+              {% if block.settings.downloadLink != blank %}
+                <a href="{{ block.settings.downloadLink }}" class="downloadSectionItemLink">
+                  {% endif %}
+                  <div class="downloadSectionItemIcon">
+                    <svg width="41" height="29" viewBox="0 0 41 29" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M20.4999 21.3335L28.6666 12.7918H22.5416V0.833496H18.4583V12.7918H12.3333L20.4999 21.3335Z" fill="currentColor"/>
+                      <path d="M36.8333 24.7498H4.16659V12.7915H0.083252V24.7498C0.083252 26.6341 1.91463 28.1665 4.16659 28.1665H36.8333C39.0852 28.1665 40.9166 26.6341 40.9166 24.7498V12.7915H36.8333V24.7498Z" fill="currentColor"/>
+                    </svg>
+                  </div>
+                  <div class="downloadSectionItemContent">{{ block.settings.downloadText }}</div>
+                  {% if block.settings.downloadLink != blank %}
+                </a>
+              {% endif %}
+            </div>
+          {% endif %}
+        {% endfor %}
+      </div>
     </div>
   </div>
-</div>
+{% endif %}
 
 <footer class="site-footer" data-section-id="{{ section.id }}" data-section-type="footer-section">
   <div class="page-width">
@@ -73,8 +99,63 @@
     {%- endif -%}
   </div>
 
-  <div class="second-footer-info">
-    <div class="page-width ">
+  {% assign additionalInfoSize = 0 %}
+  {% for block in section.blocks %}
+    {% if block.type == "additionalCopyrightInfo" %}
+      {% assign additionalInfoSize = additionalInfoSize | plus: 1 %}
+    {% endif %}
+  {% endfor %}
+  <div class="page-width ">
+    <div class="second-footer-info">
+      <div class="secondFooterInfoWrapper">
+        <div class="secondFooterInfoInner">
+          <p>&copy;{{ 'now' | date: '%Y' }} {{ shop.name }}</p>
+        </div>
+        <div class="secondFooterInfoInner">
+          <div class="secondFooterInfoLogo">
+            {% if section.settings.logo.src != blank %}
+              <a href="{{ routes.root_url }}">
+                <img src="{{ section.settings.logo | img_url: 'master' }}" srcset="{{ section.settings.logo | img_url: 'master' }} 1x, {{ section.settings.logo | img_url: 'master', scale: 2 }} 2x" alt="{{ shop.name }}" itemprop="logo">
+              </a>
+            {% else %}
+              <a href="{{ routes.root_url }}" itemprop="url">{{ shop.name }}</a>
+            {% endif %}
+          </div>
+        </div>
+        <div class="secondFooterInfoInner">
+          {% if additionalInfoSize > 0 %}
+            <ul>
+              {% for block in section.blocks %}
+                {% if block.type == "additionalCopyrightInfo" and block.settings.additionalInfoLink != blank and block.settings.additionalInfoText != blank %}
+                  <li>
+                    {% assign additionalInfoType = '' %}
+                    {% case block.settings.additionalInfoType %}
+                    {% when 'number' %}
+                    {% assign additionalInfoType = 'tel:' %}
+                    {% when 'email' %}
+                    {% assign additionalInfoType = 'mailto:' %}
+                    {% endcase %}
+                    <a href="{{ additionalInfoType }}{{ block.settings.additionalInfoLink }}">
+                      {% if block.settings.additionalInfoType == 'number' or block.settings.additionalInfoType == 'email' %}
+                        <div class="linkIcon">
+                          {% case block.settings.additionalInfoType %}
+                            {% when 'number' %}
+                              <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M13.7859 11.1361C12.8193 10.3094 11.8384 9.80864 10.8837 10.6341L10.3136 11.133C9.89654 11.4951 9.12104 13.1872 6.12272 9.73808C3.12502 6.29332 4.90891 5.75697 5.32662 5.39794L5.89981 4.89843C6.84951 4.07112 6.49111 3.02963 5.80616 1.95755L5.39281 1.30819C4.70473 0.238608 3.95546 -0.463831 3.00327 0.362237L2.48877 0.811798C2.06793 1.11837 0.89158 2.1149 0.606234 4.00805C0.262819 6.27958 1.34614 8.88079 3.82809 11.7349C6.30692 14.5902 8.73392 16.0244 11.0329 15.9995C12.9436 15.9789 14.0974 14.9536 14.4583 14.5809L14.9747 14.1307C15.9244 13.3052 15.3344 12.4648 14.3672 11.6362L13.7859 11.1361Z" fill="#B7B7AE"/></svg>
+                            {% when 'email' %}
+                              <svg width="16" height="12" viewBox="0 0 16 12" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M7.21569 5.91835C7.63348 6.19688 8.36655 6.19691 8.78443 5.91832C8.78449 5.91829 8.78458 5.91822 8.78464 5.91819L15.9055 1.17093C15.6719 0.495419 15.0299 0.00878906 14.276 0.00878906H1.72396C0.970052 0.00878906 0.328078 0.495419 0.0944824 1.17093L7.21548 5.91822C7.21557 5.91829 7.21563 5.91829 7.21569 5.91835Z" fill="#B7B7AE"/><path d="M9.30464 6.69797C9.30454 6.69804 9.30448 6.6981 9.30442 6.69813C8.93873 6.94191 8.46929 7.06382 8 7.06382C7.53062 7.06382 7.06137 6.94194 6.69565 6.6981C6.69558 6.69807 6.69555 6.69804 6.69549 6.698L0 2.23438V10.2679C0 11.2185 0.77335 11.9918 1.72395 11.9918H14.2761C15.2267 11.9918 16 11.2185 16 10.2679V2.23438L9.30464 6.69797Z" fill="#B7B7AE"/></svg>
+                          {% endcase %}
+                        </div>
+                      {% endif %}
+                      <div class="linkText">{{ block.settings.additionalInfoText }}</div>
+                    </a>
+                  </li>
+                {% endif %}
+              {% endfor %}
+            </ul>
+          {% endif %}
+        </div>
+      </div>
+      {%- comment -%}
       <div class="grid ">
         {% if section.settings.show_copyright %}
           <div class="grid__item hide-custom dp--one-half dp-grid-custom-1">
@@ -113,6 +194,7 @@
           </div>
         {% endif %}
       </div>
+      {%- endcomment -%}
     </div>
   </div>
 </footer>
@@ -137,6 +219,11 @@
     "name": "Footer",
     "max_blocks": 12,
     "settings": [
+      {
+        "type": "image_picker",
+        "id": "logo",
+        "label": "Logo"
+      },
       {
         "type": "header",
         "content": "Language selector",
@@ -213,6 +300,28 @@
         "id": "copyright_link_color_hover",
         "label": "Additional copyright link Color hover",
         "default": "#000000"
+      },
+      {
+        "type": "header",
+        "content": "Download Section Style"
+      },
+      {
+        "type": "color",
+        "id": "bgColor",
+        "label": "Background Color",
+        "default": "#5B2333"
+      },
+      {
+        "type": "color",
+        "id": "textColor",
+        "label": "Text Color",
+        "default": "#FFFFFF"
+      },
+      {
+        "type": "color",
+        "id": "linkHover",
+        "label": "Link Hover Color",
+        "default": "#2274A5"
       }
     ],
     "blocks": [
@@ -435,6 +544,58 @@
             "unit": "%"
           }
         ]
+      },
+      {
+        "name": "Download Item",
+        "type": "downloadItem",
+        "settings": [
+          {
+            "type": "url",
+            "id": "downloadLink",
+            "label": "Download Link"
+          },
+          {
+            "type": "text",
+            "id": "downloadText",
+            "label": "Download Text",
+            "default": "INSTANT DOWNLOAD"
+          }
+        ]
+      },
+      {
+        "name": "Additional copyright info",
+        "type": "additionalCopyrightInfo",
+        "settings": [
+          {
+            "type": "select",
+            "id": "additionalInfoType",
+            "label": "Info Type",
+            "options": [
+              {
+                "value": "number",
+                "label": "Contact Number"
+              },
+              {
+                "value": "email",
+                "label": "Email"
+              },
+              {
+                "value": "link",
+                "label": "Link"
+              }
+            ]
+          },
+          {
+            "type": "text",
+            "id": "additionalInfoLink",
+            "label": "Link"
+          },
+          {
+            "type": "text",
+            "id": "additionalInfoText",
+            "label": "Text"
+          }
+        ]
       }
     ],
     "default": {
@@ -453,3 +614,80 @@
   }
 {% endschema %}
 
+{% style %}
+  #shopify-section-{{ section.id }} .downloadSectionContainer {
+    font-size: 0.9375rem;
+    font-weight: 500;
+    background-color: {{ section.settings.bgColor }};
+    padding: 5rem 0;
+    text-transform: uppercase;
+  }
+  #shopify-section-{{ section.id }} .downloadSectionContainer, #shopify-section-{{ section.id }} .downloadSectionContainer a {
+    color: {{ section.settings.textColor }};
+  }
+  #shopify-section-{{ section.id }} .downloadSectionContainer a:focus,
+  #shopify-section-{{ section.id }} .downloadSectionContainer a:hover {
+    color: {{ section.settings.linkHover }}
+  }
+  .downloadSectionWrapper,
+  .downloadSectionItemLink {
+    align-items: center;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  .downloadSectionItem {
+    padding: 1.6875rem;
+  }
+  .downloadSectionItemLink > div {
+    padding: 0 .6rem;
+  }
+  .downloadSectionItemIcon svg {
+    height: 2.5rem;
+    width: 2.5rem;
+  }
+  .secondFooterInfoWrapper {
+    align-items: center;
+    display: flex;
+    color: {{section.settings.copyright_text_color}};
+    flex-wrap: wrap;
+    font-size: 1rem;
+    justify-content: space-between;
+    margin: 0 -15px;
+    padding-top: 35px;
+  }
+  .secondFooterInfoWrapper a {
+    color: {{section.settings.copyright_link_color}};
+  }
+  .secondFooterInfoInner {
+    flex: 1 1 33%;
+    padding: 15px;
+  }
+  .secondFooterInfoLogo {
+    text-align: center;
+  }
+  .secondFooterInfoLogo img {
+    max-width: 10rem;
+  }
+  .secondFooterInfoWrapper ul,
+  .secondFooterInfoWrapper ul li,
+  .secondFooterInfoWrapper ul li a {
+    align-items: center;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin: 0;
+    padding: 0;
+  }
+  .secondFooterInfoWrapper ul {
+    justify-content: flex-end;
+  }
+  .secondFooterInfoInner ul li + li:before {
+    content: "|";
+  }
+  @media only screen and (max-width: 991px) {
+    .secondFooterInfoInner {
+      flex: 1 1 100%;
+    }
+  }
+{% endstyle %}

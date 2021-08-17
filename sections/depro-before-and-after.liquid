@@ -276,4 +276,22 @@
   #shopify-section-{{ section.id }} > .index-section .rte ul {
     margin-bottom: {{ section.settings.spaceBetweenParagraphs }}em;
   }
+  #shopify-section-{{ section.id }} .stepsContainer {
+    color: #474747;
+    counter-reset: section;
+    font-family: Lora, serif;
+    font-size: 1.4375rem;
+    font-weight: 600;
+  }
+  #shopify-section-{{ section.id }} .stepsContainer p {
+    counter-increment: section;
+  }
+  #shopify-section-{{ section.id }} .stepsContainer p::before {
+    color: #2274A5;
+    content: counter(section, decimal-leading-zero);
+    font-family: 'Work Sans', sans-serif;
+    font-size: 1.625rem;
+    font-weight: 400;
+    padding-right: 1.4375rem;
+  }
 {% endstyle %}

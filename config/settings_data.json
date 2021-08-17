@@ -5412,7 +5412,11 @@
           "slider_mobile_padding": "0px 0px 0px 0px",
           "content_padding": "0px 30px 0px 50px",
           "content_mobile_padding": "0px 0px 25px 0px",
-          "slider_alignment": "top-middle"
+          "slider_alignment": "top-middle",
+          "paddingTop": 0,
+          "paddingBottom": 0,
+          "spaceBetweenHeadings": 0.7,
+          "spaceBetweenParagraphs": 0.7
         }
       },
       "slideshow-pro-1129322": {
