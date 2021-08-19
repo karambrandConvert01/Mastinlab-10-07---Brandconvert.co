@@ -1,0 +1,200 @@
+<div class="page-width">
+  <div class="testimonialsContainer">
+    <div class="testimonialsWrapper">
+      <div class="testimonialsRow">
+        <div class="testimonialsImages">
+          <div class="testimonialsImagesWrapper">
+            {% for block in section.blocks %}
+              <div class="testimonialImage">
+                <div class="testimonialImageBox" style="background-image: url({{ block.settings.image | img_url: 'master' }});"></div>
+              </div>
+            {% endfor %}
+          </div>
+        </div>
+        <div class="testimonialsContents">
+          <div class="testimonialsContentsWrapper">
+            {% for block in section.blocks %}
+              <div class="testimonialContent">
+                <div class="testimonialText">{{ block.settings.content }}</div>
+                <div class="testimonialAuthor">{{ block.settings.authorName }}</div>
+              </div>
+            {% endfor %}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{% schema %}
+{
+  "name": "Testimonials Slider",
+  "settings": [
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "Customers Say"
+    },
+    {
+      "type": "header",
+      "content": "Style"
+    },
+    {
+      "type": "color",
+      "id": "bgColor",
+      "label": "Background Color",
+      "default": "#271D2E"
+    },
+    {
+      "type": "color",
+      "id": "text",
+      "label": "Text Color",
+      "default": "#FFFFFF"
+    },
+    {
+      "type": "color",
+      "id": "authorNameColor",
+      "label": "Author Name Color",
+      "default": "#F9C138"
+    },
+    {
+      "type": "range",
+      "id": "padding",
+      "label": "Padding(Top and Bottom)",
+      "unit": "px",
+      "min": 0,
+      "max": 200,
+      "step": 5,
+      "default": 75
+    }
+  ],
+  "blocks": [
+    {
+      "name": "Testimonial",
+      "type": "testimonial",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Author Image"
+        },
+        {
+          "type": "richtext",
+          "id": "content",
+          "label": "Content"
+        },
+        {
+          "type": "text",
+          "id": "authorName",
+          "label": "Author Name"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "category": "Clients",
+      "name":"Testimonials Slider"
+    }
+  ]
+}
+{% endschema %}
+
+{% style %}
+  #shopify-section-{{ section.id }} {
+    background-color: {{ section.settings.bgColor }};
+    color: {{ section.settings.text }};
+    margin: 0;
+    padding: {{ section.settings.padding }}px 0;
+  }
+  .testimonialsRow {
+    align-items: center;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin: 0 -15px;
+  }
+  .testimonialsRow > div {
+    padding: 15px;
+  }
+  .testimonialsImages {
+    width: 45%;
+  }
+  .testimonialImage {
+    padding: 4.375rem;
+  }
+  .testimonialImageBox {
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    border-radius: 50%;
+    padding-bottom: 100%;
+  }
+  .testimonialsContents {
+    font-family: Lora;
+    font-size: 1.625rem;
+    font-weight: 500;
+    width: 55%;
+  }
+  .testimonialAuthor {
+    color: {{ section.settings.authorNameColor }};
+    font-family: Freestyle Script;
+    font-size: 3rem;
+    font-weight: 400;
+    line-height: 1;
+  }
+  .testimonialAuthor::before {
+    background-image: url(https://cdn.shopify.com/s/files/1/0267/6834/3122/files/j.svg?v=1622279647);
+    background-repeat: no-repeat;
+    background-size: contain;
+    content: "";
+    display: inline-block;
+    height: 0.625rem;
+    margin-right: 0.625rem;
+    position: relative;
+    width: 2.5rem;
+  }
+  #shopify-section-{{ section.id }} .slick-slider .slick-dots {
+    bottom: 0;
+    margin-top: 2rem;
+    position: static;
+    text-align: left;
+  }
+  #shopify-section-{{ section.id }} .slick-slider .slick-dots li,
+  #shopify-section-{{ section.id }} .slick-slider .slick-dots li button {
+    height: 0.625rem;
+    width: 0.625rem;
+  }
+  #shopify-section-{{ section.id }} .slick-dots li button::before {
+    background: #FFFFFF;
+    height: 100%;
+    opacity: 0.2;
+    width: 100%;
+  }
+  #shopify-section-{{ section.id }} .slick-dots li.slick-active button::before {
+    opacity: 1;
+  }
+{% endstyle %}
+
+<script type="text/javascript">
+  jQuery(document).ready(function($) {
+    $('#shopify-section-{{ section.id }} .testimonialsImagesWrapper').slick({
+      arrows: false,
+      asNavFor: '#shopify-section-{{ section.id }} .testimonialsContentsWrapper',
+      infinite: true,
+      slidesToShow: 1,
+      slidesToScroll: 1,
+    });
+    $('#shopify-section-{{ section.id }} .testimonialsContentsWrapper').slick({
+      arrows: false,
+      asNavFor: '#shopify-section-{{ section.id }} .testimonialsImagesWrapper',
+      autoplay: true,
+      autoplaySpeed: 2000,
+      dots: true,
+      focusOnSelect: true,
+      infinite: true,
+      slidesToShow: 1,
+      slidesToScroll: 1,
+    });
+  });
+</script>

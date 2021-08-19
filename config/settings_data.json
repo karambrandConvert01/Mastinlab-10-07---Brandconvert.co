@@ -264,15 +264,66 @@
               "text": "<p>Bite-sized photography wisdom. Get your weekly dose of photography inspiration straight to your inbox!<\/p><p><br\/><\/p>",
               "container_width": 40
             }
+          },
+          "e542ac75-d68a-4626-a3df-8eb4b8e87aa2": {
+            "type": "downloadItem",
+            "settings": {
+              "downloadLink": "#",
+              "downloadText": "INSTANT DOWNLOAD"
+            }
+          },
+          "587f0588-1317-48de-bc86-8f0494192d42": {
+            "type": "downloadItem",
+            "settings": {
+              "downloadLink": "#",
+              "downloadText": "INSTANT DOWNLOAD"
+            }
+          },
+          "bb4dc99c-c85a-4007-9f4e-70f3759a8f70": {
+            "type": "downloadItem",
+            "settings": {
+              "downloadLink": "#",
+              "downloadText": "INSTANT DOWNLOAD"
+            }
+          },
+          "dce5466c-98da-40db-95c1-d493634c3513": {
+            "type": "downloadItem",
+            "settings": {
+              "downloadLink": "#",
+              "downloadText": "INSTANT DOWNLOAD"
+            }
+          },
+          "b271160d-588e-404d-b7b8-10340bf3a40a": {
+            "type": "additionalCopyrightInfo",
+            "settings": {
+              "additionalInfoType": "email",
+              "additionalInfoLink": "support@mastinlabs.com",
+              "additionalInfoText": "support@mastinlabs.com"
+            }
+          },
+          "47a19e9c-982a-431a-967e-0280e5a5dc35": {
+            "type": "additionalCopyrightInfo",
+            "settings": {
+              "additionalInfoType": "number",
+              "additionalInfoLink": "2066272376",
+              "additionalInfoText": "206-627-2376"
+            }
           }
         },
         "block_order": [
           "1586540650503",
           "e3feda68-2762-449f-83b4-165cba47063f",
           "1494301487049",
-          "1494292487693"
+          "1494292487693",
+          "e542ac75-d68a-4626-a3df-8eb4b8e87aa2",
+          "587f0588-1317-48de-bc86-8f0494192d42",
+          "bb4dc99c-c85a-4007-9f4e-70f3759a8f70",
+          "dce5466c-98da-40db-95c1-d493634c3513",
+          "b271160d-588e-404d-b7b8-10340bf3a40a",
+          "47a19e9c-982a-431a-967e-0280e5a5dc35"
         ],
         "settings": {
+          "logo": "shopify:\/\/shop_images\/Mastin_Labs_Horizontal_Logo_RGB_540px.png",
           "show_locale_selector": false,
           "show_currency_selector": false,
           "show_currency_flags": false,
@@ -281,9 +332,12 @@
           "payment_icons_prefix_color": "#686868",
           "show_copyright": true,
           "copyright_text": "— Contact Support Team: support@mastinlabs.com, 206-627-2376",
-          "copyright_text_color": "#686868",
-          "copyright_link_color": "#686868",
-          "copyright_link_color_hover": "#2274a5"
+          "copyright_text_color": "#b7b7ae",
+          "copyright_link_color": "#b7b7ae",
+          "copyright_link_color_hover": "#2274a5",
+          "bgColor": "#5b2333",
+          "textColor": "#ffffff",
+          "linkHover": "#2274a5"
         }
       },
       "collection-template": {
@@ -5328,7 +5382,7 @@
             "type": "Content",
             "settings": {
               "title": "You Shouldn’t Have to Choose Between Beautiful Photos and Complicated Edits.",
-              "content": "<p>With the Mastin Workflow™, editing photos in Lightroom and Capture One has never been easier:<\/p>\n<p><strong>Step 1:<\/strong> Import &amp; apply presets<br><strong>Step 2:<\/strong> Adjust exposure &amp; white balance<br><strong>Step 3:<\/strong> Export &amp; you’re done<\/p>\n<p><strong><em>You just saved 30 hours of editing!<\/em><\/strong><\/p>\n<p>No more trends and no more wasted time: in 3 steps, you’ll get clean, true-to-color images both you and your clients will love.<\/p>\n\n<a class=\"btn\" href=\"https:\/\/mastinlabs.com\/collections\/lightroom-presets\">SHOP LIGHTROOM &gt; <\/a>\n<a class=\"btn\" href=\"https:\/\/mastinlabs.com\/collections\/capture-one-styles\">SHOP CAPTURE ONE &gt; <\/a>",
+              "content": "<p>With the Mastin Workflow™, editing photos in Lightroom and Capture One has never been easier:<\/p>\n<div class=\"stepsContainer\">\n  <p>Import &amp; apply presets<\/p>\n  <p>Adjust exposure &amp; white balance<\/p>\n  <p>Export &amp; you’re done<\/p>\n<\/div>\n<p>No more trends and no more wasted time: in 3 steps, you’ll get clean, true-to-color images both you and your clients will love.<\/p>\n\n<a class=\"btn\" href=\"https:\/\/mastinlabs.com\/collections\/lightroom-presets\">SHOP LIGHTROOM &gt; <\/a>\n<a class=\"btn\" href=\"https:\/\/mastinlabs.com\/collections\/capture-one-styles\">SHOP CAPTURE ONE &gt; <\/a>",
               "alignment": "top-middle"
             }
           },
@@ -5413,8 +5467,8 @@
           "content_padding": "0px 30px 0px 50px",
           "content_mobile_padding": "0px 0px 25px 0px",
           "slider_alignment": "top-middle",
-          "paddingTop": 0,
-          "paddingBottom": 0,
+          "paddingTop": 75,
+          "paddingBottom": 75,
           "spaceBetweenHeadings": 0.7,
           "spaceBetweenParagraphs": 0.7
         }
@@ -9034,6 +9088,7 @@
       },
       "1627412073c93fe790": {
         "type": "text-and-image",
+        "disabled": true,
         "settings": {
           "image": "shopify:\/\/shop_images\/Group_52.png",
           "padding": "25px 0px 25px 0px",
@@ -9066,20 +9121,120 @@
           "rows_per_page": 7,
           "mobile_flush_grid": false
         }
+      },
+      "162920394129662471": {
+        "type": "quiz",
+        "settings": {
+          "image": "shopify:\/\/shop_images\/quiz.png",
+          "heading": "What does your editing style say about you?",
+          "subHeading": "Takes 2 mins",
+          "label": "Take the preset quiz >",
+          "link": "shopify:\/\/pages\/preset-quiz",
+          "bgColor": "#271d2e",
+          "text": "#ffffff",
+          "padding": 150,
+          "reverse": false
+        }
+      },
+      "16292805564c7ff052": {
+        "type": "testimonials-slider",
+        "blocks": {
+          "90149d67-261e-4400-9bea-94ed0d84a967": {
+            "type": "testimonial",
+            "settings": {
+              "image": "shopify:\/\/shop_images\/image_17.png",
+              "content": "<p>A truly amazing product that lives up to what it promises and has made my post-processing life so much easier! Absolutely the best film-like presets on the market. Plus the post-purchase support and tips from Mastin Labs are super useful and frequent!<\/p>",
+              "authorName": "Andy"
+            }
+          },
+          "74f9b022-3695-4eaa-900b-bf27b40f72d1": {
+            "type": "testimonial",
+            "settings": {
+              "image": "shopify:\/\/shop_images\/image_17.png",
+              "content": "<p>A truly amazing product that lives up to what it promises and has made my post-processing life so much easier! Absolutely the best film-like presets on the market. Plus the post-purchase support and tips from Mastin Labs are super useful and frequent!<\/p>",
+              "authorName": "Andy"
+            }
+          },
+          "81b1b5ed-9337-4227-8cca-2c6be9478fbc": {
+            "type": "testimonial",
+            "settings": {
+              "image": "shopify:\/\/shop_images\/image_17.png",
+              "content": "<p>A truly amazing product that lives up to what it promises and has made my post-processing life so much easier! Absolutely the best film-like presets on the market. Plus the post-purchase support and tips from Mastin Labs are super useful and frequent!<\/p>",
+              "authorName": "Andy"
+            }
+          }
+        },
+        "block_order": [
+          "90149d67-261e-4400-9bea-94ed0d84a967",
+          "74f9b022-3695-4eaa-900b-bf27b40f72d1",
+          "81b1b5ed-9337-4227-8cca-2c6be9478fbc"
+        ],
+        "settings": {
+          "heading": "Customers Say",
+          "bgColor": "#271d2e",
+          "text": "#ffffff",
+          "authorNameColor": "#f9c138",
+          "padding": 30
+        }
+      },
+      "1629285187e6da153e": {
+        "type": "1FW-testimonial",
+        "blocks": {
+          "1629285187e6da153e-0": {
+            "type": "testimonial",
+            "settings": {
+              "testimonial": "<p>Add customer reviews and testimonials to showcase your store’s happy customers.<\/p>",
+              "author": "Author's name"
+            }
+          },
+          "1629285187e6da153e-1": {
+            "type": "testimonial",
+            "settings": {
+              "testimonial": "<p>Add customer reviews and testimonials to showcase your store’s happy customers.<\/p>",
+              "author": "Author's name"
+            }
+          },
+          "1629285187e6da153e-2": {
+            "type": "testimonial",
+            "settings": {
+              "testimonial": "<p>Add customer reviews and testimonials to showcase your store’s happy customers.<\/p>",
+              "author": "Author's name"
+            }
+          }
+        },
+        "block_order": [
+          "1629285187e6da153e-0",
+          "1629285187e6da153e-1",
+          "1629285187e6da153e-2"
+        ],
+        "settings": {
+          "title": "Customers Say",
+          "background_color": "#ffffff",
+          "slider_per_page": "3",
+          "align_text": "left",
+          "round_images": false,
+          "divider": false,
+          "main_color": "#ffffff",
+          "padding": "0px 0px 0px 0px",
+          "mobile_padding": "0px 0px 0px 0px"
+        }
       }
     },
     "content_for_index": [
       "1588800826092",
+      "162920394129662471",
+      "1588631401313",
+      "16292805564c7ff052",
       "1627412073c93fe790",
       "16273321243576d666",
       "1612895941708e6e65",
       "1612896058c5cbd8cf",
-      "1588631401313",
       "1612896928b4066ac8",
       "1612897145d68ac55c",
       "1587424417503",
       "161289639172c363a0",
-      "1612813112e342c9d2"
+      "1612813112e342c9d2",
+      "1629285187e6da153e"
     ]
   },
   "presets": {
