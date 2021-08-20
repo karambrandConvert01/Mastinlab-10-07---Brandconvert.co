@@ -4,7 +4,7 @@ function load_all_js() {
 	if (window.location.href.indexOf("mastin-test.myshopify.com") > -1 || window.location.href.indexOf("cart") > -1 || window.location.href.indexOf("checkout") > -1) {
 		console.log("No-optimization");
 	} else {
-		console.log("Yes-optimization");
+		// console.log("Yes-optimization");
 		setTimeout(function() {
 			var wnw_load = new Event('wnw_load');
 			window.dispatchEvent(wnw_load);

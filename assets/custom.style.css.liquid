@@ -50,3 +50,22 @@
 .gallery_content_info {
   background-color: rgb(71, 71, 71, 0.84);
 }
+.bestSellerItem::before {
+  background-color: #F45332;
+  color: #fff;
+  content: attr(data-tag);
+  font-family: Work Sans;
+  font-size: 13px;
+  font-weight: 500;
+  left: 0;
+  letter-spacing: 0.15em;
+  line-height: 1;
+  padding: .5em .75em;
+  position: absolute;
+  text-transform: uppercase;
+  top: 1.625rem;
+  z-index: 99;
+}
+.product_requirementsContent {
+  display: none;
+}

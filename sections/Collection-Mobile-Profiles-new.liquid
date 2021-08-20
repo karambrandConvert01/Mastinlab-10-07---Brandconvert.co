@@ -1,0 +1,210 @@
+{%- assign per_row = section.settings.per_row -%}
+{%- assign paginate_by = per_row | times: section.settings.rows_per_page -%}
+
+{% paginate collection.products by paginate_by %}
+  <div class="page-width">
+    <div id="CollectionSection" data-section-id="{{ section.id }}" data-section-type="collection-template">
+      <div class="grid grid--uniform grid--collection collection_new_design" >
+        <h1 class="section-header__title">
+          {{ collection.title }} 
+        </h1>
+        {% if collection.description != blank %}
+        <div class="rte" style="padding: 20px 15px 0; max-width: 900px; margin: auto;">
+          {{ collection.description }}
+        </div>
+        <hr class="hr--clear hr--small">
+        {% endif %}
+        <div class="grid__item">
+          <div class="grid grid--uniform grid--collection" id="dp_filter_results">
+            {%- assign grid_item_width = 'small--one-half medium-up--one-third' -%}
+  
+            {% case per_row %}
+              {% when 2 %}
+                {%- assign grid_item_width = 'medium-up--one-half' -%}
+              {% when 3 %}
+                {%- assign grid_item_width = 'small--one-half medium-up--one-third' -%}
+              {% when 4 %}
+                {%- assign grid_item_width = 'small--one-half medium-up--one-quarter' -%}
+              {% when 5 %}
+                {%- assign grid_item_width = 'small--one-half medium-up--one-fifth' -%}
+            {% endcase %}
+            {% for product in collection.products %}
+            {% include 'product_filter_item',  grid_item_width:grid_item_width%}
+            {% else %}
+            <div class="grid__item">
+              <p>{{ 'collections.general.no_matches' | t }}</p>
+            </div>
+            {% endfor %}
+          </div>
+        </div>
+      </div>
+  
+      <div id="bc-sf-filter-bottom-pagination" class="pagination">
+        {% if paginate.pages > 1 %}{% include 'pagination' %}{% endif %}
+      </div>
+      <div id="bc-sf-filter-load-more"></div>
+  
+      <div id="bc-sf-quick-shop-modal-container">
+        {%- if settings.quick_shop_enable -%}
+          {%- for product in collection.products -%}
+            {%- if product.available -%}
+              {%- include 'quick-shop-modal' -%}
+            {%- endif -%}
+          {%- endfor -%}
+        {%- endif -%}
+      </div>
+    </div>
+  </div>
+{% endpaginate %}
+
+{% schema %}
+  {
+    "name": "Collection pages",
+    "settings": [
+      {
+        "type": "select",
+        "id": "description_position",
+        "label": "Collection description position",
+        "default": "top",
+        "options": [
+          {
+            "value": "top",
+            "label": "Top"
+          },
+          {
+            "value": "bottom",
+            "label": "Bottom"
+          }
+        ]
+      },
+      {
+        "type": "header",
+        "content": "Subcollections"
+      },
+      {
+        "type": "paragraph",
+        "content": "Links to collections from your menu will appear here. [Learn more](https://archetypethemes.co/blogs/impulse/how-do-i-create-subcollections)"
+      },
+      {
+        "type": "select",
+        "id": "subcollection_style",
+        "label": "Subcollection style",
+        "default": "above",
+        "options": [
+          {
+            "value": "above",
+            "label": "Above products"
+          },
+          {
+            "value": "below",
+            "label": "Below products"
+          },
+          {
+            "value": "none",
+            "label": "None"
+          }
+        ]
+      },
+      {
+        "type": "range",
+        "id": "subcollections_per_row",
+        "label": "Subcollections per row",
+        "default": 5,
+        "min": 2,
+        "max": 5,
+        "step": 1
+      },
+      {
+        "type": "header",
+        "content": "Products"
+      },
+      {
+        "type": "checkbox",
+        "id": "enable_collection_count",
+        "label": "Enable collection count",
+        "default": false
+      },
+      {
+        "type": "range",
+        "id": "per_row",
+        "label": "Products per row",
+        "default": 4,
+        "min": 2,
+        "max": 5,
+        "step": 1
+      },
+      {
+        "type": "range",
+        "id": "rows_per_page",
+        "label": "Rows per page",
+        "default": 7,
+        "min": 3,
+        "max": 20,
+        "step": 1
+      },
+      {
+        "type": "checkbox",
+        "id": "mobile_flush_grid",
+        "label": "Flush grid on mobile",
+        "default": false
+      },
+      {
+        "type": "header",
+        "content": "Section Style"
+      },
+      {
+        "type": "color",
+        "id": "bgColor",
+        "label": "Background Color",
+        "default": "#F7F6F2"
+      }
+    ]
+  }
+{% endschema %}
+
+{% style %}
+  #shopify-section-{{ section.id }} {
+    background-color: {{ section.settings.bgColor }};
+  }
+  #shopify-section-{{ section.id }} .collection_new_design .section-header__title {
+    max-width: 100%;
+  }
+  #shopify-section-{{ section.id }} .grid-product__meta {
+    text-align: left;
+  }
+  #shopify-section-{{ section.id }} .fa-star-half-o:before,
+  #shopify-section-{{ section.id }} .fa-star-o:before,
+  #shopify-section-{{ section.id }} .fa-star:before,
+  #shopify-section-{{ section.id }} .stamped-fa-star-half-o:before,
+  #shopify-section-{{ section.id }} .stamped-fa-star-o:before,
+  #shopify-section-{{ section.id }} .stamped-fa-star:before,
+  #shopify-section-{{ section.id }} .collection_new_design .review-small-wrappers .avg_number {
+    font-size: 12px;
+    line-height: 1;
+  }
+  #shopify-section-{{ section.id }} .collection_new_design .review-small-wrappers .avg_number {
+    display: initial;
+    color: #8B8787;
+  }
+  #shopify-section-{{ section.id }} .collection_new_design .review-small-wrappers .avg_number::after {
+    content: ' Reviews';
+    display: inherit;
+  }
+  #shopify-section-{{ section.id }} .grid-product__title span {
+    font-family: Work Sans;
+    font-size: 16px;
+    font-weight: 700;
+    letter-spacing: 0em;
+  }
+  #shopify-section-{{ section.id }} .grid-product__title::after {
+    font-family: Work Sans;
+    font-size: 15px;
+    font-weight: 400;
+    text-align: left;
+  }
+  #shopify-section-{{ section.id }} .grid-product__price {
+    color: #3B72A1;
+    font-size: 18px;
+    font-weight: 400;
+  }
+{% endstyle %}

@@ -1,0 +1,79 @@
+{%- if section.settings.enable == false and request.design_mode == false -%}
+{%-else-%}
+<div class="dp-section-wrapper" id="dp__{{section.id}}">
+  <div class="page-width">
+    <div class="inner-page-width" style="border-top:1px solid {{section.settings.border_color}}">
+      <h2 class="toggle_title" >{{section.settings.headline}}</h2>
+      <div class="toggle_contents">
+        <div class="toggle_inner grid grid--uniform">
+        {% assign blocksize = section.blocks.size %}
+        {% case blocksize %}
+          {% when 1 %}
+             {%assign class="" %}
+          {% when 2 %}
+             {%assign class="medium-up--one-half" %}
+          {% when 3 %}
+             {%assign class="medium-up--one-third" %}
+          {% when 4 %}
+             {%assign class="medium--two-quarters medium-up--one-quarter" %}
+          {% when 5 %}
+             {%assign class="medium-up--one-third" %}
+          {% when 6 %}
+             {%assign class="medium-up--one-third" %}
+          {% else %}
+             {%assign class="medium-up--one-third" %}
+        {% endcase %}
+        {% for block in section.blocks %}
+        <div class="grid__item  {{class}}">
+          <div class="inner_container">
+          {%if block.settings.image%}
+          {%- assign img_url = block.settings.image | img_url: '1x1' | replace: '_1x1.', '_{width}x.' -%}
+          <img class="lazyload"
+               data-src="{{ img_url }}"
+               data-widths="[360, 540, 720, 900, 1080, 1600]"
+               data-aspectratio="{{ block.settings.image.aspect_ratio }}"
+               data-sizes="auto"
+               alt="{{ block.settings.image.alt }}">
+          {%endif%}
+          <div class="content_wrapper">
+            <h3>{{block.settings.title}}</h3>
+            <p>{{block.settings.content}}</p>
+          </div>
+          </div>
+        </div>
+        {%endfor%}
+
+      </div>
+      </div>
+    </div>
+  </div>
+</div>
+{% style %}
+#dp__{{section.id}}{
+	background-color:{{section.settings.background_color}};color:{{section.settings.text_color}};
+}
+#dp__{{section.id}} .toggle_title{
+ padding-bottom:1em;
+}
+#dp__{{section.id}} .content_wrapper{
+ margin-top:30px;
+}
+#dp__{{section.id}} .inner_container{
+ padding:0px !important;max-width:inherit !important
+}
+#dp__{{section.id}} .inner-page-width{
+	padding:{{section.settings.padding}}
+}
+@media only screen and (max-width: 768px) {
+  #dp__{{section.id}} .inner-page-width{
+  	padding:{{section.settings.mobile_padding}};
+  }
+}
+{% endstyle %}
+{%endif%}
+{% schema %}{"name":"Included Looks(FW)","max_blocks":6,"settings":[{"type":"checkbox","id":"enable","label":"Display for live site?","default":true},{"type":"text","id":"headline","label":"Section Title"},{"type":"color","id":"background_color","label":"Background Color"},{"type":"color","id":"text_color","label":"Text Color","default":"#000000"},{"type":"color","id":"border_color","label":"Border Color","default":"#cccccc"},{"type":"header","content":"Padding Setting"},{"type":"text","id":"padding","label":"Desktop Padding","default":"0px 0px 0px 0px","info":"Top right bottom left"},{"type":"text","id":"mobile_padding","label":"Mobile Padding","default":"0px 0px 0px 0px","info":"Top right bottom left"}],"blocks":[{"type":"content","name":"Content","settings":[{"type":"image_picker","id":"image","label":"Image"},{"type":"text","id":"title","label":"Title","default":"Ektar 100"},{"type":"text","id":"content","label":"Content","default":"Bright, bold and colorful"}]}],"default":{}}{% endschema %}
+
+
+
+{% javascript %}
+{% endjavascript %}

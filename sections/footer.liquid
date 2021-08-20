@@ -225,6 +225,12 @@
         "label": "Logo"
       },
       {
+        "type": "color",
+        "id": "footerLinks",
+        "label": "Footer Links Color",
+        "default": "#6A6A69"
+      },
+      {
         "type": "header",
         "content": "Language selector",
         "info": "To add a language, go to your [language settings.](/admin/settings/languages)"
@@ -434,12 +440,6 @@
             "default": true
           },
           {
-            "type": "color",
-            "id": "newsletter_color",
-            "label": "Newsletter Color",
-            "default": "#000000"
-      	  },
-          {
             "type": "select",
             "id": "block_float",
             "label": "Blog Float",
@@ -622,6 +622,10 @@
     padding: 5rem 0;
     text-transform: uppercase;
   }
+  #shopify-section-{{ section.id }} .footer_ns_text p,
+  #shopify-section-{{ section.id }} .site-footer__linklist a {
+    color: {{ section.settings.footerLinks }};
+  }
   #shopify-section-{{ section.id }} .downloadSectionContainer, #shopify-section-{{ section.id }} .downloadSectionContainer a {
     color: {{ section.settings.textColor }};
   }
@@ -637,7 +641,7 @@
     justify-content: center;
   }
   .downloadSectionItem {
-    padding: 1.6875rem;
+    padding: 0 1.6875rem;
   }
   .downloadSectionItemLink > div {
     padding: 0 .6rem;

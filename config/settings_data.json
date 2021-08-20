@@ -258,7 +258,6 @@
             "type": "newsletter",
             "settings": {
               "show_footer_title": true,
-              "newsletter_color": "#261d2d",
               "block_float": "right",
               "title": "Mastin Minute Newsletter",
               "text": "<p>Bite-sized photography wisdom. Get your weekly dose of photography inspiration straight to your inbox!<\/p><p><br\/><\/p>",
@@ -324,16 +323,17 @@
         ],
         "settings": {
           "logo": "shopify:\/\/shop_images\/Mastin_Labs_Horizontal_Logo_RGB_540px.png",
+          "footerLinks": "#6a6a69",
           "show_locale_selector": false,
           "show_currency_selector": false,
           "show_currency_flags": false,
           "show_payment_icons": false,
           "payment_icons_prefix": "",
-          "payment_icons_prefix_color": "#686868",
+          "payment_icons_prefix_color": "#6a6a69",
           "show_copyright": true,
           "copyright_text": "— Contact Support Team: support@mastinlabs.com, 206-627-2376",
-          "copyright_text_color": "#b7b7ae",
-          "copyright_link_color": "#b7b7ae",
+          "copyright_text_color": "#6a6a69",
+          "copyright_link_color": "#6a6a69",
           "copyright_link_color_hover": "#2274a5",
           "bgColor": "#5b2333",
           "textColor": "#ffffff",
@@ -2316,6 +2316,7 @@
       },
       "1587424417503": {
         "type": "advanced-content",
+        "disabled": true,
         "blocks": {
           "3a269eba-b6e7-442d-b165-7a45d31c82d3": {
             "type": "image",
@@ -2961,7 +2962,8 @@
           "mobile_padding": "35px 0px 35px 0px",
           "background_color": "#f7f6f2",
           "fullWidth": false,
-          "columns": "four"
+          "columns": "four",
+          "padding-top-bottom": 75
         }
       },
       "depro-gallery-pro-87981": {
@@ -7581,6 +7583,7 @@
       },
       "1612813112e342c9d2": {
         "type": "advanced-content",
+        "disabled": true,
         "blocks": {
           "1612813112e342c9d2-1": {
             "type": "html",
@@ -7664,6 +7667,7 @@
       },
       "1612895941708e6e65": {
         "type": "text-and-image",
+        "disabled": true,
         "settings": {
           "image": "shopify:\/\/shop_images\/henry.png",
           "padding": "35px 0px 35px 0px",
@@ -7687,6 +7691,7 @@
       },
       "1612896058c5cbd8cf": {
         "type": "text-and-image",
+        "disabled": true,
         "settings": {
           "image": "shopify:\/\/shop_images\/Group_8.png",
           "padding": "0px 0px 0px 0px",
@@ -7710,6 +7715,7 @@
       },
       "161289639172c363a0": {
         "type": "text-and-image",
+        "disabled": true,
         "settings": {
           "image": "shopify:\/\/shop_images\/Group_19.png",
           "padding": "50px 0px 50px 0px",
@@ -7733,6 +7739,7 @@
       },
       "1612896928b4066ac8": {
         "type": "depro-text",
+        "disabled": true,
         "settings": {
           "title": "You'll be in good company.",
           "text": "<p style=\"max-width:600px\">Photographers who use Mastin Labs have appeared in Vogue, Harper's Bazaar, Grace Ormonde, Destination I Do, Esquire Magazine, and more.<\/p>",
@@ -7748,6 +7755,7 @@
       },
       "1612897145d68ac55c": {
         "type": "advanced-content",
+        "disabled": true,
         "blocks": {
           "1612897145d68ac55c-0": {
             "type": "image",
@@ -9036,6 +9044,7 @@
       },
       "16273321243576d666": {
         "type": "featured-collections",
+        "disabled": true,
         "blocks": {
           "16273321243576d666-0": {
             "type": "collection",
@@ -9177,55 +9186,173 @@
           "padding": 30
         }
       },
-      "1629285187e6da153e": {
-        "type": "1FW-testimonial",
+      "16293563445f3a3e62": {
+        "type": "images-with-text",
         "blocks": {
-          "1629285187e6da153e-0": {
-            "type": "testimonial",
+          "16293563445f3a3e62-0": {
+            "type": "box",
             "settings": {
-              "testimonial": "<p>Add customer reviews and testimonials to showcase your store’s happy customers.<\/p>",
-              "author": "Author's name"
+              "image": "shopify:\/\/shop_images\/workflow.png",
+              "title": "1. Import & Apply",
+              "content": "<p>Don't miss out on opportunities to save! Be the first to know about flash sales, new products and services, and updates.<\/p>"
             }
           },
-          "1629285187e6da153e-1": {
-            "type": "testimonial",
+          "16293563445f3a3e62-1": {
+            "type": "box",
             "settings": {
-              "testimonial": "<p>Add customer reviews and testimonials to showcase your store’s happy customers.<\/p>",
-              "author": "Author's name"
+              "image": "shopify:\/\/shop_images\/workflow.png",
+              "title": "2. Ajdust",
+              "content": "<p>Don't miss out on opportunities to save! Be the first to know about flash sales, new products and services, and updates.<\/p>"
             }
           },
-          "1629285187e6da153e-2": {
-            "type": "testimonial",
+          "16293563445f3a3e62-2": {
+            "type": "box",
             "settings": {
-              "testimonial": "<p>Add customer reviews and testimonials to showcase your store’s happy customers.<\/p>",
-              "author": "Author's name"
+              "image": "shopify:\/\/shop_images\/workflow.png",
+              "title": "3. export",
+              "content": "<p>Don't miss out on opportunities to save! Be the first to know about flash sales, new products and services, and updates.<\/p>"
             }
           }
         },
         "block_order": [
-          "1629285187e6da153e-0",
-          "1629285187e6da153e-1",
-          "1629285187e6da153e-2"
+          "16293563445f3a3e62-0",
+          "16293563445f3a3e62-1",
+          "16293563445f3a3e62-2"
         ],
         "settings": {
-          "title": "Customers Say",
+          "heading": "The Mastin 3-Step Workflow",
+          "subHeading": "<p>We're glad you asked! We have resources and education available for your journey.<br\/><\/p>",
+          "perRow": 3,
+          "bgColor": "#f7f6f2",
+          "text": "#474747",
+          "padding": 75
+        }
+      },
+      "1629359710c3752b3b": {
+        "type": "photograpghers",
+        "settings": {
+          "heading": "50,000 Photograpghers.",
+          "subHeading": "<p>Photographers around who use Mastin Labs have appeared in Vogue, Harper's Bazaar, Grace Ormonde, Destination I Do, Esquire Magazine, and more.<\/p>",
+          "image": "shopify:\/\/shop_images\/Group_219.png",
+          "badge": "shopify:\/\/shop_images\/trustpilot.png",
+          "bgColor": "#ffffff",
+          "text": "#474747",
+          "padding": 75
+        }
+      },
+      "quiz": {
+        "type": "quiz",
+        "settings": {
+          "image": "shopify:\/\/shop_images\/quiz.png",
+          "heading": "Can’t decide ?",
+          "subHeading": "Takes 2 mins",
+          "content": "<p>Take the preset quiz to help you choose which preset to go for.<\/p>",
+          "label": "Take the preset quiz >",
+          "link": "shopify:\/\/pages\/preset-quiz",
+          "bgColor": "#ffffff",
+          "headingColor": "#000000",
+          "text": "#474747",
+          "padding": 75,
+          "reverse": false
+        }
+      },
+      "text-with-background-pro-1629362660": {
+        "type": "text-with-background-pro-1629362660",
+        "blocks": {
+          "text-with-background-pro-1629362660-0": {
+            "type": "text",
+            "settings": {
+              "title": "AUTO WHITE BALANCE",
+              "content": "Sometimes your camera gets it wrong. Get a starting point for true-to-life color."
+            }
+          },
+          "text-with-background-pro-1629362660-1": {
+            "type": "text",
+            "settings": {
+              "title": "LENS CORRECTION",
+              "content": "Fix vignetting and distortion, minimize color fringing, and remove chromatic aberration to instantly improve every image."
+            }
+          },
+          "text-with-background-pro-1629362660-2": {
+            "type": "text",
+            "settings": {
+              "title": "AUTO TRANSFORM",
+              "content": "Tired of crooked buildings? Clean up your photos by correcting vertical and horizontal lines."
+            }
+          },
+          "text-with-background-pro-1629362660-3": {
+            "type": "text",
+            "settings": {
+              "title": "ORANGE REDUCTION",
+              "content": "A lifesaver for mixed light, extra warm sunsets, and spray tans that just won’t quit."
+            }
+          },
+          "text-with-background-pro-1629362660-4": {
+            "type": "text",
+            "settings": {
+              "title": "TONE PROFILES",
+              "content": "Inspired by the original tone profiles from the Fuji Frontier film scanner, these correct contrast while preserving the look of film."
+            }
+          },
+          "text-with-background-pro-1629362660-5": {
+            "type": "text",
+            "settings": {
+              "title": "CUSTOM GRAIN",
+              "content": "While our presets start grain-free, you can complete your look with 35 mm or medium-format grains."
+            }
+          }
+        },
+        "block_order": [
+          "text-with-background-pro-1629362660-0",
+          "text-with-background-pro-1629362660-1",
+          "text-with-background-pro-1629362660-2",
+          "text-with-background-pro-1629362660-3",
+          "text-with-background-pro-1629362660-4",
+          "text-with-background-pro-1629362660-5"
+        ],
+        "settings": {
+          "padding": "0px 0px 0px 0px",
+          "content_padding": "50px 50px 50px 50px",
           "background_color": "#ffffff",
-          "slider_per_page": "3",
-          "align_text": "left",
-          "round_images": false,
-          "divider": false,
-          "main_color": "#ffffff",
+          "image_width": 500,
+          "title": "One-click fixes to up your game.",
+          "text": "<p>Included with your preset pack, our custom tools help you correct the trickiest photos.<\/p>",
+          "layout": "left",
+          "divider": false
+        }
+      },
+      "1FW-included_looks-pro-1629362670": {
+        "type": "1FW-included_looks-pro-1629362670",
+        "settings": {
+          "enable": true,
+          "headline": "",
+          "background_color": "",
+          "text_color": "#000000",
+          "border_color": "#cccccc",
           "padding": "0px 0px 0px 0px",
           "mobile_padding": "0px 0px 0px 0px"
+        }
+      },
+      "Collection-Mobile-Profiles-new": {
+        "type": "Collection-Mobile-Profiles-new",
+        "settings": {
+          "description_position": "top",
+          "subcollection_style": "above",
+          "subcollections_per_row": 5,
+          "enable_collection_count": false,
+          "per_row": 4,
+          "rows_per_page": 8,
+          "mobile_flush_grid": false
         }
       }
     },
     "content_for_index": [
       "1588800826092",
+      "1627412073c93fe790",
       "162920394129662471",
       "1588631401313",
       "16292805564c7ff052",
-      "1627412073c93fe790",
+      "16293563445f3a3e62",
       "16273321243576d666",
       "1612895941708e6e65",
       "1612896058c5cbd8cf",
@@ -9234,7 +9361,7 @@
       "1587424417503",
       "161289639172c363a0",
       "1612813112e342c9d2",
-      "1629285187e6da153e"
+      "1629359710c3752b3b"
     ]
   },
   "presets": {

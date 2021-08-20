@@ -1,0 +1,89 @@
+<div class="page-width">
+  <div class="custom_background">
+    {% if section.settings.heading != blank or section.settings.subHeading != blank %}
+      <div class="section-header">
+        {% if section.settings.heading != blank %}<h3 class="section-header__title">{{ section.settings.heading }}</h3>{% endif %}
+        {% if section.settings.subHeading != blank %}<div class="section-header__contect">{{ section.settings.subHeading }}</div>{% endif %}
+      </div>
+    {% endif %}
+    {% if section.settings.image.src != blank %}<div class="mainImage text-center"><img src="{{ section.settings.image | img_url: 'master' }}" alt="{{ section.settings.image.alt }}"></div>{% endif %}
+    {% if section.settings.badge.src != blank %}<div class="badgeImage text-center"><img src="{{ section.settings.badge | img_url: 'master' }}" alt="{{ section.settings.badge.alt }}"></div>{% endif %}
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Photograpghers",
+  "settings": [
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "50,000 Photograpghers."
+    },
+    {
+      "type": "richtext",
+      "id": "subHeading",
+      "label": "Content"
+    },
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "Image"
+    },
+    {
+      "type": "image_picker",
+      "id": "badge",
+      "label": "Badges Image"
+    },
+    {
+      "type": "header",
+      "content": "Style"
+    },
+    {
+      "type": "color",
+      "id": "bgColor",
+      "label": "Background Color",
+      "default": "#271D2E"
+    },
+    {
+      "type": "color",
+      "id": "text",
+      "label": "Text Color",
+      "default": "#FFFFFF"
+    },
+    {
+      "type": "range",
+      "id": "padding",
+      "label": "Padding(Top and Bottom)",
+      "unit": "px",
+      "min": 0,
+      "max": 200,
+      "step": 5,
+      "default": 75
+    }
+  ],
+  "presets": [
+    {
+      "category": "Images",
+      "name": "Photograpghers"
+    }
+  ]
+}
+{% endschema %}
+
+{% style %}
+  #shopify-section-{{ section.id }} {
+    background-color: {{ section.settings.bgColor }};
+    color: {{ section.settings.text }};
+    margin: 0;
+    padding: {{ section.settings.padding }}px 0;
+  }
+  #shopify-section-{{ section.id }} .section-header__contect {
+    margin: 0 auto;
+    max-width: 37rem;
+  }
+  #shopify-section-{{ section.id }} .badgeImage {
+    margin-top: 30px;
+  }
+{% endstyle %}

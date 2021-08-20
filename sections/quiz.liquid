@@ -14,6 +14,7 @@
           </h3>
         {% endif %}
         {% if section.settings.heading != blank %}<h2>{{ section.settings.heading }}</h2>{% endif %}
+        {% if section.settings.content != blank %}<div class="quizSectionText">{{ section.settings.content }}</div>{% endif %}
         {% if section.settings.link != blank and section.settings.label != blank %}<a href="{{ section.settings.link }}" class="btn section-depro_color">{{ section.settings.label }}</a>{% endif %}
       </div>
     </div>
@@ -42,6 +43,11 @@
       "default": "Takes 2 mins"
     },
     {
+      "type": "richtext",
+      "id": "content",
+      "label": "Content"
+    },
+    {
       "type": "text",
       "id": "label",
       "label": "Button Label",
@@ -61,6 +67,12 @@
       "id": "bgColor",
       "label": "Background Color",
       "default": "#271D2E"
+    },
+    {
+      "type": "color",
+      "id": "headingColor",
+      "label": "Heading Color",
+      "default": "#FFFFFF"
     },
     {
       "type": "color",
@@ -113,7 +125,7 @@
     padding: 15px;
   }
   #shopify-section-{{ section.id }} .quizSectionCol h2 {
-    color: #FFFFFF;
+    color: {{ section.settings.headingColor }};
     font-family: Lora;
     font-size: 2.125rem;
     font-weight: 500;
@@ -122,7 +134,7 @@
   }
   #shopify-section-{{ section.id }} .quizSectionCol h3 {
     align-items: center;
-    color: #ffffff;
+    color: {{ section.settings.headingColor }};
     display: flex;
     font-family: Work Sans;
     font-size: 1rem !important;
@@ -134,6 +146,12 @@
     height: auto;
     vertical-align: middle;
     width: 100%;
+  }
+  #shopify-section-{{ section.id }} .quizSectionCol path {
+    fill: currentColor;
+  }
+  #shopify-section-{{ section.id }} .quizSectionText {
+    margin-bottom: 2.5rem;
   }
   @media only screen and (max-width: 767px) {
     #shopify-section-{{ section.id }} .quizSectionCol {

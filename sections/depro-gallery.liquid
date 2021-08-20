@@ -2,20 +2,20 @@
 {% schema %}
   {
     "name": "Gallery Pro",
-	"class":"depro-gallery",
+    "class":"depro-gallery",
     "max_blocks": 40,
     "settings": [
-	  {
+      {
         "type": "text",
         "id": "section_title",
         "label": "Section title"
       },
-	  {
+      {
         "type": "text",
         "id": "section_content",
         "label": "Section description"
       },
-	  {
+      {
         "type": "text",
         "id": "border",
         "label": "Gallery Border",
@@ -25,51 +25,65 @@
         "type": "header",
         "content": "Padidng Setting"
       },
-	  {
+      {
         "type": "text",
         "id": "padding",
         "label": "Desktop Padding",
         "default": "0px 0px 0px 0px",
-		"info" : "Top right bottom left"
+        "info" : "Top right bottom left"
       },
-	  {
+      {
         "type": "text",
         "id": "mobile_padding",
         "label": "Mobile Padding",
         "default": "0px 0px 0px 0px",
-		"info" : "Top right bottom left"
+        "info" : "Top right bottom left"
       },
-	  {
+      {
         "type": "color",
         "id": "background_color",
         "label": "Custom background color ",
         "default": "#ffffff"
       },
-	  {
+      {
         "type": "checkbox",
         "id": "fullWidth",
         "label": "Full width",
         "default": true
       },
-	  {
+      {
         "type": "select",
         "id": "columns",
         "label": "Columns per page",
         "default": "three",
         "options": [
-        {
-        "value": "three",
-        "label": "Three"
-        },
-        {
-        "value": "four",
-        "label": "Four"
-        },
-        {
-        "value": "five",
-        "label": "Five"
-        }
+          {
+            "value": "three",
+            "label": "Three"
+          },
+          {
+            "value": "four",
+            "label": "Four"
+          },
+          {
+            "value": "five",
+            "label": "Five"
+          }
         ]
+      },
+      {
+        "type": "header",
+        "content": "Style"
+      },
+      {
+        "type": "range",
+        "id": "padding-top-bottom",
+        "label": "Padding(Top and Bottom)",
+        "unit": "px",
+        "min": 0,
+        "max": 200,
+        "step": 5,
+        "default": 75
       }
     ],
     "blocks": [
@@ -77,7 +91,7 @@
         "type": "image",
         "name": "Image",
         "settings": [
-		  {
+          {
             "type": "header",
             "content": "Padidng Setting"
           },
@@ -95,7 +109,7 @@
             "default": "0px 0px 0px 0px",
             "info" : "Top right bottom left"
           },
-		  {
+          {
             "type": "header",
             "content": "Block Setting"
           },
@@ -104,21 +118,21 @@
             "id": "image",
             "label": "Image"
           },
-		  {
+          {
             "type": "html",
             "id": "title",
             "label": "Title"
           },
-		  {
+          {
             "type": "html",
             "id": "description",
             "label": "Description"
           },
-		  {
+          {
             "type": "text",
             "id": "button_name",
             "label": "Button Name",
-			"default":"Lightroom"
+            "default":"Lightroom"
           },
           {
             "type": "url",
@@ -129,7 +143,7 @@
             "type": "text",
             "id": "button_name_second",
             "label": "Button Name second",
-			"default":"Capture One"
+            "default":"Capture One"
           },
           {
             "type": "url",
@@ -164,8 +178,14 @@
       {
         "name": "Gallery Pro",
         "category": "Deprohoang Sections"
-        
       }
     ]
   }
 {% endschema %}
+
+{% style %}
+  #shopify-section-{{ section.id }} {
+    margin: 0;
+    padding: {{ section.settings.padding-top-bottom }}px 0;
+  }
+{% endstyle %}

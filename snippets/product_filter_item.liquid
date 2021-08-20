@@ -54,10 +54,7 @@
     {%- assign img_url = preview_image | img_url: '1x1' | replace: '_1x1.', '_{width}x.' -%}
 
     <a href="{{ product.url | within: collection }}" class="grid-product__link {% if sold_out %} grid-product__link--disabled{% endif %}">
-      <div class="grid-product__image-mask">
-        {%- if product.tags contains "Best Seller" -%}
-        	<img src="https://cdn.shopify.com/s/files/1/0267/6834/3122/files/Best_Seller_Stamp__actual_size.png?v=1614842648" class="best_seller_icon" alt="Best Seller">
-        {%- endif -%}
+      <div class="grid-product__image-mask{% if product.tags contains "Best Seller" %} bestSellerItem{% endif %}"{% if product.tags contains "Best Seller" %} data-tag="Best Seller"{% endif %}>
         {%- if settings.quick_shop_enable and sold_out == false -%}
           <div class="quick-product__btn js-modal-open-quick-modal-{{ product.id }} small--hide" data-product-id="{{ product.id }}">
             <span class="quick-product__label">{{ settings.quick_shop_text }} </span>

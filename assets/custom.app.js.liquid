@@ -1,2 +1,9 @@
 jQuery(document).ready(function($) {
+  jQuery('.product_requirementsContainer .collapsible-trigger').on('click', function() {
+    if(jQuery(this).hasClass('is-open')) {
+      jQuery(this).parents('.product_requirementsContainer').find('.product_requirementsContent').slideUp('slow');
+    } else {
+      jQuery(this).parents('.product_requirementsContainer').find('.product_requirementsContent').slideDown('slow');
+    };
+  })
 });

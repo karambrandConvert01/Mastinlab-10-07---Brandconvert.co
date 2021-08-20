@@ -1,0 +1,38 @@
+{
+  "sections": {
+    "main": {
+      "type": "product-template-updated",
+      "settings": {
+        "description_style": "default",
+        "vcolor_loading": "#ff5121",
+        "vcolor_btn_selected": "#2d2d2d",
+        "vcolor_btn_selected_c": "#2d2d2d",
+        "vcolor_btn_bg": "rgba(0,0,0,0)",
+        "vcolor_btn_bg_hover": "rgba(0,0,0,0)",
+        "vcolor_btn_br": "#c8c8c8",
+        "vcolor_btn_br_hover": "#2d2d2d",
+        "vcolor_btn": "#000000",
+        "vcolor_btn_hover": "#2d2d2d",
+        "color_btn_bg": "#ff5121",
+        "color_btn_bg_hover": "#ffffff",
+        "color_btn_br": "#ff5121",
+        "color_btn_br_hover": "#ff5121",
+        "color_btn": "#ffffff",
+        "color_btn_hover": "#ff5121",
+        "color_mobile_btn": "#ff5121",
+        "bg_mobile_color_btn": "rgba(0,0,0,0)",
+        "mobile_border_color_btn": "#ff5121",
+        "social_enable": false,
+        "image_position": "left",
+        "image_size": "medium",
+        "thumbnail_position": "below",
+        "thumbnail_arrows": true,
+        "enable_video_looping": true,
+        "product_video_style": "muted"
+      }
+    }
+  },
+  "order": [
+    "main"
+  ]
+}

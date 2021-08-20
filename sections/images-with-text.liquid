@@ -1,0 +1,160 @@
+<div class="page-width">
+  <div class="custom_background">
+    {% if section.settings.heading != blank or section.settings.subHeading != blank %}
+      <div class="section-header">
+        {% if section.settings.heading != blank %}<h3 class="section-header__title">{{ section.settings.heading }}</h3>{% endif %}
+        {% if section.settings.subHeading != blank %}<div>{{ section.settings.subHeading }}</div>{% endif %}
+      </div>
+    {% endif %}
+    <div class="boxWrapper">
+      {% for block in section.blocks %}
+        <div class="boxCol">
+          <div class="boxColImageWrap">
+            <div class="boxColImage" style="background-image: url({{ block.settings.image | img_url: '430x' }});"></div>
+          </div>
+          <div class="boxColContentWrapper">
+            <h4 class="boxColTitle">{{ block.settings.title }}</h4>
+            <div class="boxColContent">
+              {{ block.settings.content }}
+            </div>
+          </div>
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Images With Text",
+  "settings": [
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "The Mastin 3-Step Workflow"
+    },
+    {
+      "type": "richtext",
+      "id": "subHeading",
+      "label": "Content"
+    },
+    {
+      "type": "range",
+      "id": "perRow",
+      "label": "Colunms in row",
+      "min": 1,
+      "max": 4,
+      "step": 1,
+      "default": 3
+    },
+    {
+      "type": "header",
+      "content": "Style"
+    },
+    {
+      "type": "color",
+      "id": "bgColor",
+      "label": "Background Color",
+      "default": "#271D2E"
+    },
+    {
+      "type": "color",
+      "id": "text",
+      "label": "Text Color",
+      "default": "#FFFFFF"
+    },
+    {
+      "type": "range",
+      "id": "padding",
+      "label": "Padding(Top and Bottom)",
+      "unit": "px",
+      "min": 0,
+      "max": 200,
+      "step": 5,
+      "default": 75
+    }
+  ],
+  "blocks": [
+    {
+      "name": "Box",
+      "type": "box",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Image"
+        },
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Title"
+        },
+        {
+          "type": "richtext",
+          "id": "content",
+          "label": "Content"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "category": "Images",
+      "name": "Images With Text",
+      "blocks": [
+        {
+          "type": "box"
+        },
+        {
+          "type": "box"
+        },
+        {
+          "type": "box"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}
+
+{% style %}
+  #shopify-section-{{ section.id }} {
+    background-color: {{ section.settings.bgColor }};
+    color: {{ section.settings.text }};
+    margin: 0;
+    padding: {{ section.settings.padding }}px 0;
+  }
+  #shopify-section-{{ section.id }} .boxWrapper {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin: 0 -15px;
+  }
+  #shopify-section-{{ section.id }} .boxCol {
+    padding: 15px;
+    text-align: center;
+    width: {{ 100 | divided_by: section.settings.perRow }}%;
+  }
+  .boxColImageWrap {
+    margin: 0 auto 1.5rem;
+    max-width: 18.75rem;
+  }
+  .boxColImage {
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    padding-bottom: 100%;
+  }
+  .section-header__title {
+    font-weight: 500;
+  }
+  .boxColTitle {
+    font-family: Lora, serif;
+    font-size: 2.125rem;
+    font-weight: 500;
+    letter-spacing: 0;
+    text-align: center;
+    text-transform: none;
+  }
+{% endstyle %}
