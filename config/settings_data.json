@@ -2956,7 +2956,7 @@
         ],
         "settings": {
           "section_title": "Shop The Looks",
-          "section_content": "Which images catch your eye? Click on the images below to see what pack they are edited with!",
+          "section_content": "<p>Which images catch your eye? Click on the images below to see what pack they are edited with!</p>",
           "border": "0px",
           "padding": "50px 0px 50px 0px",
           "mobile_padding": "35px 0px 35px 0px",

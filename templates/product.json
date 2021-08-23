@@ -2,6 +2,42 @@
   "sections": {
     "main": {
       "type": "product-template-updated",
+      "blocks": {
+        "a02d1714-99b5-4e29-b9c7-ef33466cb485": {
+          "type": "featuredIn",
+          "settings": {
+            "img": "shopify:\/\/shop_images\/bazaar.png",
+            "link": ""
+          }
+        },
+        "56f4d817-81dd-4a60-97f8-1a32f39b01bb": {
+          "type": "featuredIn",
+          "settings": {
+            "img": "shopify:\/\/shop_images\/bazaar.png",
+            "link": ""
+          }
+        },
+        "9870dc47-1b98-4c39-9ec7-257a723642cc": {
+          "type": "featuredIn",
+          "settings": {
+            "img": "shopify:\/\/shop_images\/bazaar.png",
+            "link": ""
+          }
+        },
+        "cdd4cd10-1206-4aa9-af8b-a5e1f82de512": {
+          "type": "featuredIn",
+          "settings": {
+            "img": "shopify:\/\/shop_images\/bazaar.png",
+            "link": ""
+          }
+        }
+      },
+      "block_order": [
+        "a02d1714-99b5-4e29-b9c7-ef33466cb485",
+        "56f4d817-81dd-4a60-97f8-1a32f39b01bb",
+        "9870dc47-1b98-4c39-9ec7-257a723642cc",
+        "cdd4cd10-1206-4aa9-af8b-a5e1f82de512"
+      ],
       "settings": {
         "description_style": "default",
         "vcolor_loading": "#ff5121",
@@ -28,11 +64,275 @@
         "thumbnail_position": "below",
         "thumbnail_arrows": true,
         "enable_video_looping": true,
-        "product_video_style": "muted"
+        "product_video_style": "muted",
+        "padding-top": 0,
+        "padding-bottom": 75
+      }
+    },
+    "1629438302c39f9edc": {
+      "type": "product-images-with-text",
+      "blocks": {
+        "1629438302c39f9edc-0": {
+          "type": "box",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/AWB_0ff71702-1171-4cd2-b93e-dfe8bf38ab46.gif",
+            "title": "AUTO WHITE BALANCE",
+            "content": "<p>Sometimes your camera gets it wrong. Get a starting point for true-to-life color.<\/p>"
+          }
+        },
+        "1629438302c39f9edc-1": {
+          "type": "box",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Lens_Correction_3777c096-b727-4435-b79a-9adb88b8335f.gif",
+            "title": "LENS CORRECTION",
+            "content": "<p>Fix vignetting and distortion, minimize color fringing, and remove chromatic aberration to instantly improve every image.<\/p>"
+          }
+        },
+        "1629438302c39f9edc-2": {
+          "type": "box",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Auto_Transform_51e04a3c-aa20-452d-9168-151cd6c3686c.gif",
+            "title": "AUTO TRANSFORM",
+            "content": "<p>Tired of crooked buildings? Clean up your photos by correcting vertical and horizontal lines.<\/p>"
+          }
+        },
+        "1629438302c39f9edc-3": {
+          "type": "box",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Orange_04397737-bb0d-443d-ae28-d2cf79af14c6.gif",
+            "title": "ORANGE REDUCTION",
+            "content": "<p>A lifesaver for mixed light, extra warm sunsets, and spray tans that just won’t quit.<\/p>"
+          }
+        },
+        "1629438302c39f9edc-4": {
+          "type": "box",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Tone_Profile_51e3ac92-661d-4214-be3a-ca0cad5f1124.gif",
+            "title": "TONE PROFILES",
+            "content": "<p>Inspired by the original tone profiles from the Fuji Frontier film scanner, these correct contrast while preserving the look of film.<\/p>"
+          }
+        },
+        "1629438302c39f9edc-5": {
+          "type": "box",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Grain_0f0e842f-bd96-469e-8ff0-5b8bf1239028.gif",
+            "title": "GRAIN",
+            "content": "<p>While our presets start grain-free, you can complete your look with 35mm or medium-format grain.<\/p>"
+          }
+        }
+      },
+      "block_order": [
+        "1629438302c39f9edc-0",
+        "1629438302c39f9edc-1",
+        "1629438302c39f9edc-2",
+        "1629438302c39f9edc-3",
+        "1629438302c39f9edc-4",
+        "1629438302c39f9edc-5"
+      ],
+      "settings": {
+        "heading": "Fast editing, made easy.",
+        "subHeading": "<p>We're glad you asked! We have resources and education available for your journey.<br\/><\/p>",
+        "perRow": 3,
+        "bgColor": "rgba(0,0,0,0)",
+        "text": "#474747",
+        "padding": 75
+      }
+    },
+    "1629441847bcee9a09": {
+      "type": "after-before-columns",
+      "blocks": {
+        "7ca86b8c-8b17-46d4-808b-761c69242437": {
+          "type": "afterBeforeBlock",
+          "settings": {
+            "after": "shopify:\/\/shop_images\/Rectangle_150.png",
+            "before": "shopify:\/\/shop_images\/Rectangle_144.png",
+            "badge": "shopify:\/\/shop_images\/Group_140.png",
+            "title": "Ektar 100",
+            "content": "<p>Bright and colorful, Ektar 100 delivers bold, saturated tones with natural looking skin, perfect for candid snapshots.<\/p>"
+          }
+        },
+        "75411961-5348-4562-8e5f-c832b420473f": {
+          "type": "afterBeforeBlock",
+          "settings": {
+            "after": "shopify:\/\/shop_images\/Rectangle_150.png",
+            "before": "shopify:\/\/shop_images\/Rectangle_144.png",
+            "badge": "shopify:\/\/shop_images\/Group_141.png",
+            "title": "Gold 200",
+            "content": "<p>Glowing and full of nostalgia, Gold 200 is a golden toned and medium contrast look with low saturation, making it the most versatile preset in this pack.<\/p>"
+          }
+        },
+        "e3d05557-2f39-48fc-bf90-d443e560688f": {
+          "type": "afterBeforeBlock",
+          "settings": {
+            "after": "shopify:\/\/shop_images\/Rectangle_150.png",
+            "before": "shopify:\/\/shop_images\/Rectangle_144.png",
+            "badge": "shopify:\/\/shop_images\/Group_142.png",
+            "title": "Tri-X 400",
+            "content": "<p>Classic black and white, Tri-X 400 delivers emotive photographs with medium contrast and gorgeous grain.<\/p>"
+          }
+        }
+      },
+      "block_order": [
+        "7ca86b8c-8b17-46d4-808b-761c69242437",
+        "75411961-5348-4562-8e5f-c832b420473f",
+        "e3d05557-2f39-48fc-bf90-d443e560688f"
+      ],
+      "settings": {
+        "heading": "What’s included?",
+        "subHeading": "<p>Open each title for pack details— so many goodies inside.<\/p>",
+        "perRow": 3,
+        "bgColor": "#f7f6f2",
+        "text": "#474747",
+        "padding": 75
+      }
+    },
+    "162944749088ab449c": {
+      "type": "video-with-text",
+      "settings": {
+        "video": "https:\/\/www.youtube.com\/watch?v=_9VUPq3SxOc",
+        "image": "shopify:\/\/shop_images\/video.png",
+        "heading": "Includes Step-by-Step Tutorial Video and Practice Images",
+        "content": "<p>Master Mastin Labs in minutes with unique video tutorials and raw images for you to edit alongside Kirk Mastin himself.<\/p><p>Each pack comes with a unique training video and three raw files that you can edit start to finish and achieve a perfect edit the very first time you use Mastin Labs.<\/p>",
+        "label": "",
+        "link": "",
+        "bgColor": "rgba(0,0,0,0)",
+        "playButton": "#ffffff",
+        "headingColor": "#474747",
+        "text": "#474747",
+        "padding": 75,
+        "reverse": true
+      }
+    },
+    "1629460612978a954e": {
+      "type": "product-reviews-template",
+      "settings": {
+        "bgColor": "rgba(0,0,0,0)",
+        "headingColor": "#474747",
+        "text": "#474747",
+        "padding": 75
+      }
+    },
+    "1629461050e020295f": {
+      "type": "depro-gallery",
+      "blocks": {
+        "c98943d9-4b53-4a83-b844-b7c181f7aac5": {
+          "type": "image",
+          "settings": {
+            "padding": "10px 10px 10px 10px",
+            "mobile_padding": "0px 0px 0px 0px",
+            "image": "shopify:\/\/shop_images\/xo-gallery-12-1588459429521.jpg",
+            "title": "Fuji Original",
+            "description": "",
+            "button_name": "Lightroom",
+            "link": "shopify:\/\/products\/fuji-original-lightroom",
+            "button_name_second": "Capture One",
+            "link_second": "shopify:\/\/products\/fuji-original-capture-one",
+            "alignment": "center"
+          }
+        },
+        "cf81448a-2b5e-48cf-8304-a0c96da075b8": {
+          "type": "image",
+          "settings": {
+            "padding": "10px 10px 10px 10px",
+            "mobile_padding": "0px 0px 0px 0px",
+            "image": "shopify:\/\/shop_images\/xo-gallery-6-1587067396321.jpg",
+            "title": "Adventure Everyday",
+            "description": "",
+            "button_name": "Lightroom",
+            "link": "shopify:\/\/products\/adventure-everyday-lightroom",
+            "button_name_second": "Capture One",
+            "link_second": "shopify:\/\/products\/adventure-everyday-capture-one",
+            "alignment": "center"
+          }
+        },
+        "db7141be-31e2-43cb-9913-a8bbde2ee987": {
+          "type": "image",
+          "settings": {
+            "padding": "10px 10px 10px 10px",
+            "mobile_padding": "0px 0px 0px 0px",
+            "image": "shopify:\/\/shop_images\/xo-gallery-6-1586203538453.jpg",
+            "title": "Adventure Everyday",
+            "description": "",
+            "button_name": "Lightroom",
+            "link": "shopify:\/\/products\/adventure-everyday-lightroom",
+            "button_name_second": "Capture One",
+            "link_second": "shopify:\/\/products\/adventure-everyday-capture-one",
+            "alignment": "center"
+          }
+        },
+        "8d0f5f55-db3f-46d5-8b1a-1539df75038a": {
+          "type": "image",
+          "settings": {
+            "padding": "10px 10px 10px 10px",
+            "mobile_padding": "0px 0px 0px 0px",
+            "image": "shopify:\/\/shop_images\/xo-gallery-6-1586633352527.jpg",
+            "title": "Adventure Everyday",
+            "description": "",
+            "button_name": "Lightroom",
+            "link": "shopify:\/\/products\/adventure-everyday-lightroom",
+            "button_name_second": "Capture One",
+            "link_second": "shopify:\/\/products\/adventure-everyday-capture-one",
+            "alignment": "center"
+          }
+        },
+        "2f189d28-dd31-4ff6-bbee-5ba7e68df838": {
+          "type": "image",
+          "settings": {
+            "padding": "10px 10px 10px 10px",
+            "mobile_padding": "0px 0px 0px 0px",
+            "image": "shopify:\/\/shop_images\/xo-gallery-12-1588459425518.jpg",
+            "title": "Portra Original",
+            "description": "",
+            "button_name": "Lightroom",
+            "link": "shopify:\/\/products\/portra-original-lightroom",
+            "button_name_second": "Capture One",
+            "link_second": "shopify:\/\/products\/portra-original-capture-one",
+            "alignment": "center"
+          }
+        },
+        "333857c6-b9fd-4c4a-a00d-a8f2f587ea2c": {
+          "type": "image",
+          "settings": {
+            "padding": "10px 10px 10px 10px",
+            "mobile_padding": "0px 0px 0px 0px",
+            "image": "shopify:\/\/shop_images\/ADV_E_GOLD200_Sean_Carr_01-2.jpg",
+            "title": "Fuji Original",
+            "description": "",
+            "button_name": "Lightroom",
+            "link": "shopify:\/\/products\/fuji-original-lightroom",
+            "button_name_second": "Capture One",
+            "link_second": "shopify:\/\/products\/fuji-original-capture-one",
+            "alignment": "center"
+          }
+        }
+      },
+      "block_order": [
+        "c98943d9-4b53-4a83-b844-b7c181f7aac5",
+        "cf81448a-2b5e-48cf-8304-a0c96da075b8",
+        "db7141be-31e2-43cb-9913-a8bbde2ee987",
+        "8d0f5f55-db3f-46d5-8b1a-1539df75038a",
+        "2f189d28-dd31-4ff6-bbee-5ba7e68df838",
+        "333857c6-b9fd-4c4a-a00d-a8f2f587ea2c"
+      ],
+      "settings": {
+        "section_title": "Pictures taken from our community",
+        "section_content": "Open each title for pack details— so many goodies inside.",
+        "border": "0px",
+        "padding": "0px 0px 0px 0px",
+        "mobile_padding": "0px 0px 0px 0px",
+        "background_color": "#ffffff",
+        "fullWidth": true,
+        "columns": "three",
+        "padding-top-bottom": 75
       }
     }
   },
   "order": [
-    "main"
+    "main",
+    "1629438302c39f9edc",
+    "1629441847bcee9a09",
+    "162944749088ab449c",
+    "1629460612978a954e",
+    "1629461050e020295f"
   ]
 }

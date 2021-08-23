@@ -1,0 +1,248 @@
+<div class="page-width">
+  <div class="bastReviewContainer">
+    <div class="bestReviewWrapper">
+      <div class="bestReviewLeft">
+        {%if product.metafields.rel.related_product != blank %}
+          {%assign product_get = product.metafields.rel.related_product.value %}
+        {% else%}
+          {%assign product_get = product%}
+        {% endif%}
+
+        {%assign avg = product_get.metafields.stamped.reviews_average | minus: 0.0001 | round:1 %}
+        {%if avg > 0%}
+          <div class="review-small-wrapper">
+            <span data-id="{{ product_get.id }}" data-product-sku="{{ product_get.handle }}" data-product-type="{{product_get.type}}" data-product-title="{{product_get.title}}" style="display: inline-block;">
+              {{ product.metafields.stamped.badge }}
+            </span>
+          </div>
+        {%endif%}
+        {% if section.settings.title != blank %}<h2 class="title">{{ section.settings.title }}</h2>{% endif %}
+        <div class="content">
+          {% if section.settings.content != blank %}{{ section.settings.content }}{% endif %}
+          {% if section.settings.link != blank and section.settings.linkLabel != blank %}
+            <div class="link">
+              <a href="{{ section.settings.link }}">{{ section.settings.linkLabel }}</a>
+            </div>
+          {% endif %}
+        </div>
+      </div>
+      <div class="bestReviewRight">
+        <ul class="bestReviewList">
+          {% for block in section.blocks %}
+            <li class="bestReview">
+              <div class="bestReviewInner">
+                <h3 class="bestReviewTitle">{{ block.settings.title }}</h3>
+                <div class="bestReviewContent">
+                  {{ block.settings.content }}
+                </div>
+              </div>
+            </li>
+          {% endfor %}
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Best Reviews",
+  "settings": [
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Title",
+      "default": "Born from film, made for you."
+    },
+    {
+      "type": "richtext",
+      "id": "content",
+      "label": "Content",
+      "default": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras egestas leo sed.</p>"
+    },
+    {
+      "type": "text",
+      "id": "linkLabel",
+      "label": "Link Label",
+      "default": "SEE MORE REVIEWS"
+    },
+    {
+      "type": "url",
+      "id": "link",
+      "label": "Link"
+    },
+    {
+      "type": "header",
+      "content": "Style"
+    },
+    {
+      "type": "color",
+      "id": "bgColor",
+      "label": "Background Color",
+      "default": "#271D2E"
+    },
+    {
+      "type": "color",
+      "id": "text",
+      "label": "Text Color",
+      "default": "#FFFFFF"
+    },
+    {
+      "type": "range",
+      "id": "paddingTop",
+      "label": "Padding Top",
+      "unit": "px",
+      "min": 0,
+      "max": 200,
+      "step": 5,
+      "default": 75
+    },
+    {
+      "type": "range",
+      "id": "paddingBottom",
+      "label": "Padding Bottom",
+      "unit": "px",
+      "min": 0,
+      "max": 200,
+      "step": 5,
+      "default": 75
+    }
+  ],
+  "blocks": [
+    {
+      "name": "Review",
+      "type": "review",
+      "settings": [
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Review Title",
+          "default": "Value Prop 1"
+        },
+        {
+          "type": "richtext",
+          "id": "content",
+          "label": "Review Content",
+          "default": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et</p>"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "category": "Review",
+      "name": "Best Reviews",
+      "blocks": [
+        {
+          "type": "review"
+        },
+        {
+          "type": "review"
+        },
+        {
+          "type": "review"
+        },
+        {
+          "type": "review"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}
+
+{% style %}
+  #shopify-section-{{ section.id }} {
+    background-color: {{ section.settings.bgColor }};
+    color: {{ section.settings.text }};
+    margin: 0;
+    padding: {{ section.settings.paddingTop }}px 0 {{ section.settings.paddingBottom }}px;
+  }
+  #shopify-section-{{ section.id }} .bestReviewWrapper {
+    align-items: center;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin: 0 -15px;
+  }
+  #shopify-section-{{ section.id }} .bestReviewWrapper > div {
+    padding: 15px;
+  }
+  #shopify-section-{{ section.id }} .bestReviewLeft {
+    width: 40%;
+  }
+  #shopify-section-{{ section.id }} .bestReviewRight {
+    width: 60%;
+  }
+  #shopify-section-{{ section.id }} .title {
+    font-family: Lora;
+    font-size: 3.1rem;
+    font-weight: 700;
+    line-height: 1.15;
+    margin-bottom: 1.5rem;
+  }
+  #shopify-section-{{ section.id }} .content {
+    color: #8B8787;
+    font-family: Work Sans;
+    font-size: 24px;
+    font-weight: 400;
+  }
+  #shopify-section-{{ section.id }} .link {
+    font-family: Work Sans;
+    font-size: 25px;
+    font-weight: 700;
+    margin-top: 1em;
+    text-align: left;
+  }
+  #shopify-section-{{ section.id }} .link a {
+    color: #3B72A1;
+  }
+  #shopify-section-{{ section.id }} .review-small-wrapper .stamped-badge .stamped-badge-caption span {
+    display: inline-block !important;
+    margin-left: .5rem;
+    text-transform: capitalize;
+    visibility: visible;
+  }
+  #shopify-section-{{ section.id }} .bestReviewList {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    list-style: none;
+    margin: 0 -15px;
+  }
+  #shopify-section-{{ section.id }} .bestReview {
+    padding: 15px;
+    width: 50%;
+  }
+  #shopify-section-{{ section.id }} .bestReviewInner {
+    background: rgba(247, 246, 242, 0.49);
+    border: 2px solid #F7F6F2;
+    box-sizing: border-box;
+    border-radius: 4px;
+    padding: 1rem;
+  }
+  #shopify-section-{{ section.id }} .bestReviewTitle {
+    font-family: Lora;
+    font-size: 27px;
+    font-weight: 700;
+  }
+  #shopify-section-{{ section.id }} .bestReviewContent {
+    color: #8B8787;
+    font-family: Work Sans;
+    font-size: 20px;
+    font-style: italic;
+    font-weight: 400;
+    line-height: 1.15;
+  }
+  #shopify-section-{{ section.id }} .bestReviewContent p {
+    font-family: initial;
+    margin: 0;
+  }
+  @media only screen and (max-width: 767px) {
+    #shopify-section-{{ section.id }} .bestReviewLeft,
+    #shopify-section-{{ section.id }} .bestReviewRight,
+    #shopify-section-{{ section.id }} .bestReview {
+      width: 100%;
+    }
+  }
+{% endstyle %}

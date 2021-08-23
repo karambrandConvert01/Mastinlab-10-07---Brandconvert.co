@@ -10,7 +10,9 @@
       {% for block in section.blocks %}
         <div class="boxCol">
           <div class="boxColImageWrap">
-            <div class="boxColImage" style="background-image: url({{ block.settings.image | img_url: '430x' }});"></div>
+            <div class="boxColImage">
+              <img src="{{ block.settings.image | img_url: '360x' }}" alt="{{ block.settings.image.alt }}">
+            </div>
           </div>
           <div class="boxColContentWrapper">
             <h4 class="boxColTitle">{{ block.settings.title }}</h4>
@@ -26,7 +28,7 @@
 
 {% schema %}
 {
-  "name": "Images With Text",
+  "name": "Product Images With Text",
   "settings": [
     {
       "type": "text",
@@ -100,9 +102,18 @@
   ],
   "presets": [
     {
-      "category": "Images",
-      "name": "Images With Text",
+      "category": "Product",
+      "name": "Product Images With Text",
       "blocks": [
+        {
+          "type": "box"
+        },
+        {
+          "type": "box"
+        },
+        {
+          "type": "box"
+        },
         {
           "type": "box"
         },
@@ -140,18 +151,12 @@
     margin: 0 auto 1.5rem;
     max-width: 18.75rem;
   }
-  #shopify-section-{{ section.id }} .boxColImage {
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: contain;
-    padding-bottom: 100%;
-  }
   #shopify-section-{{ section.id }} .section-header__title {
     font-weight: 500;
   }
   #shopify-section-{{ section.id }} .boxColTitle {
     font-family: Lora, serif;
-    font-size: 2.125rem;
+    font-size: 1.625rem;
     font-weight: 500;
     letter-spacing: 0;
     text-align: center;

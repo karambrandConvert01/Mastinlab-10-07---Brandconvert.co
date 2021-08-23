@@ -11,7 +11,7 @@
         "label": "Section title"
       },
       {
-        "type": "text",
+        "type": "richtext",
         "id": "section_content",
         "label": "Section description"
       },
@@ -74,6 +74,12 @@
       {
         "type": "header",
         "content": "Style"
+      },
+      {
+        "type": "color",
+        "id": "text",
+        "label": "Text Color",
+        "default": "#474747"
       },
       {
         "type": "range",
@@ -185,7 +191,11 @@
 
 {% style %}
   #shopify-section-{{ section.id }} {
+    color: {{ section.settings.text }};
     margin: 0;
     padding: {{ section.settings.padding-top-bottom }}px 0;
+  }
+  #shopify-section-{{ section.id }} p {
+    font-weight: 200;
   }
 {% endstyle %}

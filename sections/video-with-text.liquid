@@ -1,0 +1,244 @@
+<div class="page-width">
+  <div class="quizSectionContainer">
+    <div class="quizSectionRow">
+      {% if section.settings.image.src != blank or section.settings.video != blank %}
+      <div class="quizSectionCol quizSectionImg">
+        {% if section.settings.image.src != blank and section.settings.video != blank %}
+          <div class="videoWrapperImage">
+            <img src="{{ section.settings.image | img_url: 'master' }}">
+            <svg class="play{{ section.settings.video.type }}" data-id="{{ section.settings.video.id }}" data-url="{{ section.settings.video }}" viewBox="0 0 156 156" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M77.9167 0C34.9534 0 0 34.9534 0 77.9167C0 120.88 34.9534 155.833 77.9167 155.833C120.88 155.833 155.833 120.88 155.833 77.9167C155.833 34.9534 120.88 0 77.9167 0ZM77.9167 140.25C43.5476 140.25 15.5833 112.286 15.5833 77.9167C15.5833 43.5476 43.5476 15.5833 77.9167 15.5833C112.286 15.5833 140.25 43.5476 140.25 77.9167C140.25 112.286 112.286 140.25 77.9167 140.25Z" fill="{{ section.settings.playButton }}"/>
+              <path d="M54.5415 116.875L116.875 77.9163L54.5415 38.958V116.875Z" fill="{{ section.settings.playButton }}"/>
+            </svg>
+            <div class="videoWrapper">
+              <div id="videoWrapper"></div>
+            </div>
+          </div>
+          {% else %}
+          <div class="videoWrapper">
+            {% if section.settings.video.type == 'youtube' %}
+              <div class="videoWrapper">
+                <iframe src="https://www.youtube.com/embed/{{ section.settings.video.id }}" frameborder="0" allow="accelerometer; modestbranding; encrypted-media; gyroscope; picture-in-picture"></iframe>
+              </div>
+            {% elsif section.settings.video.type == 'vimeo' %}
+              <div class="videoWrapper">
+                <iframe src="https://player.vimeo.com/video/{{ section.settings.video.id }}" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>
+              </div>
+              <script src="https://player.vimeo.com/api/player.js"></script>
+            {% else %}
+              <video src="{{ section.settings.video }}"></video>
+            {% endif %}
+          </div>
+          {% endif %}
+      </div>
+      {% endif %}
+      <div class="quizSectionCol quizSectionContent">
+        {% if section.settings.heading != blank %}<h2>{{ section.settings.heading }}</h2>{% endif %}
+        {% if section.settings.content != blank %}<div class="quizSectionText">{{ section.settings.content }}</div>{% endif %}
+        {% if section.settings.link != blank and section.settings.label != blank %}<a href="{{ section.settings.link }}" class="btn section-depro_color">{{ section.settings.label }}</a>{% endif %}
+      </div>
+    </div>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Video with image and text",
+  "settings": [
+    {
+      "type": "video_url",
+      "id": "video",
+      "accept": [
+        "youtube"
+      ],
+      "label": "Video",
+      "default": "https://www.youtube.com/watch?v=_9VUPq3SxOc"
+    },
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "Image"
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "What does your editing style say about you?"
+    },
+    {
+      "type": "richtext",
+      "id": "content",
+      "label": "Content"
+    },
+    {
+      "type": "text",
+      "id": "label",
+      "label": "Button Label",
+      "default": "Take the preset quiz >"
+    },
+    {
+      "type": "url",
+      "id": "link",
+      "label": "Link"
+    },
+    {
+      "type": "header",
+      "content": "Style"
+    },
+    {
+      "type": "color",
+      "id": "bgColor",
+      "label": "Background Color",
+      "default": "#271D2E"
+    },
+    {
+      "type": "color",
+      "id": "playButton",
+      "label": "Play Button Color",
+      "default": "#FFFFFF"
+    },
+    {
+      "type": "color",
+      "id": "headingColor",
+      "label": "Heading Color",
+      "default": "#FFFFFF"
+    },
+    {
+      "type": "color",
+      "id": "text",
+      "label": "Text Color",
+      "default": "#FFFFFF"
+    },
+    {
+      "type": "range",
+      "id": "padding",
+      "label": "Padding(Top and Bottom)",
+      "unit": "px",
+      "min": 0,
+      "max": 200,
+      "step": 5,
+      "default": 75
+    },
+    {
+      "type": "checkbox",
+      "id": "reverse",
+      "label": "Reverse Columns"
+    }
+  ],
+  "presets": [
+    {
+      "category": "Video",
+      "name":"Video with image and text"
+    }
+  ]
+}
+{% endschema %}
+
+{% style %}
+  #shopify-section-{{ section.id }} {
+    background-color: {{ section.settings.bgColor }};
+    color: {{ section.settings.text }};
+    margin: 0;
+    padding: {{ section.settings.padding }}px 0;
+  }
+  #shopify-section-{{ section.id }} .quizSectionRow {
+    align-items: center;
+    display: flex;
+    {% if section.settings.reverse %}flex-direction: row-reverse;{% endif %}
+    flex-wrap: wrap;
+    justify-content: space-around;
+    margin: 0 -15px;
+  }
+  #shopify-section-{{ section.id }} .quizSectionCol {
+    flex: 1 1 45%;
+    padding: 15px;
+  }
+  #shopify-section-{{ section.id }} .quizSectionCol h2 {
+    color: {{ section.settings.headingColor }};
+    font-family: Lora;
+    font-size: 2.125rem;
+    font-weight: 500;
+    line-height: 1.12;
+    margin: 2.25rem 0px;
+  }
+  #shopify-section-{{ section.id }} .quizSectionText {
+    margin-bottom: 2.5rem;
+  }
+  .videoWrapperImage {
+    position: relative;
+  }
+  .videoWrapperImage > svg {
+    cursor: pointer;
+    left: 50%;
+    max-width: 9.5rem;
+    position: absolute;
+    top: 50%;
+    transform: translate(-50%, -50%);
+  }
+  .videoWrapperImage.videoIsPlaying > img,
+  .videoWrapperImage.videoIsPlaying > svg,
+  .videoWrapperImage .videoWrapper {
+    display: none;
+  }
+  .videoWrapperImage.videoIsPlaying .videoWrapper {
+    display: block;
+  }
+  .videoWrapper {
+    padding: 56.25% 0 0 0;
+    position:relative;
+  }
+  .videoWrapper iframe {
+    position: absolute;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+  }
+  @media only screen and (max-width: 767px) {
+    #shopify-section-{{ section.id }} .quizSectionCol {
+      flex: 1 1 100%;
+    }
+  }
+{% endstyle %}
+
+<script type="text/javascript">
+  const youtubeVideo = document.querySelector('#shopify-section-{{ section.id }} .playyoutube');
+  const vimeoVideo = document.querySelector('#shopify-section-{{ section.id }} .playvimeo');
+
+  if(youtubeVideo) {
+    var tag = document.createElement('script');
+    tag.src = "https://www.youtube.com/iframe_api";
+    var firstScriptTag = document.getElementsByTagName('script')[0];
+    firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+
+    var player;
+    function onYouTubeIframeAPIReady() {
+      player = new YT.Player('videoWrapper', {
+        videoId: youtubeVideo.dataset.id, //replace VIDEO_ID with the videoId from Youtube
+        events: {
+          'onReady': onPlayerReady,
+          'onStateChange': onPlayerStateChange
+        }
+      });
+    }
+
+    function onPlayerReady(event) {
+      youtubeVideo.addEventListener("click", function () {
+        console.log(this);
+        // event.target.playVideo();
+        player.playVideo();
+      });
+    }
+
+    function onPlayerStateChange(newState) {
+      if (newState.data == 1) {
+        youtubeVideo.closest('.videoWrapperImage').classList.add('videoIsPlaying');
+      } else if (newState.data == 0) {
+        youtubeVideo.closest('.videoWrapperImage').classList.remove('videoIsPlaying');
+      } else if (newState.data == 2) {
+        youtubeVideo.closest('.videoWrapperImage').classList.remove('videoIsPlaying');
+      }
+    }
+  }
+  if(vimeoVideo) {}
+</script>
