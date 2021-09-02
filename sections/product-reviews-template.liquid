@@ -62,6 +62,7 @@
 {% endschema %}
 
 {% style %}
+  @import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css');
   #shopify-section-{{ section.id }} {
     background-color: {{ section.settings.bgColor }};
     color: {{ section.settings.text }};
@@ -219,6 +220,7 @@
     background-color: #f45332;
     border: 1px solid #f45332;
     border-radius: 0;
+    box-shadow: none !important;
     color: #FFF;
     display: inline-block;
     font-family: Work Sans;
@@ -227,18 +229,40 @@
     line-height: 26px;
     letter-spacing: 0.1em;
     min-width: 15rem;
+    overflow: hidden;
     padding: 11px 20px;
+    position: relative;
     text-decoration: none;
     text-align: center;
+  }
+  #shopify-section-{{ section.id }} .productReviewTemplate #stamped-main-widget .stamped-summary-actions-newreview::after {
+    background-image: linear-gradient(to right,transparent,rgba(255,255,255,.25),transparent);
+    content: '';
+    height: 100%;
+    left: 150%;
+    position: absolute;
+    top: 0;
+    transform: skewX(-20deg);
+    width: 200%;
   }
   #shopify-section-{{ section.id }} .productReviewTemplate #stamped-main-widget .stamped-summary-actions-newreview:hover {
     background-color: #f45332;
     color: #fff;
   }
+  #shopify-section-{{ section.id }} .productReviewTemplate #stamped-main-widget .stamped-summary-actions-newreview:hover::after {
+    animation: shine .75s cubic-bezier(.01,.56,1,1);
+  }
   #shopify-section-{{ section.id }} .productReviewTemplate #stamped-main-widget .stamped-summary-actions-newreview:before {
+    background-image: url("data:image/svg+xml,%3Csvg width='11' height='12' viewBox='0 0 11 12' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0.25 9.06287V11.2504H2.4375L8.88917 4.79871L6.70167 2.61121L0.25 9.06287Z' fill='white'/%3E%3Cpath d='M10.5802 2.2844L9.2152 0.919404C8.9877 0.691904 8.62019 0.691904 8.39269 0.919404L7.3252 1.9869L9.5127 4.1744L10.5802 3.1069C10.8077 2.8794 10.8077 2.5119 10.5802 2.2844Z' fill='white'/%3E%3C/svg%3E");
+    background-position: left center;
+    background-repeat: no-repeat;
+    background-size: 50%;
+    color: transparent;
     font-size: 1.3em;
+    line-height: 1;
     margin: 0;
-    top: 0;
+    position: relative;
+    top: -0.15em;
     vertical-align: middle;
   }
   @media only screen and (max-width: 767px) {

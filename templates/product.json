@@ -203,13 +203,115 @@
         "reverse": true
       }
     },
+    "1629700485e119d0c0": {
+      "type": "faq-template",
+      "blocks": {
+        "1629700485e119d0c0-0": {
+          "type": "contentWithImage",
+          "settings": {
+            "question": "What looks are included in Adventure Everyday?",
+            "heading": "Discover how to make beautiful photos in just three steps with Adventure Everyday.",
+            "mainContent": "<p>With the Mastin Workflow™, getting a clean, consistent film look is fast and easy:<\/p>",
+            "steps": "<p>Apply a preset<\/p><p>Adjust exposure<\/p><p>Adjust white balance<\/p>",
+            "afterStepsContent": "<p>Seriously, editing really can be that simple.<\/p>",
+            "image": "shopify:\/\/shop_images\/Group_106_67e09bfd-4dad-491a-b19b-5c9b9d74208a.png",
+            "reverse": false
+          }
+        },
+        "1629700485e119d0c0-1": {
+          "type": "contentWithImage",
+          "settings": {
+            "question": "What are Mobile Profiles?",
+            "heading": "Take your look on the go.",
+            "mainContent": "<p>With Mobile Profiles, your everyday images can look as beautiful as your professional ones. Optimized for mobile images, our profiles give you the clean, consistent film look you love, from the convenience of your phone.<\/p><p>Mobile Profiles included: Ektar 100, Gold 200, Tri-X 400<\/p><p>Supported devices and files: Compatible with iOS and Android devices and jpeg formats.<\/p><p>Product Requirements: An Adobe Creative Cloud account is required to use our Mobile Profiles.<\/p>",
+            "steps": "",
+            "afterStepsContent": "",
+            "image": "shopify:\/\/shop_images\/Group_153.png",
+            "reverse": false
+          }
+        },
+        "1629700485e119d0c0-2": {
+          "type": "colunmWithImage",
+          "settings": {
+            "question": "Presets and Profiles: Should I get both?",
+            "leftHeading": "DESKTOP PRESETS",
+            "leftMainContent": "<p>Simply put, presets are for RAW images and profiles are for jpegs. Our Lightroom desktop presets are ideal for simplifying your workflow and creating beautiful and timeless professional images. And with presets, you still have access to everything under the hood, so you can dial in all the details.<\/p>",
+            "leftImage": "shopify:\/\/shop_images\/Group.png",
+            "rightHeading": "MOBILE PROFILES",
+            "rightMainContent": "<p>Our Mobile Profiles are the perfect way to edit on your phone, because you get a streamlined, one-click editing experience designed specifically for jpeg file formats. You don’t have access to all the details that you would with a preset, so you can focus on quickly and easily editing beautiful photos and sharing them with the world.<\/p>",
+            "rightImage": "shopify:\/\/shop_images\/Group-1.png"
+          }
+        }
+      },
+      "block_order": [
+        "1629700485e119d0c0-0",
+        "1629700485e119d0c0-1",
+        "1629700485e119d0c0-2"
+      ],
+      "settings": {
+        "heading": "Frequently Asked Questions",
+        "subHeading": "<p>Open each title for answers to frequently asked questions.<\/p>",
+        "bgColor": "#271d2e",
+        "text": "#ffffff",
+        "padding": 75
+      }
+    },
+    "1629720000e7d07886": {
+      "type": "best-reviews",
+      "blocks": {
+        "1629720000e7d07886-0": {
+          "type": "review",
+          "settings": {
+            "title": "Value Prop 1",
+            "content": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et<\/p>"
+          }
+        },
+        "1629720000e7d07886-1": {
+          "type": "review",
+          "settings": {
+            "title": "Value Prop 1",
+            "content": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et<\/p>"
+          }
+        },
+        "1629720000e7d07886-2": {
+          "type": "review",
+          "settings": {
+            "title": "Value Prop 1",
+            "content": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et<\/p>"
+          }
+        },
+        "1629720000e7d07886-3": {
+          "type": "review",
+          "settings": {
+            "title": "Value Prop 1",
+            "content": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et<\/p>"
+          }
+        }
+      },
+      "block_order": [
+        "1629720000e7d07886-0",
+        "1629720000e7d07886-1",
+        "1629720000e7d07886-2",
+        "1629720000e7d07886-3"
+      ],
+      "settings": {
+        "title": "Born from film, made for you.",
+        "content": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras egestas leo sed.<\/p>",
+        "linkLabel": "SEE MORE REVIEWS",
+        "link": "#stamped-main-widget",
+        "bgColor": "rgba(0,0,0,0)",
+        "text": "#474747",
+        "paddingTop": 90,
+        "paddingBottom": 35
+      }
+    },
     "1629460612978a954e": {
       "type": "product-reviews-template",
       "settings": {
         "bgColor": "rgba(0,0,0,0)",
-        "headingColor": "#474747",
         "text": "#474747",
-        "padding": 75
+        "paddingTop": 75,
+        "paddingBottom": 75
       }
     },
     "1629461050e020295f": {
@@ -316,13 +418,14 @@
       ],
       "settings": {
         "section_title": "Pictures taken from our community",
-        "section_content": "Open each title for pack details— so many goodies inside.",
+        "section_content": "<p>Open each title for pack details— so many goodies inside.<\/p>",
         "border": "0px",
         "padding": "0px 0px 0px 0px",
         "mobile_padding": "0px 0px 0px 0px",
         "background_color": "#ffffff",
         "fullWidth": true,
         "columns": "three",
+        "text": "#474747",
         "padding-top-bottom": 75
       }
     }
@@ -332,6 +435,8 @@
     "1629438302c39f9edc",
     "1629441847bcee9a09",
     "162944749088ab449c",
+    "1629700485e119d0c0",
+    "1629720000e7d07886",
     "1629460612978a954e",
     "1629461050e020295f"
   ]

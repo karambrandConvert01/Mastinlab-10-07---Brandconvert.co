@@ -2956,13 +2956,14 @@
         ],
         "settings": {
           "section_title": "Shop The Looks",
-          "section_content": "<p>Which images catch your eye? Click on the images below to see what pack they are edited with!</p>",
+          "section_content": "<p>Which images catch your eye? Click on the images below to see what<\/p><p>pack they are edited with!<\/p>",
           "border": "0px",
           "padding": "50px 0px 50px 0px",
           "mobile_padding": "35px 0px 35px 0px",
           "background_color": "#f7f6f2",
           "fullWidth": false,
           "columns": "four",
+          "text": "#474747",
           "padding-top-bottom": 75
         }
       },
@@ -9137,9 +9138,11 @@
           "image": "shopify:\/\/shop_images\/quiz.png",
           "heading": "What does your editing style say about you?",
           "subHeading": "Takes 2 mins",
+          "content": "",
           "label": "Take the preset quiz >",
           "link": "shopify:\/\/pages\/preset-quiz",
           "bgColor": "#271d2e",
+          "headingColor": "#ffffff",
           "text": "#ffffff",
           "padding": 150,
           "reverse": false
@@ -9244,7 +9247,7 @@
         "type": "quiz",
         "settings": {
           "image": "shopify:\/\/shop_images\/quiz.png",
-          "heading": "Can’t decide ?",
+          "heading": "Can't Decide?",
           "subHeading": "Takes 2 mins",
           "content": "<p>Take the preset quiz to help you choose which preset to go for.<\/p>",
           "label": "Take the preset quiz >",
@@ -9342,7 +9345,8 @@
           "enable_collection_count": false,
           "per_row": 4,
           "rows_per_page": 8,
-          "mobile_flush_grid": false
+          "mobile_flush_grid": false,
+          "bgColor": "#f7f6f2"
         }
       }
     },
