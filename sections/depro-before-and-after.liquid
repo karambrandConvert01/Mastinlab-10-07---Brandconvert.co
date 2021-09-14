@@ -268,9 +268,15 @@
   #shopify-section-{{ section.id }} > .index-section .rte h5,
   #shopify-section-{{ section.id }} > .index-section .rte .h6,
   #shopify-section-{{ section.id }} > .index-section .rte h6 {
+    line-height: 1.1;
     margin-bottom: {{ section.settings.spaceBetweenHeadings }}em;
   }
-  #shopify-section-{{ section.id }} > .index-section .rte ol,
+  #shopify-section-{{ section.id }} a.btn.text-link {
+    font-weight: bold;
+    font-family: 'Work Sans',sans-serif;
+    letter-spacing: 0.1265em;
+  }
+  /* #shopify-section-{{ section.id }} > .index-section .rte ol,
   #shopify-section-{{ section.id }} > .index-section .rte p,
   #shopify-section-{{ section.id }} > .index-section .rte table,
   #shopify-section-{{ section.id }} > .index-section .rte ul {
@@ -293,5 +299,18 @@
     font-size: 1.625rem;
     font-weight: 400;
     padding-right: 1.4375rem;
+  } */
+  #shopify-section-{{ section.id }} .stepsContainer {
+    counter-reset: section;
+    margin: 0 0 .7em;
+  }
+  #shopify-section-{{ section.id }} .stepsContainer p {
+    counter-increment: section;
+    margin: 0;
+  }
+  #shopify-section-{{ section.id }} .stepsContainer p::before {
+    content: "Step " counter(section) ":";
+    font-weight: bold;
+    margin-right: .5em;
   }
 {% endstyle %}

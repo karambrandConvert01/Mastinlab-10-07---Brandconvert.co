@@ -307,6 +307,7 @@
     },
     "1629460612978a954e": {
       "type": "product-reviews-template",
+      "disabled": true,
       "settings": {
         "bgColor": "rgba(0,0,0,0)",
         "text": "#474747",
@@ -420,10 +421,10 @@
         "section_title": "Pictures taken from our community",
         "section_content": "<p>Open each title for pack details— so many goodies inside.<\/p>",
         "border": "0px",
-        "padding": "0px 0px 0px 0px",
-        "mobile_padding": "0px 0px 0px 0px",
+        "padding": "",
+        "mobile_padding": "",
         "background_color": "#ffffff",
-        "fullWidth": true,
+        "fullWidth": false,
         "columns": "three",
         "text": "#474747",
         "padding-top-bottom": 75

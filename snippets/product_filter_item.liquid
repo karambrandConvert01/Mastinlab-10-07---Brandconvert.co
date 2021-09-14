@@ -61,25 +61,12 @@
           </div>
         {%- endif -%}
         {%- if fixed_aspect_ratio -%}
-          <div
-            class="grid__image-ratio grid__image-ratio--{{ settings.product_grid_image_size }} lazyload"
-            data-bgset="{% include 'bgset', image: preview_image %}"
-            data-sizes="auto">
-          </div>
+          <div class="grid__image-ratio grid__image-ratio--{{ settings.product_grid_image_size }} lazyload" data-bgset="{% include 'bgset', image: preview_image %}" data-sizes="auto"></div>
         {%- else -%}
-          <div class="image-wrap"
-            style="height: 0; padding-bottom: {{ 100 | divided_by: preview_image.aspect_ratio }}%;"
-            >
-            <img class="grid-product__image lazyload"
-                data-src="{{ img_url }}"
-                data-widths="[180, 360, 540, 720, 900, 1080]"
-                data-aspectratio="{{ preview_image.aspect_ratio }}"
-                data-sizes="auto"
-                alt="{{ preview_image.alt | escape }}">
+          <div class="image-wrap" style="height: 0; padding-bottom: {{ 100 | divided_by: preview_image.aspect_ratio }}%;">
+            <img class="grid-product__image lazyload" data-src="{{ img_url }}" data-widths="[180, 360, 540, 720, 900, 1080]" data-aspectratio="{{ preview_image.aspect_ratio }}" data-sizes="auto" alt="{{ preview_image.alt | escape }}">
             <noscript>
-              <img class="grid-product__image lazyloaded"
-                src="{{ preview_image | img_url: '400x' }}"
-                alt="{{ preview_image.alt | escape }}">
+              <img class="grid-product__image lazyloaded" src="{{ preview_image | img_url: '400x' }}" alt="{{ preview_image.alt | escape }}">
             </noscript>
           </div>
         {%- endif -%}
@@ -124,20 +111,32 @@
       </div>
 
       <div class="grid-product__meta">
+        {%if product.metafields.rel.related_product != blank %}
+          {%assign product_get = product.metafields.rel.related_product.value %}
+        {% else%}
+          {%assign product_get = product%}
+        {% endif%}
+
+        {%assign avg = product_get.metafields.stamped.reviews_average | minus: 0.0001 | round:1 %}
+        {%if avg > 0%}
+          <div class="review-small-wrapper">
+            <span data-id="{{ product_get.id }}" data-product-sku="{{ product_get.handle }}" data-product-type="{{product_get.type}}" data-product-title="{{product_get.title}}" style="display: inline-block;">
+              {{ product.metafields.stamped.badge }}
+              {%comment%}<span class="avg_number">{{ avg }}</span>{%endcomment%}
+            </span>
+          </div>
+        {%endif%}
+
+        {%- comment -%}
         <div class="review-small-wrappers">
           {%assign avg = product.metafields.stamped.reviews_average | minus: 0.0001 | round:1 %}
-              <span 
-                    data-id="{{ product.id }}" 
-                    data-product-sku="{{ product.handle }}" 
-                    data-product-type="{{product.type}}" 
-                    data-product-title="{{product.title}}" 
-                    style="display: inline-block;">
-                
-                {{ product.metafields.stamped.badge }}
-                <span class="avg_number">{{ avg }}</span>
-              </span>
-            </div>
-        
+          <span data-id="{{ product.id }}" data-product-sku="{{ product.handle }}" data-product-type="{{product.type}}" data-product-title="{{product.title}}" style="display: inline-block;">
+            {{ product.metafields.stamped.badge }}
+            <span class="avg_number">{{ avg }}</span>
+          </span>
+        </div>
+        {%- endcomment -%}
+
         <div class="grid-product__title grid-product__title--{{ settings.type_product_style }} custom_products-{{product.handle}}"><span>{{ product.title }}</span></div>
         {%- if settings.vendor_enable -%}
           <div class="grid-product__vendor">{{ product.vendor }}</div>

@@ -7,7 +7,10 @@
       </div>
     {% endif %}
     {% if section.settings.image.src != blank %}<div class="mainImage text-center"><img src="{{ section.settings.image | img_url: 'master' }}" alt="{{ section.settings.image.alt }}"></div>{% endif %}
-    {% if section.settings.badge.src != blank %}<div class="badgeImage text-center"><img src="{{ section.settings.badge | img_url: 'master' }}" alt="{{ section.settings.badge.alt }}"></div>{% endif %}
+    <div class="badgeImage text-center">
+      <div id="stamped-reviews-widget" data-widget-type="full-page" product-image="false" data-image="false" data-random="true" data-take="2"></div>
+    </div>
+    {%- comment -%}{% if section.settings.badge.src != blank %}<div class="badgeImage text-center"><img src="{{ section.settings.badge | img_url: 'master' }}" alt="{{ section.settings.badge.alt }}"></div>{% endif %}{%- endcomment -%}
   </div>
 </div>
 
@@ -30,11 +33,6 @@
       "type": "image_picker",
       "id": "image",
       "label": "Image"
-    },
-    {
-      "type": "image_picker",
-      "id": "badge",
-      "label": "Badges Image"
     },
     {
       "type": "header",

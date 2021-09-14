@@ -153,41 +153,45 @@
     flex: 1 1 45%;
     padding: 15px;
   }
+  #shopify-section-{{ section.id }} .quizSectionCol.quizSectionContent {
+    padding: 15px 3.35em !important;
+  }
   #shopify-section-{{ section.id }} .quizSectionCol h2 {
     color: {{ section.settings.headingColor }};
     font-family: Lora;
     font-size: 2.125rem;
-    font-weight: 500;
     line-height: 1.12;
     margin: 2.25rem 0px;
   }
   #shopify-section-{{ section.id }} .quizSectionText {
     margin-bottom: 2.5rem;
   }
-  .videoWrapperImage {
+  #shopify-section-{{ section.id }} .videoWrapperImage {
+    margin: 0 auto;
+    max-width: 27rem;
     position: relative;
   }
-  .videoWrapperImage > svg {
+  #shopify-section-{{ section.id }} .videoWrapperImage > svg {
     cursor: pointer;
     left: 50%;
-    max-width: 9.5rem;
+    max-width: 5rem;
     position: absolute;
     top: 50%;
     transform: translate(-50%, -50%);
   }
-  .videoWrapperImage.videoIsPlaying > img,
-  .videoWrapperImage.videoIsPlaying > svg,
-  .videoWrapperImage .videoWrapper {
+  #shopify-section-{{ section.id }} .videoWrapperImage.videoIsPlaying > img,
+  #shopify-section-{{ section.id }} .videoWrapperImage.videoIsPlaying > svg,
+  #shopify-section-{{ section.id }} .videoWrapperImage .videoWrapper {
     display: none;
   }
-  .videoWrapperImage.videoIsPlaying .videoWrapper {
+  #shopify-section-{{ section.id }} .videoWrapperImage.videoIsPlaying .videoWrapper {
     display: block;
   }
-  .videoWrapper {
+  #shopify-section-{{ section.id }} .videoWrapper {
     padding: 56.25% 0 0 0;
     position:relative;
   }
-  .videoWrapper iframe {
+  #shopify-section-{{ section.id }} .videoWrapper iframe {
     position: absolute;
     top:0;
     left:0;

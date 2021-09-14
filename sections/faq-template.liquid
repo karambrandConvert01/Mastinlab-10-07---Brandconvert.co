@@ -10,48 +10,50 @@
       {% for block in section.blocks %}
         {% if block.type == 'contentWithImage' %}
           <div class="inner-page-width">
-            <h2 class="toggle_title toggle_button tactive">
-              <svg enable-background="new 0 0 50 50" height="50px" id="Layer_1" version="1.1" viewBox="0 0 50 50" width="50px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-                <rect fill="none" height="50" width="50"></rect>
-                <line fill="none" stroke="currentColor" stroke-miterlimit="6" stroke-width="3" x1="9" x2="41" y1="25" y2="25"></line>
-                <line fill="none" stroke="currentColor" stroke-miterlimit="6" stroke-width="3" x1="25" x2="25" y1="9" y2="41"></line>
-              </svg>
-              {{ block.settings.question }}
-            </h2>
-
-            <div class="toggle_content">
-              <div class="padding_innter_content grid flex-display grid--uniform{% if block.settings.reverse %} row-reverse{% endif %}">
-                <div class="grid__item medium-up--six-twelfths">
-                  <div class="right-content-wrapper">
-                    <img class="lazyload"
-                    data-aspectratio="{{ block.settings.image.aspect_ratio }}"
-                    data-src="{{ block.settings.image | img_url: 'master' }}"
-                    data-widths="[360, 540, 720, 900, 1080, 1600]"
-                    alt="{{ block.settings.image.alt }}"
-                    data-sizes="auto">
+            <div class="toggle_wrapper">
+              <h2 class="toggle_title">
+                <svg enable-background="new 0 0 50 50" height="50px" id="Layer_1" version="1.1" viewBox="0 0 50 50" width="50px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                  <rect fill="none" height="50" width="50"></rect>
+                  <line fill="none" stroke="currentColor" stroke-miterlimit="6" stroke-width="3" x1="9" x2="41" y1="25" y2="25"></line>
+                  <line fill="none" stroke="currentColor" stroke-miterlimit="6" stroke-width="3" x1="25" x2="25" y1="9" y2="41"></line>
+                </svg>
+                {{ block.settings.question }}
+              </h2>
+  
+              <div class="toggle_content">
+                <div class="padding_innter_content grid flex-display grid--uniform{% if block.settings.reverse %} row-reverse{% endif %}">
+                  <div class="grid__item medium-up--six-twelfths">
+                    <div class="right-content-wrapper">
+                      <img class="lazyload"
+                      data-aspectratio="{{ block.settings.image.aspect_ratio }}"
+                      data-src="{{ block.settings.image | img_url: 'master' }}"
+                      data-widths="[360, 540, 720, 900, 1080, 1600]"
+                      alt="{{ block.settings.image.alt }}"
+                      data-sizes="auto">
+                    </div>
                   </div>
-                </div>
-
-                <div class="grid__item medium-up--six-twelfths">
-                  <div class="left-content-wrapper">
-                    {% if block.settings.heading != blank %}
-                      <h3>{{ block.settings.heading }}</h3>
-                    {% endif %}
-                    {% if block.settings.mainContent != blank %}
-                      <div class="content">
-                        {{ block.settings.mainContent }}
-                      </div>
-                    {% endif %}
-                    {% if block.settings.steps != blank %}
-                      <div class="steps stepsContainer">
-                        {{ block.settings.steps }}
-                      </div>
-                    {% endif %}
-                    {% if block.settings.afterStepsContent != blank %}
-                      <div class="afterSteps">
-                        {{ block.settings.afterStepsContent }}
-                      </div>
-                    {% endif %}
+  
+                  <div class="grid__item medium-up--six-twelfths">
+                    <div class="left-content-wrapper">
+                      {% if block.settings.heading != blank %}
+                        <h3>{{ block.settings.heading }}</h3>
+                      {% endif %}
+                      {% if block.settings.mainContent != blank %}
+                        <div class="content">
+                          {{ block.settings.mainContent }}
+                        </div>
+                      {% endif %}
+                      {% if block.settings.steps != blank %}
+                        <div class="steps stepsContainer">
+                          {{ block.settings.steps }}
+                        </div>
+                      {% endif %}
+                      {% if block.settings.afterStepsContent != blank %}
+                        <div class="afterSteps">
+                          {{ block.settings.afterStepsContent }}
+                        </div>
+                      {% endif %}
+                    </div>
                   </div>
                 </div>
               </div>
@@ -59,53 +61,55 @@
           </div>
         {% else %}
           <div class="inner-page-width">
-            <h2 class="toggle_title toggle_button tactive">
-              <svg enable-background="new 0 0 50 50" height="50px" id="Layer_1" version="1.1" viewBox="0 0 50 50" width="50px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-                <rect fill="none" height="50" width="50"></rect>
-                <line fill="none" stroke="currentColor" stroke-miterlimit="6" stroke-width="3" x1="9" x2="41" y1="25" y2="25"></line>
-                <line fill="none" stroke="currentColor" stroke-miterlimit="6" stroke-width="3" x1="25" x2="25" y1="9" y2="41"></line>
-              </svg>
-              {{ block.settings.question }}
-            </h2>
-
-            <div class="toggle_content">
-              <div class="padding_innter_content grid flex-display grid--uniform ">
-                <div class="grid__item medium-up--six-twelfths">
-                  <div class="left-content-wrapper">
-                    <div class="DivsContainer">
-                      <div class="leftDivContainer">
-                        <img class="lazyload"
-                        data-aspectratio="{{ block.settings.leftImage.aspect_ratio }}"
-                        data-src="{{ block.settings.leftImage | img_url: '130x130' }}"
-                        data-widths="[130]"
-                        alt="{{ block.settings.leftImage.alt }}"
-                        data-sizes="auto">
-                      </div>
-                      <div class="rightDivContainer">
-                        <h4>{{ block.settings.leftHeading }}</h4>
-                        <div class="content">
-                          {{ block.settings.leftMainContent }}
+            <div class="toggle_wrapper">
+              <h2 class="toggle_title">
+                <svg enable-background="new 0 0 50 50" height="50px" id="Layer_1" version="1.1" viewBox="0 0 50 50" width="50px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                  <rect fill="none" height="50" width="50"></rect>
+                  <line fill="none" stroke="currentColor" stroke-miterlimit="6" stroke-width="3" x1="9" x2="41" y1="25" y2="25"></line>
+                  <line fill="none" stroke="currentColor" stroke-miterlimit="6" stroke-width="3" x1="25" x2="25" y1="9" y2="41"></line>
+                </svg>
+                {{ block.settings.question }}
+              </h2>
+  
+              <div class="toggle_content">
+                <div class="padding_innter_content grid flex-display grid--uniform ">
+                  <div class="grid__item medium-up--six-twelfths">
+                    <div class="left-content-wrapper">
+                      <div class="DivsContainer">
+                        <div class="leftDivContainer">
+                          <img class="lazyload"
+                          data-aspectratio="{{ block.settings.leftImage.aspect_ratio }}"
+                          data-src="{{ block.settings.leftImage | img_url: '130x130' }}"
+                          data-widths="[130]"
+                          alt="{{ block.settings.leftImage.alt }}"
+                          data-sizes="auto">
+                        </div>
+                        <div class="rightDivContainer">
+                          <h4>{{ block.settings.leftHeading }}</h4>
+                          <div class="content">
+                            {{ block.settings.leftMainContent }}
+                          </div>
                         </div>
                       </div>
                     </div>
                   </div>
-                </div>
-                
-                <div class="grid__item medium-up--six-twelfths">
-                  <div class="left-content-wrapper">
-                    <div class="DivsContainer">
-                      <div class="leftDivContainer">
-                        <img class="lazyload"
-                        data-aspectratio="{{ block.settings.rightImage.aspect_ratio }}"
-                        data-src="{{ block.settings.rightImage | img_url: '130x130' }}"
-                        data-widths="[130]"
-                        alt="{{ block.settings.rightImage.alt }}"
-                        data-sizes="auto">
-                      </div>
-                      <div class="rightDivContainer">
-                        <h4>{{ block.settings.rightHeading }}</h4>
-                        <div class="content">
-                          {{ block.settings.rightMainContent }}
+                  
+                  <div class="grid__item medium-up--six-twelfths">
+                    <div class="left-content-wrapper">
+                      <div class="DivsContainer">
+                        <div class="leftDivContainer">
+                          <img class="lazyload"
+                          data-aspectratio="{{ block.settings.rightImage.aspect_ratio }}"
+                          data-src="{{ block.settings.rightImage | img_url: '130x130' }}"
+                          data-widths="[130]"
+                          alt="{{ block.settings.rightImage.alt }}"
+                          data-sizes="auto">
+                        </div>
+                        <div class="rightDivContainer">
+                          <h4>{{ block.settings.rightHeading }}</h4>
+                          <div class="content">
+                            {{ block.settings.rightMainContent }}
+                          </div>
                         </div>
                       </div>
                     </div>
@@ -288,34 +292,43 @@
   #shopify-section-{{ section.id }} .flex-display.row-reverse {
     flex-direction: row-reverse;
   }
-  #shopify-section-{{ section.id }} .toggle_title svg {
-    width: 50px;
-    height: 50px;
-    position: relative;
-    top: 8px;
-    margin-right: 15px;
-    transition: transform 0.2s ease-out;
-  }
   #shopify-section-{{ section.id }} .toggle_title.tactive svg {
     transform: rotate(45deg);
   }
   #shopify-section-{{ section.id }} .toggle_content {
-    max-height: 0;
-    overflow: hidden;
-    transition: max-height 0.2s ease-out;
+    display: none;
+  }
+  #shopify-section-{{ section.id }} .toggle_content .grid__item {
+    padding: 3rem 0;
   }
   #shopify-section-{{ section.id }} .toggle_content .grid__item > * {
     margin: 0 auto;
     max-width: 37.5rem;
   }
-  #shopify-section-{{ section.id }} .toggle_title.toggle_button,
-  #shopify-section-{{ section.id }} .toggle_content h3 {
-    font-family: Lora;
-    font-size: 2.125rem;
-    font-weight: 500;
+  #shopify-section-{{ section.id }} .toggle_content .grid__item .right-content-wrapper {
+    max-width: 27rem;
   }
-  #shopify-section-{{ section.id }} .toggle_title.toggle_button {
-    margin: 3.75rem 0;
+  #shopify-section-{{ section.id }} .toggle_title {
+    font-family: Lora;
+    font-size: 1.8rem;
+    font-weight: 500;
+    line-height: 1;
+    margin: 0.75rem 0;
+  }
+  #shopify-section-{{ section.id }} .toggle_title svg {
+    width: 40px;
+    height: 40px;
+    position: relative;
+    top: 0;
+    margin-right: 15px;
+    transition: transform 0.2s ease-out;
+    vertical-align: sub;
+  }
+  #shopify-section-{{ section.id }} .toggle_content h3 {
+    font-family: Lora,serif;
+    font-size: 1.75rem;
+    letter-spacing: .025em;
+    line-height: 1.5;
   }
   #shopify-section-{{ section.id }} .toggle_content h4 {
     font-family: Lora;
@@ -323,7 +336,7 @@
     font-weight: 500;
   }
   #shopify-section-{{ section.id }} .toggle_content p {
-    font-family: Work Sans;
+    font-family: 'Work Sans',sans-serif;
     font-size: 1.125rem;
     font-weight: 300;
   }
@@ -347,7 +360,7 @@
   #shopify-section-{{ section.id }} .rightDivContainer {
     width: calc(100% - 10.125rem);
   }
-  #shopify-section-{{ section.id }} .stepsContainer {
+  /* #shopify-section-{{ section.id }} .stepsContainer {
     counter-reset: section;
   }
   #shopify-section-{{ section.id }} .stepsContainer p {
@@ -363,6 +376,19 @@
     font-size: 3rem;
     font-weight: 400;
     padding-right: 1rem;
+  } */
+  #shopify-section-{{ section.id }} .stepsContainer {
+    counter-reset: section;
+    margin: 0 0 .7em;
+  }
+  #shopify-section-{{ section.id }} .stepsContainer p {
+    counter-increment: section;
+    margin: 0;
+  }
+  #shopify-section-{{ section.id }} .stepsContainer p::before {
+    content: "Step " counter(section) ":";
+    font-weight: bold;
+    margin-right: .5em;
   }
   @media only screen and (max-width: 767px) {
     #shopify-section-{{ section.id }} .leftDivContainer,
@@ -372,10 +398,27 @@
     #shopify-section-{{ section.id }} .grid__item + .grid__item {
       margin-top: 1.75rem;
     }
-    #shopify-section-{{ section.id }} .toggle_title.toggle_button {
+    #shopify-section-{{ section.id }} .toggle_title {
       margin: 1.875rem 0;
       padding-bottom: 0;
       padding-top: 0;
     }
   }
 {% endstyle %}
+
+<script type="text/javascript">
+  jQuery(document).ready(function($) {
+    jQuery('#shopify-section-{{ section.id }} .toggle_title').on('click', function() {
+      jQuery(this).parents('.inner-page-width').siblings().find('.toggle_content').slideUp();
+      jQuery(this).parents('.inner-page-width').siblings().find('.toggle_title').removeClass('tactive');
+
+      if(jQuery(this).hasClass('tactive')) {
+        jQuery(this).removeClass('tactive');
+        jQuery(this).parents('.inner-page-width').find('.toggle_content').slideUp();
+      } else {
+        jQuery(this).addClass('tactive');
+        jQuery(this).parents('.inner-page-width').find('.toggle_content').slideDown();
+      }
+    })
+  });
+</script>

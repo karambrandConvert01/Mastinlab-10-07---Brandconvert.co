@@ -107,43 +107,47 @@
     margin: 0;
     padding: {{ section.settings.padding }}px 0;
   }
-  .testimonialsRow {
+  #shopify-section-{{ section.id }} .testimonialsRow {
     align-items: center;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
     margin: 0 -15px;
   }
-  .testimonialsRow > div {
+  #shopify-section-{{ section.id }} .testimonialsRow > div {
     padding: 15px;
   }
-  .testimonialsImages {
-    width: 45%;
+  #shopify-section-{{ section.id }} .testimonialsImages {
+    width: 40%;
   }
-  .testimonialImage {
-    padding: 4.375rem;
+  #shopify-section-{{ section.id }} .testimonialImage {
+    padding: 0 6rem;
   }
-  .testimonialImageBox {
+  #shopify-section-{{ section.id }} .testimonialImageBox {
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
     border-radius: 50%;
     padding-bottom: 100%;
   }
-  .testimonialsContents {
-    font-family: Lora;
-    font-size: 1.625rem;
-    font-weight: 500;
-    width: 55%;
+  #shopify-section-{{ section.id }} .testimonialsContents {
+    width: 60%;
   }
-  .testimonialAuthor {
+  #shopify-section-{{ section.id }} .testimonialsContents .testimonialText p {
+    font-family: 'Work Sans', sans-serif;
+    font-size: 1.2rem;
+    font-weight: 200;
+    letter-spacing: 0.05em;
+  }
+  #shopify-section-{{ section.id }} .testimonialAuthor {
     color: {{ section.settings.authorNameColor }};
     font-family: Freestyle Script;
-    font-size: 3rem;
+    font-family: Freestyle Script;
+    font-size: 2.5rem;
     font-weight: 400;
     line-height: 1;
   }
-  .testimonialAuthor::before {
+  #shopify-section-{{ section.id }} .testimonialAuthor::before {
     background-image: url(https://cdn.shopify.com/s/files/1/0267/6834/3122/files/j.svg?v=1622279647);
     background-repeat: no-repeat;
     background-size: contain;
@@ -154,9 +158,16 @@
     position: relative;
     width: 2.5rem;
   }
+  #shopify-section-{{ section.id }} .slick-slide {
+    opacity: 0 !important;
+    transition: opacity 300ms ease-in-out;
+  }
+  #shopify-section-{{ section.id }} .slick-slide.slick-active {
+    opacity: 1 !important;
+  }
   #shopify-section-{{ section.id }} .slick-slider .slick-dots {
     bottom: 0;
-    margin-top: 2rem;
+    margin-top: 1rem;
     position: static;
     text-align: left;
   }
@@ -181,20 +192,24 @@
     $('#shopify-section-{{ section.id }} .testimonialsImagesWrapper').slick({
       arrows: false,
       asNavFor: '#shopify-section-{{ section.id }} .testimonialsContentsWrapper',
+      fade: true,
       infinite: true,
       slidesToShow: 1,
       slidesToScroll: 1,
+      speed: 1000,
     });
     $('#shopify-section-{{ section.id }} .testimonialsContentsWrapper').slick({
       arrows: false,
       asNavFor: '#shopify-section-{{ section.id }} .testimonialsImagesWrapper',
       autoplay: true,
-      autoplaySpeed: 2000,
+      autoplaySpeed: 3000,
       dots: true,
+      fade: true,
       focusOnSelect: true,
       infinite: true,
       slidesToShow: 1,
       slidesToScroll: 1,
+      speed: 1000,
     });
   });
 </script>

@@ -26,15 +26,39 @@
           <div class="megamenuContainer">
             {% for childlink in link.links %}
               <div class="megamenuWrapper">
-                {% assign titleArray = childlink.title | split: ',' %}
-                <div class="megamenuTitle">{{ titleArray | first }}</div>
+                <div class="megamenuTitle">{{ childlink.title }}</div>
+                {% assign collectionHandle = childlink.url | split: '/' | last %}
+                {% assign navCollectionDescription = '' %}
                 {% if childlink.url contains '/collections/' %}
-                  {% assign collectionHandle = childlink.url | split: '/' | last %}
                   {% assign navCollection = collections[collectionHandle] %}
                   {% assign navCollectionDescription = navCollection.description | strip_html | strip | truncatewords: 13, "." %}
-                  <div class="megamenuContent">{{ navCollectionDescription }}</div>
                 {% endif %}
-                <div class="megamenuLink"><a href="{{ childlink.url }}">{{ titleArray | last }}</a></div>
+                {% if childlink.url contains '/pages/' %}
+                  {% assign navCollection = pages[collectionHandle] %}
+                  {% assign navCollectionDescription = navCollection.content | strip_html | strip | truncatewords: 13, "." %}
+                {% endif %}
+                <div class="megamenuContent">
+                  {% if navCollectionDescription != blank %}
+                    {{ navCollectionDescription }}
+                  {% else %}
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur ab accusamus explicabo velit.
+                  {% endif %}
+                </div>
+                <div class="megamenuLink">
+                  <ul>
+                    {% if childlink.links.size > 0 %}
+                      {% for grandchild in childlink.links %}
+                        <li>
+                          <a href="{{ grandchild.url }}">{{ grandchild.title }}</a>
+                        </li>
+                      {% endfor %}
+                    {% else %}
+                      <li>
+                        <a href="{{ childlink.url }}">{{ childlink.title }}</a>
+                      </li>
+                    {% endif %}
+                  </ul>
+                </div>
               </div>
             {% endfor %}
           </div>

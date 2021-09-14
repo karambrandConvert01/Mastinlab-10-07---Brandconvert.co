@@ -11,7 +11,7 @@
         <div class="boxCol">
           <div class="boxColImageWrap">
             <div class="boxColImage">
-              <img src="{{ block.settings.image | img_url: '360x' }}" alt="{{ block.settings.image.alt }}">
+              <img src="{{ block.settings.image | img_url: '200x' }}" alt="{{ block.settings.image.alt }}">
             </div>
           </div>
           <div class="boxColContentWrapper">
@@ -151,13 +151,13 @@
     margin: 0 auto 1.5rem;
     max-width: 18.75rem;
   }
-  #shopify-section-{{ section.id }} .section-header__title {
-    font-weight: 500;
+  #shopify-section-{{ section.id }} .boxColImage img {
+    margin: 0 auto;
+    max-width: 12.5rem;
   }
   #shopify-section-{{ section.id }} .boxColTitle {
     font-family: Lora, serif;
-    font-size: 1.625rem;
-    font-weight: 500;
+    font-size: 1.125rem;
     letter-spacing: 0;
     text-align: center;
     text-transform: capitalize;

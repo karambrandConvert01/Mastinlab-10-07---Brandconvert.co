@@ -134,12 +134,6 @@
 
             {% if logo_alignment == 'left' and section.settings.main_menu_alignment != 'left-drawer' %}
               <div class="header-item depro_hcustom_wrapper header-item--navigation{% if section.settings.main_menu_alignment == 'left-center' %} text-center{% endif %}">
-                <div id="custom_for_product_by_dp" class="custom_for_product_by_dp">
-                  <ul class="add_cart_info">
-                    <li class="dp-title">{{product.title}}</li>
-                    <li><button id="scroll-to-cart" class="btn scroll-to-cart">Add to cart</button></li>
-                  </ul>
-                </div>
                 {% include 'header-desktop-nav' %}
               </div>
             

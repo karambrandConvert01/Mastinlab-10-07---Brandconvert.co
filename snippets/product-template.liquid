@@ -106,20 +106,14 @@
             {% endif%}
             {%assign avg = product_get.metafields.stamped.reviews_average | minus: 0.0001 | round:1 %}
             {%if avg > 0%}
-			<div class="review-small-wrapper">
-              
-              <span 
-                    data-id="{{ product_get.id }}" 
-                    data-product-sku="{{ product_get.handle }}" 
-                    data-product-type="{{product_get.type}}" 
-                    data-product-title="{{product_get.title}}" 
-                    style="display: inline-block;">
-                
-                {{ product.metafields.stamped.badge }}
-                {%comment%}<span class="avg_number">{{ avg }}</span>{%endcomment%}
-              </span>
-            </div>
+              <div class="review-small-wrapper">
+                <span data-id="{{ product_get.id }}" data-product-sku="{{ product_get.handle }}" data-product-type="{{product_get.type}}" data-product-title="{{product_get.title}}" style="display: inline-block;">
+                  {{ product.metafields.stamped.badge }}
+                  {%comment%}<span class="avg_number">{{ avg }}</span>{%endcomment%}
+                </span>
+              </div>
             {%endif%}
+
             {%- if settings.enable_product_reviews and settings.reviews_layout == 'full' -%}
               {%- if isModal -%}
                 {%- assign review_link = product.url | within: collection | append: '#Reviews-' | append: product.id -%}

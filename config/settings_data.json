@@ -267,6 +267,7 @@
           "e542ac75-d68a-4626-a3df-8eb4b8e87aa2": {
             "type": "downloadItem",
             "settings": {
+              "downloadImage": "shopify:\/\/shop_images\/bx-download_1.png",
               "downloadLink": "#",
               "downloadText": "INSTANT DOWNLOAD"
             }
@@ -274,6 +275,7 @@
           "587f0588-1317-48de-bc86-8f0494192d42": {
             "type": "downloadItem",
             "settings": {
+              "downloadImage": "shopify:\/\/shop_images\/bx-download_1.png",
               "downloadLink": "#",
               "downloadText": "INSTANT DOWNLOAD"
             }
@@ -281,6 +283,7 @@
           "bb4dc99c-c85a-4007-9f4e-70f3759a8f70": {
             "type": "downloadItem",
             "settings": {
+              "downloadImage": "shopify:\/\/shop_images\/bx-download_1.png",
               "downloadLink": "#",
               "downloadText": "INSTANT DOWNLOAD"
             }
@@ -288,6 +291,7 @@
           "dce5466c-98da-40db-95c1-d493634c3513": {
             "type": "downloadItem",
             "settings": {
+              "downloadImage": "shopify:\/\/shop_images\/bx-download_1.png",
               "downloadLink": "#",
               "downloadText": "INSTANT DOWNLOAD"
             }
@@ -2964,7 +2968,7 @@
           "fullWidth": false,
           "columns": "four",
           "text": "#474747",
-          "padding-top-bottom": 75
+          "padding-top-bottom": 50
         }
       },
       "depro-gallery-pro-87981": {
@@ -9138,13 +9142,13 @@
           "image": "shopify:\/\/shop_images\/quiz.png",
           "heading": "What does your editing style say about you?",
           "subHeading": "Takes 2 mins",
-          "content": "",
+          "content": "<p>Discover the presets that best align with your editing style by taking our one minute Preset Quiz.<br\/><\/p>",
           "label": "Take the preset quiz >",
           "link": "shopify:\/\/pages\/preset-quiz",
           "bgColor": "#271d2e",
           "headingColor": "#ffffff",
           "text": "#ffffff",
-          "padding": 150,
+          "padding": 40,
           "reverse": false
         }
       },
@@ -9154,7 +9158,7 @@
           "90149d67-261e-4400-9bea-94ed0d84a967": {
             "type": "testimonial",
             "settings": {
-              "image": "shopify:\/\/shop_images\/image_17.png",
+              "image": "shopify:\/\/shop_images\/passive_income_Simon_Becchetti.jpg",
               "content": "<p>A truly amazing product that lives up to what it promises and has made my post-processing life so much easier! Absolutely the best film-like presets on the market. Plus the post-purchase support and tips from Mastin Labs are super useful and frequent!<\/p>",
               "authorName": "Andy"
             }
@@ -9162,7 +9166,7 @@
           "74f9b022-3695-4eaa-900b-bf27b40f72d1": {
             "type": "testimonial",
             "settings": {
-              "image": "shopify:\/\/shop_images\/image_17.png",
+              "image": "shopify:\/\/shop_images\/passive_income_gabi_bucataru.jpg",
               "content": "<p>A truly amazing product that lives up to what it promises and has made my post-processing life so much easier! Absolutely the best film-like presets on the market. Plus the post-purchase support and tips from Mastin Labs are super useful and frequent!<\/p>",
               "authorName": "Andy"
             }
@@ -9237,7 +9241,6 @@
           "heading": "50,000 Photograpghers.",
           "subHeading": "<p>Photographers around who use Mastin Labs have appeared in Vogue, Harper's Bazaar, Grace Ormonde, Destination I Do, Esquire Magazine, and more.<\/p>",
           "image": "shopify:\/\/shop_images\/Group_219.png",
-          "badge": "shopify:\/\/shop_images\/trustpilot.png",
           "bgColor": "#ffffff",
           "text": "#474747",
           "padding": 75
@@ -9255,7 +9258,7 @@
           "bgColor": "#ffffff",
           "headingColor": "#000000",
           "text": "#474747",
-          "padding": 75,
+          "padding": 15,
           "reverse": false
         }
       },

@@ -178,26 +178,38 @@
   #shopify-section-{{ section.id }} .stamped-fa-star-half-o:before,
   #shopify-section-{{ section.id }} .stamped-fa-star-o:before,
   #shopify-section-{{ section.id }} .stamped-fa-star:before,
+  #shopify-section-{{ section.id }} .collection_new_design .review-small-wrapper .stamped-badge-caption,
   #shopify-section-{{ section.id }} .collection_new_design .review-small-wrappers .avg_number {
-    font-size: 12px;
+    font-size: 15px;
+    font-weight: bold;
     line-height: 1;
   }
+  #shopify-section-{{ section.id }} .fa-star-half-o:before,
+  #shopify-section-{{ section.id }} .fa-star-o:before,
+  #shopify-section-{{ section.id }} .fa-star:before,
+  #shopify-section-{{ section.id }} .stamped-fa-star-half-o:before,
+  #shopify-section-{{ section.id }} .stamped-fa-star-o:before,
+  #shopify-section-{{ section.id }} .stamped-fa-star:before {
+    font-size: 18px;
+  }
+  #shopify-section-{{ section.id }} .collection_new_design .review-small-wrapper .stamped-badge-caption,
   #shopify-section-{{ section.id }} .collection_new_design .review-small-wrappers .avg_number {
     display: initial;
     color: #8B8787;
   }
+  #shopify-section-{{ section.id }} .collection_new_design .review-small-wrapper .stamped-badge-caption::after,
   #shopify-section-{{ section.id }} .collection_new_design .review-small-wrappers .avg_number::after {
-    content: ' Reviews';
+    content: ' Reviews' !important;
     display: inherit;
   }
   #shopify-section-{{ section.id }} .grid-product__title span {
-    font-family: Work Sans;
-    font-size: 16px;
+    font-family: 'Work Sans',sans-serif;
+    font-size: 19px;
     font-weight: 700;
     letter-spacing: 0em;
   }
   #shopify-section-{{ section.id }} .grid-product__title::after {
-    font-family: Work Sans;
+    font-family: 'Work Sans',sans-serif;
     font-size: 15px;
     font-weight: 400;
     text-align: left;

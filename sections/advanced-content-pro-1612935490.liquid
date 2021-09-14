@@ -1,4 +1,32 @@
 {%include "advanced-content" %}
 {% schema %}{"name":"Custom content","max_blocks":10,"settings":[{"type":"checkbox","id":"full_width","label":"Full page width","default":false},{"type":"color","id":"background_color","label":"Custom background color ","default":"#ffffff"},{"type":"checkbox","id":"divider","label":"Show section divider","default":false},{"type":"checkbox","id":"space_around","label":"Add spacing above and below","default":true},{"type":"header","content":"Padidng Setting"},{"type":"text","id":"padding","label":"Desktop Padding","default":"0px 0px 0px 0px","info":"Top right bottom left"},{"type":"text","id":"mobile_padding","label":"Mobile Padding","default":"0px 0px 0px 0px","info":"Top right bottom left"}],"blocks":[{"type":"html","name":"Custom content","settings":[{"type":"header","content":"Padidng Setting"},{"type":"text","id":"padding","label":"Desktop Padding","default":"0px 0px 0px 0px","info":"Top right bottom left"},{"type":"text","id":"mobile_padding","label":"Mobile Padding","default":"0px 0px 0px 0px","info":"Top right bottom left"},{"type":"header","content":"Block Setting"},{"type":"html","id":"code","label":"HTML","default":"<h2>Custom content<\/h2><p>Use this advanced section to build your own layouts or to add custom HTML or scripts.<\/p>"},{"type":"richtext","id":"code_richtext","label":"Extra Content"},{"type":"select","id":"width","label":"Width","default":"100%","options":[{"value":"25%","label":"25%"},{"value":"33%","label":"33%"},{"value":"50%","label":"50%"},{"value":"66%","label":"66%"},{"value":"75%","label":"75%"},{"value":"100%","label":"100%"}]},{"type":"select","id":"alignment","label":"Vertical alignment","default":"top-middle","info":"Aligns when next to other custom content","options":[{"value":"top-middle","label":"Top"},{"value":"center","label":"Middle"},{"value":"bottom-middle","label":"Bottom"}]}]},{"type":"image","name":"Image","settings":[{"type":"text","id":"padding","label":"Custom Padding ","default":"0px 0px 0px 0px","info":"Top right bottom left"},{"type":"image_picker","id":"image","label":"Image"},{"type":"url","id":"link","label":"Link"},{"type":"select","id":"width","label":"Width","default":"100%","options":[{"value":"25%","label":"25%"},{"value":"33%","label":"33%"},{"value":"50%","label":"50%"},{"value":"66%","label":"66%"},{"value":"75%","label":"75%"},{"value":"100%","label":"100%"}]},{"type":"select","id":"alignment","label":"Vertical alignment","default":"top-middle","info":"Aligns when next to other custom content","options":[{"value":"top-middle","label":"Top"},{"value":"center","label":"Middle"},{"value":"bottom-middle","label":"Bottom"}]}]}],"default":{"blocks":[{"type":"image","settings":{"width":"50%"}},{"type":"html","settings":{"width":"50%","alignment":"center"}}]}}{% endschema %}
 
-  
+{% style %}
+#shopify-section-{{ section.id }} .custom__item-inner button.needsclick {
+  border: none !important;
+  border-radius: 0;
+  box-sizing: border-box;
+  font-family: 'Work Sans',sans-serif;
+  font-weight: 700;
+  height: 100%;
+  letter-spacing: .1265em;
+  overflow: hidden;
+  position: relative;
+  text-align: center;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+#shopify-section-{{ section.id }} .custom__item-inner button.needsclick::after {
+  background-image: linear-gradient(to right,transparent,rgba(255,255,255,.25),transparent);
+  content: '';
+  height: 100%;
+  left: 150%;
+  position: absolute;
+  top: 0;
+  transform: skewX(-20deg);
+  width: 200%;
+}
+#shopify-section-{{ section.id }} .custom__item-inner button.needsclick:hover::after {
+  animation: shine .75s cubic-bezier(.01,.56,1,1);
+}
+{% endstyle %}

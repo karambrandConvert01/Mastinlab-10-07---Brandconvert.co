@@ -138,7 +138,7 @@
   }
   #shopify-section-{{ section.id }} .boxColImageWrap {
     margin: 0 auto 1.5rem;
-    max-width: 18.75rem;
+    max-width: 15rem;
   }
   #shopify-section-{{ section.id }} .boxColImage {
     background-position: center;
@@ -146,16 +146,17 @@
     background-size: contain;
     padding-bottom: 100%;
   }
-  #shopify-section-{{ section.id }} .section-header__title {
-    font-weight: 500;
-  }
   #shopify-section-{{ section.id }} .boxColTitle {
     font-family: Lora, serif;
-    font-size: 2.125rem;
-    font-weight: 500;
-    letter-spacing: 0;
+    font-size: 20px;
+    margin: 0 0 0.25em;
     text-align: center;
     text-transform: capitalize;
+  }
+  @media only screen and (min-width: 768px) {
+    #shopify-section-{{ section.id }} .section-header {
+      margin-bottom: 30px;
+    }
   }
   @media only screen and (max-width: 767px) {
     #shopify-section-{{ section.id }} .boxCol {
