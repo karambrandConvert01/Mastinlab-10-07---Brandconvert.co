@@ -2,40 +2,35 @@
   <div class="quizSectionContainer">
     <div class="quizSectionRow">
       {% if section.settings.image.src != blank or section.settings.video != blank %}
-      <div class="quizSectionCol quizSectionImg">
-        {% if section.settings.image.src != blank and section.settings.video != blank %}
-          <div class="videoWrapperImage">
-            <img src="{{ section.settings.image | img_url: 'master' }}">
-            <svg class="play{{ section.settings.video.type }}" data-id="{{ section.settings.video.id }}" data-url="{{ section.settings.video }}" viewBox="0 0 156 156" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M77.9167 0C34.9534 0 0 34.9534 0 77.9167C0 120.88 34.9534 155.833 77.9167 155.833C120.88 155.833 155.833 120.88 155.833 77.9167C155.833 34.9534 120.88 0 77.9167 0ZM77.9167 140.25C43.5476 140.25 15.5833 112.286 15.5833 77.9167C15.5833 43.5476 43.5476 15.5833 77.9167 15.5833C112.286 15.5833 140.25 43.5476 140.25 77.9167C140.25 112.286 112.286 140.25 77.9167 140.25Z" fill="{{ section.settings.playButton }}"/>
-              <path d="M54.5415 116.875L116.875 77.9163L54.5415 38.958V116.875Z" fill="{{ section.settings.playButton }}"/>
-            </svg>
-            <div class="videoWrapper">
-              <div id="videoWrapper"></div>
+        <div class="quizSectionCol quizSectionImg">
+          {% if section.settings.image.src != blank and section.settings.video != blank %}
+            <div class="videoWrapperImage">
+              <img src="{{ section.settings.image | img_url: 'master' }}">
+              <svg class="play{{ section.settings.video.type }}" data-id="{{ section.settings.video.id }}" data-url="{{ section.settings.video }}" viewBox="0 0 156 156" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M77.9167 0C34.9534 0 0 34.9534 0 77.9167C0 120.88 34.9534 155.833 77.9167 155.833C120.88 155.833 155.833 120.88 155.833 77.9167C155.833 34.9534 120.88 0 77.9167 0ZM77.9167 140.25C43.5476 140.25 15.5833 112.286 15.5833 77.9167C15.5833 43.5476 43.5476 15.5833 77.9167 15.5833C112.286 15.5833 140.25 43.5476 140.25 77.9167C140.25 112.286 112.286 140.25 77.9167 140.25Z" fill="{{ section.settings.playButton }}"></path>
+                <path d="M54.5415 116.875L116.875 77.9163L54.5415 38.958V116.875Z" fill="{{ section.settings.playButton }}"></path>
+              </svg>
             </div>
-          </div>
-          {% else %}
-          <div class="videoWrapper">
-            {% if section.settings.video.type == 'youtube' %}
-              <div class="videoWrapper">
-                <iframe src="https://www.youtube.com/embed/{{ section.settings.video.id }}" frameborder="0" allow="accelerometer; modestbranding; encrypted-media; gyroscope; picture-in-picture"></iframe>
-              </div>
-            {% elsif section.settings.video.type == 'vimeo' %}
-              <div class="videoWrapper">
-                <iframe src="https://player.vimeo.com/video/{{ section.settings.video.id }}" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>
-              </div>
-              <script src="https://player.vimeo.com/api/player.js"></script>
-            {% else %}
-              <video src="{{ section.settings.video }}"></video>
-            {% endif %}
-          </div>
           {% endif %}
-      </div>
+        </div>
       {% endif %}
       <div class="quizSectionCol quizSectionContent">
         {% if section.settings.heading != blank %}<h2>{{ section.settings.heading }}</h2>{% endif %}
         {% if section.settings.content != blank %}<div class="quizSectionText">{{ section.settings.content }}</div>{% endif %}
         {% if section.settings.link != blank and section.settings.label != blank %}<a href="{{ section.settings.link }}" class="btn section-depro_color">{{ section.settings.label }}</a>{% endif %}
+      </div>
+    </div>
+  </div>
+</div>
+
+<div id="VideoModal-{{ section.id }}">
+  <div class="modalCloseBtn">
+    <svg aria-hidden="true" focusable="false" role="presentation" class="icon icon-close" viewBox="0 0 64 64"><path d="M19 17.61l27.12 27.13m0-27.12L19 44.74"/></svg>
+  </div>
+  <div class="modalInner">
+    <div class="modalBody">
+      <div class="modalVideo">
+        <div id="videoWrapper-{{ section.id }}"></div>
       </div>
     </div>
   </div>
@@ -198,6 +193,60 @@
     width:100%;
     height:100%;
   }
+
+  {% comment %} Video Modal {% endcomment %}
+  #shopify-section-{{ section.id }} #VideoModal-{{ section.id }} {
+    background-color: rgb(39 29 46 / 85%);
+    bottom: 0;
+    display: none;
+    left: 0;
+    position: fixed;
+    right: 0;
+    top: 0;
+    z-index: 9999;
+  }
+  #shopify-section-{{ section.id }} .modalCloseBtn {
+    align-items: center;
+    border: 4px solid currentColor;
+    border-radius: 50%;
+    color: #ffffff;
+    cursor: pointer;
+    display: flex;
+    height: 2rem;
+    justify-content: center;
+    position: absolute;
+    right: 1rem;
+    top: 1rem;
+    width: 2rem;
+    z-index: 2;
+  }
+  #shopify-section-{{ section.id }} .modalInner {
+    align-items: center;
+    display: flex;
+    flex-wrap: wrap;
+    height: 100%;
+    justify-content: center;
+    padding: 3rem;
+    position: relative;
+  }
+  #shopify-section-{{ section.id }} .modalBody {
+    max-width: 900px;
+    width: 100%;
+    z-index: 1;
+  }
+  #shopify-section-{{ section.id }} .modalVideo {
+    padding-bottom: 56.25%;
+    position: relative;
+  }
+  #shopify-section-{{ section.id }} .modalVideo > * {
+    height: 100%;
+    left: 50%;
+    position: absolute;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+  }
+  {% comment %} Video Modal {% endcomment %}
   @media only screen and (max-width: 767px) {
     #shopify-section-{{ section.id }} .quizSectionCol {
       flex: 1 1 100%;
@@ -208,16 +257,17 @@
 <script type="text/javascript">
   const youtubeVideo = document.querySelector('#shopify-section-{{ section.id }} .playyoutube');
   const vimeoVideo = document.querySelector('#shopify-section-{{ section.id }} .playvimeo');
+  const modalCloseBtn = document.querySelector('#shopify-section-{{ section.id }} .modalCloseBtn');
 
   if(youtubeVideo) {
-    var tag = document.createElement('script');
+    const tag = document.createElement('script');
     tag.src = "https://www.youtube.com/iframe_api";
-    var firstScriptTag = document.getElementsByTagName('script')[0];
+    const firstScriptTag = document.getElementsByTagName('script')[0];
     firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
 
-    var player;
+    let player;
     function onYouTubeIframeAPIReady() {
-      player = new YT.Player('videoWrapper', {
+      player = new YT.Player('videoWrapper-{{ section.id }}', {
         videoId: youtubeVideo.dataset.id, //replace VIDEO_ID with the videoId from Youtube
         events: {
           'onReady': onPlayerReady,
@@ -228,21 +278,28 @@
 
     function onPlayerReady(event) {
       youtubeVideo.addEventListener("click", function () {
-        console.log(this);
-        // event.target.playVideo();
         player.playVideo();
       });
     }
 
     function onPlayerStateChange(newState) {
       if (newState.data == 1) {
+        document.querySelector('#shopify-section-{{ section.id }} #VideoModal-{{ section.id }}').style.display = 'block';
         youtubeVideo.closest('.videoWrapperImage').classList.add('videoIsPlaying');
       } else if (newState.data == 0) {
+        document.querySelector('#shopify-section-{{ section.id }} #VideoModal-{{ section.id }}').style.display = 'none';
         youtubeVideo.closest('.videoWrapperImage').classList.remove('videoIsPlaying');
-      } else if (newState.data == 2) {
+      }{% comment %}  else if (newState.data == 2) {
         youtubeVideo.closest('.videoWrapperImage').classList.remove('videoIsPlaying');
-      }
+      } {% endcomment %}
+    }
+    
+    if(modalCloseBtn) {
+      modalCloseBtn.addEventListener('click', function() {
+        document.querySelector('#shopify-section-{{ section.id }} #VideoModal-{{ section.id }}').style.display = 'none';
+        youtubeVideo.closest('.videoWrapperImage').classList.remove('videoIsPlaying');
+        player.stopVideo();
+      })
     }
   }
-  if(vimeoVideo) {}
 </script>

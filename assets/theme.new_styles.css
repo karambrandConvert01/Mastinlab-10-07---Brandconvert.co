@@ -2137,9 +2137,9 @@ h4, .h4 {
 	}
 }
 @media screen and (max-width: 640px) {
-	#stamped-reviews-widget{
+	/* #stamped-reviews-widget{
 		display:none !important;
-	}
+	} */
 	#shopify-section-1588631401313 .gallery_item_info{
 		padding:5px !important;
 	}

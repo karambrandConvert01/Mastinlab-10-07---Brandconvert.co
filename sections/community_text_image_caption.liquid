@@ -3,52 +3,103 @@
   {
     "name": "Community Image caption",
     "settings": [
-	  {
+      {
         "type": "text",
         "id": "title",
         "label": "Heading",
-		"default":"Join more than 50,000 photographers creating their own way."
+        "default":"Join more than 50,000 photographers creating their own way."
       },
-	  {
+      {
         "type": "html",
         "id": "description",
         "label": "Content",
-		"default":"<p>Make beautiful photos, find your crew, and take charge of your life and career in our free Facebook community.</p>"
+        "default":"<p>Make beautiful photos, find your crew, and take charge of your life and career in our free Facebook community.</p>"
       },
-	  {
+      {
         "type": "text",
         "id": "button",
         "label": "Button",
-		"default":"JOIN THE COMMUNITY >"
+        "default":"JOIN THE COMMUNITY >"
       },
-	  {
+      {
         "type": "url",
         "id": "link_button",
         "label": "Button Link"
       },
-	  {
+      {
         "type": "image_picker",
         "id": "image",
         "label": "Image"
       },
-	  {
+      {
         "type": "text",
         "id": "caption",
         "label": "Image Caption",
-		"default":"Photo by Kike Arnaiz."
+        "default":"Photo by Kike Arnaiz."
+      },
+      {
+        "type": "color",
+        "id": "btn_color",
+        "label": "Buttons color",
+        "default": "rgba(0,0,0,1)"
+      },
+      {
+        "type": "color",
+        "id": "btn_color_border",
+        "label": "Buttons border color",
+        "default": "rgba(0,0,0,1)"
+      },
+      {
+        "type": "color",
+        "id": "btn_color_bg",
+        "label": "Buttons background color",
+        "default": "rgba(0,0,0,0)"
+      },
+      {
+        "type": "color",
+        "id": "btn_color_hover",
+        "label": "Buttons color Hover",
+        "default": "rgba(0,0,0,1)"
+      },
+      {
+        "type": "color",
+        "id": "btn_color_border_hover",
+        "label": "Buttons border color Hover",
+        "default": "rgba(0,0,0,1)"
+      },
+      {
+        "type": "color",
+        "id": "btn_color_bg_hover",
+        "label": "Buttons background color Hover",
+        "default": "rgba(0,0,0,0)"
       }
-	],
-	"presets": [
+    ],
+    "presets": [
       {
         "name": "Community Image caption",
         "category": "Deprohoang Sections"
-		}
+      }
     ]
   }
 {% endschema %}
 
-{% stylesheet %}
-{% endstylesheet %}
+{% style %}
+#shopify-section-{{ section.id }} .featured-row__subtext a.btn{
+  color: {{ section.settings.btn_color}};
+  border-color: {{ section.settings.btn_color_border}};
+  background-color:{{ section.settings.btn_color_bg}};
+}
+#shopify-section-{{ section.id }} .featured-row__subtext a.btn[href*=capture]{
+	border-color: {{ section.settings.btn_color_border}} !important;
+	background-color:{{ section.settings.btn_color}} !important;
+	color: {{ section.settings.btn_color_bg}} !important;
+}
+#shopify-section-{{ section.id }} .featured-row__subtext a.btn:hover{
+  color: {{ section.settings.btn_color_hover}};
+  border-color: {{ section.settings.btn_color_border_hover}};
+  background-color:{{ section.settings.btn_color_bg_hover}};
+}
+{% endstyle %}
 
 {% javascript %}
 {% endjavascript %}

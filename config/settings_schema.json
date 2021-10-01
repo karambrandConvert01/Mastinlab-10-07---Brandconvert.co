@@ -1288,6 +1288,22 @@
         "type": "url",
         "id": "cart_terms_conditions_link",
         "label": "Terms and conditions page"
+      },
+      {
+        "type": "header",
+        "content": "Sticky cart style"
+      },
+      {
+        "type": "color",
+        "id": "stickyBackgroundColor",
+        "label":"Background Color",
+        "default": "#f7f6f2"
+      },
+      {
+        "type": "color",
+        "id": "stickyColor",
+        "label":"Text Color",
+        "default": "#474747"
       }
     ]
   },

@@ -84,22 +84,11 @@
               </p>
             {%- endif -%}
 
-            {%- unless description_style == 'full' -%}
-              <div id="position_lookup" class="product-single__description rte">
-                {% if product.metafields.info.product_short_description != blank %}
-                  <div class="product_short_description">
-                    {{ product.metafields.info.product_short_description }}
-                  </div>
-                {% endif %}
-                {{ product.description }}
-
-                {% if product.metafields.info.bullet_points != blank %}
-                  <div class="bulletPointsContainer">
-                    {{ product.metafields.info.bullet_points }}
-                  </div>
-                {% endif %}
+            {% if product.metafields.info.product_short_description != blank %}
+              <div class="product_short_description">
+                {{ product.metafields.info.product_short_description }}
               </div>
-            {%- endunless -%}
+            {% endif %}
 
             {%- assign hide_sale_price = true -%}
             {%- if product.compare_at_price_max > product.price -%}
@@ -223,6 +212,33 @@
             {%- endif -%}
 
             {%- unless description_style == 'full' -%}
+              <div class="product-single__description_accordion">
+                {% assign description = product.description | split: '</p>' | first %}
+                <div class="product-single__description_exert">
+                  {{ description }}
+                </div>
+                <div class="product-single__description_accordion-btn">
+                  <button>
+                    <span style="font-size: 17px;" data-open-accessibility-text-original="18px" role="presentation" class="collapsible-trigger__icon collapsible-trigger__icon--circle collapsible-trigger__icon--open" data-mce-style="font-size: 17px;">
+                      <svg viewBox="0 0 28 16" class="icon icon--wide icon-chevron-down" role="presentation" aria-hidden="true" focusable="false">
+                        <path fill-rule="evenodd" fill="none" stroke="#000" stroke-width="2" d="M1.57 1.59l12.76 12.77L27.1 1.59"></path>
+                      </svg>
+                    </span>
+                  </button>
+                </div>
+                <div id="position_lookup" class="product-single__description rte">
+                  {{ product.description | remove_first: description | remove: "<p></p>" }}
+  
+                  {% if product.metafields.info.bullet_points != blank %}
+                    <div class="bulletPointsContainer">
+                      {{ product.metafields.info.bullet_points }}
+                    </div>
+                  {% endif %}
+                </div>
+              </div>
+            {%- endunless -%}
+
+            {%- unless description_style == 'full' -%}
               {% include 'product-additional-content', section_id: section_id %}
               {% if product.metafields.rel.product_requirements != blank %}
                 <div class="product_requirementsContainer">
@@ -255,12 +271,6 @@
       </div>
 
       {%- if description_style == 'full' -%}
-        <div class="product-single__description-full rte">
-          {% if product.metafields.info.product_short_description != blank %}
-            <div class="product_short_description">
-              {{ product.metafields.info.product_short_description }}
-            </div>
-          {% endif %}
           {{ product.description }}
 
           {% if product.metafields.info.bullet_points != blank %}
@@ -304,19 +314,21 @@
       <div class="featuredInWrapper">
         <div class="featuredInItem">Featured in:</div>
 
-        {% for block in section.blocks %}
-          {% if block.type == "featuredIn" and block.settings.img.src != blank %}
-            <div class="featuredInItem">
-              {% if block.settings.link != blank %}
-                <a href="">
-                  {% endif %}
-                    <img src="{{ block.settings.img | img_url: 'master' }}" alt="{{ block.settings.img.alt }}">
-                  {% if block.settings.link != blank %}
-                </a>
-              {% endif %}
-            </div>
-          {% endif %}
-        {% endfor %}
+        <div class="featuredInInner">
+          {% for block in section.blocks %}
+            {% if block.type == "featuredIn" and block.settings.img.src != blank %}
+              <div class="featuredInItem">
+                {% if block.settings.link != blank %}
+                  <a href="">
+                    {% endif %}
+                      <img src="{{ block.settings.img | img_url: 'master' }}" alt="{{ block.settings.img.alt }}">
+                    {% if block.settings.link != blank %}
+                  </a>
+                {% endif %}
+              </div>
+            {% endif %}
+          {% endfor %}
+        </div>
       </div>
     </div>
   </div>

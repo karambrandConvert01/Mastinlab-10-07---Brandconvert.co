@@ -204,6 +204,10 @@
   #shopify-section-{{ section.id }} .link a {
     color: #3B72A1;
   }
+  #shopify-section-{{ section.id }} .link a:focus,
+  #shopify-section-{{ section.id }} .link a:hover {
+    color: #ff5121;
+  }
   #shopify-section-{{ section.id }} .review-small-wrapper .stamped-badge .stamped-badge-caption span {
     display: inline-block !important;
     margin-left: .5rem;
@@ -263,7 +267,7 @@
     flex-wrap: wrap;
     justify-content: space-between;
     margin: 0 -15px !important;
-    max-width: 100%;
+    max-width: initial;
   }
   #shopify-section-{{ section.id }} .productReviewTemplate #stamped-main-widget .stamped-header-title {
     width: 100%;
@@ -362,17 +366,17 @@
     padding: 0 1.5rem;
     width: 1.125rem;
   }
-  #shopify-section-{{ section.id }} .productReviewTemplate #stamped-main-widget  ul.stamped-pagination.stamped-reviews-ul {
+  #shopify-section-{{ section.id }} #stamped-main-widget  ul.stamped-pagination.stamped-reviews-ul {
     border-top: 1px solid #B7B7AE;
     padding: 1rem;
   }
-  #shopify-section-{{ section.id }} .productReviewTemplate #stamped-main-widget  ul.stamped-pagination.stamped-reviews-ul li + li {
+  #shopify-section-{{ section.id }} #stamped-main-widget  ul.stamped-pagination.stamped-reviews-ul li + li {
     margin-left: .5em
   }
-  #shopify-section-{{ section.id }} .productReviewTemplate #stamped-main-widget  ul.stamped-pagination.stamped-reviews-ul li::after {
+  #shopify-section-{{ section.id }} #stamped-main-widget  ul.stamped-pagination.stamped-reviews-ul li::after {
     display: none;
   }
-  #shopify-section-{{ section.id }} .productReviewTemplate #stamped-main-widget  ul.stamped-pagination.stamped-reviews-ul a {
+  #shopify-section-{{ section.id }} #stamped-main-widget  ul.stamped-pagination.stamped-reviews-ul a {
     background: unset;
     background-color: transparent;
     border: 1px solid #f45332;
@@ -387,7 +391,7 @@
     text-decoration: none;
     text-align: center;
   }
-  #shopify-section-{{ section.id }} .productReviewTemplate #stamped-main-widget ul.stamped-pagination.stamped-reviews-ul li.active a {
+  #shopify-section-{{ section.id }} #stamped-main-widget ul.stamped-pagination.stamped-reviews-ul li.active a {
     background-color: #f45332;
     color: #fff;
   }
@@ -445,14 +449,15 @@
   }
   @media only screen and (max-width: 767px) {
     #shopify-section-{{ section.id }} .bestReviewLeft,
-    #shopify-section-{{ section.id }} .bestReviewRight,
-    #shopify-section-{{ section.id }} .bestReview,
     #shopify-section-{{ section.id }} .productReviewTemplate #stamped-main-widget .stamped-header,
     #shopify-section-{{ section.id }} .productReviewTemplate #stamped-main-widget .stamped-content {
       width: 100%;
     }
+    #shopify-section-{{ section.id }} .bestReviewRight {
+      display: none;
+    }
     #shopify-section-{{ section.id }} .productReviewTemplate {
-      padding-top: {{ section.settings.paddingTop | divided_by: 2 }}px;
+      padding-top: 0;
     }
   }
 {% endstyle %}
@@ -465,7 +470,22 @@
       });
       jQuery('#shopify-section-{{ section.id }} .link a').on('click', function(e) {
         e.preventDefault();
+        if(jQuery('#shopify-section-{{ section.id }} .productReviewTemplate').is(':visible')) {
+          jQuery(this).text('SEE MORE REVIEWS');
+        } else {
+          jQuery(this).text('SEE LESS REVIEWS');
+        }
+
         jQuery('#shopify-section-{{ section.id }} .productReviewTemplate').slideToggle();
+      })
+
+      const page = $("html, body");
+      page.bind('DOMSubtreeModified', function (e) {
+        $(document).find("#shopify-section-{{ section.id }} .stamped-pagination a").on('click', function(e) {
+          setTimeout(function() {
+            jQuery('html, body').queue([]).stop();
+          }, 10);
+        });
       })
     });
   })()

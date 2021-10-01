@@ -185,6 +185,15 @@
   #shopify-section-{{ section.id }} .slick-dots li.slick-active button::before {
     opacity: 1;
   }
+  @media only screen and (max-width: 768px) {
+    #shopify-section-{{ section.id }} .testimonialsContents,
+    #shopify-section-{{ section.id }} .testimonialsImages {
+      width: 100%;
+    }
+    #shopify-section-{{ section.id }} .slick-slider .slick-dots {
+      text-align: center;
+    }
+  }
 {% endstyle %}
 
 <script type="text/javascript">

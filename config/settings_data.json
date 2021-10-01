@@ -127,6 +127,8 @@
     "cart_notes_enable": false,
     "cart_terms_conditions_enable": false,
     "cart_terms_conditions_link": "shopify:\/\/pages\/privacy-policy",
+    "stickyBackgroundColor": "#261d2d",
+    "stickyColor": "#f7f6f2",
     "social_facebook_link": "",
     "social_twitter_link": "",
     "social_pinterest_link": "",
@@ -267,7 +269,7 @@
           "e542ac75-d68a-4626-a3df-8eb4b8e87aa2": {
             "type": "downloadItem",
             "settings": {
-              "downloadImage": "shopify:\/\/shop_images\/bx-download_1.png",
+              "downloadImage": "shopify:\/\/shop_images\/108-box-package-open-close-morph-outline.gif",
               "downloadLink": "#",
               "downloadText": "INSTANT DOWNLOAD"
             }
@@ -4865,9 +4867,9 @@
           "btn_color": "#ffffff",
           "btn_color_border": "#f45332",
           "btn_color_bg": "#f45332",
-          "btn_color_hover": "#000000",
-          "btn_color_border_hover": "#000000",
-          "btn_color_bg_hover": "rgba(0,0,0,0)",
+          "btn_color_hover": "#ffffff",
+          "btn_color_border_hover": "#f45332",
+          "btn_color_bg_hover": "#f45332",
           "layout": "left",
           "divider": false
         }
@@ -4884,6 +4886,7 @@
           "title": "We’re in it for the underdog...",
           "text": "<p>...the one carving out their own version of success, no matter how the world tries to keep them down.<\/p><p><strong>I’m Kirk Mastin, the founder and color scientist behind Mastin Labs.<\/strong><\/p><p>Whatever you’re going through as a photographer, chances are I’ve lived it—from the long nights of editing to the boss who told me, <\/p><p>“Don’t quit your day job.”<\/p>",
           "button_label": "",
+          "button_link": "",
           "btn_color": "#000000",
           "btn_color_border": "#000000",
           "btn_color_bg": "rgba(0,0,0,0)",
@@ -4906,6 +4909,7 @@
           "title": "We did the work so you don’t have to.",
           "text": "<p>We know you’ve been burned by bad tools before. That’s why we don’t chase trends or churn out presets you’ll have to spend hours tweaking.<\/p><p>Every tool we create is meticulously designed to be subtle, classic, clean, and unbelievably easy—thanks to the Mastin 3-Step Workflow.<\/p><p>So you can finally ditch those editing marathons and focus on serving your clients, building your business, supporting your family, and enjoying your life.<\/p><p>It really can be that simple.<\/p>",
           "button_label": "",
+          "button_link": "",
           "btn_color": "#000000",
           "btn_color_border": "#000000",
           "btn_color_bg": "rgba(0,0,0,0)",
@@ -4928,6 +4932,7 @@
           "title": "What if everyone could have access to the simple beauty of film?",
           "text": "<p>That’s the question we set out to answer almost a decade ago.<\/p><p>And after rigorous testing and endless tinkering with our trusty film scanner, Henri, the first Mastin Labs presets came to life.<\/p><p>We’ve continued innovating since then, but when it comes to creating the most authentic film emulation presets on the market, we’re not trying to do anything new.<\/p><p>We’re working to preserve something that’s already perfect.<\/p>",
           "button_label": "",
+          "button_link": "",
           "btn_color": "#000000",
           "btn_color_border": "#000000",
           "btn_color_bg": "rgba(0,0,0,0)",
@@ -5971,6 +5976,7 @@
             "settings": {
               "padding": "0px 0px 0px 0px",
               "image": "shopify:\/\/shop_images\/1.png",
+              "link": "",
               "width": "25%",
               "alignment": "top-middle"
             }
@@ -5980,6 +5986,7 @@
             "settings": {
               "padding": "0px 0px 0px 0px",
               "image": "shopify:\/\/shop_images\/2.png",
+              "link": "",
               "width": "25%",
               "alignment": "bottom-middle"
             }
@@ -5989,6 +5996,7 @@
             "settings": {
               "padding": "0px 0px 0px 0px",
               "image": "shopify:\/\/shop_images\/3.png",
+              "link": "",
               "width": "25%",
               "alignment": "top-middle"
             }
@@ -5998,6 +6006,7 @@
             "settings": {
               "padding": "0px 0px 0px 0px",
               "image": "shopify:\/\/shop_images\/4.png",
+              "link": "",
               "width": "25%",
               "alignment": "top-middle"
             }
@@ -6050,6 +6059,7 @@
             "settings": {
               "padding": "0px 0px 0px 0px",
               "image": "shopify:\/\/shop_images\/Group_112.png",
+              "link": "",
               "width": "50%",
               "alignment": "center"
             }
@@ -6059,6 +6069,7 @@
             "settings": {
               "padding": "0px 0px 0px 0px",
               "image": "shopify:\/\/shop_images\/Group_47.png",
+              "link": "",
               "width": "50%",
               "alignment": "center"
             }
@@ -6090,6 +6101,7 @@
             "settings": {
               "padding": "0px 0px 0px 0px",
               "image": "shopify:\/\/shop_images\/Tomayia_and_Kirk.png",
+              "link": "",
               "width": "50%",
               "alignment": "center"
             }
@@ -6241,8 +6253,8 @@
           "btn_color_border": "#f45332",
           "btn_color_bg": "#f45332",
           "btn_color_hover": "#ffffff",
-          "btn_color_border_hover": "#000000",
-          "btn_color_bg_hover": "#000000",
+          "btn_color_border_hover": "#f45332",
+          "btn_color_bg_hover": "#f45332",
           "layout": "left",
           "divider": false
         }
@@ -6315,7 +6327,13 @@
           "button": "JOIN OUR FACEBOOK COMMUNITY >",
           "link_button": "https:\/\/www.facebook.com\/groups\/mastinlabs",
           "image": "shopify:\/\/shop_images\/image-1.jpg",
-          "caption": "Photo by Kike Arnaiz"
+          "caption": "Photo by Kike Arnaiz",
+          "btn_color": "#ffffff",
+          "btn_color_border": "#f45332",
+          "btn_color_bg": "#f45332",
+          "btn_color_hover": "#ffffff",
+          "btn_color_border_hover": "#f45332",
+          "btn_color_bg_hover": "#f45332"
         }
       },
       "text-and-image-pro-1610992970": {
@@ -6334,9 +6352,9 @@
           "btn_color": "#ffffff",
           "btn_color_border": "#f45332",
           "btn_color_bg": "#f45332",
-          "btn_color_hover": "#f45332",
+          "btn_color_hover": "#ffffff",
           "btn_color_border_hover": "#f45332",
-          "btn_color_bg_hover": "rgba(0,0,0,0)",
+          "btn_color_bg_hover": "#f45332",
           "layout": "left",
           "divider": false
         }
@@ -7904,6 +7922,7 @@
             "settings": {
               "padding": "0px 50px 25px 50px",
               "image": "shopify:\/\/shop_images\/111.png",
+              "link": "",
               "width": "50%",
               "alignment": "top-middle"
             }
@@ -8831,6 +8850,7 @@
             "settings": {
               "padding": "0px 50px 0px 0px",
               "image": "shopify:\/\/shop_images\/Group_114.png",
+              "link": "",
               "width": "33%",
               "alignment": "top-middle"
             }
@@ -9139,7 +9159,7 @@
       "162920394129662471": {
         "type": "quiz",
         "settings": {
-          "image": "shopify:\/\/shop_images\/quiz.png",
+          "image": "shopify:\/\/shop_images\/Preset-Quiz.jpg",
           "heading": "What does your editing style say about you?",
           "subHeading": "Takes 2 mins",
           "content": "<p>Discover the presets that best align with your editing style by taking our one minute Preset Quiz.<br\/><\/p>",
@@ -9167,7 +9187,7 @@
             "type": "testimonial",
             "settings": {
               "image": "shopify:\/\/shop_images\/passive_income_gabi_bucataru.jpg",
-              "content": "<p>A truly amazing product that lives up to what it promises and has made my post-processing life so much easier! Absolutely the best film-like presets on the market. Plus the post-purchase support and tips from Mastin Labs are super useful and frequent!<\/p>",
+              "content": "<p>Mauris id consequat nisl, a consequat arcu. Aliquam facilisis ligula sem, vitae fringilla odio bibendum vel. Phasellus at nibh orci. Praesent bibendum, magna quis aliquet cursus, nibh nibh rutrum nisl, sit amet egestas libero arcu eu augue. Sed turpis turpis, aliquam at varius eget, vulputate vel metus. Suspendisse et vestibulum.<br\/><\/p>",
               "authorName": "Andy"
             }
           },
@@ -9175,7 +9195,7 @@
             "type": "testimonial",
             "settings": {
               "image": "shopify:\/\/shop_images\/image_17.png",
-              "content": "<p>A truly amazing product that lives up to what it promises and has made my post-processing life so much easier! Absolutely the best film-like presets on the market. Plus the post-purchase support and tips from Mastin Labs are super useful and frequent!<\/p>",
+              "content": "<p>In et metus vel augue suscipit feugiat. Fusce id justo sit amet magna mollis volutpat. Ut ipsum dolor, suscipit nec accumsan vitae, eleifend vel leo. Nullam feugiat risus eu risus luctus egestas. Vestibulum volutpat tempus tellus, at varius velit viverra a. In iaculis orci metus, sit amet porttitor lorem mollis.<br\/><\/p>",
               "authorName": "Andy"
             }
           }
@@ -9249,16 +9269,16 @@
       "quiz": {
         "type": "quiz",
         "settings": {
-          "image": "shopify:\/\/shop_images\/quiz.png",
+          "image": "shopify:\/\/shop_images\/Preset-Quiz.jpg",
           "heading": "Can't Decide?",
           "subHeading": "Takes 2 mins",
           "content": "<p>Take the preset quiz to help you choose which preset to go for.<\/p>",
           "label": "Take the preset quiz >",
           "link": "shopify:\/\/pages\/preset-quiz",
-          "bgColor": "#ffffff",
-          "headingColor": "#000000",
-          "text": "#474747",
-          "padding": 15,
+          "bgColor": "#271d2e",
+          "headingColor": "#ffffff",
+          "text": "#ffffff",
+          "padding": 40,
           "reverse": false
         }
       },

@@ -627,7 +627,7 @@
     font-size: 0.9375rem;
     font-weight: 500;
     background-color: {{ section.settings.bgColor }};
-    padding: 5rem 0;
+    padding: 25px 0;
     text-transform: uppercase;
   }
   #shopify-section-{{ section.id }} .footer_ns_text p,
@@ -649,6 +649,7 @@
     justify-content: center;
   }
   .downloadSectionItem {
+    flex: 1 1 25%;
     padding: 0 1.6875rem;
   }
   .downloadSectionItemLink > div {
@@ -702,6 +703,13 @@
   @media only screen and (max-width: 991px) {
     .secondFooterInfoInner {
       flex: 1 1 100%;
+    }
+  }
+  @media only screen and (max-width: 767px) {
+    .downloadSectionItem {
+      flex: 1 1 100%;
+      padding: 20px .5em;
+      text-align: center;
     }
   }
 {% endstyle %}

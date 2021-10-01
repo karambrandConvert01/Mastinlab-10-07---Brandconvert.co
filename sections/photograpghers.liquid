@@ -84,4 +84,67 @@
   #shopify-section-{{ section.id }} .badgeImage {
     margin-top: 30px;
   }
+
+  {% comment %} Pagination {% endcomment %}
+  #shopify-section-{{ section.id }} .stamped-pagination > div {
+    padding: 1rem 0;
+  }
+  #shopify-section-{{ section.id }} .stamped-pagination > div > span[style*="display: none;"] {
+    display: flex !important;
+    opacity: .5;
+  }
+  #shopify-section-{{ section.id }} .stamped-pagination > div,
+  #shopify-section-{{ section.id }} .stamped-pagination > div > span {
+    align-items: center;
+    display: flex;
+    gap: 5px;
+    justify-content: space-between;
+    margin: 0;
+  }
+  #shopify-section-{{ section.id }} .stamped-pagination > div .stamped-pagination-page::after {
+    display: none;
+  }
+  #shopify-section-{{ section.id }} .stamped-pagination > div a {
+    background: unset;
+    background-color: transparent;
+    border: 1px solid #f45332 !important;
+    border-radius: 0;
+    color: #f45332;
+    display: inline-block;
+    font-size: 12px;
+    line-height: 1.42;
+    padding: 5px 10px !important;
+    text-decoration: none;
+    text-align: center;
+  }
+  #shopify-section-{{ section.id }} .stamped-pagination > div .stamped-pagination-page.is-active a {
+    background-color: #f45332;
+    color: #fff;
+  }
+  {% comment %} Pagination {% endcomment %}
+  @media only screen and (min-width: 769px) {
+    #shopify-section-{{ section.id }} .mainImage img {
+      max-width: 70%;
+    }
+  }
+  @media only screen and (max-width: 768px) {
+    #shopify-section-{{ section.id }} .stamped-pagination > div a {
+      padding: 3px 6px !important;
+    }
+  }
 {% endstyle %}
+
+<script type="text/javascript">
+  (function() {
+    jQuery(document).ready(function($) {
+      const page = $("html, body");
+      page.bind('DOMSubtreeModified', function (e) {
+        $(document).find("#shopify-section-{{ section.id }} .stamped-pagination a").on('click', function(e) {
+          setTimeout(function() {
+            jQuery('html, body').queue([]).stop();
+          }, 10);
+        });
+      })
+    });
+  })()
+</script>
