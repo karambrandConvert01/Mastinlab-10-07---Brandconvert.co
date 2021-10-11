@@ -1,3 +1,9 @@
+document.addEventListener('readystatechange', function() {
+  if(document.readyState == 'complete') {
+    document.body.classList.add('bodyLoaded');
+  }
+})
+
 jQuery(document).ready(function($) {
   jQuery('.product_requirementsContainer .collapsible-trigger').on('click', function() {
     if(jQuery(this).hasClass('is-open')) {
@@ -5,5 +11,21 @@ jQuery(document).ready(function($) {
     } else {
       jQuery(this).parents('.product_requirementsContainer').find('.product_requirementsContent').slideDown('slow');
     };
-  })
+  });
+
+  jQuery(document).on('click', '.stamped-badge', function() {
+    let reviewDiv = jQuery('.stamped-main-widget');
+    let stickyHeader = jQuery(document).find('.sticky_header').outerHeight(true) || 0;
+    if(jQuery('#bastReviewContainer').parents('.shopify-section').length > 0) {
+      reviewDiv = jQuery('#bastReviewContainer').parents('.shopify-section');
+    }
+    reviewTop = reviewDiv.offset().top - stickyHeader;
+
+    $('html, body').animate({scrollTop: reviewTop}, 1, function() {
+      stickyHeader = jQuery(document).find('.sticky_header').outerHeight(true) || 0;
+      reviewTop = reviewDiv.offset().top - stickyHeader;
+
+      $('html, body').animate({scrollTop: reviewTop}, 'slow');
+    });
+  });
 });

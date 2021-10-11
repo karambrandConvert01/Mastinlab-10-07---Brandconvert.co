@@ -86,31 +86,52 @@
 {% if section.settings.divider %}</div>{% endif %}
 </div>
 <style>
-  #dp__{{section.id}}{
-	padding:{{section.settings.padding}};
-	background-color:{{section.settings.background_color}};
-  }
-{% if section.settings.slider_on_right %}
-	#dp__{{section.id}}  .slider_before-and-after{
-		order:1;
+  #dp__{{section.id}} {
+		padding:{{section.settings.padding}};
+		background-color:{{section.settings.background_color}};
 	}
-{% endif %}
-  #dp__{{section.id}} .dp__slider_contentss{
-	padding:{{section.settings.slider_padding}};
-  }
-  #dp__{{section.id}}  .dp__slider_contentss{
-	padding:{{section.settings.content_padding}};
-  }
-  @media only screen and (max-width: 768px) {
-	#dp__{{section.id}}{
-	  padding:{{section.settings.mobile_padding}};
+	{% if section.settings.slider_on_right %}
+		#dp__{{section.id}}  .slider_before-and-after {
+			order:1;
+		}
+	{% endif %}
+	#dp__{{section.id}} .dp__slider_contentss {
+		padding:{{section.settings.slider_padding}};
 	}
-
-	#dp__{{section.id}} .dp__slider_contentss{
-	  padding:{{section.settings.slider_mobile_padding}};
+	#dp__{{section.id}}  .dp__slider_contentss {
+		padding:{{section.settings.content_padding}};
 	}
-	#dp__{{section.id}}  .dp__slider_contentss{
-	  padding:{{section.settings.content_mobile_padding}};
+	@media only screen and (max-width: 768px) {
+		#dp__{{section.id}} {
+			padding:{{section.settings.mobile_padding}};
+		}
+		#dp__{{section.id}} .dp__slider_contentss{
+			padding:{{section.settings.slider_mobile_padding}};
+		}
+		#dp__{{section.id}}  .dp__slider_contentss{
+			padding:{{section.settings.content_mobile_padding}};
+		}
 	}
+	@media only screen and (max-width: 767px) {
+    #shopify-section-{{ section.id }} .product__thumbs {
+      display: flex;
+      overflow: auto;
+    }
+    #shopify-section-{{ section.id }} .product__thumbs--beside {
+      display: flex;
+      flex: 1 1 100%;
+      margin: 0;
+      max-width: 100%;
+      overflow: auto;
+    }
+    #shopify-section-{{ section.id }} .product__photos--main {
+      width: 100%;
+    }
+    #shopify-section-{{ section.id }} .product__photos--beside {
+      flex-wrap: wrap;
+    }
+    #shopify-section-{{ section.id }} .product__thumb-item {
+      width: 80px;
+    }
   }
 </style>

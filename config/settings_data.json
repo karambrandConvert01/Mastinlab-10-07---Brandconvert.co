@@ -9371,6 +9371,91 @@
           "mobile_flush_grid": false,
           "bgColor": "#f7f6f2"
         }
+      },
+      "background-image-text-pro-1632987959": {
+        "type": "background-image-text-pro-1632987959",
+        "settings": {
+          "subtitle": "Impressive",
+          "title": "Large image with text box",
+          "text": "<p>Pair large text with a full-width image to draw attention to an important detail of your brand or product line.<\/p>",
+          "button_label": "",
+          "button_link": "",
+          "focal_point": "center",
+          "color_border": "#f4f4f4",
+          "layout": "left",
+          "height": 550,
+          "framed": false,
+          "parallax": true,
+          "padding": "0px 0px 0px 0px",
+          "mobile_padding": "0px 0px 0px 0px",
+          "background_color": "#ffffff"
+        }
+      },
+      "text-with-background-pro-1632989185": {
+        "type": "text-with-background-pro-1632989185",
+        "blocks": {
+          "text-with-background-pro-1632989185-0": {
+            "type": "text",
+            "settings": {
+              "title": "AUTO WHITE BALANCE",
+              "content": "Sometimes your camera gets it wrong. Get a starting point for true-to-life color."
+            }
+          },
+          "text-with-background-pro-1632989185-1": {
+            "type": "text",
+            "settings": {
+              "title": "LENS CORRECTION",
+              "content": "Fix vignetting and distortion, minimize color fringing, and remove chromatic aberration to instantly improve every image."
+            }
+          },
+          "text-with-background-pro-1632989185-2": {
+            "type": "text",
+            "settings": {
+              "title": "AUTO TRANSFORM",
+              "content": "Tired of crooked buildings? Clean up your photos by correcting vertical and horizontal lines."
+            }
+          },
+          "text-with-background-pro-1632989185-3": {
+            "type": "text",
+            "settings": {
+              "title": "ORANGE REDUCTION",
+              "content": "A lifesaver for mixed light, extra warm sunsets, and spray tans that just won’t quit."
+            }
+          },
+          "text-with-background-pro-1632989185-4": {
+            "type": "text",
+            "settings": {
+              "title": "TONE PROFILES",
+              "content": "Inspired by the original tone profiles from the Fuji Frontier film scanner, these correct contrast while preserving the look of film."
+            }
+          },
+          "text-with-background-pro-1632989185-5": {
+            "type": "text",
+            "settings": {
+              "title": "CUSTOM GRAIN",
+              "content": "While our presets start grain-free, you can complete your look with 35 mm or medium-format grains."
+            }
+          }
+        },
+        "block_order": [
+          "text-with-background-pro-1632989185-0",
+          "text-with-background-pro-1632989185-1",
+          "text-with-background-pro-1632989185-2",
+          "text-with-background-pro-1632989185-3",
+          "text-with-background-pro-1632989185-4",
+          "text-with-background-pro-1632989185-5"
+        ],
+        "settings": {
+          "image": "shopify:\/\/shop_images\/Michael_Alfredo_Zamora_Mendez_BEFORE.jpg",
+          "padding": "0px 0px 0px 0px",
+          "content_padding": "50px 50px 50px 50px",
+          "background_color": "#ffffff",
+          "image_width": 500,
+          "title": "One-click fixes to up your game.",
+          "text": "<p>Included with your preset pack, our custom tools help you correct the trickiest photos.<\/p>",
+          "layout": "left",
+          "divider": false
+        }
       }
     },
     "content_for_index": [
