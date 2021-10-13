@@ -193,18 +193,6 @@
 							{%- else -%}
 								{{ product.price | money }}
 							{%- endif -%}
-							{%- if on_sale -%}
-								{%- if settings.product_save_amount -%}
-									{%- if settings.product_save_type == 'dollar' -%}
-										{% capture saved_amount %}{{ product.compare_at_price | minus: product.price | money }}{% endcapture %}
-									{%- else -%}
-										{% capture saved_amount %}{{ product.compare_at_price | minus: product.price | times: 100.0 | divided_by: product.compare_at_price | round }}%{% endcapture %}
-									{%- endif -%}
-									<span class="grid-product__price--savings">
-										{{ 'products.general.save_html' | t: saved_amount: saved_amount }}
-									</span>
-								{%- endif -%}
-							{%- endif -%}
 
 							{%- assign product_variant = product.selected_or_first_available_variant -%}
 							{%- if product_variant.unit_price_measurement -%}
@@ -223,7 +211,34 @@
 							{%- endif -%}
 						</li>
 						<li>
-							<button id="scroll-to-cart" class="btn scroll-to-cart">Add to cart</button>
+							<button id="scroll-to-cart" class="btn scroll-to-cart">
+								Add to cart
+								<span class="mobilePrice">
+									<span class="saprater">--</span>
+									{%- if product.price_varies -%}
+										{%- assign price = product.selected_or_first_available_variant.price | money -%}
+										{{ price }}
+									{%- else -%}
+										{{ product.price | money }}
+									{%- endif -%}
+
+									{%- assign product_variant = product.selected_or_first_available_variant -%}
+									{%- if product_variant.unit_price_measurement -%}
+										<span class="product__unit-price">
+											{%- capture unit_price_base_unit -%}
+												{%- if product_variant.unit_price_measurement -%}
+													{%- if product_variant.unit_price_measurement.reference_value != 1 -%}
+														{{ product_variant.unit_price_measurement.reference_value }}
+													{%- endif -%}
+													{{ product_variant.unit_price_measurement.reference_unit }}
+												{%- endif -%}
+											{%- endcapture -%}
+
+											{{ product_variant.unit_price | money }}/{{ unit_price_base_unit }}
+										</span>
+									{%- endif -%}
+								</span>
+							</button>
 						</li>
 					</ul>
 					<div class="page-width">

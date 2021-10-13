@@ -224,9 +224,11 @@
 #custom_for_product_by_dp.custom_for_product_by_dp.custom_for_product_by_dp_wrapper {
   all: unset;
   background-color: {{ settings.stickyBackgroundColor }};
-  bottom: -100%;
+  bottom: 0%;
+  box-shadow: 0px -4px 4px rgb(0 0 0 / 10%);
   box-sizing: border-box;
   color: {{ settings.stickyColor }};
+  display: block;
   height: auto;
   left: 0;
   padding: 20px;
@@ -240,9 +242,13 @@
 .template-product .dp--opening {
   margin-bottom: 0 !important;
 }
-.template-product.scrolling_dw #PageContainer.dp--opening {
+.template-product #PageContainer {
   margin-bottom: 0 !important;
   overflow: unset !important;
+}
+.template-product #PageContainer .transition-body {
+  display: inline-block;
+  width: 100%;
 }
 .dp--opening #custom_for_product_by_dp.custom_for_product_by_dp.custom_for_product_by_dp_wrapper {
   bottom: 0%;
@@ -265,6 +271,13 @@
   font-family: Lora,serif;
   font-weight: 500;
 }
+span.mobilePrice {
+  display: none;
+}
+span.saprater {
+  letter-spacing: -0.15em;
+  margin-right: .5em;
+}
 /* Product Sticky Cart Style Ends */
 
 /* Product Review Style start */
@@ -284,20 +297,16 @@ div[data-widget-style*=standard] .stamped-review,
 
 @media only screen and (min-width: 992px) {
   /* Homepage Style Start */
-  /* #shopify-section-1588800826092 .custom-content {
-    justify-content: space-between;
-  }
-  #shopify-section-1588800826092 .custom__item {
-    width: 39.1%;
-  }
-  #shopify-section-1588800826092 .custom__item .dp__slider_contentss {
-    padding: 0;
-  } */
   #shopify-section-1588800826092 .before-after-wrapper .product__thumb-item img {
     min-height: unset !important;
     min-width: unset !important;
   }
   /* Homepage Style End */
+}
+@media only screen and (min-width: 768px) {
+  .template-product #PageContainer:not(.dp--opening) #custom_for_product_by_dp.custom_for_product_by_dp.custom_for_product_by_dp_wrapper {
+    bottom: -100%;
+  }
 }
 @media only screen and (min-width: 769px) {
   #custom_for_product_by_dp.custom_for_product_by_dp.custom_for_product_by_dp_wrapper li.dp-price {
@@ -321,5 +330,23 @@ div[data-widget-style*=standard] .stamped-review,
   }
   .secondFooterInfoWrapper ul, .secondFooterInfoWrapper ul li, .secondFooterInfoWrapper ul li a {
     justify-content: center;
+  }
+  #custom_for_product_by_dp.custom_for_product_by_dp.custom_for_product_by_dp_wrapper ul {
+    flex-wrap: wrap;
+  }
+  #custom_for_product_by_dp.custom_for_product_by_dp.custom_for_product_by_dp_wrapper li {
+    font-size: 0.7rem !important;
+    flex: 1 1 100%;
+    width: 100%;
+  }
+  li.dp-price {
+    display: none;
+  }
+  .custom_for_product_by_dp li.dp-title,
+  span.mobilePrice {
+    display: inline-block !important;
+  }
+  #custom_for_product_by_dp.custom_for_product_by_dp.custom_for_product_by_dp_wrapper li .btn {
+    letter-spacing: 0em;
   }
 }
