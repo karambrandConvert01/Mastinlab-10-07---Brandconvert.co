@@ -1,6 +1,5 @@
 {%- assign header_font = settings.type_header_font_family -%}
 {%- assign base_font = settings.type_base_font_family -%}
-
 .octane-ai-quiz-rendered button {
   border: none ;
   font-family: {{ base_font.family }}, {{ base_font.fallback_families }};
@@ -275,8 +274,9 @@ span.mobilePrice {
   display: none;
 }
 span.saprater {
-  letter-spacing: -0.15em;
-  margin-right: .5em;
+  margin: 0 .5em 0 .25em;
+  text-decoration: line-through;
+  text-decoration-thickness: 0.2em;
 }
 /* Product Sticky Cart Style Ends */
 
@@ -328,6 +328,9 @@ div[data-widget-style*=standard] .stamped-review,
   .custom__item-inner--html .rte .btn {
     display: block !important;
   }
+  #custom_for_product_by_dp.custom_for_product_by_dp.custom_for_product_by_dp_wrapper {
+    padding: 25px 20px;
+  }
   .secondFooterInfoWrapper ul, .secondFooterInfoWrapper ul li, .secondFooterInfoWrapper ul li a {
     justify-content: center;
   }
@@ -335,8 +338,9 @@ div[data-widget-style*=standard] .stamped-review,
     flex-wrap: wrap;
   }
   #custom_for_product_by_dp.custom_for_product_by_dp.custom_for_product_by_dp_wrapper li {
-    font-size: 0.7rem !important;
     flex: 1 1 100%;
+    font-size: 0.8rem !important;
+    margin-bottom: .5em !important;
     width: 100%;
   }
   li.dp-price {
@@ -348,5 +352,6 @@ div[data-widget-style*=standard] .stamped-review,
   }
   #custom_for_product_by_dp.custom_for_product_by_dp.custom_for_product_by_dp_wrapper li .btn {
     letter-spacing: 0em;
+    padding: 12px 20px !important;
   }
 }

@@ -127,8 +127,8 @@
     "cart_notes_enable": false,
     "cart_terms_conditions_enable": false,
     "cart_terms_conditions_link": "shopify:\/\/pages\/privacy-policy",
-    "stickyBackgroundColor": "#261d2d",
-    "stickyColor": "#f7f6f2",
+    "stickyBackgroundColor": "#ffffff",
+    "stickyColor": "#474747",
     "social_facebook_link": "",
     "social_twitter_link": "",
     "social_pinterest_link": "",
@@ -2585,6 +2585,7 @@
               "link": "shopify:\/\/products\/fuji-original-lightroom",
               "button_name_second": "Capture One",
               "link_second": "shopify:\/\/products\/fuji-original-capture-one",
+              "product": "",
               "alignment": "center"
             }
           },
@@ -2600,6 +2601,7 @@
               "link": "shopify:\/\/products\/adventure-everyday-lightroom",
               "button_name_second": "Capture One",
               "link_second": "shopify:\/\/products\/adventure-everyday-capture-one",
+              "product": "",
               "alignment": "center"
             }
           },
@@ -2615,6 +2617,7 @@
               "link": "shopify:\/\/products\/adventure-everyday-lightroom",
               "button_name_second": "Capture One",
               "link_second": "shopify:\/\/products\/adventure-everyday-capture-one",
+              "product": "",
               "alignment": "center"
             }
           },
@@ -2630,6 +2633,7 @@
               "link": "shopify:\/\/products\/adventure-everyday-lightroom",
               "button_name_second": "Capture One",
               "link_second": "shopify:\/\/products\/adventure-everyday-capture-one",
+              "product": "",
               "alignment": "center"
             }
           },
@@ -2645,6 +2649,7 @@
               "link": "shopify:\/\/products\/portra-original-lightroom",
               "button_name_second": "Capture One",
               "link_second": "shopify:\/\/products\/portra-original-capture-one",
+              "product": "",
               "alignment": "center"
             }
           },
@@ -2660,6 +2665,7 @@
               "link": "shopify:\/\/products\/fuji-original-lightroom",
               "button_name_second": "Capture One",
               "link_second": "shopify:\/\/products\/fuji-original-capture-one",
+              "product": "",
               "alignment": "center"
             }
           },
@@ -2675,6 +2681,7 @@
               "link": "shopify:\/\/products\/adventure-everyday-lightroom",
               "button_name_second": "Capture One",
               "link_second": "shopify:\/\/products\/adventure-everyday-capture-one",
+              "product": "",
               "alignment": "center"
             }
           },
@@ -2690,6 +2697,7 @@
               "link": "shopify:\/\/products\/portra-original-lightroom",
               "button_name_second": "Capture One",
               "link_second": "shopify:\/\/products\/portra-original-capture-one",
+              "product": "",
               "alignment": "center"
             }
           },
@@ -2705,6 +2713,7 @@
               "link": "shopify:\/\/products\/portra-original-lightroom",
               "button_name_second": "Capture One",
               "link_second": "shopify:\/\/products\/portra-original-capture-one",
+              "product": "",
               "alignment": "center"
             }
           },
@@ -2720,6 +2729,7 @@
               "link": "shopify:\/\/products\/fuji-pushed-lightroom",
               "button_name_second": "Capture One",
               "link_second": "shopify:\/\/products\/fuji-pushed-capture-one",
+              "product": "",
               "alignment": "center"
             }
           },
@@ -2735,6 +2745,7 @@
               "link": "shopify:\/\/products\/adventure-everyday-lightroom",
               "button_name_second": "Capture One",
               "link_second": "shopify:\/\/products\/adventure-everyday-capture-one",
+              "product": "",
               "alignment": "center"
             }
           },
@@ -2750,6 +2761,7 @@
               "link": "shopify:\/\/products\/portra-pushed-lightroom",
               "button_name_second": "Capture One",
               "link_second": "shopify:\/\/products\/portra-pushed-capture-one",
+              "product": "",
               "alignment": "center"
             }
           },
@@ -2765,6 +2777,7 @@
               "link": "shopify:\/\/products\/fuji-everyday-lightroom",
               "button_name_second": "Capture One",
               "link_second": "shopify:\/\/products\/fuji-everyday-capture-one",
+              "product": "",
               "alignment": "center"
             }
           },
@@ -2780,6 +2793,7 @@
               "link": "shopify:\/\/products\/fuji-original-lightroom",
               "button_name_second": "Capture One",
               "link_second": "shopify:\/\/products\/fuji-original-capture-one",
+              "product": "",
               "alignment": "center"
             }
           },
@@ -2795,6 +2809,7 @@
               "link": "shopify:\/\/products\/ilford-original-lightroom",
               "button_name_second": "Capture One",
               "link_second": "shopify:\/\/products\/ilford-original-capture-one",
+              "product": "",
               "alignment": "center"
             }
           },
@@ -2810,6 +2825,7 @@
               "link": "shopify:\/\/products\/fuji-everyday-lightroom",
               "button_name_second": "Capture One",
               "link_second": "shopify:\/\/products\/fuji-everyday-capture-one",
+              "product": "",
               "alignment": "center"
             }
           },
@@ -2825,6 +2841,7 @@
               "link": "shopify:\/\/products\/fuji-everyday-lightroom",
               "button_name_second": "Capture One",
               "link_second": "shopify:\/\/products\/fuji-everyday-capture-one",
+              "product": "",
               "alignment": "center"
             }
           },
@@ -2840,6 +2857,7 @@
               "link": "shopify:\/\/products\/portra-original-lightroom",
               "button_name_second": "Capture One",
               "link_second": "shopify:\/\/products\/portra-original-capture-one",
+              "product": "",
               "alignment": "center"
             }
           },
@@ -2855,6 +2873,7 @@
               "link": "shopify:\/\/products\/portra-pushed-lightroom",
               "button_name_second": "Capture One",
               "link_second": "shopify:\/\/products\/portra-pushed-capture-one",
+              "product": "",
               "alignment": "center"
             }
           },
@@ -2870,6 +2889,7 @@
               "link": "shopify:\/\/products\/fuji-original-lightroom",
               "button_name_second": "Capture One",
               "link_second": "shopify:\/\/products\/fuji-original-capture-one",
+              "product": "",
               "alignment": "center"
             }
           },
@@ -2885,6 +2905,7 @@
               "link": "shopify:\/\/products\/fuji-pushed-lightroom",
               "button_name_second": "Capture One",
               "link_second": "shopify:\/\/products\/fuji-pushed-capture-one",
+              "product": "",
               "alignment": "center"
             }
           },
@@ -2900,6 +2921,7 @@
               "link": "shopify:\/\/products\/ilford-original-lightroom",
               "button_name_second": "Capture One",
               "link_second": "shopify:\/\/products\/ilford-original-capture-one",
+              "product": "",
               "alignment": "center"
             }
           },
@@ -2915,6 +2937,7 @@
               "link": "shopify:\/\/products\/fuji-original-lightroom",
               "button_name_second": "Capture One",
               "link_second": "shopify:\/\/products\/fuji-original-capture-one",
+              "product": "",
               "alignment": "center"
             }
           },
@@ -2930,6 +2953,7 @@
               "link": "shopify:\/\/products\/portra-pushed-lightroom",
               "button_name_second": "Capture One",
               "link_second": "shopify:\/\/products\/portra-pushed-capture-one",
+              "product": "",
               "alignment": "center"
             }
           }
@@ -2970,7 +2994,9 @@
           "fullWidth": false,
           "columns": "four",
           "text": "#474747",
-          "padding-top-bottom": 50
+          "padding-top-bottom": 50,
+          "disableBtn": true,
+          "disableShopBtn": false
         }
       },
       "depro-gallery-pro-87981": {
