@@ -269,7 +269,7 @@
           "e542ac75-d68a-4626-a3df-8eb4b8e87aa2": {
             "type": "downloadItem",
             "settings": {
-              "downloadImage": "shopify:\/\/shop_images\/108-box-package-open-close-morph-outline.gif",
+              "downloadImage": "shopify:\/\/shop_images\/icons8-download-from-cloud-48.png",
               "downloadLink": "#",
               "downloadText": "INSTANT DOWNLOAD"
             }
@@ -277,25 +277,25 @@
           "587f0588-1317-48de-bc86-8f0494192d42": {
             "type": "downloadItem",
             "settings": {
-              "downloadImage": "shopify:\/\/shop_images\/bx-download_1.png",
+              "downloadImage": "shopify:\/\/shop_images\/icons8-security-ssl-48.png",
               "downloadLink": "#",
-              "downloadText": "INSTANT DOWNLOAD"
+              "downloadText": "SECURE CHECKOUT"
             }
           },
           "bb4dc99c-c85a-4007-9f4e-70f3759a8f70": {
             "type": "downloadItem",
             "settings": {
-              "downloadImage": "shopify:\/\/shop_images\/bx-download_1.png",
+              "downloadImage": "shopify:\/\/shop_images\/icons8-streaming-movies-48.png",
               "downloadLink": "#",
-              "downloadText": "INSTANT DOWNLOAD"
+              "downloadText": "Video Tutorials"
             }
           },
           "dce5466c-98da-40db-95c1-d493634c3513": {
             "type": "downloadItem",
             "settings": {
-              "downloadImage": "shopify:\/\/shop_images\/bx-download_1.png",
+              "downloadImage": "shopify:\/\/shop_images\/icons8-update-48.png",
               "downloadLink": "#",
-              "downloadText": "INSTANT DOWNLOAD"
+              "downloadText": "Lifetime Updates"
             }
           },
           "b271160d-588e-404d-b7b8-10340bf3a40a": {
@@ -2572,6 +2572,7 @@
       },
       "1588631401313": {
         "type": "depro-gallery",
+        "disabled": true,
         "blocks": {
           "1588632929499": {
             "type": "image",
@@ -5420,7 +5421,7 @@
             "type": "Content",
             "settings": {
               "title": "You Shouldn’t Have to Choose Between Beautiful Photos and Complicated Edits.",
-              "content": "<p>With the Mastin Workflow™, editing photos in Lightroom and Capture One has never been easier:<\/p>\n<div class=\"stepsContainer\">\n  <p>Import &amp; apply presets<\/p>\n  <p>Adjust exposure &amp; white balance<\/p>\n  <p>Export &amp; you’re done<\/p>\n<\/div>\n<p>No more trends and no more wasted time: in 3 steps, you’ll get clean, true-to-color images both you and your clients will love.<\/p>\n\n<a class=\"btn\" href=\"https:\/\/mastinlabs.com\/collections\/lightroom-presets\">SHOP LIGHTROOM &gt; <\/a>\n<a class=\"btn\" href=\"https:\/\/mastinlabs.com\/collections\/capture-one-styles\">SHOP CAPTURE ONE &gt; <\/a>",
+              "content": "<p>With the Mastin Workflow™, editing photos in Lightroom and Capture One has never been easier:<\/p>\n<div class=\"stepsContainer\">\n  <p>Import &amp; apply presets<\/p>\n  <p>Adjust exposure &amp; white balance<\/p>\n  <p>Export &amp; you’re done<\/p>\n<br><strong><em>You just saved 30 hours of editing!<\/em><\/strong>\n<\/div>\n<p>No more trends and no more wasted time: in 3 steps, you’ll get clean, true-to-color images both you and your clients will love.<\/p>\n\n<a class=\"btn\" href=\"https:\/\/mastinlabs.com\/collections\/lightroom-presets\">SHOP LIGHTROOM &gt; <\/a>\n<a class=\"btn\" href=\"https:\/\/mastinlabs.com\/collections\/capture-one-styles\">SHOP CAPTURE ONE &gt; <\/a>",
               "alignment": "top-middle"
             }
           },
@@ -9031,13 +9032,6 @@
               "product": "adventure-everyday-lightroom"
             }
           },
-          "af11f33d-e48c-4764-a564-b7ce1d42ab45": {
-            "type": "nav_setup",
-            "settings": {
-              "text": "Create clean, warm, deep tones",
-              "product": "portra-original-video-luts"
-            }
-          },
           "abdaa942-290e-42e0-99d5-a06096fd9b04": {
             "type": "nav_setup",
             "settings": {
@@ -9073,23 +9067,38 @@
               "product": "fuji-original-mobile-profiles"
             }
           },
-          "06b605dd-9178-442d-acaa-f2f685559690": {
+          "af11f33d-e48c-4764-a564-b7ce1d42ab45": {
             "type": "nav_setup",
             "settings": {
-              "text": "Adventur",
-              "product": ""
+              "text": "Clean, warm, deep tones",
+              "product": "portra-original-video-luts"
+            }
+          },
+          "7816aa26-a84e-4376-9dcc-f6c380a9eb79": {
+            "type": "nav_setup",
+            "settings": {
+              "text": "Bright and vivid colors",
+              "product": "adventure-everyday-video-luts"
+            }
+          },
+          "5aceb6d8-227e-4fe8-8440-eb8e8d7763e6": {
+            "type": "nav_setup",
+            "settings": {
+              "text": "The original light & airy look",
+              "product": "fuji-original-video-luts"
             }
           }
         },
         "block_order": [
           "fcceaf33-7318-46d5-b47f-d392b79d51e0",
-          "af11f33d-e48c-4764-a564-b7ce1d42ab45",
           "abdaa942-290e-42e0-99d5-a06096fd9b04",
           "dbb78319-326f-4841-a132-c714378fb9dd",
           "dad95563-6340-4d81-840a-01d04ed9ea39",
           "959b580f-e9c6-4d8a-a05e-27d12fefd088",
           "abf665b1-4d60-452c-9f07-99d17babdf6e",
-          "06b605dd-9178-442d-acaa-f2f685559690"
+          "af11f33d-e48c-4764-a564-b7ce1d42ab45",
+          "7816aa26-a84e-4376-9dcc-f6c380a9eb79",
+          "5aceb6d8-227e-4fe8-8440-eb8e8d7763e6"
         ],
         "settings": {}
       },
@@ -9204,25 +9213,25 @@
           "90149d67-261e-4400-9bea-94ed0d84a967": {
             "type": "testimonial",
             "settings": {
-              "image": "shopify:\/\/shop_images\/passive_income_Simon_Becchetti.jpg",
-              "content": "<p>A truly amazing product that lives up to what it promises and has made my post-processing life so much easier! Absolutely the best film-like presets on the market. Plus the post-purchase support and tips from Mastin Labs are super useful and frequent!<\/p>",
-              "authorName": "Andy"
+              "image": "shopify:\/\/shop_images\/abul101_websize-768x1152.jpg",
+              "content": "<p>Mastin Labs has created the most authentic film presets, and they’re also the easiest to use. I can get the look I’m going for and save time so I can focus on other aspects of my business.<\/p>",
+              "authorName": "Abul S."
             }
           },
           "74f9b022-3695-4eaa-900b-bf27b40f72d1": {
             "type": "testimonial",
             "settings": {
-              "image": "shopify:\/\/shop_images\/passive_income_gabi_bucataru.jpg",
-              "content": "<p>Mauris id consequat nisl, a consequat arcu. Aliquam facilisis ligula sem, vitae fringilla odio bibendum vel. Phasellus at nibh orci. Praesent bibendum, magna quis aliquet cursus, nibh nibh rutrum nisl, sit amet egestas libero arcu eu augue. Sed turpis turpis, aliquam at varius eget, vulputate vel metus. Suspendisse et vestibulum.<br\/><\/p>",
-              "authorName": "Andy"
+              "image": "shopify:\/\/shop_images\/Julie_Igo.jpg",
+              "content": "<p>I bought the video LUTs and literally fell in love with how easy it made editing family films with my current photo editing style. Like...literally SO MUCH EASIER. <br\/><\/p>",
+              "authorName": "Julie I."
             }
           },
           "81b1b5ed-9337-4227-8cca-2c6be9478fbc": {
             "type": "testimonial",
             "settings": {
-              "image": "shopify:\/\/shop_images\/image_17.png",
-              "content": "<p>In et metus vel augue suscipit feugiat. Fusce id justo sit amet magna mollis volutpat. Ut ipsum dolor, suscipit nec accumsan vitae, eleifend vel leo. Nullam feugiat risus eu risus luctus egestas. Vestibulum volutpat tempus tellus, at varius velit viverra a. In iaculis orci metus, sit amet porttitor lorem mollis.<br\/><\/p>",
-              "authorName": "Andy"
+              "image": "shopify:\/\/shop_images\/75614245_10156679306127043_4277815657636036608_o.jpg",
+              "content": "<p>Mastin Labs is a game-changer if you’re looking to emulate film, get consistency, and fine-tune your look. I’ve never been afraid to try different presets, but I keep coming back to Mastin because they’re always innovating to emulate film as closely as possible.<br\/><\/p>",
+              "authorName": "Tyrenda P."
             }
           }
         },
@@ -9247,23 +9256,23 @@
             "settings": {
               "image": "shopify:\/\/shop_images\/workflow.png",
               "title": "1. Import & Apply",
-              "content": "<p>Don't miss out on opportunities to save! Be the first to know about flash sales, new products and services, and updates.<\/p>"
+              "content": "<p>Import your photos into your editing program and apply the look you want.<\/p>"
             }
           },
           "16293563445f3a3e62-1": {
             "type": "box",
             "settings": {
               "image": "shopify:\/\/shop_images\/workflow.png",
-              "title": "2. Ajdust",
-              "content": "<p>Don't miss out on opportunities to save! Be the first to know about flash sales, new products and services, and updates.<\/p>"
+              "title": "2. Adjust",
+              "content": "<p>Adjust exposure, white balance and tint. The preset takes care of the rest!<\/p>"
             }
           },
           "16293563445f3a3e62-2": {
             "type": "box",
             "settings": {
               "image": "shopify:\/\/shop_images\/workflow.png",
-              "title": "3. export",
-              "content": "<p>Don't miss out on opportunities to save! Be the first to know about flash sales, new products and services, and updates.<\/p>"
+              "title": "3. Export",
+              "content": "<p>Hit export and you're done. Now, go have fun with the hours you saved editing!<\/p>"
             }
           }
         },
@@ -9273,8 +9282,8 @@
           "16293563445f3a3e62-2"
         ],
         "settings": {
-          "heading": "The Mastin 3-Step Workflow",
-          "subHeading": "<p>We're glad you asked! We have resources and education available for your journey.<br\/><\/p>",
+          "heading": "Get Started In 3 Simple Steps",
+          "subHeading": "<p>It's never been easier to get the look you want!<br\/><\/p>",
           "perRow": 3,
           "bgColor": "#f7f6f2",
           "text": "#474747",
@@ -9482,6 +9491,407 @@
           "layout": "left",
           "divider": false
         }
+      },
+      "1634811819f58a837d": {
+        "type": "depro-gallery-live",
+        "blocks": {
+          "ebb8f399-7039-426b-a6f1-61a4e3d39836": {
+            "type": "image",
+            "settings": {
+              "padding": "10px 10px 10px 10px",
+              "mobile_padding": "0px 0px 0px 0px",
+              "image": "shopify:\/\/shop_images\/xo-gallery-12-1588459429521.jpg",
+              "title": "Fuji Original",
+              "description": "",
+              "button_name": "Lightroom",
+              "link": "shopify:\/\/products\/fuji-original-lightroom",
+              "button_name_second": "Capture One",
+              "link_second": "shopify:\/\/products\/fuji-original-capture-one",
+              "alignment": "center"
+            }
+          },
+          "a69ea1b5-db86-4806-b837-42ed19524bc0": {
+            "type": "image",
+            "settings": {
+              "padding": "10px 10px 10px 10px",
+              "mobile_padding": "0px 0px 0px 0px",
+              "image": "shopify:\/\/shop_images\/xo-gallery-6-1587067396321.jpg",
+              "title": "Adventure Everyday",
+              "description": "",
+              "button_name": "Lightroom",
+              "link": "shopify:\/\/products\/adventure-everyday-lightroom",
+              "button_name_second": "Capture One",
+              "link_second": "shopify:\/\/products\/adventure-everyday-capture-one",
+              "alignment": "center"
+            }
+          },
+          "01ecfa79-6c74-4452-baf0-f7835a7650e0": {
+            "type": "image",
+            "settings": {
+              "padding": "10px 10px 10px 10px",
+              "mobile_padding": "0px 0px 0px 0px",
+              "image": "shopify:\/\/shop_images\/xo-gallery-6-1586203538453.jpg",
+              "title": "Adventure Everyday",
+              "description": "",
+              "button_name": "Lightroom",
+              "link": "shopify:\/\/products\/adventure-everyday-lightroom",
+              "button_name_second": "Capture One",
+              "link_second": "shopify:\/\/products\/adventure-everyday-capture-one",
+              "alignment": "center"
+            }
+          },
+          "936b9575-de11-4a18-b2ac-89baf15302f6": {
+            "type": "image",
+            "settings": {
+              "padding": "10px 10px 10px 10px",
+              "mobile_padding": "0px 0px 0px 0px",
+              "image": "shopify:\/\/shop_images\/xo-gallery-6-1586633352527.jpg",
+              "title": "Adventure Everyday",
+              "description": "",
+              "button_name": "Lightroom",
+              "link": "shopify:\/\/products\/adventure-everyday-lightroom",
+              "button_name_second": "Capture One",
+              "link_second": "shopify:\/\/products\/adventure-everyday-capture-one",
+              "alignment": "center"
+            }
+          },
+          "23930825-e0bf-42d7-9c92-08113913881c": {
+            "type": "image",
+            "settings": {
+              "padding": "10px 10px 10px 10px",
+              "mobile_padding": "0px 0px 0px 0px",
+              "image": "shopify:\/\/shop_images\/xo-gallery-12-1588459425518.jpg",
+              "title": "Portra Original",
+              "description": "",
+              "button_name": "Lightroom",
+              "link": "shopify:\/\/products\/portra-original-lightroom",
+              "button_name_second": "Capture One",
+              "link_second": "shopify:\/\/products\/portra-original-capture-one",
+              "alignment": "center"
+            }
+          },
+          "83d2d072-c449-49fb-bd9f-f3890a8f501a": {
+            "type": "image",
+            "settings": {
+              "padding": "10px 10px 10px 10px",
+              "mobile_padding": "0px 0px 0px 0px",
+              "image": "shopify:\/\/shop_images\/FUJI_O_PRO400HN_Madeleine_Collins_-_Madeleine_Collins.jpg",
+              "title": "Fuji Original",
+              "description": "",
+              "button_name": "Lightroom",
+              "link": "shopify:\/\/products\/fuji-original-lightroom",
+              "button_name_second": "Capture One",
+              "link_second": "shopify:\/\/products\/fuji-original-capture-one",
+              "alignment": "center"
+            }
+          },
+          "bf784c11-6adc-4103-b77b-ab597103d25f": {
+            "type": "image",
+            "settings": {
+              "padding": "10px 10px 10px 10px",
+              "mobile_padding": "0px 0px 0px 0px",
+              "image": "shopify:\/\/shop_images\/xo-gallery-6-1587675421919.jpg",
+              "title": "Ilford Original",
+              "description": "",
+              "button_name": "Lightroom",
+              "link": "shopify:\/\/products\/adventure-everyday-lightroom",
+              "button_name_second": "Capture One",
+              "link_second": "shopify:\/\/products\/adventure-everyday-capture-one",
+              "alignment": "center"
+            }
+          },
+          "cf264a01-49ad-4db2-bde5-a2df50fcc6fc": {
+            "type": "image",
+            "settings": {
+              "padding": "10px 10px 10px 10px",
+              "mobile_padding": "0px 0px 0px 0px",
+              "image": "shopify:\/\/shop_images\/xo-gallery-12-1588459423796.jpg",
+              "title": "Portra Original",
+              "description": "",
+              "button_name": "Lightroom",
+              "link": "shopify:\/\/products\/portra-original-lightroom",
+              "button_name_second": "Capture One",
+              "link_second": "shopify:\/\/products\/portra-original-capture-one",
+              "alignment": "center"
+            }
+          },
+          "2dc3621b-403a-4fa1-8919-cd907de3165f": {
+            "type": "image",
+            "settings": {
+              "padding": "10px 10px 10px 10px",
+              "mobile_padding": "0px 0px 0px 0px",
+              "image": "shopify:\/\/shop_images\/xo-gallery-12-1588459427416.jpg",
+              "title": "Portra Original",
+              "description": "",
+              "button_name": "Lightroom",
+              "link": "shopify:\/\/products\/portra-original-lightroom",
+              "button_name_second": "Capture One",
+              "link_second": "shopify:\/\/products\/portra-original-capture-one",
+              "alignment": "center"
+            }
+          },
+          "f9e38175-609a-4ebd-a3dc-2d0f9e055918": {
+            "type": "image",
+            "settings": {
+              "padding": "10px 10px 10px 10px",
+              "mobile_padding": "0px 0px 0px 0px",
+              "image": "shopify:\/\/shop_images\/xo-gallery-12-1588459423536.jpg",
+              "title": "Fuji Pushed",
+              "description": "",
+              "button_name": "Lightroom",
+              "link": "shopify:\/\/products\/fuji-pushed-lightroom",
+              "button_name_second": "Capture One",
+              "link_second": "shopify:\/\/products\/fuji-pushed-capture-one",
+              "alignment": "center"
+            }
+          },
+          "7f128935-fbe1-464d-9c48-042672602ed5": {
+            "type": "image",
+            "settings": {
+              "padding": "10px 10px 10px 10px",
+              "mobile_padding": "0px 0px 0px 0px",
+              "image": "shopify:\/\/shop_images\/ADV_E_EKTAR100_Clarisse_Meyer_-_273A9810.jpg",
+              "title": "Adventure Everyday",
+              "description": "",
+              "button_name": "Lightroom",
+              "link": "shopify:\/\/products\/adventure-everyday-lightroom",
+              "button_name_second": "Capture One",
+              "link_second": "shopify:\/\/products\/adventure-everyday-capture-one",
+              "alignment": "center"
+            }
+          },
+          "10c2a026-9002-4e58-ab53-e8bc53d3015a": {
+            "type": "image",
+            "settings": {
+              "padding": "10px 10px 10px 10px",
+              "mobile_padding": "0px 0px 0px 0px",
+              "image": "shopify:\/\/shop_images\/Amanda_McClellan_Portra_400_P1.jpg",
+              "title": "Portra Pushed",
+              "description": "",
+              "button_name": "Lightroom",
+              "link": "shopify:\/\/products\/portra-pushed-lightroom",
+              "button_name_second": "Capture One",
+              "link_second": "shopify:\/\/products\/portra-pushed-capture-one",
+              "alignment": "center"
+            }
+          },
+          "3cdc7270-a1a0-4c91-8ff0-93a3c9b2e7cf": {
+            "type": "image",
+            "settings": {
+              "padding": "10px 10px 10px 10px",
+              "mobile_padding": "0px 0px 0px 0px",
+              "image": "shopify:\/\/shop_images\/xo-gallery-12-1588459420094.jpg",
+              "title": "Fuji Everyday",
+              "description": "",
+              "button_name": "Lightroom",
+              "link": "shopify:\/\/products\/fuji-everyday-lightroom",
+              "button_name_second": "Capture One",
+              "link_second": "shopify:\/\/products\/fuji-everyday-capture-one",
+              "alignment": "center"
+            }
+          },
+          "247cca6e-4fb8-4886-b8f1-755ffc2dc092": {
+            "type": "image",
+            "settings": {
+              "padding": "10px 10px 10px 10px",
+              "mobile_padding": "0px 0px 0px 0px",
+              "image": "shopify:\/\/shop_images\/xo-gallery-12-1588459429448.jpg",
+              "title": "Fuji Original",
+              "description": "",
+              "button_name": "Lightroom",
+              "link": "shopify:\/\/products\/fuji-original-lightroom",
+              "button_name_second": "Capture One",
+              "link_second": "shopify:\/\/products\/fuji-original-capture-one",
+              "alignment": "center"
+            }
+          },
+          "3f5caf31-ae35-4c15-99f2-73cac3c17d8a": {
+            "type": "image",
+            "settings": {
+              "padding": "10px 10px 10px 10px",
+              "mobile_padding": "0px 0px 0px 0px",
+              "image": "shopify:\/\/shop_images\/xo-gallery-12-1588459435629.jpg",
+              "title": "Ilford Original",
+              "description": "",
+              "button_name": "Lightroom",
+              "link": "shopify:\/\/products\/ilford-original-lightroom",
+              "button_name_second": "Capture One",
+              "link_second": "shopify:\/\/products\/ilford-original-capture-one",
+              "alignment": "center"
+            }
+          },
+          "9078bfac-c075-4355-abb6-abde0587161d": {
+            "type": "image",
+            "settings": {
+              "padding": "10px 10px 10px 10px",
+              "mobile_padding": "0px 0px 0px 0px",
+              "image": "shopify:\/\/shop_images\/xo-gallery-12-1588459418256.jpg",
+              "title": "Fuji Everyday",
+              "description": "",
+              "button_name": "Lightroom",
+              "link": "shopify:\/\/products\/fuji-everyday-lightroom",
+              "button_name_second": "Capture One",
+              "link_second": "shopify:\/\/products\/fuji-everyday-capture-one",
+              "alignment": "center"
+            }
+          },
+          "d46d6e06-e742-44c5-b8ec-68d837a9cb50": {
+            "type": "image",
+            "settings": {
+              "padding": "10px 10px 10px 10px",
+              "mobile_padding": "0px 0px 0px 0px",
+              "image": "shopify:\/\/shop_images\/xo-gallery-12-1588459420149.jpg",
+              "title": "Fuji Everyday",
+              "description": "",
+              "button_name": "Lightroom",
+              "link": "shopify:\/\/products\/fuji-everyday-lightroom",
+              "button_name_second": "Capture One",
+              "link_second": "shopify:\/\/products\/fuji-everyday-capture-one",
+              "alignment": "center"
+            }
+          },
+          "c90a9c06-f8d9-4bff-923a-72bdd475e302": {
+            "type": "image",
+            "settings": {
+              "padding": "10px 10px 10px 10px",
+              "mobile_padding": "0px 0px 0px 0px",
+              "image": "shopify:\/\/shop_images\/PO_Portra400_Ania_Boniecka.jpg",
+              "title": "Porta Original",
+              "description": "",
+              "button_name": "Lightroom",
+              "link": "shopify:\/\/products\/portra-original-lightroom",
+              "button_name_second": "Capture One",
+              "link_second": "shopify:\/\/products\/portra-original-capture-one",
+              "alignment": "center"
+            }
+          },
+          "1a33d209-1fc6-4a12-b072-59749e4183b3": {
+            "type": "image",
+            "settings": {
+              "padding": "10px 10px 10px 10px",
+              "mobile_padding": "0px 0px 0px 0px",
+              "image": "shopify:\/\/shop_images\/xo-gallery-12-1588459416566.jpg",
+              "title": "Portra Pushed",
+              "description": "",
+              "button_name": "Lightroom",
+              "link": "shopify:\/\/products\/portra-pushed-lightroom",
+              "button_name_second": "Capture One",
+              "link_second": "shopify:\/\/products\/portra-pushed-capture-one",
+              "alignment": "center"
+            }
+          },
+          "0f3120c9-7a1d-4283-9c3c-c20277090e68": {
+            "type": "image",
+            "settings": {
+              "padding": "10px 10px 10px 10px",
+              "mobile_padding": "0px 0px 0px 0px",
+              "image": "shopify:\/\/shop_images\/xo-gallery-12-1588459431627.jpg",
+              "title": "Fuji Original",
+              "description": "",
+              "button_name": "Lightroom",
+              "link": "shopify:\/\/products\/fuji-original-lightroom",
+              "button_name_second": "Capture One",
+              "link_second": "shopify:\/\/products\/fuji-original-capture-one",
+              "alignment": "center"
+            }
+          },
+          "b025b4ab-6ca6-4019-8680-62584d1dbe46": {
+            "type": "image",
+            "settings": {
+              "padding": "10px 10px 10px 10px",
+              "mobile_padding": "0px 0px 0px 0px",
+              "image": "shopify:\/\/shop_images\/xo-gallery-12-1588459421835.jpg",
+              "title": "Fuji Pushed",
+              "description": "",
+              "button_name": "Lightroom",
+              "link": "shopify:\/\/products\/fuji-pushed-lightroom",
+              "button_name_second": "Capture One",
+              "link_second": "shopify:\/\/products\/fuji-pushed-capture-one",
+              "alignment": "center"
+            }
+          },
+          "3ba2b93d-1d36-4697-96cf-b8314e6a14b7": {
+            "type": "image",
+            "settings": {
+              "padding": "10px 10px 10px 10px",
+              "mobile_padding": "0px 0px 0px 0px",
+              "image": "shopify:\/\/shop_images\/Andrew_Morton_PANF.jpg",
+              "title": "Ilford Original",
+              "description": "",
+              "button_name": "Lightroom",
+              "link": "shopify:\/\/products\/ilford-original-lightroom",
+              "button_name_second": "Capture One",
+              "link_second": "shopify:\/\/products\/ilford-original-capture-one",
+              "alignment": "center"
+            }
+          },
+          "bcb14a16-c94f-42a7-8857-1393f015b462": {
+            "type": "image",
+            "settings": {
+              "padding": "10px 10px 10px 10px",
+              "mobile_padding": "0px 0px 0px 0px",
+              "image": "shopify:\/\/shop_images\/xo-gallery-12-1588459432038.jpg",
+              "title": "Fuji Original",
+              "description": "",
+              "button_name": "Lightroom",
+              "link": "shopify:\/\/products\/fuji-original-lightroom",
+              "button_name_second": "Capture One",
+              "link_second": "shopify:\/\/products\/fuji-original-capture-one",
+              "alignment": "center"
+            }
+          },
+          "f2c08441-6e6d-4961-9001-de46fd79717e": {
+            "type": "image",
+            "settings": {
+              "padding": "10px 10px 10px 10px",
+              "mobile_padding": "0px 0px 0px 0px",
+              "image": "shopify:\/\/shop_images\/Colby_Moore_Portra_800_P1-3_306c79bc-1d26-445e-98ed-d9a2428cd201.jpg",
+              "title": "Portra Pushed",
+              "description": "",
+              "button_name": "Lightroom",
+              "link": "shopify:\/\/products\/portra-pushed-lightroom",
+              "button_name_second": "Capture One",
+              "link_second": "shopify:\/\/products\/portra-pushed-capture-one",
+              "alignment": "center"
+            }
+          }
+        },
+        "block_order": [
+          "ebb8f399-7039-426b-a6f1-61a4e3d39836",
+          "a69ea1b5-db86-4806-b837-42ed19524bc0",
+          "01ecfa79-6c74-4452-baf0-f7835a7650e0",
+          "936b9575-de11-4a18-b2ac-89baf15302f6",
+          "23930825-e0bf-42d7-9c92-08113913881c",
+          "83d2d072-c449-49fb-bd9f-f3890a8f501a",
+          "bf784c11-6adc-4103-b77b-ab597103d25f",
+          "cf264a01-49ad-4db2-bde5-a2df50fcc6fc",
+          "2dc3621b-403a-4fa1-8919-cd907de3165f",
+          "f9e38175-609a-4ebd-a3dc-2d0f9e055918",
+          "7f128935-fbe1-464d-9c48-042672602ed5",
+          "10c2a026-9002-4e58-ab53-e8bc53d3015a",
+          "3cdc7270-a1a0-4c91-8ff0-93a3c9b2e7cf",
+          "247cca6e-4fb8-4886-b8f1-755ffc2dc092",
+          "3f5caf31-ae35-4c15-99f2-73cac3c17d8a",
+          "9078bfac-c075-4355-abb6-abde0587161d",
+          "d46d6e06-e742-44c5-b8ec-68d837a9cb50",
+          "c90a9c06-f8d9-4bff-923a-72bdd475e302",
+          "1a33d209-1fc6-4a12-b072-59749e4183b3",
+          "0f3120c9-7a1d-4283-9c3c-c20277090e68",
+          "b025b4ab-6ca6-4019-8680-62584d1dbe46",
+          "3ba2b93d-1d36-4697-96cf-b8314e6a14b7",
+          "bcb14a16-c94f-42a7-8857-1393f015b462",
+          "f2c08441-6e6d-4961-9001-de46fd79717e"
+        ],
+        "settings": {
+          "section_title": "Shop The Looks",
+          "section_content": "Which images catch your eye? Click on the images below to see what pack they are edited with!",
+          "border": "0px",
+          "padding": "50px 0px 50px 0px",
+          "mobile_padding": "35px 0px 35px 0px",
+          "background_color": "#f7f6f2",
+          "fullWidth": false,
+          "columns": "four"
+        }
       }
     },
     "content_for_index": [
@@ -9489,6 +9899,7 @@
       "1627412073c93fe790",
       "162920394129662471",
       "1588631401313",
+      "1634811819f58a837d",
       "16292805564c7ff052",
       "16293563445f3a3e62",
       "16273321243576d666",
