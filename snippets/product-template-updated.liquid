@@ -194,7 +194,7 @@
               scripts that cause slower load times and false statistics.
               Quick view modals request these on-demand.
               {% endcomment %}
-              {% include 'product-form-v2', section_id: section_id %}
+              {% include 'product-form-v2-updated', section_id: section_id %}
             {%- else -%}
               <div id="ProductFormHolder-{{ section_id }}" class="product-form-holder" data-url="{{ product.url }}" data-template="{{ product.template_suffix }}"></div>
             {%- endunless -%}
@@ -228,12 +228,6 @@
                 </div>
                 <div id="position_lookup" class="product-single__description rte">
                   {{ product.description | remove_first: description | remove: "<p></p>" }}
-  
-                  {% if product.metafields.info.bullet_points != blank %}
-                    <div class="bulletPointsContainer">
-                      {{ product.metafields.info.bullet_points }}
-                    </div>
-                  {% endif %}
                 </div>
               </div>
             {%- endunless -%}

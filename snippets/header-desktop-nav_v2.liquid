@@ -31,11 +31,11 @@
                 {% assign navCollectionDescription = '' %}
                 {% if childlink.url contains '/collections/' %}
                   {% assign navCollection = collections[collectionHandle] %}
-                  {% assign navCollectionDescription = navCollection.description | strip_html | strip | truncatewords: 13, "." %}
+                  {% assign navCollectionDescription = navCollection.description | strip_html | strip | split: '</p>' | first %}
                 {% endif %}
                 {% if childlink.url contains '/pages/' %}
                   {% assign navCollection = pages[collectionHandle] %}
-                  {% assign navCollectionDescription = navCollection.content | strip_html | strip | truncatewords: 13, "." %}
+                  {% assign navCollectionDescription = navCollection.content | strip_html | strip | split: '</p>' | first %}
                 {% endif %}
                 <div class="megamenuContent">
                   {% if navCollectionDescription != blank %}

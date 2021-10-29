@@ -6,37 +6,45 @@
         "a02d1714-99b5-4e29-b9c7-ef33466cb485": {
           "type": "featuredIn",
           "settings": {
-            "img": "shopify:\/\/shop_images\/bazaar.png",
-            "link": ""
-          }
-        },
-        "56f4d817-81dd-4a60-97f8-1a32f39b01bb": {
-          "type": "featuredIn",
-          "settings": {
-            "img": "shopify:\/\/shop_images\/Best_Seller_Stamp__actual_size.png",
+            "img": "shopify:\/\/shop_images\/external-content.duckduckgo-2.png",
             "link": ""
           }
         },
         "9870dc47-1b98-4c39-9ec7-257a723642cc": {
           "type": "featuredIn",
           "settings": {
-            "img": "shopify:\/\/shop_images\/bazaar.png",
+            "img": "shopify:\/\/shop_images\/external-content.duckduckgo.png",
+            "link": ""
+          }
+        },
+        "56f4d817-81dd-4a60-97f8-1a32f39b01bb": {
+          "type": "featuredIn",
+          "settings": {
+            "img": "shopify:\/\/shop_images\/external-content.duckduckgo-5.png",
             "link": ""
           }
         },
         "cdd4cd10-1206-4aa9-af8b-a5e1f82de512": {
           "type": "featuredIn",
           "settings": {
-            "img": "shopify:\/\/shop_images\/MastinMinute.png",
+            "img": "shopify:\/\/shop_images\/external-content.duckduckgo-1.png",
+            "link": ""
+          }
+        },
+        "abfd3a91-bdbc-4153-97a7-4f014b545751": {
+          "type": "featuredIn",
+          "settings": {
+            "img": "shopify:\/\/shop_images\/external-content.duckduckgo-3.png",
             "link": ""
           }
         }
       },
       "block_order": [
         "a02d1714-99b5-4e29-b9c7-ef33466cb485",
-        "56f4d817-81dd-4a60-97f8-1a32f39b01bb",
         "9870dc47-1b98-4c39-9ec7-257a723642cc",
-        "cdd4cd10-1206-4aa9-af8b-a5e1f82de512"
+        "56f4d817-81dd-4a60-97f8-1a32f39b01bb",
+        "cdd4cd10-1206-4aa9-af8b-a5e1f82de512",
+        "abfd3a91-bdbc-4153-97a7-4f014b545751"
       ],
       "settings": {
         "description_style": "default",
@@ -262,28 +270,28 @@
         "1629720000e7d07886-0": {
           "type": "review",
           "settings": {
-            "title": "Value Prop 1",
+            "title": "Mastin Magic Toolkit™",
             "content": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et<\/p>"
           }
         },
         "1629720000e7d07886-1": {
           "type": "review",
           "settings": {
-            "title": "Value Prop 1",
+            "title": "Time-saving Mastin 3-Step Workflow™",
             "content": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et<\/p>"
           }
         },
         "1629720000e7d07886-2": {
           "type": "review",
           "settings": {
-            "title": "Value Prop 1",
-            "content": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et<\/p>"
+            "title": "Bonus tutorials for getting started",
+            "content": "<p>Each pack comes with a unique training video and three raw files that you can edit start to finish and achieve a perfect edit the very first time you use Mastin Labs.<\/p>"
           }
         },
         "1629720000e7d07886-3": {
           "type": "review",
           "settings": {
-            "title": "Value Prop 1",
+            "title": "Lifetime product updates and support",
             "content": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et<\/p>"
           }
         }
@@ -330,6 +338,7 @@
             "link": "shopify:\/\/products\/fuji-original-lightroom",
             "button_name_second": "Capture One",
             "link_second": "shopify:\/\/products\/fuji-original-capture-one",
+            "product": "",
             "alignment": "center"
           }
         },
@@ -345,6 +354,7 @@
             "link": "shopify:\/\/products\/adventure-everyday-lightroom",
             "button_name_second": "Capture One",
             "link_second": "shopify:\/\/products\/adventure-everyday-capture-one",
+            "product": "",
             "alignment": "center"
           }
         },
@@ -360,6 +370,7 @@
             "link": "shopify:\/\/products\/adventure-everyday-lightroom",
             "button_name_second": "Capture One",
             "link_second": "shopify:\/\/products\/adventure-everyday-capture-one",
+            "product": "",
             "alignment": "center"
           }
         },
@@ -375,6 +386,7 @@
             "link": "shopify:\/\/products\/adventure-everyday-lightroom",
             "button_name_second": "Capture One",
             "link_second": "shopify:\/\/products\/adventure-everyday-capture-one",
+            "product": "",
             "alignment": "center"
           }
         },
@@ -390,6 +402,7 @@
             "link": "shopify:\/\/products\/portra-original-lightroom",
             "button_name_second": "Capture One",
             "link_second": "shopify:\/\/products\/portra-original-capture-one",
+            "product": "",
             "alignment": "center"
           }
         },
@@ -405,6 +418,7 @@
             "link": "shopify:\/\/products\/fuji-original-lightroom",
             "button_name_second": "Capture One",
             "link_second": "shopify:\/\/products\/fuji-original-capture-one",
+            "product": "",
             "alignment": "center"
           }
         }
@@ -427,7 +441,9 @@
         "fullWidth": false,
         "columns": "three",
         "text": "#474747",
-        "padding-top-bottom": 75
+        "padding-top-bottom": 75,
+        "disableBtn": true,
+        "disableShopBtn": false
       }
     }
   },
