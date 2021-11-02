@@ -21,11 +21,14 @@ jQuery(document).ready(function($) {
     }
     reviewTop = reviewDiv.offset().top - stickyHeader;
 
-    $('html, body').animate({scrollTop: reviewTop}, 1, function() {
+    jQuery('html, body').animate({scrollTop: reviewTop}, 1, function() {
       stickyHeader = jQuery(document).find('.sticky_header').outerHeight(true) || 0;
       reviewTop = reviewDiv.offset().top - stickyHeader;
 
-      $('html, body').animate({scrollTop: reviewTop}, 'slow');
+      jQuery('html, body').animate({scrollTop: reviewTop}, 'slow');
     });
+  });
+  jQuery(".custom_for_product_by_dp").on("click", ".scroll-to-cart", function() {
+    jQuery('button.add-to-cart').click();
   });
 });

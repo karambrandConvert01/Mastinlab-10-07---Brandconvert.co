@@ -179,6 +179,7 @@
           },
           "e3686d38-512a-49d4-8eed-b49904882def": {
             "type": "announcement",
+            "disabled": true,
             "settings": {
               "text": "Video LUTs are Here! 🎥🌈✨",
               "link_text": "Shop Portra Original Video LUTs",
