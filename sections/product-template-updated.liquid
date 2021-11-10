@@ -264,6 +264,12 @@
         "default": "#F7F6F2"
       },
       {
+        "type": "color",
+        "id": "featuredInColor",
+        "label": "Color",
+        "default": "#FFFFFF"
+      },
+      {
         "type": "range",
         "id": "padding-top",
         "label": "Padding Top",
@@ -376,6 +382,7 @@
   }
   #shopify-section-{{ section.id }} .featuredInContainer {
     background-color: {{ section.settings.featuredInBgColor }};
+    color: {{ section.settings.featuredInColor }};
     padding-bottom: {{ section.settings.padding-bottom }}px;
     padding-top: {{ section.settings.padding-top }}px;
   }

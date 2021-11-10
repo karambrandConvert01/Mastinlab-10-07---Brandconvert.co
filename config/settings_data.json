@@ -271,7 +271,7 @@
             "type": "downloadItem",
             "settings": {
               "downloadImage": "shopify:\/\/shop_images\/icons8-download-from-cloud-48.png",
-              "downloadLink": "#",
+              "downloadLink": "",
               "downloadText": "INSTANT DOWNLOAD"
             }
           },
@@ -279,7 +279,7 @@
             "type": "downloadItem",
             "settings": {
               "downloadImage": "shopify:\/\/shop_images\/icons8-security-ssl-48.png",
-              "downloadLink": "#",
+              "downloadLink": "shopify:\/\/policies\/refund-policy",
               "downloadText": "SECURE CHECKOUT"
             }
           },
@@ -287,7 +287,7 @@
             "type": "downloadItem",
             "settings": {
               "downloadImage": "shopify:\/\/shop_images\/icons8-streaming-movies-48.png",
-              "downloadLink": "#",
+              "downloadLink": "shopify:\/\/policies\/terms-of-service",
               "downloadText": "Video Tutorials"
             }
           },
@@ -295,7 +295,7 @@
             "type": "downloadItem",
             "settings": {
               "downloadImage": "shopify:\/\/shop_images\/icons8-update-48.png",
-              "downloadLink": "#",
+              "downloadLink": "shopify:\/\/policies\/privacy-policy",
               "downloadText": "Lifetime Updates"
             }
           },
@@ -344,7 +344,11 @@
           "copyright_link_color_hover": "#2274a5",
           "bgColor": "#5b2333",
           "textColor": "#ffffff",
-          "linkHover": "#2274a5"
+          "linkHover": "#2274a5",
+          "bgFooterColor": "#271d2e",
+          "textFooterColor": "#FFFFFF",
+          "linkFooterHover": "#2274A5",
+          "textFooterHeading": "#FFFFFF"
         }
       },
       "collection-template": {
@@ -9255,7 +9259,7 @@
           "16293563445f3a3e62-0": {
             "type": "box",
             "settings": {
-              "image": "shopify:\/\/shop_images\/workflow.png",
+              "image": "shopify:\/\/shop_images\/2_b08ae8ed-b42c-435c-808c-ec36b339246a.png",
               "title": "1. Import & Apply",
               "content": "<p>Import your photos into your editing program and apply the look you want.<\/p>"
             }
@@ -9263,7 +9267,7 @@
           "16293563445f3a3e62-1": {
             "type": "box",
             "settings": {
-              "image": "shopify:\/\/shop_images\/workflow.png",
+              "image": "shopify:\/\/shop_images\/1_1a853eb6-3e83-4170-ab45-fa818aeffa5c.png",
               "title": "2. Adjust",
               "content": "<p>Adjust exposure, white balance and tint. The preset takes care of the rest!<\/p>"
             }
@@ -9271,7 +9275,7 @@
           "16293563445f3a3e62-2": {
             "type": "box",
             "settings": {
-              "image": "shopify:\/\/shop_images\/workflow.png",
+              "image": "shopify:\/\/shop_images\/3_93069068-0d88-4117-b9ea-2104f72325ec.png",
               "title": "3. Export",
               "content": "<p>Hit export and you're done. Now, go have fun with the hours you saved editing!<\/p>"
             }
@@ -9284,7 +9288,7 @@
         ],
         "settings": {
           "heading": "Get Started In 3 Simple Steps",
-          "subHeading": "<p>It's never been easier to get the look you want!<br\/><\/p>",
+          "subHeading": "<p>It's never been easier to get the look you want!<\/p>",
           "perRow": 3,
           "bgColor": "#f7f6f2",
           "text": "#474747",
