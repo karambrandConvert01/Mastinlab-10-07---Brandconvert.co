@@ -49,6 +49,7 @@
       "settings": {
         "description_style": "default",
         "vcolor_loading": "#ff5121",
+        "payment_terms": true,
         "vcolor_btn_selected": "#2d2d2d",
         "vcolor_btn_selected_c": "#2d2d2d",
         "vcolor_btn_bg": "rgba(0,0,0,0)",
@@ -74,6 +75,7 @@
         "enable_video_looping": true,
         "product_video_style": "muted",
         "featuredInBgColor": "#261d2d",
+        "featuredInColor": "#ffffff",
         "padding-top": 75,
         "padding-bottom": 75
       }
@@ -149,15 +151,16 @@
     },
     "1629441847bcee9a09": {
       "type": "after-before-columns",
+      "disabled": true,
       "blocks": {
         "7ca86b8c-8b17-46d4-808b-761c69242437": {
           "type": "afterBeforeBlock",
           "settings": {
             "after": "shopify:\/\/shop_images\/Rectangle_150.png",
             "before": "shopify:\/\/shop_images\/Rectangle_144.png",
-            "badge": "shopify:\/\/shop_images\/Group_140.png",
+            "badge": "shopify:\/\/shop_images\/Badge_Fuji-160NS.png",
             "title": "Ektar 100",
-            "content": "<p>Bright and colorful, Ektar 100 delivers bold, saturated tones with natural looking skin, perfect for candid snapshots.<\/p>"
+            "content": "<p>Neutral and balanced, Fuji 160NS is the portrait photographers favored film stock for its smooth gradients from the highlights to the shadows and clean skin across a broad range of tones.<\/p>"
           }
         },
         "75411961-5348-4562-8e5f-c832b420473f": {
@@ -165,9 +168,9 @@
           "settings": {
             "after": "shopify:\/\/shop_images\/Rectangle_150.png",
             "before": "shopify:\/\/shop_images\/Rectangle_144.png",
-            "badge": "shopify:\/\/shop_images\/Group_141.png",
-            "title": "Gold 200",
-            "content": "<p>Glowing and full of nostalgia, Gold 200 is a golden toned and medium contrast look with low saturation, making it the most versatile preset in this pack.<\/p>"
+            "badge": "shopify:\/\/shop_images\/Badge_Fuji-400H_ddd08fa4-d172-4b83-b699-903b675f5a10.png",
+            "title": "Fuji 400H",
+            "content": "<p>The first light and airy preset, Fuji 400h is the preferred film stock for wedding and family photographers. Fuji 400h provides natural skin-tones while maintaining vivid three-dimensional color.<\/p>"
           }
         },
         "e3d05557-2f39-48fc-bf90-d443e560688f": {
@@ -175,9 +178,9 @@
           "settings": {
             "after": "shopify:\/\/shop_images\/Rectangle_150.png",
             "before": "shopify:\/\/shop_images\/Rectangle_144.png",
-            "badge": "shopify:\/\/shop_images\/Group_142.png",
-            "title": "Tri-X 400",
-            "content": "<p>Classic black and white, Tri-X 400 delivers emotive photographs with medium contrast and gorgeous grain.<\/p>"
+            "badge": "shopify:\/\/shop_images\/Badge_Fuji-800Z.png",
+            "title": "Fuji 800Z",
+            "content": "<p>Pretty in pink, Fuji 800Z brings magenta to the forefront of the highlights creating a dream-like color scape in your photography.<\/p>"
           }
         }
       },
@@ -198,7 +201,7 @@
     "162944749088ab449c": {
       "type": "video-with-text",
       "settings": {
-        "video": "https:\/\/www.youtube.com\/watch?v=_9VUPq3SxOc",
+        "video": "https:\/\/www.youtube.com\/watch?v=lWH0jtfZvaQ",
         "image": "shopify:\/\/shop_images\/video.png",
         "heading": "Includes Step-by-Step Tutorial Video and Practice Images",
         "content": "<p>Master Mastin Labs in minutes with unique video tutorials and raw images for you to edit alongside Kirk Mastin himself.<\/p><p>Each pack comes with a unique training video and three raw files that you can edit start to finish and achieve a perfect edit the very first time you use Mastin Labs.<\/p>",
@@ -218,24 +221,36 @@
         "1629700485e119d0c0-0": {
           "type": "contentWithImage",
           "settings": {
-            "question": "What looks are included in this pack?",
-            "heading": "Discover how to make beautiful photos in just three steps with Adventure Everyday.",
-            "mainContent": "<p>With the Mastin Workflow™, getting a clean, consistent film look is fast and easy:<\/p>",
-            "steps": "<p>Apply a preset<\/p><p>Adjust exposure<\/p><p>Adjust white balance<\/p>",
-            "afterStepsContent": "<p>Seriously, editing really can be that simple.<\/p>",
-            "image": "shopify:\/\/shop_images\/Group_106_67e09bfd-4dad-491a-b19b-5c9b9d74208a.png",
+            "question": "I’ve been burned by bad presets before. What makes Mastin Labs different?",
+            "heading": "We hear you!",
+            "mainContent": "<p>That’s why our presets aren’t based on passing trends – they’re meticulously designed and tested to model real film. And not just the color and tone of film, but also the way it reacts to light. As technology evolves, we’re continually innovating and updating our presets to give you access to a consistent look that will help you get noticed in a crowded market, elevate your business, and create timeless images you and your clients love.<\/p>",
+            "steps": "",
+            "afterStepsContent": "",
+            "image": "shopify:\/\/shop_images\/video.png",
             "reverse": false
           }
         },
-        "1629700485e119d0c0-1": {
+        "dd9cf233-0c0a-4f3c-a83b-c4e3c6246ce0": {
           "type": "contentWithImage",
           "settings": {
-            "question": "What are Mobile Profiles?",
-            "heading": "Take your look on the go.",
-            "mainContent": "<p>With Mobile Profiles, your everyday images can look as beautiful as your professional ones. Optimized for mobile images, our profiles give you the clean, consistent film look you love, from the convenience of your phone.<\/p><p>Mobile Profiles included: Ektar 100, Gold 200, Tri-X 400<\/p><p>Supported devices and files: Compatible with iOS and Android devices and jpeg formats.<\/p><p>Product Requirements: An Adobe Creative Cloud account is required to use our Mobile Profiles.<\/p>",
+            "question": "Why use a preset when I can hand edit?",
+            "heading": "Faster workflow, consistent edits!",
+            "mainContent": "<p>Like most of us, chances are you started out spending hours editing photos and adjusting every slider by hand. But that workflow requires a lot of mental energy, and it’s tough to maintain a consistent style from edit to edit. With a preset, you get a faster workflow, a consistent edit, and a timeless look based on real film – so you can focus on elevating your art and growing your business.<\/p>",
             "steps": "",
             "afterStepsContent": "",
-            "image": "shopify:\/\/shop_images\/Group_153.png",
+            "image": "shopify:\/\/shop_images\/workflow.png",
+            "reverse": false
+          }
+        },
+        "4d2659ff-0d89-4293-8bbd-0ab5063b7da5": {
+          "type": "contentWithImage",
+          "settings": {
+            "question": "How do I know which preset pack is right for me?",
+            "heading": "",
+            "mainContent": "<p><a href=\"https:\/\/mastinlabs.com\/pages\/preset-quiz\" target=\"_blank\"><span style=\"text-decoration:underline\">Take our 2-minute quiz<\/span><\/a> to find your perfect pack! You can also <a href=\"https:\/\/www.facebook.com\/groups\/mastinlabs\/\" target=\"_blank\"><span style=\"text-decoration:underline\">join our free community on Facebook<\/span><\/a> to see how thousands of photographers are using the presets and even ask our users to test a preset on your photos.<\/p>",
+            "steps": "",
+            "afterStepsContent": "",
+            "image": "shopify:\/\/shop_images\/Preset-Quiz.jpg",
             "reverse": false
           }
         },
@@ -254,7 +269,8 @@
       },
       "block_order": [
         "1629700485e119d0c0-0",
-        "1629700485e119d0c0-1",
+        "dd9cf233-0c0a-4f3c-a83b-c4e3c6246ce0",
+        "4d2659ff-0d89-4293-8bbd-0ab5063b7da5",
         "1629700485e119d0c0-2"
       ],
       "settings": {

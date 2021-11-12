@@ -194,7 +194,7 @@
               scripts that cause slower load times and false statistics.
               Quick view modals request these on-demand.
               {% endcomment %}
-              {% include 'product-form-v2-updated', section_id: section_id %}
+              {% include 'product-form-v2-updated', section_id: section_id, payment_terms: payment_terms %}
             {%- else -%}
               <div id="ProductFormHolder-{{ section_id }}" class="product-form-holder" data-url="{{ product.url }}" data-template="{{ product.template_suffix }}"></div>
             {%- endunless -%}

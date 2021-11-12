@@ -1,10 +1,55 @@
 {
   "sections": {
     "product-template": {
-      "type": "product-template",
+      "type": "product-template-updated",
+      "blocks": {
+        "960b6310-43cf-4f39-ae42-a814300e3301": {
+          "type": "featuredIn",
+          "settings": {
+            "img": "shopify:\/\/shop_images\/Vogue_Logo.png",
+            "link": ""
+          }
+        },
+        "35cfeb32-174e-40e3-9100-496dbc6d4f27": {
+          "type": "featuredIn",
+          "settings": {
+            "img": "shopify:\/\/shop_images\/Anthropologie_Logo_b981a7a4-9542-42cb-be72-06cb7b0fa501.png",
+            "link": ""
+          }
+        },
+        "92935b0e-dc18-4eb5-9b0f-1baab795719c": {
+          "type": "featuredIn",
+          "settings": {
+            "img": "shopify:\/\/shop_images\/Grace_Ormonde_Logo.png",
+            "link": ""
+          }
+        },
+        "4db11f7c-f890-4f88-9901-feaa60ed9794": {
+          "type": "featuredIn",
+          "settings": {
+            "img": "shopify:\/\/shop_images\/Bazaar_Logo.png",
+            "link": ""
+          }
+        },
+        "1e640fad-f5cc-4828-9a36-0260d48f244c": {
+          "type": "featuredIn",
+          "settings": {
+            "img": "shopify:\/\/shop_images\/Conde_Nast_Logo.png",
+            "link": ""
+          }
+        }
+      },
+      "block_order": [
+        "960b6310-43cf-4f39-ae42-a814300e3301",
+        "35cfeb32-174e-40e3-9100-496dbc6d4f27",
+        "92935b0e-dc18-4eb5-9b0f-1baab795719c",
+        "4db11f7c-f890-4f88-9901-feaa60ed9794",
+        "1e640fad-f5cc-4828-9a36-0260d48f244c"
+      ],
       "settings": {
         "description_style": "default",
         "vcolor_loading": "#ff5121",
+        "payment_terms": false,
         "vcolor_btn_selected": "#2d2d2d",
         "vcolor_btn_selected_c": "#2d2d2d",
         "vcolor_btn_bg": "rgba(0,0,0,0)",
@@ -28,14 +73,19 @@
         "thumbnail_position": "below",
         "thumbnail_arrows": true,
         "enable_video_looping": true,
-        "product_video_style": "unmuted"
+        "product_video_style": "unmuted",
+        "featuredInBgColor": "#261d2d",
+        "featuredInColor": "#ffffff",
+        "padding-top": 75,
+        "padding-bottom": 75
       }
     },
     "1BX-text-and-background": {
       "type": "1BX-text-and-background",
+      "disabled": true,
       "settings": {
-        "title": "\" {{ product.title }} intensifies emotion, giving my images a gorgeous pop while keeping the skin tones clean and natural\"",
-        "text": "Kayla Potter",
+        "title": "\" {{ product.title }} pack is BY FAR my favorite— it makes my heart sing!\"",
+        "text": "- Rachel Ashcraft",
         "align_text": "center",
         "narrow_column": true,
         "enlarge_text": false,
@@ -49,81 +99,94 @@
     },
     "3rd_gallery-pro-4509579280466": {
       "type": "3rd_gallery",
+      "disabled": true,
       "blocks": {
-        "45086121001781588625821474": {
+        "45095792804661588636388567": {
           "type": "image",
           "settings": {
-            "image": "shopify:\/\/shop_images\/Chris_Zielecki_Portra_400_P1.jpg",
-            "title": "Portra 400<sup>+1<\/sup>",
-            "description": "Photo: Chris Zielecki",
-            "button_name": "",
-            "button_name_second": "Capture One",
-            "alignment": "bottom"
-          }
-        },
-        "45086121001781588625925401": {
-          "type": "image",
-          "settings": {
-            "image": "shopify:\/\/shop_images\/Santi_Nunez_Portra_800_P1.jpg",
-            "title": "Portra 800<sup>+1<\/sup>",
-            "description": "Photo: Santi Nunez",
-            "button_name": "",
-            "button_name_second": "Capture One",
-            "alignment": "bottom"
-          }
-        },
-        "45086121001781588625828206": {
-          "type": "image",
-          "settings": {
-            "image": "shopify:\/\/shop_images\/Colby_Moore_Portra_800_P1-3_306c79bc-1d26-445e-98ed-d9a2428cd201.jpg",
-            "title": "Portra 800<sup>+1<\/sup>",
-            "description": "Photo: Colby Moore",
-            "button_name": "",
-            "button_name_second": "Capture One",
-            "alignment": "bottom"
-          }
-        },
-        "45086121001781588625910417": {
-          "type": "image",
-          "settings": {
-            "image": "shopify:\/\/shop_images\/Cole_Roberts_Portra_800_P1.jpg",
-            "title": "Portra 800<sup>+2<\/sup>",
-            "description": "Photo: Cole Roberts",
-            "button_name": "",
-            "button_name_second": "Capture One",
-            "alignment": "bottom"
-          }
-        },
-        "45086121001781588625811263": {
-          "type": "image",
-          "settings": {
-            "image": "shopify:\/\/shop_images\/PP_Portra160_1_Stacey_Krolow_03.jpg",
-            "title": "Portra 160<sup>+1<\/sup>",
-            "description": "Photo: Stacey Krowlow",
-            "button_name": "",
-            "button_name_second": "Capture One",
-            "alignment": "bottom"
-          }
-        },
-        "45086121001781588625918859": {
-          "type": "image",
-          "settings": {
-            "image": "shopify:\/\/shop_images\/Hannah_Wagner_Portra_160_P2.jpg",
-            "title": "Portra 400<sup>+1<\/sup>",
-            "description": "Photo: Hannah Wagner",
+            "image": "shopify:\/\/shop_images\/xo-gallery-6-1586203538453.jpg",
+            "title": "Ektar 100",
+            "description": "Photo: Bisual Studio",
             "button_name": "Shop This look",
+            "link": "",
             "button_name_second": "Capture One",
+            "link_second": "",
+            "alignment": "bottom"
+          }
+        },
+        "45095792804661588636411948": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/T_Rex_and_Flower_Ektar_100_PX1280_Q70.jpg",
+            "title": "Ektar 100",
+            "description": "Danil Nevsky",
+            "button_name": "Shop This look",
+            "link": "",
+            "button_name_second": "Capture One",
+            "link_second": "",
+            "alignment": "bottom"
+          }
+        },
+        "45095792804661588636433205": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/xo-gallery-6-1587675421919.jpg",
+            "title": "Tri-X",
+            "description": "Photo: Duet Postscriptum",
+            "button_name": "Shop This look",
+            "link": "",
+            "button_name_second": "Capture One",
+            "link_second": "",
+            "alignment": "bottom"
+          }
+        },
+        "45095792804661588636453993": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/ADV_E_TRIX400_Andrew_Shepherd_04.jpg",
+            "title": "Tri-X",
+            "description": "Photo: Andrew Shepherd",
+            "button_name": "Shop This look",
+            "link": "",
+            "button_name_second": "Capture One",
+            "link_second": "",
+            "alignment": "bottom"
+          }
+        },
+        "45095792804661588636536008": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/ADV_E_TRIX400_Clarisse_Meyer_-_273A9810.jpg",
+            "title": "Ektar 100",
+            "description": "Photo: Clarisse Meyer",
+            "button_name": "Shop This look",
+            "link": "",
+            "button_name_second": "Capture One",
+            "link_second": "",
+            "alignment": "bottom"
+          }
+        },
+        "45095792804661588636481335": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/xo-gallery-6-1587670240220.jpg",
+            "title": "Gold 200",
+            "description": "Photo: HOWL",
+            "button_name": "Shop This look",
+            "link": "",
+            "button_name_second": "Capture One",
+            "link_second": "",
             "alignment": "bottom"
           }
         }
       },
       "block_order": [
-        "45086121001781588625821474",
-        "45086121001781588625925401",
-        "45086121001781588625828206",
-        "45086121001781588625910417",
-        "45086121001781588625811263",
-        "45086121001781588625918859"
+        "45095792804661588636388567",
+        "45095792804661588636411948",
+        "45095792804661588636433205",
+        "45095792804661588636453993",
+        "45095792804661588636536008",
+        "45095792804661588636481335"
       ],
       "settings": {
         "enable": true,
@@ -141,6 +204,7 @@
     },
     "1FW-html": {
       "type": "1FW-html",
+      "disabled": true,
       "settings": {
         "padding": "50px 0px 0px 0px",
         "mobile_padding": "0px 0px 0px 0px",
@@ -151,63 +215,37 @@
     },
     "1FW-included_looks": {
       "type": "1FW-included_looks",
+      "disabled": true,
       "blocks": {
         "eebaa2ee-5413-4483-81ce-51e5a2d7c5d9": {
           "type": "content",
           "settings": {
-            "image": "shopify:\/\/shop_images\/PP_Portra160_1_Thais_Varela_01.jpg",
-            "title": "Portra 160+1",
-            "content": "Neutral with medium contrast, Portra 160+1 is a flexible look with low saturation and tones that lean towards reds and brown."
+            "image": "shopify:\/\/shop_images\/ADV_E_EKTAR100_Lizzeth_Mendoza_01.jpg",
+            "title": "Ektar 100",
+            "content": "Bright, bold and colorful"
           }
         },
         "eebaa2ee-5413-4483-81ce-51e5a2d7c5d8": {
           "type": "content",
           "settings": {
-            "image": "shopify:\/\/shop_images\/PP_Portra400_1_Thais_Varela_01.jpg",
-            "title": "Portra 400+1",
-            "content": "Warm-toned with medium contrast, Portra 400+1 is an extremely flexible look with deep, rich color with clean tones."
+            "image": "shopify:\/\/shop_images\/ADV_E_GOLD200_Lizzeth_Mendoza_01_18acd49f-fd39-4c6c-ad1d-02c674ea7230.jpg",
+            "title": "Gold 200",
+            "content": "Glowing and full of nostalgia, Gold 200 is a golden toned and medium contrast look with low saturation, making it the most versatile preset in this pack."
           }
         },
         "eebaa2ee-5413-4483-81ce-51e5a2d7c5d7": {
           "type": "content",
           "settings": {
-            "image": "shopify:\/\/shop_images\/PP_Portra4800_1_Thais_Varela_01.jpg",
-            "title": "Portra 800+1",
-            "content": "Balanced and natural, Portra 800+1 is a medium saturated look with higher contrast and purple shifts in the shadows for a stylized and edgy feeling."
-          }
-        },
-        "eebaa2ee-5413-4483-81ce-51e5a2d7c5d6": {
-          "type": "content",
-          "settings": {
-            "image": "shopify:\/\/shop_images\/PP_Portra160_2_Thais_Varela_01.jpg",
-            "title": "Portra 160+2",
-            "content": "A progression on Portra 160+1, Portra 160+2 has increased red tones and flatness in the shadows."
-          }
-        },
-        "eebaa2ee-5413-4483-81ce-51e5a2d7c5d5": {
-          "type": "content",
-          "settings": {
-            "image": "shopify:\/\/shop_images\/PP_Portra400_2_Thais_Varela_01.jpg",
-            "title": "Portra 400+2",
-            "content": "An evolution on Portra 400+1 but with increased red and orange shifts in the shadows for an editorial look."
-          }
-        },
-        "eebaa2ee-5413-4483-81ce-51e5a2d7c5d4": {
-          "type": "content",
-          "settings": {
-            "image": "shopify:\/\/shop_images\/PP_Portra4800_2_Thais_Varela_01.jpg",
-            "title": "Portra 800+2",
-            "content": "This looks takes the look of Portra 800+1 and pushes the shadows even further for the ultimate moody look."
+            "image": "shopify:\/\/shop_images\/ADV_E_TRIX400_Lizzeth_Mendoza_01.jpg",
+            "title": "Tri-X 400",
+            "content": "Classic black and white, Tri-X 400 delivers emotive photographs with medium contrast and gorgeous grain."
           }
         }
       },
       "block_order": [
         "eebaa2ee-5413-4483-81ce-51e5a2d7c5d9",
         "eebaa2ee-5413-4483-81ce-51e5a2d7c5d8",
-        "eebaa2ee-5413-4483-81ce-51e5a2d7c5d7",
-        "eebaa2ee-5413-4483-81ce-51e5a2d7c5d6",
-        "eebaa2ee-5413-4483-81ce-51e5a2d7c5d5",
-        "eebaa2ee-5413-4483-81ce-51e5a2d7c5d4"
+        "eebaa2ee-5413-4483-81ce-51e5a2d7c5d7"
       ],
       "settings": {
         "enable": true,
@@ -221,9 +259,320 @@
     },
     "1stamped-main-widget": {
       "type": "1stamped-main-widget",
+      "disabled": true,
       "settings": {
         "padding": "0px 0px 0px",
         "mobile_padding": "0px 0px 0px"
+      }
+    },
+    "163655860325e8add4": {
+      "type": "after-before-columns",
+      "blocks": {
+        "0e715159-3a74-4e6b-9fdc-220be776b06a": {
+          "type": "afterBeforeBlock",
+          "settings": {
+            "after": "shopify:\/\/shop_images\/PP_Portra160_1_Thais_Varela_01_900x_997076cb-7c96-4963-a2fa-3144d2b9989a.jpg",
+            "before": "shopify:\/\/shop_images\/PP_Portra160_1_Thais_Varela_01_900x_997076cb-7c96-4963-a2fa-3144d2b9989a.jpg",
+            "badge": "shopify:\/\/shop_images\/Badge_Portra-160_1.png",
+            "title": "Portra 160+1",
+            "content": "<p>Neutral with medium contrast, Portra 160+1 is a flexible look with low saturation and tones that lean towards reds and brown.<\/p>"
+          }
+        },
+        "ddfa5e89-4377-45a1-a88a-1fb1fcbdde76": {
+          "type": "afterBeforeBlock",
+          "settings": {
+            "after": "shopify:\/\/shop_images\/PP_Portra400_1_Thais_Varela_01_900x_3ce96637-435c-4d74-bcff-571ff9397861.jpg",
+            "before": "shopify:\/\/shop_images\/PP_Portra400_1_Thais_Varela_01_900x_3ce96637-435c-4d74-bcff-571ff9397861.jpg",
+            "badge": "shopify:\/\/shop_images\/Badge_Portra-400_1.png",
+            "title": "Portra 400+1",
+            "content": "<p>Warm-toned with medium contrast, Portra 400+1 is an extremely flexible look with deep, rich color with clean tones.<\/p>"
+          }
+        },
+        "2507f3c3-5735-415e-81cf-91119c202e77": {
+          "type": "afterBeforeBlock",
+          "settings": {
+            "after": "shopify:\/\/shop_images\/PP_Portra4800_1_Thais_Varela_01_900x_416ee467-f45f-4c24-b4e2-182b63431c26.jpg",
+            "before": "shopify:\/\/shop_images\/PP_Portra4800_1_Thais_Varela_01_900x_416ee467-f45f-4c24-b4e2-182b63431c26.jpg",
+            "badge": "shopify:\/\/shop_images\/Badge_Portra-800_1.png",
+            "title": "Portra 800+1",
+            "content": "<p>Balanced and natural, Portra 800+1 is a medium saturated look with higher contrast and purple shifts in the shadows for a stylized and edgy feeling.<\/p>"
+          }
+        },
+        "aef50273-0893-41a0-baa6-8a29c6a1662d": {
+          "type": "afterBeforeBlock",
+          "settings": {
+            "after": "shopify:\/\/shop_images\/PP_Portra160_2_Thais_Varela_01_900x_d852dc60-bc98-4f07-88b7-e498df4b95cf.jpg",
+            "before": "shopify:\/\/shop_images\/PP_Portra160_2_Thais_Varela_01_900x_d852dc60-bc98-4f07-88b7-e498df4b95cf.jpg",
+            "badge": "shopify:\/\/shop_images\/Badge_Portra-160_2.png",
+            "title": "Portra 160+2",
+            "content": "<p>A progression on Portra 160+1, Portra 160+2 has increased red tones and flatness in the shadows.<\/p>"
+          }
+        },
+        "db927f75-1156-4873-8199-737845dab6ab": {
+          "type": "afterBeforeBlock",
+          "settings": {
+            "after": "shopify:\/\/shop_images\/PP_Portra400_2_Thais_Varela_01_900x_166a0212-e52d-4f43-9f58-312f73de842d.jpg",
+            "before": "shopify:\/\/shop_images\/PP_Portra400_2_Thais_Varela_01_900x_dcaf1359-eed1-4724-8fc7-5b92a90b9646.jpg",
+            "badge": "shopify:\/\/shop_images\/Badge_Portra-400_2.png",
+            "title": "Portra 400+2",
+            "content": "<p>An evolution on Portra 400+1 but with increased red and orange shifts in the shadows for an editorial look.<\/p>"
+          }
+        },
+        "72c9f5c0-21a5-4c4b-83f9-4a678d91267c": {
+          "type": "afterBeforeBlock",
+          "settings": {
+            "after": "shopify:\/\/shop_images\/PP_Portra4800_2_Thais_Varela_01_900x_a2c9f6b1-2584-4157-882c-319501cfe4fb.jpg",
+            "before": "shopify:\/\/shop_images\/PP_Portra4800_2_Thais_Varela_01_900x_a2c9f6b1-2584-4157-882c-319501cfe4fb.jpg",
+            "badge": "shopify:\/\/shop_images\/Badge_Portra-800_2.png",
+            "title": "Portra 800+2",
+            "content": "<p>This looks takes the look of Portra 800+1 and pushes the shadows even further for the ultimate moody look.<\/p>"
+          }
+        }
+      },
+      "block_order": [
+        "0e715159-3a74-4e6b-9fdc-220be776b06a",
+        "ddfa5e89-4377-45a1-a88a-1fb1fcbdde76",
+        "2507f3c3-5735-415e-81cf-91119c202e77",
+        "aef50273-0893-41a0-baa6-8a29c6a1662d",
+        "db927f75-1156-4873-8199-737845dab6ab",
+        "72c9f5c0-21a5-4c4b-83f9-4a678d91267c"
+      ],
+      "settings": {
+        "heading": "What’s included?",
+        "subHeading": "<p>Open each title for pack details— so many goodies inside.<\/p>",
+        "perRow": 3,
+        "bgColor": "#ffffff",
+        "text": "#474747",
+        "padding": 75
+      }
+    },
+    "1636559108e5f1d3ab": {
+      "type": "faq-template",
+      "blocks": {
+        "1636559108e5f1d3ab-0": {
+          "type": "contentWithImage",
+          "settings": {
+            "question": "What looks are included in this pack?",
+            "heading": "Discover how to make beautiful photos in just three steps with Adventure Everyday.",
+            "mainContent": "<p>With the Mastin Workflow™, getting a clean, consistent film look is fast and easy:<\/p>",
+            "steps": "<p>Apply a preset<br\/>Adjust exposure<br\/>Adjust white balance<\/p>",
+            "afterStepsContent": "<p>Seriously, editing really can be that simple.<\/p>",
+            "image": "shopify:\/\/shop_images\/Group_106_67e09bfd-4dad-491a-b19b-5c9b9d74208a.png",
+            "reverse": false
+          }
+        },
+        "1636559108e5f1d3ab-1": {
+          "type": "contentWithImage",
+          "settings": {
+            "question": "What are Mobile Profiles?",
+            "heading": "Take your look on the go.",
+            "mainContent": "<p>With Mobile Profiles, your everyday images can look as beautiful as your professional ones. Optimized for mobile images, our profiles give you the clean, consistent film look you love, from the convenience of your phone.<br\/>Mobile Profiles included: Ektar 100, Gold 200, Tri-X 400<br\/>Supported devices and files: Compatible with iOS and Android devices and jpeg formats.<br\/>Product Requirements: An Adobe Creative Cloud account is required to use our Mobile Profiles.<\/p>",
+            "steps": "",
+            "afterStepsContent": "",
+            "image": "shopify:\/\/shop_images\/Group_153.png",
+            "reverse": false
+          }
+        },
+        "1636559108e5f1d3ab-2": {
+          "type": "colunmWithImage",
+          "settings": {
+            "question": "Presets and Profiles: Should I get both?",
+            "leftHeading": "DESKTOP PRESETS",
+            "leftMainContent": "<p>Simply put, presets are for RAW images and profiles are for jpegs. Our Lightroom desktop presets are ideal for simplifying your workflow and creating beautiful and timeless professional images. And with presets, you still have access to everything under the hood, so you can dial in all the details.<\/p>",
+            "leftImage": "shopify:\/\/shop_images\/Group.png",
+            "rightHeading": "MOBILE PROFILES",
+            "rightMainContent": "<p>Our Mobile Profiles are the perfect way to edit on your phone, because you get a streamlined, one-click editing experience designed specifically for jpeg file formats. You don’t have access to all the details that you would with a preset, so you can focus on quickly and easily editing beautiful photos and sharing them with the world.<\/p>",
+            "rightImage": "shopify:\/\/shop_images\/Group-1.png"
+          }
+        }
+      },
+      "block_order": [
+        "1636559108e5f1d3ab-0",
+        "1636559108e5f1d3ab-1",
+        "1636559108e5f1d3ab-2"
+      ],
+      "settings": {
+        "heading": "Frequently Asked Questions",
+        "subHeading": "<p>Open each title for answers to frequently asked questions.<\/p>",
+        "bgColor": "#271d2e",
+        "text": "#ffffff",
+        "padding": 75
+      }
+    },
+    "1636559659e73a7cee": {
+      "type": "best-reviews",
+      "blocks": {
+        "1636559659e73a7cee-0": {
+          "type": "review",
+          "settings": {
+            "title": "Mastin Magic Toolkit™",
+            "content": "<p>One-click fixes to up your game! Included with your preset pack, our custom tools help you correct the trickiest photos. <\/p>",
+            "image": "shopify:\/\/shop_images\/Mastin_Magic_Toolkit.png"
+          }
+        },
+        "1636559659e73a7cee-1": {
+          "type": "review",
+          "settings": {
+            "title": "Time-saving Mastin 3-Step Workflow™",
+            "content": "<p>Our tested, easy-to-use workflow means you can finally ditch hours of editing and get back to the moments you live for.<\/p>",
+            "image": "shopify:\/\/shop_images\/Time_Saving_3_Step_Workflow.png"
+          }
+        },
+        "1636559659e73a7cee-2": {
+          "type": "review",
+          "settings": {
+            "title": "Bonus tutorials for getting started",
+            "content": "<p>Each pack comes with a unique training video and three raw files that you can edit start to finish and achieve a perfect edit the very first time you use Mastin Labs.<\/p>",
+            "image": "shopify:\/\/shop_images\/Bonus_tutorials_for_getting_started.png"
+          }
+        },
+        "1636559659e73a7cee-3": {
+          "type": "review",
+          "settings": {
+            "title": "Lifetime product updates and support",
+            "content": "<p>We are dedicated to your success as a photographer! Our team is here with end-to-end product and editing support.<\/p>",
+            "image": "shopify:\/\/shop_images\/Lifetime_Product_Updates_and_Support.png"
+          }
+        }
+      },
+      "block_order": [
+        "1636559659e73a7cee-0",
+        "1636559659e73a7cee-1",
+        "1636559659e73a7cee-2",
+        "1636559659e73a7cee-3"
+      ],
+      "settings": {
+        "title": "Born from film, made for you.",
+        "content": "<p>See all the reviews and why our customers say this pack is a game changer for giving the look you've always wanted!<\/p>",
+        "linkLabel": "SEE MORE REVIEWS",
+        "link": "",
+        "bgColor": "rgba(0,0,0,0)",
+        "text": "#474747",
+        "paddingTop": 90,
+        "paddingBottom": 35
+      }
+    },
+    "1636559995130c60b5": {
+      "type": "depro-gallery",
+      "blocks": {
+        "03814fc3-e7d5-4a89-a65e-795e1b76663d": {
+          "type": "image",
+          "settings": {
+            "padding": "10px 10px 10px 10px",
+            "mobile_padding": "0px 0px 0px 0px",
+            "image": "shopify:\/\/shop_images\/xo-gallery-12-1588459429521.jpg",
+            "title": "Fuji Original",
+            "description": "",
+            "button_name": "Lightroom",
+            "link": "shopify:\/\/products\/fuji-original-lightroom",
+            "button_name_second": "Capture One",
+            "link_second": "shopify:\/\/products\/fuji-original-capture-one",
+            "product": "",
+            "alignment": "center"
+          }
+        },
+        "921be288-3547-4985-9ac5-c1a49fcc1ca9": {
+          "type": "image",
+          "settings": {
+            "padding": "10px 10px 10px 10px",
+            "mobile_padding": "0px 0px 0px 0px",
+            "image": "shopify:\/\/shop_images\/xo-gallery-6-1587067396321.jpg",
+            "title": "Adventure Everyday",
+            "description": "",
+            "button_name": "Lightroom",
+            "link": "shopify:\/\/products\/adventure-everyday-lightroom",
+            "button_name_second": "Capture One",
+            "link_second": "shopify:\/\/products\/adventure-everyday-capture-one",
+            "product": "",
+            "alignment": "center"
+          }
+        },
+        "db42fd55-7570-45fa-b448-d463648aa0b7": {
+          "type": "image",
+          "settings": {
+            "padding": "10px 10px 10px 10px",
+            "mobile_padding": "0px 0px 0px 0px",
+            "image": "shopify:\/\/shop_images\/xo-gallery-6-1586203538453.jpg",
+            "title": "Adventure Everyday",
+            "description": "",
+            "button_name": "Lightroom",
+            "link": "shopify:\/\/products\/adventure-everyday-lightroom",
+            "button_name_second": "Capture One",
+            "link_second": "shopify:\/\/products\/adventure-everyday-capture-one",
+            "product": "",
+            "alignment": "center"
+          }
+        },
+        "d4e9ed9a-e8a4-4041-a315-86e865a6e937": {
+          "type": "image",
+          "settings": {
+            "padding": "10px 10px 10px 10px",
+            "mobile_padding": "0px 0px 0px 0px",
+            "image": "shopify:\/\/shop_images\/xo-gallery-6-1586633352527.jpg",
+            "title": "Adventure Everyday",
+            "description": "",
+            "button_name": "Lightroom",
+            "link": "shopify:\/\/products\/adventure-everyday-lightroom",
+            "button_name_second": "Capture One",
+            "link_second": "shopify:\/\/products\/adventure-everyday-capture-one",
+            "product": "",
+            "alignment": "center"
+          }
+        },
+        "73daa3ad-6151-4c7d-9a4e-ebf2c3844f19": {
+          "type": "image",
+          "settings": {
+            "padding": "10px 10px 10px 10px",
+            "mobile_padding": "0px 0px 0px 0px",
+            "image": "shopify:\/\/shop_images\/xo-gallery-12-1588459425518.jpg",
+            "title": "Portra Original",
+            "description": "",
+            "button_name": "Lightroom",
+            "link": "shopify:\/\/products\/portra-original-lightroom",
+            "button_name_second": "Capture One",
+            "link_second": "shopify:\/\/products\/portra-original-capture-one",
+            "product": "",
+            "alignment": "center"
+          }
+        },
+        "b1f037d3-441c-4130-b408-96031e14ab83": {
+          "type": "image",
+          "settings": {
+            "padding": "10px 10px 10px 10px",
+            "mobile_padding": "0px 0px 0px 0px",
+            "image": "shopify:\/\/shop_images\/ADV_E_GOLD200_Sean_Carr_01-2.jpg",
+            "title": "Fuji Original",
+            "description": "",
+            "button_name": "Lightroom",
+            "link": "shopify:\/\/products\/fuji-original-lightroom",
+            "button_name_second": "Capture One",
+            "link_second": "shopify:\/\/products\/fuji-original-capture-one",
+            "product": "",
+            "alignment": "center"
+          }
+        }
+      },
+      "block_order": [
+        "03814fc3-e7d5-4a89-a65e-795e1b76663d",
+        "921be288-3547-4985-9ac5-c1a49fcc1ca9",
+        "db42fd55-7570-45fa-b448-d463648aa0b7",
+        "d4e9ed9a-e8a4-4041-a315-86e865a6e937",
+        "73daa3ad-6151-4c7d-9a4e-ebf2c3844f19",
+        "b1f037d3-441c-4130-b408-96031e14ab83"
+      ],
+      "settings": {
+        "section_title": "Pictures taken from our community",
+        "section_content": "<p>Open each title for pack details— so many goodies inside.<\/p>",
+        "border": "0px",
+        "padding": "",
+        "mobile_padding": "",
+        "background_color": "#ffffff",
+        "fullWidth": false,
+        "columns": "three",
+        "text": "#474747",
+        "padding-top-bottom": 75,
+        "disableBtn": true,
+        "disableShopBtn": false
       }
     }
   },
@@ -233,6 +582,10 @@
     "3rd_gallery-pro-4509579280466",
     "1FW-html",
     "1FW-included_looks",
-    "1stamped-main-widget"
+    "1stamped-main-widget",
+    "163655860325e8add4",
+    "1636559108e5f1d3ab",
+    "1636559659e73a7cee",
+    "1636559995130c60b5"
   ]
 }

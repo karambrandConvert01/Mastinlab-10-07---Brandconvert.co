@@ -1,10 +1,11 @@
 {%- assign metarobots_found = false -%}
 {%- assign allowUrlFound = false -%}
 {%- assign allowQueryStringUrls = '' -%}
+{%- assign fullUrl = request.host | append: request.path -%}
 {%- if shop.metafields.seo.allow_url_normal != empty -%}
 	{%- assign allow_urls_normal = shop.metafields.seo.allow_url_normal | split: ',' -%}
     {%- for allow_url_normal in allow_urls_normal -%}
-      {%- if request.path == allow_url_normal -%}
+      {%- if request.path == allow_url_normal or request.host == allow_url_normal or fullUrl == allow_url_normal -%}
         {%- assign allowUrlFound = true -%}
       {%- endif -%}
       {%- if allow_url_normal contains '?' -%}
@@ -281,15 +282,13 @@
             <meta name="robots" content="nofollow" />
             {%- assign metarobots_found = true -%}
         {%- endif -%}
-	{%- elsif request.path contains '/sitemap/' -%}
-		<meta name="robots" content="noindex" />
     {%- endif -%}
     {%- if metarobots_found == false -%}
         {%- assign noindex_urls_normal = shop.metafields.seo.noindex_url_normal | split: ',' -%}
         {%- assign noindex_urls_contains = shop.metafields.seo.noindex_url_contains | split: ',' -%}
         {%- assign queryStringUrls = '' -%}
         {%- for noindex_url_normal in noindex_urls_normal -%}
-          {%- if request.path == noindex_url_normal -%}
+          {%- if request.path == noindex_url_normal or request.host == noindex_url_normal or fullUrl == noindex_url_normal -%}
               {%- assign metarobots_found = true -%}
           {%- endif -%}
           {%- if noindex_url_normal contains '?' -%}

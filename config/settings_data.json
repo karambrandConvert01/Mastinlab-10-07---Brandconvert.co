@@ -344,11 +344,7 @@
           "copyright_link_color_hover": "#2274a5",
           "bgColor": "#5b2333",
           "textColor": "#ffffff",
-          "linkHover": "#2274a5",
-          "bgFooterColor": "#271d2e",
-          "textFooterColor": "#FFFFFF",
-          "linkFooterHover": "#2274A5",
-          "textFooterHeading": "#FFFFFF"
+          "linkHover": "#2274a5"
         }
       },
       "collection-template": {

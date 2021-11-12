@@ -7,7 +7,8 @@
   thumbnail_position: section.settings.thumbnail_position,
   thumbnail_arrows: section.settings.thumbnail_arrows,
   video_looping: section.settings.enable_video_looping,
-  video_style: section.settings.product_video_style
+  video_style: section.settings.product_video_style,
+  payment_terms: section.settings.payment_terms
 %}
 
 {% if settings.enable_product_reviews and settings.reviews_layout == 'full' %}
@@ -44,6 +45,12 @@
         "id": "vcolor_loading",
         "label": "Add to cart loading ",
         "default": "rgba(0, 0, 0, 1)"
+      },
+      {
+        "type": "checkbox",
+        "id": "payment_terms",
+        "label": "Enable Payment Terms",
+        "default": true
       },
       {
         "type": "header",
