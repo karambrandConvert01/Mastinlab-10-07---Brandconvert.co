@@ -31,4 +31,27 @@ jQuery(document).ready(function($) {
   jQuery(".custom_for_product_by_dp").on("click", ".scroll-to-cart", function() {
     jQuery('button.add-to-cart').click();
   });
+
+  jQuery('div.product-single__form .addToCartButton').on('click', async function() {
+    const proId = jQuery(this).parent().find('input[name="id"]').val();
+    // alert(proId)
+    const formData = {
+      'items': [{
+        'id': proId,
+        'quantity': 1
+      }]
+    };
+
+    const req = await fetch('/cart/add.js', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(formData)
+    })
+
+    const res = await req.json();
+    new theme.CartDrawer();
+    $('.js-drawer-open-cart').trigger("click");
+  })
 });

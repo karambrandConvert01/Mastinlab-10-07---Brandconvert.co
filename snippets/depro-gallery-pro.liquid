@@ -1,6 +1,7 @@
 {% unless section.settings.fullWidth %}
 	<div class="page-width">
 	{% endunless %}
+
 	<div class="custom_background">
 		{% if section.settings.section_title != blank %}
 			<div class="section-header">
@@ -41,11 +42,11 @@
 										{% unless section.settings.disableShopBtn %}
 											{% assign proHandle = block.settings.link_second | split: "/" | last %}
 											{% assign product = all_products[proHandle] %}
-											{% capture form_id %}AddToCartForm-{{ product.selected_or_first_available_variant.id }}{% endcapture %}
-											{% form 'product', product, id: form_id, class: 'product-single__form' %}
+
+											<div class="product-single__form">
 												{% assign cpro = product.selected_or_first_available_variant %}
 												<input type="hidden" name="id" value="{{ cpro.id }}">
-
+	
 												<button type="submit" href="{{block.settings.link}}" class="imagebox__btn ny0hes addToCartButton">SHOP NOW</button>
 												<div id="VariantsJson-{{ section_id }}" class="hide" aria-hidden="true">
 													{{ product.variants | json }}
@@ -55,7 +56,7 @@
 														{{ current_variant | json }}
 													</div>
 												{% endif %}
-											{% endform %}
+											</div>
 										{% endunless %}
 									</div>
 								</div>
