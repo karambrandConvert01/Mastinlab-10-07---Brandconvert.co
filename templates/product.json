@@ -151,14 +151,13 @@
     },
     "1629441847bcee9a09": {
       "type": "after-before-columns",
-      "disabled": true,
       "blocks": {
         "7ca86b8c-8b17-46d4-808b-761c69242437": {
           "type": "afterBeforeBlock",
           "settings": {
-            "after": "shopify:\/\/shop_images\/Rectangle_150.png",
-            "before": "shopify:\/\/shop_images\/Rectangle_144.png",
-            "badge": "shopify:\/\/shop_images\/Badge_White_Delta-3200.png",
+            "after": "shopify:\/\/shop_images\/Portra_160.jpg",
+            "before": "shopify:\/\/shop_images\/Portra_Original_Unedited-2.jpg",
+            "badge": "shopify:\/\/shop_images\/Badge_Portra-160.png",
             "title": "Ektar 100",
             "content": "<p>Neutral and balanced, Fuji 160NS is the portrait photographers favored film stock for its smooth gradients from the highlights to the shadows and clean skin across a broad range of tones.<\/p>"
           }
